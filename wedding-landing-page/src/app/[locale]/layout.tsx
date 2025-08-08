@@ -2,6 +2,7 @@ import { Playfair_Display, Great_Vibes, Lato } from "next/font/google";
 import {notFound} from 'next/navigation';
 import {ReactNode} from 'react';
 import {NextIntlClientProvider, useMessages} from 'next-intl';
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 import "@fontsource/playfair-display";
 import "@fontsource/great-vibes";
@@ -39,6 +40,7 @@ export default function LocaleLayout({children, params: {locale}}: Props) {
       <body className={`${playfairDisplay.variable} ${greatVibes.variable} ${lato.variable} font-sans antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <WhatsAppButton />
         </NextIntlClientProvider>
       </body>
     </html>

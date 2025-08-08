@@ -3,15 +3,15 @@
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/navigation';
 import { useTransition, useState, useRef, useEffect } from 'react';
-import UKFlag from './icons/UKFlag';
 import DEFlag from './icons/DEFlag';
 import ESFlag from './icons/ESFlag';
+import USFlag from './icons/USFlag';
 
-const localeDetails = {
-  en: { name: 'EN', Flag: UKFlag },
-  de: { name: 'DE', Flag: DEFlag },
-  es: { name: 'ES', Flag: ESFlag },
-};
+const locales: { code: 'en' | 'de' | 'es'; name: string; flag: React.ComponentType<React.SVGProps<SVGSVGElement>>; }[] = [
+  { code: 'en', name: 'English', flag: USFlag },
+  { code: 'de', name: 'Deutsch', flag: DEFlag },
+  { code: 'es', name: 'Español', flag: ESFlag },
+];
 
 export default function LanguageSwitcher() {
   const router = useRouter();
@@ -38,7 +38,8 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [dropdownRef]);
 
-  const { Flag: CurrentFlag } = localeDetails[locale];
+  const currentLocale = locales.find(l => l.code === locale);
+  const CurrentFlag = currentLocale?.flag;
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -47,22 +48,21 @@ export default function LanguageSwitcher() {
         className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800"
         disabled={isPending}
       >
-        <CurrentFlag />
+        {CurrentFlag && <CurrentFlag className="w-6 h-auto" />}
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-            {Object.keys(localeDetails).map((key) => {
-              const { name, Flag } = localeDetails[key as 'en' | 'de' | 'es'];
+            {locales.map(({ code, name, flag: Flag }) => {
               return (
                 <button
-                  key={key}
-                  onClick={() => onSelectChange(key as 'en' | 'de' | 'es')}
+                  key={code}
+                  onClick={() => onSelectChange(code)}
                   className="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                   role="menuitem"
                 >
-                  <Flag />
-                  <span className="ml-3">{name}</span>
+                  <Flag className="w-5 h-auto mr-3" />
+                  <span>{name}</span>
                 </button>
               );
             })}
