@@ -1,3 +1,6 @@
+# Node.js build directory
+.next
+
 # macOS system files
 .DS_Store
 
