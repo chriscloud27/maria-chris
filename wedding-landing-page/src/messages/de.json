@@ -1,0 +1,97 @@
+{
+  "couple": {
+    "name1": "Jane",
+    "name2": "John"
+  },
+  "hero": {
+    "title": "Wir heiraten!",
+    "subtitle": "15. August 2025"
+  },
+  "nav": {
+    "location": "Ort",
+    "hotels": "Hotels",
+    "arrival": "Anreise",
+    "events": "Veranstaltungen",
+    "rsvp": "RSVP",
+    "excursions": "Ausflüge",
+    "faq": "FAQ"
+  },
+  "location": {
+    "title": "Ort",
+    "main": {
+      "name": "St. Margaretenkirche",
+      "address": "St.-Margareten-Straße 1, 81371 München, Deutschland"
+    }
+  },
+  "hotels": {
+    "title": "Hotel Optionen",
+    "bookingLinkText": "Jetzt buchen",
+    "hotel1": {
+      "name": "Hotel Sonne",
+      "bookingLink": "https://booking.com/sonne"
+    },
+    "hotel2": {
+      "name": "Gasthof Mond",
+      "bookingLink": "https://booking.com/mond"
+    },
+    "hotel3": {
+      "name": "Pension Sterne",
+      "bookingLink": "https://booking.com/sterne"
+    }
+  },
+  "arrival": {
+    "title": "Anreise",
+    "train": "Der nächste Bahnhof ist Musterstadt Hbf.",
+    "taxi": "Taxis sind am Bahnhof verfügbar.",
+    "car": "Parkplätze sind am Schloss vorhanden.",
+    "airport": "Der nächste Flughafen ist Musterstadt Airport (MST)."
+  },
+  "prePostEvents": {
+    "title": "Vor- und Nach-Hochzeitsveranstaltungen",
+    "events": [
+      {
+        "name": "Get-Together am Vorabend",
+        "description": "Zwangloses Treffen am 14. August um 19 Uhr in der Hotelbar."
+      },
+      {
+        "name": "Brunch am Tag danach",
+        "description": "Gemeinsamer Brunch am 16. August um 11 Uhr im Hotel."
+      }
+    ]
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "formspreeEndpoint": "https://formspree.io/f/your-id",
+    "nameLabel": "Name",
+    "attendanceLabel": "Wirst du teilnehmen?",
+    "attendanceYes": "Ja",
+    "attendanceNo": "Nein",
+    "plusOneLabel": "+1 Name (falls zutreffend)",
+    "submitButton": "Senden"
+  },
+  "excursions": {
+    "title": "Ausflugstipps",
+    "tips": [
+      "Besuch des historischen Stadtzentrums.",
+      "Wanderung zum Musterberg.",
+      "Bootsfahrt auf dem Mustersee."
+    ]
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "questions": [
+      {
+        "question": "Gibt es einen Dresscode?",
+        "answer": "Wir würden uns über festliche Kleidung freuen."
+      },
+      {
+        "question": "Sind Kinder willkommen?",
+        "answer": "Ja, Kinder sind herzlich willkommen."
+      },
+      {
+        "question": "An wen kann ich mich bei Fragen wenden?",
+        "answer": "Bitte kontaktiert uns direkt."
+      }
+    ]
+  }
+}

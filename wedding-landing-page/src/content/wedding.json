@@ -1,0 +1,85 @@
+{
+  "couple": {
+    "name1": "Carolin",
+    "name2": "Sebastian"
+  },
+  "hero": {
+    "title": "We're getting married!",
+    "subtitle": "Join us for our wedding celebration"
+  },
+  "location": {
+    "title": "Location",
+    "church": {
+      "name": "St. Margaret's Church",
+      "address": "123 Church Street, Munich, Germany",
+      "mapLink": "https://maps.google.com/?q=St.+Margaret's+Church"
+    },
+    "party": {
+      "name": "The Grand Hall",
+      "address": "456 Party Avenue, Munich, Germany",
+      "mapLink": "https://maps.google.com/?q=The+Grand+Hall"
+    }
+  },
+  "hotels": {
+    "title": "Hotels",
+    "options": [
+      {
+        "name": "Hotel Central",
+        "bookingLink": "https://booking.com/hotel-central"
+      },
+      {
+        "name": "Bavarian Inn",
+        "bookingLink": "https://booking.com/bavarian-inn"
+      }
+    ]
+  },
+  "arrival": {
+    "title": "Arrival",
+    "train": "Munich Central Station (Hauptbahnhof) is well-connected.",
+    "taxi": "Taxis are readily available at the station and airport.",
+    "car": "Parking is available at the party venue.",
+    "airport": "Munich Airport (MUC) is the nearest airport."
+  },
+  "prePostEvents": {
+    "title": "Pre & Post Wedding Events",
+    "events": [
+      {
+        "name": "Oktoberfest Visit",
+        "description": "Join us for a trip to the famous Oktoberfest."
+      },
+      {
+        "name": "Farewell Brunch",
+        "description": "A casual brunch the day after the wedding."
+      }
+    ]
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "formspreeEndpoint": "https://formspree.io/f/your_form_id"
+  },
+  "excursions": {
+    "title": "Excursions",
+    "tips": [
+      "Visit the English Garden.",
+      "Explore the Deutsches Museum.",
+      "Take a day trip to Neuschwanstein Castle."
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "questions": [
+      {
+        "question": "What is the dress code?",
+        "answer": "Formal attire is requested."
+      },
+      {
+        "question": "Are children welcome?",
+        "answer": "Please let us know if you plan to bring your children."
+      },
+      {
+        "question": "What about gifts?",
+        "answer": "Your presence is the greatest gift! If you wish to give something, a contribution to our honeymoon fund would be appreciated."
+      }
+    ]
+  }
+}
