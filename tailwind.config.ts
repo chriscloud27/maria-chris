@@ -9,9 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["var(--font-playfair-display)"],
-        script: ["var(--font-great-vibes)"],
-        sans: ["var(--font-lato)"],
+        // Heading Fonts (Serif, elegant, festlich)
+        'heading': ['var(--font-playfair-display)', 'var(--font-cormorant-garamond)', 'serif'],
+        'serif': ['var(--font-playfair-display)', 'serif'],
+        'serif-alt': ['var(--font-cormorant-garamond)', 'serif'],
+        
+        // Body Fonts (Sans-Serif, modern, klar)
+        'sans': ['var(--font-inter)', 'var(--font-nunito)', 'sans-serif'],
+        'body': ['var(--font-inter)', 'sans-serif'],
+        'body-alt': ['var(--font-nunito)', 'sans-serif'],
+        
+        // Accent Fonts (Script/Handwritten)
+        'script': ['var(--font-great-vibes)', 'var(--font-dancing-script)', 'cursive'],
+        'accent': ['var(--font-great-vibes)', 'cursive'],
+        'accent-alt': ['var(--font-dancing-script)', 'cursive'],
       },
       colors: {
         'soft-white': '#F9F9F8',
