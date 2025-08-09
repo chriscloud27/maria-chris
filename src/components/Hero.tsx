@@ -1,3 +1,4 @@
+import React from 'react';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 

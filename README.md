@@ -1,3 +1,34 @@
+## Testing & Quality Assurance
+
+Das Projekt nutzt moderne Test- und Qualitätswerkzeuge:
+
+- **Unit/Component-Tests:** Vitest + React Testing Library (jsdom)
+- **E2E-Tests:** Playwright
+- **Linting:** ESLint
+- **Type-Checking:** TypeScript
+
+### Test-Skripte (package.json)
+
+```json
+"scripts": {
+  "lint": "next lint",
+  "typecheck": "tsc --noEmit",
+  "test": "vitest --run --reporter=dot",
+  "test:watch": "vitest",
+  "test:coverage": "vitest --run --coverage",
+  "test:e2e": "playwright test",
+  "test:e2e:headed": "playwright test --headed",
+  "test:ci": "npm run lint && npm run typecheck && vitest --run --coverage && playwright test"
+}
+```
+
+### Testausführung
+
+- **Alle Unit-Tests:** `npm test`
+- **E2E-Tests:** `npm run test:e2e`
+- **CI-Workflow:** `npm run test:ci`
+
+Weitere Details zur Testkonfiguration findest du in `vitest.config.ts` und `playwright.config.ts`.
 # Wedding Landing Page
 
 ## Overview
