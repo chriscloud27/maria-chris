@@ -1,6 +1,6 @@
 import { Playfair_Display, Great_Vibes, Lato } from "next/font/google";
-import {ReactNode} from 'react';
-import {NextIntlClientProvider, useMessages} from 'next-intl';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 import "@fontsource/playfair-display";
@@ -24,14 +24,18 @@ const lato = Lato({
   variable: "--font-lato",
 });
 
-type Props = {
-  children: ReactNode;
-  params: {locale: string};
-};
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'de'}, {locale: 'es'}];
+}
 
-export default function LocaleLayout({children, params: {locale}}: Props) {
-  // Providing all messages to the client
-  // side is the easiest way to get started
+export default function LocaleLayout({
+  children,
+  params: {locale}
+}: {
+  children: React.ReactNode;
+  params: {locale: string};
+}) {
+  setRequestLocale(locale);
   const messages = useMessages();
  
   return (
