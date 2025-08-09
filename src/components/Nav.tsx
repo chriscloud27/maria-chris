@@ -25,8 +25,8 @@ export const Nav = () => {
     <nav className="sticky top-0 bg-white dark:bg-black shadow-md z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link href="#hero" className="text-xl font-bold">
-            {c('name1')} & {c('name2')}
+          <Link href="#hero" className="text-xl font-script">
+            {c('name1')} & {c('name2')} {c('activity')}
           </Link>
           <div className="hidden md:flex items-center space-x-4">
             {sections.map(section => (

@@ -1,7 +1,8 @@
 {
   "couple": {
     "name1": "Maria",
-    "name2": "Chris"
+    "name2": "Chris",
+    "activity": "Wedding"
   },
   "hero": {
     "title": "We're getting married!",
