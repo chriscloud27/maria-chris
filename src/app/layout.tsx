@@ -25,7 +25,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: `${content.couple.name1} & ${content.couple.name2}'s Wedding`,
+  title: "Wedding Maria and Chris",
   description: content.hero.subtitle,
 };
 

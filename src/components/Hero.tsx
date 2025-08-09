@@ -5,7 +5,17 @@ export const Hero = () => {
   const c = useTranslations('couple');
 
   return (
-    <section id="hero" className="flex flex-col items-center justify-center h-screen bg-background text-foreground">
+    <section
+      id="hero"
+      className="flex flex-col items-center justify-center h-screen text-foreground relative"
+      style={{ 
+        backgroundImage: 'url(/hero_55q.jpg)', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#f0f0f0'
+      }}
+    >
       <h1 className="font-script text-7xl text-purple">{c('name1')} & {c('name2')}</h1>
       <p className="font-heading mt-4 text-4xl">{t('title')}</p>
       <p className="mt-2 text-xl">{t('subtitle')}</p>

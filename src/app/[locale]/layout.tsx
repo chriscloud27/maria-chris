@@ -1,5 +1,4 @@
 import { Playfair_Display, Great_Vibes, Lato } from "next/font/google";
-import {notFound} from 'next/navigation';
 import {ReactNode} from 'react';
 import {NextIntlClientProvider, useMessages} from 'next-intl';
 import WhatsAppButton from "@/components/WhatsAppButton";

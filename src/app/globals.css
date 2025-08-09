@@ -108,5 +108,33 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Safari-kompatibler Aquarell-Mint Hintergrund */
+    background-image: url('/watercolor-mint-bg.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Fallback für ältere Browser */
+    background-color: #ffffff;
+    /* Alternative: CSS-Gradient Fallback für bessere Performance auf mobilen Geräten */
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(240, 253, 244, 0.8) 0%, rgba(220, 252, 231, 0.6) 40%, rgba(187, 247, 208, 0.3) 80%, transparent 100%),
+      radial-gradient(circle at 80% 20%, rgba(236, 253, 245, 0.7) 0%, rgba(209, 250, 229, 0.4) 50%, transparent 100%),
+      radial-gradient(circle at 50% 80%, rgba(240, 253, 244, 0.6) 0%, rgba(220, 252, 231, 0.5) 30%, rgba(167, 243, 208, 0.2) 70%, transparent 100%),
+      url('/watercolor-mint-bg.svg');
+    min-height: 100vh;
+  }
+  
+  /* Optimierung für iOS Safari */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      /* Für iOS Safari: Verwende nur CSS-Gradients für bessere Performance */
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(240, 253, 244, 0.8) 0%, rgba(220, 252, 231, 0.6) 40%, rgba(187, 247, 208, 0.3) 80%, transparent 100%),
+        radial-gradient(circle at 80% 20%, rgba(236, 253, 245, 0.7) 0%, rgba(209, 250, 229, 0.4) 50%, transparent 100%),
+        radial-gradient(circle at 50% 80%, rgba(240, 253, 244, 0.6) 0%, rgba(220, 252, 231, 0.5) 30%, rgba(167, 243, 208, 0.2) 70%, transparent 100%),
+        radial-gradient(circle at 10% 70%, rgba(236, 253, 245, 0.5) 0%, rgba(187, 247, 208, 0.3) 60%, transparent 100%),
+        radial-gradient(circle at 90% 60%, rgba(240, 253, 244, 0.4) 0%, rgba(209, 250, 229, 0.2) 50%, transparent 100%);
+      background-attachment: scroll; /* Verhindert Ruckeln auf iOS */
+    }
   }
 }
