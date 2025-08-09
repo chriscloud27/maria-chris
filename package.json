@@ -12,7 +12,6 @@
     "@fontsource/great-vibes": "^5.2.6",
     "@fontsource/lato": "^5.2.6",
     "@fontsource/playfair-display": "^5.2.6",
-    "@vis.gl/react-google-maps": "^0.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.537.0",

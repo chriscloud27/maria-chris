@@ -30,3 +30,6 @@ build/
 *.bak
 *.tmp
 *.temp
+
+# TypeScript build info
+tsconfig.tsbuildinfo
