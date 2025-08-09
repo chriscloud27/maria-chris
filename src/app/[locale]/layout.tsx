@@ -1,13 +1,20 @@
 
-import { NextIntlClientProvider, useMessages } from 'next-intl';
-import WhatsAppButton from "@/components/WhatsAppButton";
+import LocaleLayoutInner from './LocaleLayoutInner';
 
-export default function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
-  const messages = useMessages();
+export default async function LocaleLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  // Load messages server-side
+  const messages = (await import(`../../messages/${locale}.json`)).default;
+  const timeZone = 'America/Bogota';
   return (
-    <NextIntlClientProvider locale={params.locale} messages={messages}>
+    <LocaleLayoutInner locale={locale} messages={messages} timeZone={timeZone}>
       {children}
-      <WhatsAppButton />
-    </NextIntlClientProvider>
+    </LocaleLayoutInner>
   );
 }

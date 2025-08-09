@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 export const Location = () => {
   const t = useTranslations('location');
   // Coordinates for "St. Margaretenkirche, München"
-  const locationPosition = { lat: 48.1234, lng: 11.5678 }; 
+  // const locationPosition = { lat: 48.1234, lng: 11.5678 }; 
 
   return (
     <section id="location" className="py-20">
