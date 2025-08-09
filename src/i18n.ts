@@ -1,12 +1,12 @@
+// src/i18n.ts
 import {notFound} from 'next/navigation';
-import {getRequestConfig, requestLocale} from 'next-intl/server';
+import {getRequestConfig} from 'next-intl/server';
 
-// Can be imported from a shared config
-const locales = ['en', 'de', 'es'];
+const locales = ['en', 'de', 'es'] as const;
 
-export default getRequestConfig(async () => {
-  const locale = await requestLocale(locales);
-  if (!locales.includes(locale)) notFound();
+export default getRequestConfig(async ({requestLocale}) => {
+  const locale = await requestLocale;              // vom System ermittelt
+  if (!locales.includes(locale as any)) notFound(); // Guard
 
   return {
     locale,
