@@ -1,27 +1,28 @@
-import { Hero } from "@/components/Hero";
-import { Location } from "@/components/Location";
-import { Hotels } from "@/components/Hotels";
-import { Arrival } from "@/components/Arrival";
-import { PrePostEvents } from "@/components/PrePostEvents";
-import { Rsvp } from "@/components/Rsvp";
-import { Excursions } from "@/components/Excursions";
-import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
- 
-export default function Index() {
+
+// List your supported locales here
+export const supportedLocales = ["en", "de", "es"];
+
+// This function tells Next.js to statically generate pages for each locale
+export function generateStaticParams() {
+  return supportedLocales.map((locale) => ({ locale }));
+}
+
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+
+export default async function HomePage({ params }: PageProps) {
+  const { locale } = await params;
+
   return (
     <>
-      <Nav />
+      <Nav currentLocale={locale} />
       <main>
-        <Hero />
         <div className="container mx-auto px-4">
-          <Location />
-          <Hotels />
-          <Arrival />
-          <PrePostEvents />
-          <Rsvp />
-          <Excursions />
-          <Faq />
+          <h1>Welcome to the Wedding Landing Page!</h1>
         </div>
       </main>
     </>

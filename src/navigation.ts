@@ -1,11 +1,3 @@
-import {
-  Link,
-  redirect,
-  usePathname,
-  useRouter,
-} from 'next-intl/navigation';
-
+// Locale configuration for navigation and i18n
 export const locales = ['en', 'de', 'es'] as const;
 export const localePrefix = 'as-needed';
-
-export { Link, redirect, usePathname, useRouter };

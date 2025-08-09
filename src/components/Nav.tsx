@@ -1,15 +1,20 @@
 "use client";
 
 import { useState } from 'react';
-import {useTranslations} from 'next-intl';
-import {Link} from '@/navigation';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { locales } from '@/navigation';
+
 import LanguageSwitcher from './LanguageSwitcher';
 import HamburgerIcon from './icons/HamburgerIcon';
 
-export const Nav = () => {
+export const Nav = ({ currentLocale }: { currentLocale: string }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const c = useTranslations('couple');
+  const pathname = usePathname();
+  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '');
 
   const sections = [
     { title: t('location'), id: 'location' },
@@ -55,6 +60,20 @@ export const Nav = () => {
           </div>
         </div>
       )}
+      <div className="container mx-auto px-4 py-2">
+        <div className="flex space-x-4">
+          {locales.map(locale => (
+            <Link
+              key={locale}
+              href={`/${locale}${pathWithoutLocale}`}
+              locale={false}
+              style={{ fontWeight: locale === currentLocale ? 'bold' : 'normal' }}
+            >
+              {locale.toUpperCase()}
+            </Link>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };
