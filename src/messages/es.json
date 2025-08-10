@@ -22,7 +22,8 @@
     "main": {
       "name": "Iglesia de Santa Margarita",
       "address": "Calle Santa Margarita 1, 81371 Múnich, Alemania"
-    }
+    },
+    "intro": "Ubicado en el corazón de Antioquia, a solo dos horas de Medellín, Guatapé es el pueblo más colorido de Colombia: un lienzo viviente de casas vibrantes, encantadores zócalos y vistas impresionantes al lago. Situado a orillas del embalse Peñol-Guatapé y a solo 10 km de la imponente Piedra del Peñol, este pintoresco pueblo ofrece aventuras sin fin, desde kayak y wake surf hasta subir los famosos 700 escalones para disfrutar de vistas panorámicas de las montañas. Tras un día de exploración, relájate con auténticos sabores antioqueños y cócteles tropicales mientras el sol se pone sobre el agua."
   },
   "hotels": {
     "title": "Opciones de Hotel",
@@ -38,7 +39,15 @@
     "hotel3": {
       "name": "Pensión Estrellas",
       "bookingLink": "https://booking.com/estrellas"
-    }
+    },
+    "guatapeViajero": {
+      "description": "muy cerca del lugar del evento, pintoresco y asombroso"
+    },
+    "searchOnBooking": "Buscar en Booking",
+    "searchOnAirbnb": "Buscar en Airbnb",
+    "searchHotelOptionsCloseBy": "Buscar opciones de hotel cercanas",
+  "searchAirbnbOptionsCloseBy": "Buscar opciones de Airbnb cercanas",
+  "discountVoucher": "Cupón de descuento"
   },
   "arrival": {
     "title": "Llegada",

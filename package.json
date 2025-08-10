@@ -13,7 +13,8 @@
     "test:coverage": "vitest --run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
-    "test:ci": "npm run lint && npm run typecheck && vitest --run --coverage && playwright test"
+    "test:ci": "npm run lint && npm run typecheck && vitest --run --coverage && playwright test",
+    "test:vercel": "node scripts/vercel-simulation.js"
   },
   "dependencies": {
     "@fontsource/great-vibes": "^5.2.6",

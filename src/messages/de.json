@@ -22,7 +22,8 @@
     "main": {
       "name": "St. Margaretenkirche",
       "address": "St.-Margareten-Straße 1, 81371 München, Deutschland"
-    }
+    },
+    "intro": "Eingebettet im Herzen Antioquias, nur zwei Stunden von Medellín entfernt, ist Guatapé das bunteste Dorf Kolumbiens – eine lebendige Leinwand aus farbenfrohen Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol gelegen, bietet dieses malerische Städtchen endlose Abenteuer: von Kajakfahren und Wakeboarden bis hin zum Erklimmen der berühmten 700 Stufen für einen Panoramablick auf die Berge. Nach einem Tag voller Erkundungen kannst du bei authentischen antioquianischen Spezialitäten und tropischen Cocktails entspannen, während die Sonne über dem Wasser untergeht."
   },
   "hotels": {
     "title": "Hotel Optionen",
@@ -38,7 +39,15 @@
     "hotel3": {
       "name": "Pension Sterne",
       "bookingLink": "https://booking.com/sterne"
-    }
+    },
+    "guatapeViajero": {
+      "description": "sehr nah am Veranstaltungsort, malerisch und großartig"
+    },
+    "searchOnBooking": "Bei Booking suchen",
+    "searchOnAirbnb": "Bei Airbnb suchen",
+    "searchHotelOptionsCloseBy": "Hotels in der Nähe suchen",
+  "searchAirbnbOptionsCloseBy": "Airbnb-Optionen in der Nähe suchen",
+  "discountVoucher": "Rabattgutschein"
   },
   "arrival": {
     "title": "Anreise",

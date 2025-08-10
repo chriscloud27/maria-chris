@@ -9,7 +9,8 @@ export const Location = () => {
 
   return (
     <section id="location" className="py-20">
-      <h2 className="text-3xl font-bold text-center">{t('title')}</h2>
+  <h2 className="text-3xl font-bold text-center">{t('title')}</h2>
+  <p className="max-w-2xl mx-auto mt-4 text-center text-lg text-gray-700 dark:text-gray-300">{t('intro')}</p>
       <div className="flex flex-col items-center mt-8">
         <div className="w-full md:w-2/3 lg:w-1/2 px-4">
           <h3 className="text-xl font-semibold text-center">{t('main.name')}</h3>
@@ -17,8 +18,8 @@ export const Location = () => {
           {/* Embedded Google Map for Parque Lleras, Medellín */}
           <div style={{ height: '450px', width: '100%' }} className="mt-4 rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.726964073624!2d-75.5707268241556!3d6.209517993782998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46827e7e2e2e2d%3A0x7e2e2e2e2e2e2e2e!2sParque%20Lleras!5e0!3m2!1sen!2sco!4v1691600000000!5m2!1sen!2sco"
               width="100%"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde"
               height="450"
               style={{ border: 0 }}
               allowFullScreen={true}

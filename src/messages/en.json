@@ -22,7 +22,8 @@
     "main": {
       "name": "St. Margaret's Church",
       "address": "St. Margaret Street 1, 81371 Munich, Germany"
-    }
+    },
+    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia’s most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water."
   },
   "hotels": {
     "title": "Hotel Options",
@@ -38,7 +39,15 @@
     "hotel3": {
       "name": "Stars Guesthouse",
       "bookingLink": "https://booking.com/stars"
-    }
+    },
+    "guatapeViajero": {
+      "description": "very close by the event venue, picturesque, and amazing"
+    },
+    "searchOnBooking": "Search on Booking",
+    "searchOnAirbnb": "Search on Airbnb",
+    "searchHotelOptionsCloseBy": "Search for hotel options close by",
+  "searchAirbnbOptionsCloseBy": "Search for Airbnb options close by",
+  "discountVoucher": "Discount voucher"
   },
   "arrival": {
     "title": "Arrival",

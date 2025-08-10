@@ -11,17 +11,17 @@ import { Nav } from "@/components/Nav";
 export default function Home() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <main>
-        <Hero />
+        {/* <Hero /> */}
         <div className="container mx-auto px-4">
-          <Location />
+          {/* <Location />
           <Hotels />
           <Arrival />
           <PrePostEvents />
           <Rsvp />
           <Excursions />
-          <Faq />
+          <Faq /> */}
         </div>
       </main>
     </>
