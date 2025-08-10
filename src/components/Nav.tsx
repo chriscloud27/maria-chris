@@ -1,25 +1,37 @@
 "use client";
 
+
 import { useState } from 'react';
-import {useTranslations} from 'next-intl';
-import {Link} from '@/navigation';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import HamburgerIcon from './icons/HamburgerIcon';
 
-export const Nav = () => {
+export interface NavItem {
+  title: string;
+  id: string;
+}
+
+interface NavProps {
+  navItems?: NavItem[];
+}
+
+export const Nav = ({ navItems }: NavProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const c = useTranslations('couple');
 
-  const sections = [
+  const defaultSections: NavItem[] = [
+    { title: 'Details', id: 'details' },
+    { title: 'Schedule', id: 'schedule' },
     { title: t('location'), id: 'location' },
     { title: t('hotels'), id: 'hotels' },
     { title: t('arrival'), id: 'arrival' },
-    { title: t('events'), id: 'pre-post-events' },
     { title: t('rsvp'), id: 'rsvp' },
     { title: t('excursions'), id: 'excursions' },
     { title: t('faq'), id: 'faq' },
   ];
+  const sections = navItems ?? defaultSections;
 
   return (
     <nav className="sticky top-0 bg-white dark:bg-black shadow-md z-50">

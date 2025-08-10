@@ -9,10 +9,11 @@
     "subtitle": "December 20, 2025"
   },
   "nav": {
+    "details": "Details",
+    "schedule": "Schedule",
     "location": "Location",
     "hotels": "Hotels",
     "arrival": "Arrival",
-    "events": "Events",
     "rsvp": "RSVP",
     "excursions": "Excursions",
     "faq": "FAQ"
@@ -46,8 +47,8 @@
     "searchOnBooking": "Search on Booking",
     "searchOnAirbnb": "Search on Airbnb",
     "searchHotelOptionsCloseBy": "Search for hotel options close by",
-  "searchAirbnbOptionsCloseBy": "Search for Airbnb options close by",
-  "discountVoucher": "Discount voucher"
+    "searchAirbnbOptionsCloseBy": "Search for Airbnb options close by",
+    "discountVoucher": "Discount voucher"
   },
   "arrival": {
     "title": "Arrival",
@@ -103,5 +104,80 @@
         "answer": "Please contact us directly."
       }
     ]
-  }
+  },
+  "details": {
+    "title": "The Details",
+    "subtitle": "Ceremony, reception, and everything in between",
+    "dateTitle": "Date",
+  "dateMain": "Saturday, December 20, 2025",
+    "ceremonyTime": "Ceremony at 3:00 PM",
+    "venueTitle": "Venue",
+  "venueName": "To be announced",
+  "venueAddress1": "To be announced",
+  "venueAddress2": "Guatapé, Antioquia, Colombia",
+    "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
+    "getDirections": "Get Directions",
+    "attireTitle": "Attire",
+    "attireMain": "to be announced",
+    "attireNote": "to be announced"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "subtitle": "A day filled with love and celebration",
+    "days": [
+      {
+        "dateLabel": "Friday, December 19, 2025",
+        "events": [
+          {
+            "time": "7:00 PM",
+            "title": "Welcome Drinks",
+            "description": "Join us for a casual welcome at the hotel bar."
+          }
+        ]
+      },
+      {
+        "dateLabel": "Saturday, December 20, 2025",
+        "events": [
+          {
+            "time": "2:30 PM",
+            "title": "Guest Arrival",
+            "description": "Find your seat and enjoy a welcome refreshment."
+          },
+          {
+            "time": "3:00 PM",
+            "title": "Ceremony",
+            "description": "Join us as we say 'I do'."
+          },
+          {
+            "time": "4:00 PM",
+            "title": "Cocktail Hour",
+            "description": "Light bites, drinks, and music."
+          },
+          {
+            "time": "5:30 PM",
+            "title": "Reception",
+            "description": "Dinner, speeches, and first dances."
+          },
+          {
+            "time": "8:00 PM",
+            "title": "Dancing",
+            "description": "Let's celebrate all night!"
+          }
+        ]
+      },
+      {
+        "dateLabel": "Sunday, December 21, 2025",
+        "events": [
+          {
+            "time": "11:00 AM",
+            "title": "Farewell Brunch",
+            "description": "Enjoy a relaxed brunch before saying goodbye."
+          }
+        ]
+      }
+    ]
+  },
+  "details.venueName": "tbd",
+  "details.venueAddress1": "tbd",
+  "details.venueAddress2": "tbd"
 }

@@ -9,10 +9,11 @@
     "subtitle": "20. Dezember 2025"
   },
   "nav": {
+    "details": "Details",
+    "schedule": "Ablaufplan",
     "location": "Ort",
     "hotels": "Hotels",
     "arrival": "Anreise",
-    "events": "Veranstaltungen",
     "rsvp": "RSVP",
     "excursions": "Ausflüge",
     "faq": "FAQ"
@@ -46,8 +47,8 @@
     "searchOnBooking": "Bei Booking suchen",
     "searchOnAirbnb": "Bei Airbnb suchen",
     "searchHotelOptionsCloseBy": "Hotels in der Nähe suchen",
-  "searchAirbnbOptionsCloseBy": "Airbnb-Optionen in der Nähe suchen",
-  "discountVoucher": "Rabattgutschein"
+    "searchAirbnbOptionsCloseBy": "Airbnb-Optionen in der Nähe suchen",
+    "discountVoucher": "Rabattgutschein"
   },
   "arrival": {
     "title": "Anreise",
@@ -101,6 +102,78 @@
       {
         "question": "An wen kann ich mich bei Fragen wenden?",
         "answer": "Bitte kontaktiert uns direkt."
+      }
+    ]
+  },
+  "details": {
+    "title": "Die Details",
+    "subtitle": "Zeremonie, Empfang und alles dazwischen",
+    "dateTitle": "Datum",
+  "dateMain": "Samstag, 20. Dezember 2025",
+    "ceremonyTime": "Zeremonie um 15:00 Uhr",
+    "venueTitle": "Veranstaltungsort",
+  "venueName": "wird noch bekanntgegeben",
+  "venueAddress1": "wird noch bekanntgegeben",
+  "venueAddress2": "Guatapé, Antioquia, Kolumbien",
+    "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
+    "getDirections": "Route anzeigen",
+    "attireTitle": "Kleidung",
+    "attireMain": "wird noch bekanntgegeben",
+    "attireNote": "wird noch bekanntgegeben"
+  },
+  "schedule": {
+    "title": "Ablaufplan",
+    "subtitle": "Ein Tag voller Liebe und Feierlichkeiten",
+    "days": [
+      {
+        "dateLabel": "Freitag, 19. Dezember 2025",
+        "events": [
+          {
+            "time": "19:00 Uhr",
+            "title": "Willkommensgetränke",
+            "description": "Gemütliches Willkommen an der Hotelbar."
+          }
+        ]
+      },
+      {
+        "dateLabel": "Samstag, 20. Dezember 2025",
+        "events": [
+          {
+            "time": "14:30 Uhr",
+            "title": "Ankunft der Gäste",
+            "description": "Nehmt Platz und genießt einen Willkommensdrink."
+          },
+          {
+            "time": "15:00 Uhr",
+            "title": "Zeremonie",
+            "description": "Begleitet uns, wenn wir uns das Ja-Wort geben."
+          },
+          {
+            "time": "16:00 Uhr",
+            "title": "Sektempfang",
+            "description": "Snacks, Getränke und Musik."
+          },
+          {
+            "time": "17:30 Uhr",
+            "title": "Abendessen & Reden",
+            "description": "Dinner, Reden und der erste Tanz."
+          },
+          {
+            "time": "20:00 Uhr",
+            "title": "Tanzen",
+            "description": "Feiert mit uns die ganze Nacht!"
+          }
+        ]
+      },
+      {
+        "dateLabel": "Sonntag, 21. Dezember 2025",
+        "events": [
+          {
+            "time": "11:00 Uhr",
+            "title": "Abschiedsbrunch",
+            "description": "Genießt einen entspannten Brunch zum Abschied."
+          }
+        ]
       }
     ]
   }
