@@ -1,9 +1,21 @@
+
 import React from "react";
 import { useTranslations } from "next-intl";
 
+type ScheduleEvent = {
+  time: string;
+  title: string;
+  description: string;
+};
+
+type ScheduleDay = {
+  dateLabel: string;
+  events: ScheduleEvent[];
+};
+
 export function Schedule() {
   const t = useTranslations("schedule");
-  const days = t.raw("days");
+  const days = t.raw("days") as ScheduleDay[];
 
   return (
     <section className="py-16 bg-[url('/background-small.png')] bg-center bg-no-repeat bg-cover">

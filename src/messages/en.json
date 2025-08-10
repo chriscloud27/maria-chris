@@ -109,12 +109,12 @@
     "title": "The Details",
     "subtitle": "Ceremony, reception, and everything in between",
     "dateTitle": "Date",
-  "dateMain": "Saturday, December 20, 2025",
+    "dateMain": "Saturday, December 20, 2025",
     "ceremonyTime": "Ceremony at 3:00 PM",
     "venueTitle": "Venue",
-  "venueName": "To be announced",
-  "venueAddress1": "To be announced",
-  "venueAddress2": "Guatapé, Antioquia, Colombia",
+    "venueName": "To be announced",
+    "venueAddress1": "To be announced",
+    "venueAddress2": "Guatapé, Antioquia, Colombia",
     "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
     "getDirections": "Get Directions",
     "attireTitle": "Attire",
@@ -176,8 +176,5 @@
         ]
       }
     ]
-  },
-  "details.venueName": "tbd",
-  "details.venueAddress1": "tbd",
-  "details.venueAddress2": "tbd"
+  }
 }
