@@ -121,6 +121,11 @@
     "attireMain": "wird noch bekanntgegeben",
     "attireNote": "wird noch bekanntgegeben"
   },
+  "Countdown": {
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten"
+  },
   "schedule": {
     "title": "Ablaufplan",
     "subtitle": "Ein Tag voller Liebe und Feierlichkeiten",

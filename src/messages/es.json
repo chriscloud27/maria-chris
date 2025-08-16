@@ -121,6 +121,11 @@
     "attireMain": "mas tarde",
     "attireNote": "mas tarde"
   },
+  "Countdown": {
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Minutos"
+  },
   "schedule": {
     "title": "Programa",
     "subtitle": "Un día lleno de amor y celebración",

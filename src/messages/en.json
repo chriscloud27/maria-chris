@@ -121,6 +121,11 @@
     "attireMain": "to be announced",
     "attireNote": "to be announced"
   },
+  "Countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes"
+  },
   "schedule": {
     "title": "Schedule",
     "subtitle": "A day filled with love and celebration",

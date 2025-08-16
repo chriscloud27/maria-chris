@@ -54,7 +54,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Wedding Maria and Chris",
+  title: "Maria and Chris",
   description: content.hero.subtitle,
 };
 
