@@ -1,11 +1,12 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useTransition, useState, useRef, useEffect } from 'react';
 import DEFlag from './icons/DEFlag';
 import ESFlag from './icons/ESFlag';
 import USFlag from './icons/USFlag';
+import Link from 'next/link';
 
 const locales: { code: 'en' | 'de' | 'es'; name: string; flag: React.ComponentType<React.SVGProps<SVGSVGElement>>; }[] = [
   { code: 'en', name: 'English', flag: USFlag },
@@ -22,8 +23,9 @@ export default function LanguageSwitcher() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   function onSelectChange(nextLocale: 'en' | 'de' | 'es') {
+    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '');
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(`/${nextLocale}${pathWithoutLocale}`);
     });
     setIsOpen(false);
   }
@@ -41,6 +43,8 @@ export default function LanguageSwitcher() {
   const currentLocale = locales.find(l => l.code === locale);
   const CurrentFlag = currentLocale?.flag;
 
+  const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '');
+
   return (
     <div className="relative" ref={dropdownRef}>
       <button
@@ -55,15 +59,21 @@ export default function LanguageSwitcher() {
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {locales.map(({ code, name, flag: Flag }) => {
               return (
-                <button
+                <Link
                   key={code}
-                  onClick={() => onSelectChange(code)}
-                  className="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  role="menuitem"
+                  href={`/${code}${pathWithoutLocale}`}
+                  locale={false}
+                  style={{ fontWeight: code === locale ? 'bold' : 'normal' }}
                 >
-                  <Flag className="w-5 h-auto mr-3" />
-                  <span>{name}</span>
-                </button>
+                  <button
+                    onClick={() => onSelectChange(code)}
+                    className="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    role="menuitem"
+                  >
+                    <Flag className="w-5 h-auto mr-3" />
+                    <span>{name}</span>
+                  </button>
+                </Link>
               );
             })}
           </div>

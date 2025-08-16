@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/navigation';
+import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
 import HamburgerIcon from './icons/HamburgerIcon';
 

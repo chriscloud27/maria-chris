@@ -1,20 +1,52 @@
+import { Playfair_Display, Great_Vibes, Lato } from "next/font/google";
+import { NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale, getMessages } from 'next-intl/server';
+import { locales } from '@/navigation';
 
-import LocaleLayoutInner from './LocaleLayoutInner';
+import "@fontsource/playfair-display";
+import "@fontsource/great-vibes";
+import "@fontsource/lato";
 
-export default async function LocaleLayout({
-  children,
-  params
-}: {
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-great-vibes",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lato",
+});
+
+export function generateStaticParams() {
+  return locales.map(locale => ({ locale }));
+}
+
+
+interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-}) {
+}
+
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
-  // Load messages server-side
-  const messages = (await import(`../../messages/${locale}.json`)).default;
-  const timeZone = 'America/Bogota';
+
+  setRequestLocale(locale);
+  const messages = await getMessages();
+
   return (
-    <LocaleLayoutInner locale={locale} messages={messages} timeZone={timeZone}>
-      {children}
-    </LocaleLayoutInner>
+    <html lang={locale}>
+      <body className={`${playfairDisplay.variable} ${greatVibes.variable} ${lato.variable} font-sans antialiased`}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
