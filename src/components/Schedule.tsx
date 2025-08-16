@@ -30,12 +30,12 @@ export function Schedule() {
             <ol className="relative border-l-2 border-green-200 ml-4">
               {day.events.map((event, j) => (
                 <li key={j} className="mb-10 ml-6 relative">
-                  <span className="absolute -left-4 flex items-center justify-center w-6 h-6 bg-white border-2 border-green-400 rounded-full">
-                    <span className="block w-3 h-3 bg-purple-400 rounded-full"></span>
-                  </span>
                   <span className="block text-sm text-gray-600 mb-1">{event.time}</span>
                   <span className="block font-bold text-lg mb-1">{event.title}</span>
                   <span className="block text-gray-700">{event.description}</span>
+                  {j < day.events.length - 1 && (
+                    <hr className="border-t border-gray-300 my-6" />
+                  )}
                 </li>
               ))}
             </ol>
