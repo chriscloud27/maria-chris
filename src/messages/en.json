@@ -6,7 +6,11 @@
   },
   "hero": {
     "title": "We're getting married!",
-    "subtitle": "December 20, 2025"
+    "subtitle": "December 20, 2025",
+    "month": "December",
+    "days": "20-21",
+    "year": "2025",
+    "location": "Guatapé, Colombia"
   },
   "nav": {
     "details": "Details",
@@ -121,6 +125,14 @@
     "attireMain": "to be announced",
     "attireNote": "to be announced"
   },
+  "story": {
+    "title": "Our Story",
+    "subtitle": "It all started at the Digital Nomad Fest in Bulgaria.",
+    "paragraph2": "Maria went there for one reason only – to find another adventurous soul as crazy about traveling the world as she was. Chris, on the other hand, came with a single question: how to be a digital nomad and actually make a living from it?",
+    "paragraph3": "He had no intention of meeting someone. In fact, after a poorly organized speed dating event, Chris was ready to leave… until he noticed the woman who had already caught his eye. One last conversation before heading back to the hotel – and bam, it was a match!",
+    "paragraph4": "From that moment, Maria and Chris have never stopped talking. Even better: in their very first twelve months together, they traveled to 14 countries.",
+    "paragraph5": "What began with one conversation became a life filled with laughter, adventure, and love. And now, we can’t wait to celebrate this next chapter with all of you who mean the world to us."
+  },
   "Countdown": {
     "days": "Days",
     "hours": "Hours",
@@ -131,17 +143,37 @@
     "subtitle": "A day filled with love and celebration",
     "days": [
       {
-        "dateLabel": "Friday, December 19, 2025",
+        "dateLabel": "Fri, Dec 19",
         "events": [
           {
-            "time": "7:00 PM",
-            "title": "Welcome Drinks",
-            "description": "Join us for a casual welcome at the hotel bar."
+            "time": "10:00 AM",
+            "title": "Close Family Arrival",
+            "description": "Relax, unwind, and enjoy some refreshments."
+          },
+          {
+            "time": "10:30 AM",
+            "title": "Icebreakers",
+            "description": "Fun activities to get to know each other."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Lunch",
+            "description": "Enjoy a relaxed meal together with international flavors."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Fun Activities",
+            "description": "Join us for team games, laughter, and cultural exchanges."
+          },
+          {
+            "time": "5:30 PM",
+            "title": "End and easy evening",
+            "description": "Take it easy, relax, and enjoy the evening."
           }
         ]
       },
       {
-        "dateLabel": "Saturday, December 20, 2025",
+        "dateLabel": "Sat, Dec 20",
         "events": [
           {
             "time": "2:30 PM",
@@ -171,7 +203,7 @@
         ]
       },
       {
-        "dateLabel": "Sunday, December 21, 2025",
+        "dateLabel": "Sun, Dec 21",
         "events": [
           {
             "time": "11:00 AM",

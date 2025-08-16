@@ -6,7 +6,11 @@
   },
   "hero": {
     "title": "¡Nos casamos!",
-    "subtitle": "20 de diciembre de 2025"
+    "subtitle": "20 de diciembre de 2025",
+    "month": "Diciembre",
+    "days": "20-21",
+    "year": "2025",
+    "location": "Guatapé, Colombia"
   },
   "nav": {
     "details": "Detalles",
@@ -121,6 +125,14 @@
     "attireMain": "mas tarde",
     "attireNote": "mas tarde"
   },
+  "story": {
+    "title": "Nuestra Historia",
+    "subtitle": "Todo comenzó en el Digital Nomad Fest en Bulgaria.",
+    "paragraph2": "María fue allí por una sola razón: encontrar otra alma aventurera tan loca por viajar por el mundo como ella. Chris, por otro lado, llegó con una sola pregunta: ¿cómo ser un nómada digital y realmente ganarse la vida con ello?",
+    "paragraph3": "No tenía intención de conocer a nadie. De hecho, después de un evento de speed dating mal organizado, Chris estaba listo para irse... hasta que notó a la mujer que ya le había llamado la atención. Una última conversación antes de regresar al hotel – y ¡bam, fue una conexión instantánea!",
+    "paragraph4": "Desde ese momento, María y Chris nunca han dejado de hablar. Mejor aún: en sus primeros doce meses juntos, viajaron a 14 paíse.",
+    "paragraph5": "Lo que comenzó con una conversación se convirtió en una vida llena de risas, aventuras y amor. Y ahora, no podemos esperar para celebrar este próximo capítulo con todos ustedes que significan el mundo para nosotros."
+  },
   "Countdown": {
     "days": "Días",
     "hours": "Horas",
@@ -131,50 +143,70 @@
     "subtitle": "Un día lleno de amor y celebración",
     "days": [
       {
-        "dateLabel": "Viernes, 19 de diciembre de 2025",
+        "dateLabel": "Vie, 19 dic",
         "events": [
           {
-            "time": "19:00",
-            "title": "Cóctel de bienvenida",
-            "description": "Acompáñanos para una bienvenida informal en el bar del hotel."
+            "time": "10:00 AM",
+            "title": "Llegada de la familia cercana",
+            "description": "Relájate, descansa y disfruta de unos refrescos."
+          },
+          {
+            "time": "10:30 AM",
+            "title": "Rompehielos",
+            "description": "Actividades divertidas para conocernos."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Almuerzo",
+            "description": "Disfruta de una comida relajada juntos con sabores internacionales."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Actividades divertidas",
+            "description": "Únete a nosotros para juegos en equipo, risas e intercambios culturales."
+          },
+          {
+            "time": "5:30 PM",
+            "title": "Fin y tarde tranquila",
+            "description": "Tómatelo con calma, relájate y disfruta de la noche."
           }
         ]
       },
       {
-        "dateLabel": "Sábado, 20 de diciembre de 2025",
+        "dateLabel": "Sáb, 20 dic",
         "events": [
           {
-            "time": "14:30",
+            "time": "2:30 PM",
             "title": "Llegada de invitados",
-            "description": "Toma asiento y disfruta de una bebida de bienvenida."
+            "description": "Encuentra tu asiento y disfruta de un refresco de bienvenida."
           },
           {
-            "time": "15:00",
+            "time": "3:00 PM",
             "title": "Ceremonia",
             "description": "Acompáñanos mientras decimos 'Sí, quiero'."
           },
           {
-            "time": "16:00",
-            "title": "Cóctel",
-            "description": "Aperitivos, bebidas y música."
+            "time": "4:00 PM",
+            "title": "Hora del cóctel",
+            "description": "Bocadillos, bebidas y música."
           },
           {
-            "time": "17:30",
+            "time": "5:30 PM",
             "title": "Recepción",
-            "description": "Cena, discursos y primer baile."
+            "description": "Cena, discursos y primeros bailes."
           },
           {
-            "time": "20:00",
+            "time": "8:00 PM",
             "title": "Baile",
             "description": "¡Celebremos toda la noche!"
           }
         ]
       },
       {
-        "dateLabel": "Domingo, 21 de diciembre de 2025",
+        "dateLabel": "Dom, 21 dic",
         "events": [
           {
-            "time": "11:00",
+            "time": "11:00 AM",
             "title": "Brunch de despedida",
             "description": "Disfruta de un brunch relajado antes de despedirnos."
           }

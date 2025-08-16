@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit --watch",
     "test": "vitest --run --reporter=dot",
     "test:watch": "vitest",
     "test:coverage": "vitest --run --coverage",
