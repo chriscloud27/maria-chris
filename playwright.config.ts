@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests/e2e',
+  testDir: 'test', // Tell Playwright where to find the tests
   webServer: {
     command: 'next build && next start -p 3000',
     port: 3000,
@@ -22,7 +22,7 @@ export default defineConfig({
     },
   ],
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3000', // Your app's base URL
     trace: 'on-first-retry',
   },
 });

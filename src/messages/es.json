@@ -157,8 +157,9 @@
     "nameLabel": "Nombre completo",
     "emailLabel": "Correo electrónico",
     "attendanceLabel": "¿Asistirás?",
-    "attendanceYes": "Acepto con gusto",
-    "attendanceNo": "Lamento declinar",
+    "attendanceYes": "Sí",
+    "attendanceNo": "No",
+    "attendanceMaybe": "Quizás",
     "songRequestLabel": "Petición de canción (opcional)",
     "songRequestPlaceholder": "Artista — Título de la canción",
     "messageLabel": "Mensaje (opcional)",
@@ -167,7 +168,9 @@
     "submittingButton": "Enviando...",
     "successMessage": "¡Gracias! Tu RSVP ha sido enviada.",
     "errorMessage": "Ocurrió un error. Por favor, inténtalo de nuevo.",
-    "selectOption": "Por favor, selecciona una opción"
+    "selectOption": "Por favor, selecciona una opción",
+    "notesLabel": "Notas",
+    "notesPlaceholder": "Escribe aquí tus notas"
   },
   "excursions": {
     "title": "Sugerencias de Excursiones",

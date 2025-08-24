@@ -156,6 +156,8 @@
     "songRequestPlaceholder": "Artist — Song Title",
     "messageLabel": "Message (optional)",
     "messagePlaceholder": "Dietary needs, kiddo ages, etc.",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Write your notes here",
     "submitButton": "Send RSVP",
     "submittingButton": "Submitting...",
     "successMessage": "Thank you! Your RSVP has been submitted.",

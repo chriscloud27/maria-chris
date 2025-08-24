@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { addRSVP } from '@/lib/notionClient';
 import { Resend } from 'resend';
-import RsvpConfirmationEmail from '@/components/emails/RsvpConfirmation';
+import { renderRsvpConfirmationHtml } from '@/components/emails/RsvpConfirmation';
 import { rsvpSchema } from '@/lib/schema';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -21,48 +21,68 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
+    console.log("Request Body:", body);
+
     const parsedData = rsvpSchema.safeParse(body);
 
     if (!parsedData.success) {
+      console.error("Validation Error:", parsedData.error);
       return NextResponse.json({ error: parsedData.error.format() }, { status: 400 });
     }
 
-    const { name, email, attendance, song, message } = parsedData.data;
+    const { name, email, rsvp, notes, honeypot } = parsedData.data;
 
-    // Insert data into Supabase
-    const { error } = await supabase
-      .from('wedding_rsvps')
-      .insert([{ name, email, attendance, song, message }])
-      .select();
-
-    if (error) {
-      console.error('Supabase error:', error);
-      // Check for unique constraint violation
-      if (error.code === '23505') {
-          return NextResponse.json({ error: 'An RSVP with this email has already been submitted.' }, { status: 409 });
-      }
+    // Persist to Notion
+    try {
+      console.log("Attempting to add RSVP to Notion:", { name, email, rsvp, notes });
+      await addRSVP({ name, email, rsvp, notes });
+      console.log("Successfully added RSVP to Notion");
+    } catch (pErr: any) {
+      console.error("Notion Error:", pErr, JSON.stringify(pErr)); // Include JSON.stringify
       return NextResponse.json({ error: 'Failed to save RSVP.' }, { status: 500 });
     }
 
     // Send confirmation email
     try {
+      const html = renderRsvpConfirmationHtml({ name, rsvp, email, notes });
+      console.log("Attempting to send confirmation email to:", email);
+
       await resend.emails.send({
         from: fromEmail,
         to: email,
         subject: 'Thank you for your RSVP!',
-        react: RsvpConfirmationEmail({ name, attendance }),
+        html,
       });
-    } catch (emailError) {
-        console.error('Resend error:', emailError);
-        // Even if email fails, the RSVP was saved.
-        // You might want to log this for manual follow-up.
-        return NextResponse.json({ message: 'RSVP submitted successfully, but confirmation email failed.' });
+      console.log("Successfully sent confirmation email to:", email);
+    } catch (emailError: any) { // Add type any
+      console.error("Resend Error:", emailError, JSON.stringify(emailError)); // Include JSON.stringify
+      return NextResponse.json({ message: 'RSVP submitted successfully, but confirmation email failed.' });
     }
 
+    return NextResponse.json({ message: 'RSVP submitted successfully!' });
+  } catch (error: any) { // Add type any
+    console.error("General API Error:", error, JSON.stringify(error));
+    return NextResponse.json({ error: 'An unexpected error occurred.' }, { status: 500 });
+  }
+}
+    try {
+      // Use server-side HTML renderer to avoid react-dom/server import in the API route
+      const html = renderRsvpConfirmationHtml({ name, rsvp, email, notes });
+
+      await resend.emails.send({
+        from: fromEmail,
+        to: email,
+        subject: 'Thank you for your RSVP!',
+        html,
+      });
+    } catch (emailError) {
+      console.error('Resend error:', emailError);
+      return NextResponse.json({ message: 'RSVP submitted successfully, but confirmation email failed.' });
+    }
 
     return NextResponse.json({ message: 'RSVP submitted successfully!' });
-  } catch (error) {
-    console.error('API error:', error);
+  } catch (error: any) {
+    console.error('API error:', error, JSON.stringify(error)); // Log general API errors
     return NextResponse.json({ error: 'An unexpected error occurred.' }, { status: 500 });
   }
 }

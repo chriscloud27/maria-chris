@@ -31,86 +31,92 @@ Das Projekt nutzt moderne Test- und Qualitätswerkzeuge:
 Weitere Details zur Testkonfiguration findest du in `vitest.config.ts` und `playwright.config.ts`.
 # Wedding Landing Page
 
-## Overview
+This project is a landing page for our wedding, built with Next.js, React, and Tailwind CSS.
 
-This project is a wedding landing page built using modern web technologies. It is designed to provide an elegant and responsive interface for wedding-related information, including features like multilingual support and a WhatsApp contact button.
+## RSVP System
 
-## Tech Stack
+The RSVP system allows guests to RSVP to our wedding and stores their responses in a Notion database.
 
-### Frontend
+### Setup
 
-- **React**: A JavaScript library for building user interfaces.
-- **Next.js**: A React framework for server-side rendering, static site generation, and routing.
-- **TypeScript**: A strongly typed programming language that builds on JavaScript.
-- **Tailwind CSS**: A utility-first CSS framework for styling.
-- **next-intl**: A library for internationalization (i18n) in Next.js applications, configured with support for `es` (Spanish), `de` (German), and `en` (English).
-- **Google Fonts**: Custom fonts integrated using `next/font` and `@fontsource`.
+1.  **Environment Variables:**
 
-### Backend
+    *   Create a `.env.local` file in the root directory of the project.
+    *   Add the following environment variables:
 
-- **Next.js API Routes**: Used for server-side logic and API endpoints.
+        ```
+        NOTION_TOKEN=<your_notion_integration_token>
+        NOTION_DATABASE_ID=<your_notion_database_id>
+        RESEND_API_KEY=<your_resend_api_key>
+        RESEND_FROM_EMAIL=<your_resend_from_email>
+        RSVP_DEADLINE=<rsvp_deadline_date> # e.g., '2026-05-10T23:59:59'
+        ```
 
-### Additional Tools
+    *   `NOTION_TOKEN`:  Internal integration secret from [https://www.notion.com/my-integrations](https://www.notion.com/my-integrations).
+    *   `NOTION_DATABASE_ID`: The UUID of the RSVP Sync database (copied from Notion URL).
+    *   `RESEND_API_KEY`: Your Resend API key for sending confirmation emails.
+    *   `RESEND_FROM_EMAIL`: The email address to send confirmation emails from (e.g., `Wedding RSVP <noreply@yourdomain.com>`).
+    *   `RSVP_DEADLINE`: The deadline for submitting RSVPs.
 
-- **WhatsApp Button**: A custom React component for quick WhatsApp contact.
-- **ESLint & Prettier**: For code linting and formatting.
-- **GitHub**: Version control and collaboration.
+2.  **Notion Database:**
 
-## Project Structure
+    *   Create a Notion database with the following properties:
+        *   `Title` (Title): Guest name.
+        *   `Email` (Email): Guest email address.
+        *   `RSVP` (Select):  Options: `Yes`, `No`, `Maybe`.
+        *   `Notes` (Rich text):  Any additional notes from the guest.
 
-```
-/src
-  /app
-    /[locale]
-      layout.tsx       # Layout component with locale-based rendering
-  /components
-    WhatsAppButton.tsx # Custom WhatsApp button component
-  /styles
-    globals.css        # Global styles
-```
+3.  **Dependencies:**
 
-### Key Files
+    *   Install the project dependencies:
 
-- **`layout.tsx`**: Handles the layout for the application, including font imports, locale-based rendering, and the integration of the WhatsApp button.
-- **`WhatsAppButton.tsx`**: A reusable component for adding a WhatsApp contact button.
+        ```bash
+        npm install
+        ```
 
-## Features
+### Usage
 
-- **Multilingual Support**: Powered by `next-intl` for seamless internationalization.
-- **Custom Fonts**: Integrated using Google Fonts and `@fontsource`.
-- **Responsive Design**: Styled with Tailwind CSS for mobile-first responsiveness.
-- **WhatsApp Integration**: A button for direct communication via WhatsApp.
-
-## How to Run
-
-1.  Clone the repository:
-
-    ```bash
-    git clone https://github.com/your-username/wedding-landing-page.git
-    ```
-
-2.  Install dependencies:
-
-    ```bash
-    npm install
-    ```
-
-3.  Run the development server:
+1.  **Start the Development Server:**
 
     ```bash
     npm run dev
     ```
 
-4.  Open the application in your browser at `http://localhost:3000`.
+2.  **Access the Landing Page:**
 
-## Deployment
+    *   Open your browser and navigate to `http://localhost:3000`.
+    *   Go to the RSVP section and fill out the form.
+    *   Submit the form.
 
-This project can be deployed on platforms like Vercel for seamless hosting and CI/CD integration.
+3.  **Verify the Data:**
 
-## Contributing
+    *   Check your Notion database to ensure that the RSVP data has been successfully added.
+    *   Check your email to ensure that you have received a confirmation email.
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+### Important Considerations
 
-## License
+*   **Database Requirements:** Ensure that your Notion database has the correct properties (`Title`, `Email`, `RSVP`, `Notes`) with the specified types.
+*   **Notion Connection:** Verify that your `NOTION_TOKEN` has the necessary permissions to read and write to the Notion database.
+*   **End-to-End Tests:**
 
-This project is licensed under the MIT License.
+    *   This project includes end-to-end tests using Playwright to verify the entire flow from form input to Notion DB update.
+    *   To run the tests:
+
+        ```bash
+        npm install --save-dev playwright @notionhq/client
+        npx playwright test
+        ```
+
+    *   **Test Database:** It's crucial to use a separate Notion database for testing to avoid corrupting your production data. Set up a new database in Notion and update the `NOTION_DATABASE_ID` in your `.env.local` file (or a separate `.env.test.local` if you configure your test environment that way).
+    *   **Authentication:** Make sure your `NOTION_TOKEN` is valid and has the necessary permissions to read and write to the test database.
+    *   **Cleanup:** The tests include a cleanup step to delete the test data from the Notion database after the test runs.
+*   **Error Handling:** The API route includes error handling and logging to help diagnose any issues. Check the server-side logs for more details if you encounter any errors.
+
+### Notion Integration Files
+
+*   `/src/components/Rsvp.tsx`: The React component for the RSVP form.
+*   `/src/lib/schema.ts`: Defines the schema for the RSVP data using Zod.
+*   `/src/app/api/rsvp/route.ts`: The Next.js API route that handles the form submission and writes to Notion.
+*   `/src/lib/notionClient.ts`: Initializes the Notion client and provides the `addRSVP` function.
+*   `/src/config/notion.ts`: Contains the configuration for the Notion integration.
+*   `/test/rsvp.integration.test.ts`: Contains the end-to-end integration tests.

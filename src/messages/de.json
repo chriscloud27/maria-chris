@@ -156,6 +156,8 @@
     "songRequestPlaceholder": "Künstler — Songtitel",
     "messageLabel": "Nachricht (optional)",
     "messagePlaceholder": "Ernährungsbedürfnisse, Alter der Kinder, etc.",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Schreibe hier deine Notizen",
     "submitButton": "RSVP senden",
     "submittingButton": "Wird gesendet...",
     "successMessage": "Vielen Dank! Deine RSVP wurde übermittelt.",
