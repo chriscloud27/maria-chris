@@ -41,13 +41,20 @@
     },
     "hotel2": {
       "name": "Posada Luna",
-      "bookingLink": "https://booking.com/luna"
+      "bookingLink": "https://booking.com/luna",
+      "description": "Una acogedora posada con habitaciones cómodas y un ambiente familiar, perfecta para una estancia cercana al lugar del evento.",
+      "location": "https://maps.app.goo.gl/example-hotel2-location"
     },
     "hotel3": {
       "name": "Pensión Estrellas",
-      "bookingLink": "https://booking.com/estrellas"
+      "bookingLink": "https://booking.com/estrellas",
+      "description": "Una encantadora pensión con habitaciones sencillas, desayuno incluido y un trato familiar.",
+      "location": "https://maps.app.goo.gl/example-hotel3-location"
     },
     "guatapeViajero": {
+      "name": "Guatapé Viajero",
+      "bookingLink": "https://booking.com/guatapeviajero",
+      "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
       "description": "muy cerca del lugar del evento, pintoresco y asombroso. No se permiten niños."
     },
     "searchOnBooking": "Buscar en Booking",
