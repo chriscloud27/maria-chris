@@ -33,9 +33,11 @@
   "hotels": {
     "title": "Hotel Options",
     "bookingLinkText": "Book Now",
-    "hotel1": {
-      "name": "Sun Hotel",
-      "bookingLink": "https://booking.com/sun"
+    "cristalinaCabana": {
+      "name": "Cristalina Cabana",
+      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
+      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+      "description": "A spacious 4-bedroom villa with modern amenities, private garden, BBQ area, and breathtaking lake, mountain, and landmark views for a relaxed and scenic stay by the reservoir."
     },
     "hotel2": {
       "name": "Moon Inn",
@@ -46,7 +48,7 @@
       "bookingLink": "https://booking.com/stars"
     },
     "guatapeViajero": {
-      "description": "very close by the event venue, picturesque, and amazing"
+      "description": "very close by the event venue, picturesque, and amazing. No kids allowed."
     },
     "searchOnBooking": "Search on Booking",
     "searchOnAirbnb": "Search on Airbnb",
@@ -56,10 +58,73 @@
   },
   "arrival": {
     "title": "Arrival",
+    "headerTitle": "How to Get Here",
     "train": "The nearest train station is Sample City Main Station.",
     "taxi": "Taxis are available at the train station.",
     "car": "Parking is available at the castle.",
-    "airport": "The nearest airport is Sample City Airport (SCA)."
+    "airport": "The nearest airport is Sample City Airport (SCA).",
+    "cards": {
+      "air": {
+        "title": "By Air",
+        "imageAlt": "Plane flying over mountains",
+        "content": {
+          "item1": {
+            "title": "International Flights",
+            "text": "Fly to José María Córdova International Airport (MDE) in Medellín"
+          },
+          "item2": {
+            "title": "Ground Transfer",
+            "text": "2-hour scenic drive to Guatapé"
+          },
+          "item3": {
+            "title": "Airlines",
+            "text": "Avianca, LATAM, Copa Airlines, American Airlines"
+          }
+        },
+        "buttonText": "Find Flights",
+        "buttonLink": "#"
+      },
+      "car": {
+        "title": "By Car",
+        "imageAlt": "Winding road in Guatapé",
+        "content": {
+          "item1": {
+            "title": "From Medellín",
+            "text": "2 hours via Autopista Medellín-Bogotá (beautiful mountain views!)"
+          },
+          "item2": {
+            "title": "Car Rental",
+            "text": "Available at MDE airport: Hertz, Avis, Budget, Localiza"
+          },
+          "item3": {
+            "title": "Pro Tip",
+            "text": "Stop in El Peñón village for empanadas and coffee!"
+          }
+        },
+        "buttonText": "Get Directions",
+        "buttonLink": "#"
+      },
+      "transport": {
+        "title": "Public Transport",
+        "imageAlt": "Colorful chiva bus in Colombia",
+        "content": {
+          "item1": {
+            "title": "Metro + Bus",
+            "text": "Take Metro to Norte terminal, then bus to Guatapé (3 hours total)"
+          },
+          "item2": {
+            "title": "Direct Bus",
+            "text": "Sotrasanvicente buses from Terminal del Norte every 30 mins"
+          },
+          "item3": {
+            "title": "Adventure Option",
+            "text": "Take a colorful \"chiva\" party bus for the full Colombian experience!"
+          }
+        },
+        "buttonText": "Bus Schedules",
+        "buttonLink": "#"
+      }
+    }
   },
   "prePostEvents": {
     "title": "Pre & Post-Wedding Events",

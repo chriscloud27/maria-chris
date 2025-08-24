@@ -33,9 +33,11 @@
   "hotels": {
     "title": "Hotel Optionen",
     "bookingLinkText": "Jetzt buchen",
-    "hotel1": {
-      "name": "Hotel Sonne",
-      "bookingLink": "https://booking.com/sonne"
+    "cristalinaCabana": {
+      "name": "Cabaña Cristalina",
+      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
+      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+      "description": "Eine geräumige 4-Schlafzimmer-Villa mit modernen Annehmlichkeiten, eigenem Garten, Grillbereich und atemberaubendem Blick auf See, Berge und Wahrzeichen für einen entspannten und malerischen Aufenthalt am Stausee."
     },
     "hotel2": {
       "name": "Gasthof Mond",
@@ -46,7 +48,7 @@
       "bookingLink": "https://booking.com/sterne"
     },
     "guatapeViajero": {
-      "description": "sehr nah am Veranstaltungsort, malerisch und großartig"
+      "description": "sehr nah am Veranstaltungsort, malerisch und großartig. Keine Kinder erlaubt."
     },
     "searchOnBooking": "Bei Booking suchen",
     "searchOnAirbnb": "Bei Airbnb suchen",
@@ -56,10 +58,73 @@
   },
   "arrival": {
     "title": "Anreise",
+    "headerTitle": "So kommst du hierher",
     "train": "Der nächste Bahnhof ist Musterstadt Hbf.",
     "taxi": "Taxis sind am Bahnhof verfügbar.",
     "car": "Parkplätze sind am Schloss vorhanden.",
-    "airport": "Der nächste Flughafen ist Musterstadt Airport (MST)."
+    "airport": "Der nächste Flughafen ist Musterstadt Airport (MST).",
+    "cards": {
+      "air": {
+        "title": "Mit dem Flugzeug",
+        "imageAlt": "Flugzeug über Bergen",
+        "content": {
+          "item1": {
+            "title": "Internationale Flüge",
+            "text": "Fliege zum internationalen Flughafen José María Córdova (MDE) in Medellín"
+          },
+          "item2": {
+            "title": "Bodentransfer",
+            "text": "2-stündige landschaftlich schöne Fahrt nach Guatapé"
+          },
+          "item3": {
+            "title": "Fluggesellschaften",
+            "text": "Avianca, LATAM, Copa Airlines, American Airlines"
+          }
+        },
+        "buttonText": "Flüge finden",
+        "buttonLink": "#"
+      },
+      "car": {
+        "title": "Mit dem Auto",
+        "imageAlt": "Kurvige Straße in Guatapé",
+        "content": {
+          "item1": {
+            "title": "Von Medellín",
+            "text": "2 Stunden über die Autopista Medellín-Bogotá (wunderschöne Bergblicke!)"
+          },
+          "item2": {
+            "title": "Mietwagen",
+            "text": "Am Flughafen MDE verfügbar: Hertz, Avis, Budget, Localiza"
+          },
+          "item3": {
+            "title": "Tipp",
+            "text": "Halte im Dorf El Peñón für Empanadas und Kaffee!"
+          }
+        },
+        "buttonText": "Route anzeigen",
+        "buttonLink": "#"
+      },
+      "transport": {
+        "title": "Öffentliche Verkehrsmittel",
+        "imageAlt": "Bunte Chiva-Bus in Kolumbien",
+        "content": {
+          "item1": {
+            "title": "Metro + Bus",
+            "text": "Nimm die Metro zur Terminal Norte, dann Bus nach Guatapé (gesamt 3 Stunden)"
+          },
+          "item2": {
+            "title": "Direktbus",
+            "text": "Sotrasanvicente Busse vom Terminal del Norte alle 30 Minuten"
+          },
+          "item3": {
+            "title": "Abenteueroption",
+            "text": "Nimm eine bunte \"Chiva\"-Partybustour für das volle kolumbianische Erlebnis!"
+          }
+        },
+        "buttonText": "Busfahrpläne",
+        "buttonLink": "#"
+      }
+    }
   },
   "prePostEvents": {
     "title": "Vor- und Nach-Hochzeitsveranstaltungen",

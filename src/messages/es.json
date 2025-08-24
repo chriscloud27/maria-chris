@@ -33,9 +33,11 @@
   "hotels": {
     "title": "Opciones de Hotel",
     "bookingLinkText": "Reservar ahora",
-    "hotel1": {
-      "name": "Hotel Sol",
-      "bookingLink": "https://booking.com/sol"
+    "cristalinaCabana": {
+      "name": "Cabaña Cristalina",
+      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
+      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+      "description": "Una espaciosa villa de 4 habitaciones con comodidades modernas, jardín privado, área de barbacoa y vistas impresionantes al lago, las montañas y el monumento para una estancia relajada y escénica junto al embalse."
     },
     "hotel2": {
       "name": "Posada Luna",
@@ -46,7 +48,7 @@
       "bookingLink": "https://booking.com/estrellas"
     },
     "guatapeViajero": {
-      "description": "muy cerca del lugar del evento, pintoresco y asombroso"
+      "description": "muy cerca del lugar del evento, pintoresco y asombroso. No se permiten niños."
     },
     "searchOnBooking": "Buscar en Booking",
     "searchOnAirbnb": "Buscar en Airbnb",
@@ -56,10 +58,73 @@
   },
   "arrival": {
     "title": "Llegada",
+    "headerTitle": "Cómo llegar",
     "train": "La estación de tren más cercana es la Estación Principal de Ciudad Ejemplo.",
     "taxi": "Hay taxis disponibles en la estación de tren.",
     "car": "Hay aparcamiento disponible en el castillo.",
-    "airport": "El aeropuerto más cercano es el Aeropuerto de Ciudad Ejemplo (ACE)."
+    "airport": "El aeropuerto más cercano es el Aeropuerto de Ciudad Ejemplo (ACE).",
+    "cards": {
+      "air": {
+        "title": "En avión",
+        "imageAlt": "Avión sobre montañas",
+        "content": {
+          "item1": {
+            "title": "Vuelos internacionales",
+            "text": "Vuela al Aeropuerto Internacional José María Córdova (MDE) en Medellín"
+          },
+          "item2": {
+            "title": "Traslado terrestre",
+            "text": "Viaje panorámico de 2 horas hasta Guatapé"
+          },
+          "item3": {
+            "title": "Aerolíneas",
+            "text": "Avianca, LATAM, Copa Airlines, American Airlines"
+          }
+        },
+        "buttonText": "Buscar vuelos",
+        "buttonLink": "#"
+      },
+      "car": {
+        "title": "En coche",
+        "imageAlt": "Carretera sinuosa en Guatapé",
+        "content": {
+          "item1": {
+            "title": "Desde Medellín",
+            "text": "2 horas por la Autopista Medellín-Bogotá (¡hermosas vistas montañosas!)"
+          },
+          "item2": {
+            "title": "Alquiler de coches",
+            "text": "Disponible en el aeropuerto MDE: Hertz, Avis, Budget, Localiza"
+          },
+          "item3": {
+            "title": "Consejo",
+            "text": "¡Haz una parada en el pueblo El Peñón por empanadas y café!"
+          }
+        },
+        "buttonText": "Obtener direcciones",
+        "buttonLink": "#"
+      },
+      "transport": {
+        "title": "Transporte público",
+        "imageAlt": "Chiva colorida en Colombia",
+        "content": {
+          "item1": {
+            "title": "Metro + Bus",
+            "text": "Toma el Metro hasta la terminal Norte, luego bus a Guatapé (3 horas en total)"
+          },
+          "item2": {
+            "title": "Directo",
+            "text": "Buses Sotrasanvicente desde Terminal del Norte cada 30 minutos"
+          },
+          "item3": {
+            "title": "Opción de aventura",
+            "text": "¡Toma una chiva colorida para una experiencia colombiana completa!"
+          }
+        },
+        "buttonText": "Horarios de autobús",
+        "buttonLink": "#"
+      }
+    }
   },
   "prePostEvents": {
     "title": "Eventos Pre y Post-Boda",

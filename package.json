@@ -22,6 +22,7 @@
     "@fontsource/lato": "^5.2.6",
     "@fontsource/playfair-display": "^5.2.6",
     "@hookform/resolvers": "^5.2.1",
+    "@notionhq/client": "^4.0.2",
     "@supabase/supabase-js": "^2.55.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

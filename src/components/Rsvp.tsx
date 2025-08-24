@@ -83,8 +83,8 @@ export const Rsvp = () => {
         </div>
 
         <div className="bg-white p-8 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-bold mb-2">{t('formTitle')}</h3>
-          <p className="text-gray-600 mb-6">{t('formSubtitle')}</p>
+          {/* <h3 className="text-2xl font-bold mb-2">{t('formTitle')}</h3> */}
+          {/* <p className="text-gray-600 mb-6">{t('formSubtitle')}</p> */}
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             {/* Full Name */}
             <div className="mb-4">

@@ -1,5 +1,5 @@
-
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const Card = ({
   imageSrc,
@@ -61,72 +61,74 @@ const Card = ({
 );
 
 export const Arrival = () => {
+  const t = useTranslations('arrival');
+
   const arrivalData = {
     air: {
       imageSrc: '/arrival.jpeg',
-      imageAlt: 'Plane flying over mountains',
-      title: 'By Air',
+      imageAlt: t('cards.air.imageAlt'),
+      title: t('cards.air.title'),
       icon: <span className="text-xl font-bold text-purple-800">A</span>,
       content: [
         {
-          title: 'International Flights',
-          text: 'Fly to José María Córdova International Airport (MDE) in Medellín',
+          title: t('cards.air.content.item1.title'),
+          text: t('cards.air.content.item1.text'),
         },
         {
-          title: 'Ground Transfer',
-          text: "2-hour scenic drive to Guatapé (we'll arrange shuttles!)",
+          title: t('cards.air.content.item2.title'),
+          text: t('cards.air.content.item2.text'),
         },
         {
-          title: 'Airlines',
-          text: 'Avianca, LATAM, Copa Airlines, American Airlines',
+          title: t('cards.air.content.item3.title'),
+          text: t('cards.air.content.item3.text'),
         },
       ],
-      buttonText: 'Find Flights',
-      buttonLink: '#',
+      buttonText: t('cards.air.buttonText'),
+      buttonLink: t('cards.air.buttonLink'),
     },
     car: {
       imageSrc: '/location.jpeg',
-      imageAlt: 'Winding road in Guatapé',
-      title: 'By Car',
+      imageAlt: t('cards.car.imageAlt'),
+      title: t('cards.car.title'),
       icon: <span className="text-xl">🚗</span>,
       content: [
         {
-          title: 'From Medellín',
-          text: '2 hours via Autopista Medellín-Bogotá (beautiful mountain views!)',
+          title: t('cards.car.content.item1.title'),
+          text: t('cards.car.content.item1.text'),
         },
         {
-          title: 'Car Rental',
-          text: 'Available at MDE airport: Hertz, Avis, Budget, Localiza',
+          title: t('cards.car.content.item2.title'),
+          text: t('cards.car.content.item2.text'),
         },
         {
-          title: 'Pro Tip',
-          text: 'Stop in El Peñón village for empanadas and coffee!',
+          title: t('cards.car.content.item3.title'),
+          text: t('cards.car.content.item3.text'),
         },
       ],
-      buttonText: 'Get Directions',
-      buttonLink: '#',
+      buttonText: t('cards.car.buttonText'),
+      buttonLink: t('cards.car.buttonLink'),
     },
     transport: {
       imageSrc: '/excursion.jpeg',
-      imageAlt: 'Colorful chiva bus in Colombia',
-      title: 'Public Transport',
+      imageAlt: t('cards.transport.imageAlt'),
+      title: t('cards.transport.title'),
       icon: <span className="text-xl">🚌</span>,
       content: [
         {
-          title: 'Metro + Bus',
-          text: 'Take Metro to Norte terminal, then bus to Guatapé (3 hours total)',
+          title: t('cards.transport.content.item1.title'),
+          text: t('cards.transport.content.item1.text'),
         },
         {
-          title: 'Direct Bus',
-          text: 'Sotrasanvicente buses from Terminal del Norte every 30 mins',
+          title: t('cards.transport.content.item2.title'),
+          text: t('cards.transport.content.item2.text'),
         },
         {
-          title: 'Adventure Option',
-          text: 'Take a colorful "chiva" party bus for the full Colombian experience!',
+          title: t('cards.transport.content.item3.title'),
+          text: t('cards.transport.content.item3.text'),
         },
       ],
-      buttonText: 'Bus Schedules',
-      buttonLink: '#',
+      buttonText: t('cards.transport.buttonText'),
+      buttonLink: t('cards.transport.buttonLink'),
     },
   };
 
@@ -134,7 +136,7 @@ export const Arrival = () => {
     <section id="arrival" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12">
-          How to Get Here
+          {t('headerTitle')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Card {...arrivalData.air} />
