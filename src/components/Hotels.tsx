@@ -6,7 +6,7 @@ export const Hotels = () => {
 
   const safe = (key: string): string | null => {
     try {
-      const v = t(key as any);
+  const v = t(key as string);
       return typeof v === 'string' ? v : String(v);
     } catch {
       return null;

@@ -30,15 +30,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: parsedData.error.format() }, { status: 400 });
     }
 
-    const { name, email, rsvp, notes, honeypot } = parsedData.data;
+  const { name, email, rsvp, notes } = parsedData.data;
 
     // Persist to Notion
     try {
       console.log("Attempting to add RSVP to Notion:", { name, email, rsvp, notes });
       await addRSVP({ name, email, rsvp, notes });
       console.log("Successfully added RSVP to Notion");
-    } catch (pErr: any) {
-      console.error("Notion Error:", pErr, JSON.stringify(pErr)); // Include JSON.stringify
+    } catch (pErr: unknown) {
+      if (pErr instanceof Error) {
+        console.error("Notion Error:", pErr.message, JSON.stringify(pErr));
+      } else {
+        console.error("Notion Error:", pErr);
+      }
       return NextResponse.json({ error: 'Failed to save RSVP.' }, { status: 500 });
     }
 
@@ -54,35 +58,22 @@ export async function POST(req: NextRequest) {
         html,
       });
       console.log("Successfully sent confirmation email to:", email);
-    } catch (emailError: any) { // Add type any
-      console.error("Resend Error:", emailError, JSON.stringify(emailError)); // Include JSON.stringify
+    } catch (emailError: unknown) {
+      if (emailError instanceof Error) {
+        console.error("Resend Error:", emailError.message, JSON.stringify(emailError));
+      } else {
+        console.error("Resend Error:", emailError);
+      }
       return NextResponse.json({ message: 'RSVP submitted successfully, but confirmation email failed.' });
     }
 
     return NextResponse.json({ message: 'RSVP submitted successfully!' });
-  } catch (error: any) { // Add type any
-    console.error("General API Error:", error, JSON.stringify(error));
-    return NextResponse.json({ error: 'An unexpected error occurred.' }, { status: 500 });
-  }
-}
-    try {
-      // Use server-side HTML renderer to avoid react-dom/server import in the API route
-      const html = renderRsvpConfirmationHtml({ name, rsvp, email, notes });
-
-      await resend.emails.send({
-        from: fromEmail,
-        to: email,
-        subject: 'Thank you for your RSVP!',
-        html,
-      });
-    } catch (emailError) {
-      console.error('Resend error:', emailError);
-      return NextResponse.json({ message: 'RSVP submitted successfully, but confirmation email failed.' });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("General API Error:", error.message, JSON.stringify(error));
+    } else {
+      console.error("General API Error:", error);
     }
-
-    return NextResponse.json({ message: 'RSVP submitted successfully!' });
-  } catch (error: any) {
-    console.error('API error:', error, JSON.stringify(error)); // Log general API errors
     return NextResponse.json({ error: 'An unexpected error occurred.' }, { status: 500 });
   }
 }

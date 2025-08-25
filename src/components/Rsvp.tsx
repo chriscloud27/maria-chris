@@ -61,7 +61,7 @@ export const Rsvp = () => {
       } else {
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
-    } catch (err) {
+    } catch {
       setSubmitStatus({ success: false, message: t('errorMessage') });
     } finally {
       setIsSubmitting(false);
