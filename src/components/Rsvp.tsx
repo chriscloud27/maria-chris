@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { rsvpSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { CutleryIcon } from './icons/CutleryIcon';
 import { MusicIcon } from './icons/MusicIcon';
 import { StarIcon } from './icons/StarIcon';
@@ -15,6 +15,23 @@ type FormInputs = SchemaInputs & {
   // Honeypot for spam protection
   honeypot?: string;
 };
+
+// Debounce hook
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
 
 export const Rsvp = () => {
   const t = useTranslations('rsvp');
@@ -26,11 +43,42 @@ export const Rsvp = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
+    setValue,
   } = useForm<FormInputs>({
     resolver: zodResolver(rsvpSchema),
     defaultValues: { rsvp: 'Yes' },
   });
 
+  const nameValue = watch('name');
+  const debouncedName = useDebounce(nameValue, 500);
+
+  const searchRsvp = useCallback(
+    async (name: string) => {
+      if (name && name.length >= 3) {
+        try {
+          const res = await fetch(`/api/rsvp/search?name=${encodeURIComponent(name)}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.email) {
+              setValue('email', data.email);
+              setValue('rsvp', data.rsvp);
+              setValue('notes', data.notes);
+              setValue('song', data.song);
+              setValue('boat', data.boat);
+            }
+          }
+        } catch (error) {
+          console.error('Failed to fetch RSVP data', error);
+        }
+      }
+    },
+    [setValue],
+  );
+
+  useEffect(() => {
+    searchRsvp(debouncedName);
+  }, [debouncedName, searchRsvp]);
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -51,6 +99,8 @@ export const Rsvp = () => {
           email: data.email,
           rsvp: data.rsvp,
           notes: data.notes,
+          song: data.song,
+          boat: data.boat,
         }),
       });
 
@@ -155,6 +205,34 @@ export const Rsvp = () => {
                 className="w-full p-3 border border-gray-200 rounded-md"
               />
               {errors.notes && <p className="text-red-500 text-xs mt-1">{errors.notes.message}</p>}
+            </div>
+
+            {/* Song request */}
+            <div className="mb-6">
+              <label htmlFor="song" className="block text-gray-700 text-sm font-bold mb-2">
+                {t('songLabel')}
+              </label>
+              <input
+                id="song"
+                {...register('song')}
+                type="text"
+                placeholder={t('songPlaceholder')}
+                className={`w-full p-3 border rounded-md ${errors.song ? 'border-red-500' : 'border-gray-200'}`}
+              />
+              {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
+            </div>
+
+            {/* Boat party checkbox */}
+            <div className="mb-6">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  {...register('boat')}
+                  className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                />
+                <span className="text-gray-700 text-sm font-bold">{t('boatLabel')}</span>
+              </label>
+              {errors.boat && <p className="text-red-500 text-xs mt-1">{errors.boat.message}</p>}
             </div>
 
             {/* Honeypot */}
