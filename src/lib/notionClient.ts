@@ -14,6 +14,7 @@ export async function addRSVP({
   rsvp: string; // e.g. "Yes" | "No" | "Maybe"
   notes?: string;
 }) {
+  // Await the Notion API call
   return await notion.pages.create({
     parent: { database_id: notionConfig.databaseId },
     properties: {

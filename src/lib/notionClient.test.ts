@@ -17,7 +17,7 @@ type NotionMock = {
 type NotionCreatePayload = {
   parent: { database_id: string };
   properties: {
-    Title: { title: { text: { content: string } }[] };
+    Name: { title: { text: { content: string } }[] };
     Email: { email: string };
     RSVP: { select: { name: string } };
     Notes?: { rich_text: { text: { content: string } }[] };
@@ -50,9 +50,9 @@ test('calls notion.pages.create with expected payload including notes', async ()
   expect(notion.pages.create).toHaveBeenCalledTimes(1);
   // cast the mocked call argument to a typed payload so `calledWith` is not `unknown`
   const calledWith = notion.pages.create.mock.calls[0][0] as NotionCreatePayload;
-  // Title property is now used for the page title
+  // Name property is now used for the page title
   expect(calledWith.parent.database_id).toBe('test-db-id');
-  expect(calledWith.properties.Title.title[0].text.content).toBe(data.name);
+  expect(calledWith.properties.Name.title[0].text.content).toBe(data.name);
   expect(calledWith.properties.Email.email).toBe(data.email);
   expect(calledWith.properties.RSVP.select.name).toBe(data.rsvp);
   expect(calledWith.properties.Notes!.rich_text[0].text.content).toBe(data.notes);
