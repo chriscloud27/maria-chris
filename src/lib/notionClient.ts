@@ -17,8 +17,9 @@ export async function addRSVP({
   return await notion.pages.create({
     parent: { database_id: notionConfig.databaseId },
     properties: {
-      // Use "Title" as the Notion Title property
-      Title: { title: [{ text: { content: name } }] },
+      // The name of the property in Notion, which is "Name"
+      // The name of the property in Notion, which is "Name"
+      Name: { title: [{ text: { content: name } }] },
       Email: { email },
       RSVP: { select: { name: rsvp } },
       ...(notes ? { Notes: { rich_text: [{ text: { content: notes } }] } } : {}),

@@ -8,9 +8,9 @@ export function Story() {
   return (
     <section className="py-20 bg-[url('/background-small.png')] bg-center bg-no-repeat bg-cover">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap items-center -mx-4">
+        <div className="flex flex-wrap items-stretch -mx-4">
           <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-            <div className="bg-white/80 p-8 rounded-2xl shadow-lg">
+            <div className="bg-white/80 p-8 rounded-2xl shadow-lg h-full">
               <h2 className="text-4xl font-serif font-semibold mb-2">{t('title')}</h2>
               <p className="text-lg text-gray-500 mb-6">{t('subtitle')}</p>
                 {/* <p className="text-gray-700 leading-relaxed mb-4">
@@ -36,7 +36,7 @@ export function Story() {
               alt="Our Story" 
               width={600} 
               height={400} 
-              className="rounded-2xl shadow-lg object-cover w-full h-96"
+              className="rounded-2xl shadow-lg object-cover w-full h-full"
             />
           </div>
         </div>
