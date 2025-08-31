@@ -9,6 +9,7 @@ import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
 import { Details } from "@/components/Details";
 import { Schedule } from "@/components/Schedule";
+import { Story } from "@/components/Story";
 import { useTranslations } from "next-intl";
 
 export default function Index() {
@@ -28,6 +29,7 @@ export default function Index() {
       ]} />
       <main>
         <Hero />
+        <Story />
         <Details />
         <Schedule />
         <div className="container mx-auto px-4">

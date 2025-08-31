@@ -52,17 +52,17 @@ export const Hero = () => {
 
       {/* Date Section - Elegant invitation style */}
       <div className="text-center mb-8">
-        <p className="font-heading text-xl md:text-2xl tracking-[0.3em] uppercase mb-4">December</p>
+        <p className="font-heading text-xl md:text-2xl tracking-[0.3em] uppercase mb-4">{t('month')}</p>
         <div className="border-t border-b border-foreground py-6 px-12 mb-4">
-          <p className="font-script text-4xl md:text-5xl">20-21</p>
+          <p className="font-script text-4xl md:text-5xl">{t('days')}</p>
         </div>
-        <p className="font-heading text-lg md:text-xl tracking-[0.2em]">2025</p>
+        <p className="font-heading text-lg md:text-xl tracking-[0.2em]">{t('year')}</p>
       </div>
       
       {/* Location Section - Formal typography */}
       <div className="text-center max-w-md">
         <p className="font-heading text-base md:text-lg tracking-[0.15em] uppercase">
-          Guatapé, Colombia
+          {t('location')}
         </p>
       </div>
     </section>

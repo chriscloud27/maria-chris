@@ -6,7 +6,11 @@
   },
   "hero": {
     "title": "Wir heiraten!",
-    "subtitle": "20. Dezember 2025"
+    "subtitle": "20. Dezember 2025",
+    "month": "Dezember",
+    "days": "20-21",
+    "year": "2025",
+    "location": "Guatapé, Kolumbien"
   },
   "nav": {
     "details": "Details",
@@ -29,20 +33,29 @@
   "hotels": {
     "title": "Hotel Optionen",
     "bookingLinkText": "Jetzt buchen",
-    "hotel1": {
-      "name": "Hotel Sonne",
-      "bookingLink": "https://booking.com/sonne"
+    "cristalinaCabana": {
+      "name": "Cabaña Cristalina",
+      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
+      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+      "description": "Eine geräumige 4-Schlafzimmer-Villa mit modernen Annehmlichkeiten, eigenem Garten, Grillbereich und atemberaubendem Blick auf See, Berge und Wahrzeichen für einen entspannten und malerischen Aufenthalt am Stausee."
     },
     "hotel2": {
       "name": "Gasthof Mond",
-      "bookingLink": "https://booking.com/mond"
+      "bookingLink": "https://booking.com/mond",
+      "description": "Ein gemütlicher Gasthof mit komfortablen Zimmern und freundlicher Atmosphäre, perfekt für einen Aufenthalt in der Nähe der Veranstaltung.",
+      "location": "https://maps.app.goo.gl/example-hotel2-location"
     },
     "hotel3": {
       "name": "Pension Sterne",
-      "bookingLink": "https://booking.com/sterne"
+      "bookingLink": "https://booking.com/sterne",
+      "description": "Eine charmante Pension mit einfachen Zimmern, Frühstück inklusive und familiärer Atmosphäre.",
+      "location": "https://maps.app.goo.gl/example-hotel3-location"
     },
     "guatapeViajero": {
-      "description": "sehr nah am Veranstaltungsort, malerisch und großartig"
+      "name": "Guatape Viajero",
+      "bookingLink": "https://booking.com/guatapeviajero",
+      "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
+      "description": "sehr nah am Veranstaltungsort, malerisch und großartig. Keine Kinder erlaubt."
     },
     "searchOnBooking": "Bei Booking suchen",
     "searchOnAirbnb": "Bei Airbnb suchen",
@@ -52,10 +65,73 @@
   },
   "arrival": {
     "title": "Anreise",
+    "headerTitle": "So kommst du hierher",
     "train": "Der nächste Bahnhof ist Musterstadt Hbf.",
     "taxi": "Taxis sind am Bahnhof verfügbar.",
     "car": "Parkplätze sind am Schloss vorhanden.",
-    "airport": "Der nächste Flughafen ist Musterstadt Airport (MST)."
+    "airport": "Der nächste Flughafen ist Musterstadt Airport (MST).",
+    "cards": {
+      "air": {
+        "title": "Mit dem Flugzeug",
+        "imageAlt": "Flugzeug über Bergen",
+        "content": {
+          "item1": {
+            "title": "Internationale Flüge",
+            "text": "Fliege zum internationalen Flughafen José María Córdova (MDE) in Medellín"
+          },
+          "item2": {
+            "title": "Bodentransfer",
+            "text": "2-stündige landschaftlich schöne Fahrt nach Guatapé"
+          },
+          "item3": {
+            "title": "Fluggesellschaften",
+            "text": "Avianca, LATAM, Copa Airlines, American Airlines"
+          }
+        },
+        "buttonText": "Flüge finden",
+        "buttonLink": "#"
+      },
+      "car": {
+        "title": "Mit dem Auto",
+        "imageAlt": "Kurvige Straße in Guatapé",
+        "content": {
+          "item1": {
+            "title": "Von Medellín",
+            "text": "2 Stunden über die Autopista Medellín-Bogotá (wunderschöne Bergblicke!)"
+          },
+          "item2": {
+            "title": "Mietwagen",
+            "text": "Am Flughafen MDE verfügbar: Hertz, Avis, Budget, Localiza"
+          },
+          "item3": {
+            "title": "Tipp",
+            "text": "Halte im Dorf El Peñón für Empanadas und Kaffee!"
+          }
+        },
+        "buttonText": "Route anzeigen",
+        "buttonLink": "#"
+      },
+      "transport": {
+        "title": "Öffentliche Verkehrsmittel",
+        "imageAlt": "Bunte Chiva-Bus in Kolumbien",
+        "content": {
+          "item1": {
+            "title": "Metro + Bus",
+            "text": "Nimm die Metro zur Terminal Norte, dann Bus nach Guatapé (gesamt 3 Stunden)"
+          },
+          "item2": {
+            "title": "Direktbus",
+            "text": "Sotrasanvicente Busse vom Terminal del Norte alle 30 Minuten"
+          },
+          "item3": {
+            "title": "Abenteueroption",
+            "text": "Nimm eine bunte \"Chiva\"-Partybustour für das volle kolumbianische Erlebnis!"
+          }
+        },
+        "buttonText": "Busfahrpläne",
+        "buttonLink": "#"
+      }
+    }
   },
   "prePostEvents": {
     "title": "Vor- und Nach-Hochzeitsveranstaltungen",
@@ -71,14 +147,30 @@
     ]
   },
   "rsvp": {
-    "title": "RSVP",
-    "formspreeEndpoint": "https://formspree.io/f/your-id",
-    "nameLabel": "Name",
+    "title": "Bitte um Antwort",
+    "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 10. Mai 2026 Bescheid.",
+    "dinnerInfo": "Die Menüauswahl wird nach der Zusage angefragt.",
+    "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
+    "kidsInfo": "Kinder sind willkommen; bitte gebt das Alter im Nachrichtenfeld an.",
+    "formTitle": "RSVP-Formular",
+    "formSubtitle": "Wir senden eine Bestätigung an deine E-Mail.",
+    "nameLabel": "Vollständiger Name",
+    "emailLabel": "E-Mail",
     "attendanceLabel": "Wirst du teilnehmen?",
-    "attendanceYes": "Ja",
-    "attendanceNo": "Nein",
-    "plusOneLabel": "+1 Name (falls zutreffend)",
-    "submitButton": "Senden"
+    "attendanceYes": "Gerne annehmen",
+    "attendanceNo": "Leider ablehnen",
+    "attendanceMaybe": "Vielleicht",
+    "songRequestLabel": "Musikwunsch (optional)",
+    "songRequestPlaceholder": "Künstler — Songtitel",
+    "messageLabel": "Nachricht (optional)",
+    "messagePlaceholder": "Ernährungsbedürfnisse, Alter der Kinder, etc.",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Schreibe hier deine Notizen",
+    "submitButton": "RSVP senden",
+    "submittingButton": "Wird gesendet...",
+    "successMessage": "Vielen Dank! Deine RSVP wurde übermittelt.",
+    "errorMessage": "Ein Fehler ist aufgetreten. Bitte versuche es erneut.",
+    "selectOption": "Bitte eine Option auswählen"
   },
   "excursions": {
     "title": "Ausflugstipps",
@@ -121,57 +213,90 @@
     "attireMain": "wird noch bekanntgegeben",
     "attireNote": "wird noch bekanntgegeben"
   },
+  "story": {
+    "title": "Unsere Geschichte",
+    "subtitle": "Alles begann beim Digital Nomad Fest in Bulgarien.",
+    "paragraph2": "Maria ging aus nur einem Grund dorthin – um eine andere abenteuerlustige Seele zu finden, die genauso verrückt nach dem Reisen um die Welt war wie sie. Chris hingegen kam mit einer einzigen Frage: Wie wird man digitaler Nomade und verdient damit tatsächlich seinen Lebensunterhalt?",
+    "paragraph3": "Er hatte nicht die Absicht, jemanden kennenzulernen. Tatsächlich war Chris nach einem schlecht organisierten Speed-Dating-Event bereit zu gehen... bis er die Frau bemerkte, die ihm bereits aufgefallen war. Ein letztes Gespräch, bevor es zurück ins Hotel ging – und bam, es war ein Volltreffer!",
+    "paragraph4": "Von diesem Moment an haben Maria und Chris nie aufgehört zu reden. Besser noch: In ihren ersten zwölf gemeinsamen Monaten reisten sie in 14 Länder.",
+    "paragraph5": "Was mit einem Gespräch begann, wurde zu einem Leben voller Lachen, Abenteuer und Liebe. Und jetzt können wir es kaum erwarten, dieses nächste Kapitel mit euch allen zu feiern, die uns die Welt bedeuten."
+  },
+  "Countdown": {
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten"
+  },
   "schedule": {
     "title": "Ablaufplan",
     "subtitle": "Ein Tag voller Liebe und Feierlichkeiten",
     "days": [
       {
-        "dateLabel": "Freitag, 19. Dezember 2025",
+        "dateLabel": "Fr, 19. Dez",
         "events": [
           {
-            "time": "19:00 Uhr",
-            "title": "Willkommensgetränke",
-            "description": "Gemütliches Willkommen an der Hotelbar."
+            "time": "10:00 Uhr",
+            "title": "Ankunft der engen Familie",
+            "description": "Entspannen, erholen und Erfrischungen genießen."
+          },
+          {
+            "time": "10:30 Uhr",
+            "title": "Kennenlernspiele",
+            "description": "Lustige Aktivitäten, um sich gegenseitig kennenzulernen."
+          },
+          {
+            "time": "13:00 Uhr",
+            "title": "Mittagessen",
+            "description": "Genießt ein entspanntes gemeinsames Essen mit internationalen Aromen."
+          },
+          {
+            "time": "14:00 Uhr",
+            "title": "Unterhaltsame Aktivitäten",
+            "description": "Nehmt an Teamspielen, Gelächter und kulturellem Austausch teil."
+          },
+          {
+            "time": "17:30 Uhr",
+            "title": "Ausklang und entspannter Abend",
+            "description": "Lasst es ruhig angehen, entspannt euch und genießt den Abend."
           }
         ]
       },
       {
-        "dateLabel": "Samstag, 20. Dezember 2025",
+        "dateLabel": "Sa, 20. Dez",
         "events": [
           {
             "time": "14:30 Uhr",
             "title": "Ankunft der Gäste",
-            "description": "Nehmt Platz und genießt einen Willkommensdrink."
+            "description": "Findet eure Plätze und genießt ein Willkommensgetränk."
           },
           {
             "time": "15:00 Uhr",
             "title": "Zeremonie",
-            "description": "Begleitet uns, wenn wir uns das Ja-Wort geben."
+            "description": "Seid dabei, wenn wir 'Ja' sagen."
           },
           {
             "time": "16:00 Uhr",
             "title": "Sektempfang",
-            "description": "Snacks, Getränke und Musik."
+            "description": "Leichte Häppchen, Getränke und Musik."
           },
           {
             "time": "17:30 Uhr",
-            "title": "Abendessen & Reden",
-            "description": "Dinner, Reden und der erste Tanz."
+            "title": "Empfang",
+            "description": "Abendessen, Reden und erste Tänze."
           },
           {
             "time": "20:00 Uhr",
             "title": "Tanzen",
-            "description": "Feiert mit uns die ganze Nacht!"
+            "description": "Lasst uns die ganze Nacht feiern!"
           }
         ]
       },
       {
-        "dateLabel": "Sonntag, 21. Dezember 2025",
+        "dateLabel": "So, 21. Dez",
         "events": [
           {
             "time": "11:00 Uhr",
             "title": "Abschiedsbrunch",
-            "description": "Genießt einen entspannten Brunch zum Abschied."
+            "description": "Genießt einen entspannten Brunch, bevor wir uns verabschieden."
           }
         ]
       }

@@ -6,7 +6,11 @@
   },
   "hero": {
     "title": "We're getting married!",
-    "subtitle": "December 20, 2025"
+    "subtitle": "December 20, 2025",
+    "month": "December",
+    "days": "20-21",
+    "year": "2025",
+    "location": "Guatapé, Colombia"
   },
   "nav": {
     "details": "Details",
@@ -29,20 +33,29 @@
   "hotels": {
     "title": "Hotel Options",
     "bookingLinkText": "Book Now",
-    "hotel1": {
-      "name": "Sun Hotel",
-      "bookingLink": "https://booking.com/sun"
+    "cristalinaCabana": {
+      "name": "Cristalina Cabana",
+      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
+      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+      "description": "A spacious 4-bedroom villa with modern amenities, private garden, BBQ area, and breathtaking lake, mountain, and landmark views for a relaxed and scenic stay by the reservoir."
     },
     "hotel2": {
       "name": "Moon Inn",
-      "bookingLink": "https://booking.com/moon"
+      "bookingLink": "https://booking.com/moon",
+      "description": "A cozy inn with comfortable rooms and a friendly atmosphere, perfect for a stay close to the event.",
+      "location": "https://maps.app.goo.gl/example-hotel2-location"
     },
     "hotel3": {
       "name": "Stars Guesthouse",
-      "bookingLink": "https://booking.com/stars"
+      "bookingLink": "https://booking.com/stars",
+      "description": "A charming guesthouse with simple rooms, breakfast included, and a homely feel.",
+      "location": "https://maps.app.goo.gl/example-hotel3-location"
     },
     "guatapeViajero": {
-      "description": "very close by the event venue, picturesque, and amazing"
+      "name": "Guatape Viajero",
+      "bookingLink": "https://booking.com/guatapeviajero",
+      "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
+      "description": "very close by the event venue, picturesque, and amazing. No kids allowed."
     },
     "searchOnBooking": "Search on Booking",
     "searchOnAirbnb": "Search on Airbnb",
@@ -52,10 +65,73 @@
   },
   "arrival": {
     "title": "Arrival",
+    "headerTitle": "How to Get Here",
     "train": "The nearest train station is Sample City Main Station.",
     "taxi": "Taxis are available at the train station.",
     "car": "Parking is available at the castle.",
-    "airport": "The nearest airport is Sample City Airport (SCA)."
+    "airport": "The nearest airport is Sample City Airport (SCA).",
+    "cards": {
+      "air": {
+        "title": "By Air",
+        "imageAlt": "Plane flying over mountains",
+        "content": {
+          "item1": {
+            "title": "International Flights",
+            "text": "Fly to José María Córdova International Airport (MDE) in Medellín"
+          },
+          "item2": {
+            "title": "Ground Transfer",
+            "text": "2-hour scenic drive to Guatapé"
+          },
+          "item3": {
+            "title": "Airlines",
+            "text": "Avianca, LATAM, Copa Airlines, American Airlines"
+          }
+        },
+        "buttonText": "Find Flights",
+        "buttonLink": "#"
+      },
+      "car": {
+        "title": "By Car",
+        "imageAlt": "Winding road in Guatapé",
+        "content": {
+          "item1": {
+            "title": "From Medellín",
+            "text": "2 hours via Autopista Medellín-Bogotá (beautiful mountain views!)"
+          },
+          "item2": {
+            "title": "Car Rental",
+            "text": "Available at MDE airport: Hertz, Avis, Budget, Localiza"
+          },
+          "item3": {
+            "title": "Pro Tip",
+            "text": "Stop in El Peñón village for empanadas and coffee!"
+          }
+        },
+        "buttonText": "Get Directions",
+        "buttonLink": "#"
+      },
+      "transport": {
+        "title": "Public Transport",
+        "imageAlt": "Colorful chiva bus in Colombia",
+        "content": {
+          "item1": {
+            "title": "Metro + Bus",
+            "text": "Take Metro to Norte terminal, then bus to Guatapé (3 hours total)"
+          },
+          "item2": {
+            "title": "Direct Bus",
+            "text": "Sotrasanvicente buses from Terminal del Norte every 30 mins"
+          },
+          "item3": {
+            "title": "Adventure Option",
+            "text": "Take a colorful \"chiva\" party bus for the full Colombian experience!"
+          }
+        },
+        "buttonText": "Bus Schedules",
+        "buttonLink": "#"
+      }
+    }
   },
   "prePostEvents": {
     "title": "Pre & Post-Wedding Events",
@@ -71,14 +147,30 @@
     ]
   },
   "rsvp": {
-    "title": "RSVP",
-    "formspreeEndpoint": "https://formspree.io/f/your-id",
-    "nameLabel": "Name",
+    "title": "Kindly RSVP",
+    "invitation": "We can't wait to celebrate with you. Please respond by May 10, 2026.",
+    "dinnerInfo": "Dinner selections will be requested after RSVP is received.",
+    "songInfo": "Song requests welcome! Add your favorite tune below.",
+    "kidsInfo": "Kids welcome; kindly note ages in the message field.",
+    "formTitle": "RSVP Form",
+    "formSubtitle": "We'll send a confirmation to your email.",
+    "nameLabel": "Full name",
+    "emailLabel": "Email",
     "attendanceLabel": "Will you attend?",
-    "attendanceYes": "Yes",
-    "attendanceNo": "No",
-    "plusOneLabel": "+1 Name (if applicable)",
-    "submitButton": "Submit"
+    "attendanceYes": "Happily accept",
+    "attendanceNo": "Regretfully decline",
+    "attendanceMaybe": "Maybe",
+    "songRequestLabel": "Song request (optional)",
+    "songRequestPlaceholder": "Artist — Song Title",
+    "messageLabel": "Message (optional)",
+    "messagePlaceholder": "Dietary needs, kiddo ages, etc.",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Write your notes here",
+    "submitButton": "Send RSVP",
+    "submittingButton": "Submitting...",
+    "successMessage": "Thank you! Your RSVP has been submitted.",
+    "errorMessage": "An error occurred. Please try again.",
+    "selectOption": "Please select an option"
   },
   "excursions": {
     "title": "Excursion Tips",
@@ -121,22 +213,55 @@
     "attireMain": "to be announced",
     "attireNote": "to be announced"
   },
+  "story": {
+    "title": "Our Story",
+    "subtitle": "It all started at the Digital Nomad Fest in Bulgaria.",
+    "paragraph2": "Maria went there for one reason only – to find another adventurous soul as crazy about traveling the world as she was. Chris, on the other hand, came with a single question: how to be a digital nomad and actually make a living from it?",
+    "paragraph3": "He had no intention of meeting someone. In fact, after a poorly organized speed dating event, Chris was ready to leave… until he noticed the woman who had already caught his eye. One last conversation before heading back to the hotel – and bam, it was a match!",
+    "paragraph4": "From that moment, Maria and Chris have never stopped talking. Even better: in their very first twelve months together, they traveled to 14 countries.",
+    "paragraph5": "What began with one conversation became a life filled with laughter, adventure, and love. And now, we can’t wait to celebrate this next chapter with all of you who mean the world to us."
+  },
+  "Countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes"
+  },
   "schedule": {
     "title": "Schedule",
     "subtitle": "A day filled with love and celebration",
     "days": [
       {
-        "dateLabel": "Friday, December 19, 2025",
+        "dateLabel": "Fri, Dec 19",
         "events": [
           {
-            "time": "7:00 PM",
-            "title": "Welcome Drinks",
-            "description": "Join us for a casual welcome at the hotel bar."
+            "time": "10:00 AM",
+            "title": "Close Family Arrival",
+            "description": "Relax, unwind, and enjoy some refreshments."
+          },
+          {
+            "time": "10:30 AM",
+            "title": "Icebreakers",
+            "description": "Fun activities to get to know each other."
+          },
+          {
+            "time": "1:00 PM",
+            "title": "Lunch",
+            "description": "Enjoy a relaxed meal together with international flavors."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "Fun Activities",
+            "description": "Join us for team games, laughter, and cultural exchanges."
+          },
+          {
+            "time": "5:30 PM",
+            "title": "End and easy evening",
+            "description": "Take it easy, relax, and enjoy the evening."
           }
         ]
       },
       {
-        "dateLabel": "Saturday, December 20, 2025",
+        "dateLabel": "Sat, Dec 20",
         "events": [
           {
             "time": "2:30 PM",
@@ -166,7 +291,7 @@
         ]
       },
       {
-        "dateLabel": "Sunday, December 21, 2025",
+        "dateLabel": "Sun, Dec 21",
         "events": [
           {
             "time": "11:00 AM",
