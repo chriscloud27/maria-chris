@@ -41,13 +41,20 @@
     },
     "hotel2": {
       "name": "Moon Inn",
-      "bookingLink": "https://booking.com/moon"
+      "bookingLink": "https://booking.com/moon",
+      "description": "A cozy inn with comfortable rooms and a friendly atmosphere, perfect for a stay close to the event.",
+      "location": "https://maps.app.goo.gl/example-hotel2-location"
     },
     "hotel3": {
       "name": "Stars Guesthouse",
-      "bookingLink": "https://booking.com/stars"
+      "bookingLink": "https://booking.com/stars",
+      "description": "A charming guesthouse with simple rooms, breakfast included, and a homely feel.",
+      "location": "https://maps.app.goo.gl/example-hotel3-location"
     },
     "guatapeViajero": {
+      "name": "Guatape Viajero",
+      "bookingLink": "https://booking.com/guatapeviajero",
+      "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
       "description": "very close by the event venue, picturesque, and amazing. No kids allowed."
     },
     "searchOnBooking": "Search on Booking",
@@ -152,6 +159,7 @@
     "attendanceLabel": "Will you attend?",
     "attendanceYes": "Happily accept",
     "attendanceNo": "Regretfully decline",
+    "attendanceMaybe": "Maybe",
     "songRequestLabel": "Song request (optional)",
     "songRequestPlaceholder": "Artist — Song Title",
     "messageLabel": "Message (optional)",

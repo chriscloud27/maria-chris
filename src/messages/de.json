@@ -41,13 +41,20 @@
     },
     "hotel2": {
       "name": "Gasthof Mond",
-      "bookingLink": "https://booking.com/mond"
+      "bookingLink": "https://booking.com/mond",
+      "description": "Ein gemütlicher Gasthof mit komfortablen Zimmern und freundlicher Atmosphäre, perfekt für einen Aufenthalt in der Nähe der Veranstaltung.",
+      "location": "https://maps.app.goo.gl/example-hotel2-location"
     },
     "hotel3": {
       "name": "Pension Sterne",
-      "bookingLink": "https://booking.com/sterne"
+      "bookingLink": "https://booking.com/sterne",
+      "description": "Eine charmante Pension mit einfachen Zimmern, Frühstück inklusive und familiärer Atmosphäre.",
+      "location": "https://maps.app.goo.gl/example-hotel3-location"
     },
     "guatapeViajero": {
+      "name": "Guatape Viajero",
+      "bookingLink": "https://booking.com/guatapeviajero",
+      "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
       "description": "sehr nah am Veranstaltungsort, malerisch und großartig. Keine Kinder erlaubt."
     },
     "searchOnBooking": "Bei Booking suchen",
@@ -152,6 +159,7 @@
     "attendanceLabel": "Wirst du teilnehmen?",
     "attendanceYes": "Gerne annehmen",
     "attendanceNo": "Leider ablehnen",
+    "attendanceMaybe": "Vielleicht",
     "songRequestLabel": "Musikwunsch (optional)",
     "songRequestPlaceholder": "Künstler — Songtitel",
     "messageLabel": "Nachricht (optional)",
