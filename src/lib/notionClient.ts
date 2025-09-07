@@ -114,10 +114,15 @@ export async function findRSVPByName(name: string) {
 }
 
 export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'title' = 'rich_text') {
-  const filter: any = {
-    property: 'Code',
-  };
-  filter[filterType] = { equals: code };
+  const filter = filterType === 'rich_text' 
+    ? {
+        property: 'Code',
+        rich_text: { equals: code },
+      }
+    : {
+        property: 'Code',
+        title: { equals: code },
+      };
 
   const response: QueryDatabaseResponse = await notion.databases.query({
     database_id: notionConfig.databaseId,
