@@ -171,7 +171,13 @@
     "submittingButton": "Submitting...",
     "successMessage": "Thank you! Your RSVP has been submitted.",
     "errorMessage": "An error occurred. Please try again.",
-    "selectOption": "Please select an option"
+    "selectOption": "Please select an option",
+    "enterCodePrompt": "Please enter your invitation code to RSVP.",
+    "invitationIdLabel": "Invitation ID",
+    "invitationIdPlaceholder": "Enter your code here",
+    "verifyButton": "Verify",
+    "verifyingButton": "Verifying...",
+    "invalidCodeError": "Try again or ask Maria and Chris for your code"
   },
   "excursions": {
     "title": "Excursion Tips",

@@ -171,7 +171,13 @@
     "submittingButton": "Wird gesendet...",
     "successMessage": "Vielen Dank! Deine RSVP wurde übermittelt.",
     "errorMessage": "Ein Fehler ist aufgetreten. Bitte versuche es erneut.",
-    "selectOption": "Bitte eine Option auswählen"
+    "selectOption": "Bitte eine Option auswählen",
+    "enterCodePrompt": "Bitte gib deinen Einladungscode ein, um zuzusagen.",
+    "invitationIdLabel": "Einladungs-ID",
+    "invitationIdPlaceholder": "Gib hier deinen Code ein",
+    "verifyButton": "Bestätigen",
+    "verifyingButton": "Wird überprüft...",
+    "invalidCodeError": "Versuche es erneut oder frage Maria und Chris nach deinem Code"
   },
   "excursions": {
     "title": "Ausflugstipps",

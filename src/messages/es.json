@@ -171,7 +171,13 @@
     "errorMessage": "Ocurrió un error. Por favor, inténtalo de nuevo.",
     "selectOption": "Por favor, selecciona una opción",
     "notesLabel": "Notas",
-    "notesPlaceholder": "Escribe aquí tus notas"
+    "notesPlaceholder": "Escribe aquí tus notas",
+    "enterCodePrompt": "Por favor, introduce tu código de invitación para confirmar tu asistencia.",
+    "invitationIdLabel": "ID de Invitación",
+    "invitationIdPlaceholder": "Introduce tu código aquí",
+    "verifyButton": "Verificar",
+    "verifyingButton": "Verificando...",
+    "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
   },
   "excursions": {
     "title": "Sugerencias de Excursiones",

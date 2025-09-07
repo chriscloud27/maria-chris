@@ -37,6 +37,10 @@ export const Rsvp = () => {
   const t = useTranslations('rsvp');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
+  const [isVerified, setIsVerified] = useState(false);
+  const [invitationCode, setInvitationCode] = useState('');
+  const [verificationError, setVerificationError] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const {
     register,
@@ -55,7 +59,7 @@ export const Rsvp = () => {
 
   const searchRsvp = useCallback(
     async (name: string) => {
-      if (name && name.length >= 3) {
+      if (name && name.length >= 3 && !isVerified) {
         try {
           const res = await fetch(`/api/rsvp/search?name=${encodeURIComponent(name)}`);
           if (res.ok) {
@@ -73,12 +77,42 @@ export const Rsvp = () => {
         }
       }
     },
-    [setValue],
+    [setValue, isVerified],
   );
 
   useEffect(() => {
     searchRsvp(debouncedName);
   }, [debouncedName, searchRsvp]);
+
+  const handleCodeVerification = async () => {
+    if (!invitationCode) return;
+    setIsVerifying(true);
+    setVerificationError(null);
+    try {
+      const res = await fetch(`/api/rsvp/verify-code?code=${encodeURIComponent(invitationCode)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.email) {
+          setValue('name', data.name);
+          setValue('email', data.email);
+          setValue('rsvp', data.rsvp);
+          setValue('notes', data.notes);
+          setValue('song', data.song);
+          setValue('boat', data.boat);
+          setIsVerified(true);
+        }
+      } else {
+        const errorData = await res.json();
+        setVerificationError(errorData.error === 'Not Found' ? t('invalidCodeError') : t('errorMessage'));
+      }
+    } catch (error) {
+      console.error('Failed to verify code', error);
+      setVerificationError(t('errorMessage'));
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -108,6 +142,8 @@ export const Rsvp = () => {
       if (res.ok) {
         setSubmitStatus({ success: true, message: t('successMessage') });
         reset();
+        setIsVerified(false); // Reset to show code entry again
+        setInvitationCode('');
       } else {
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
@@ -117,6 +153,49 @@ export const Rsvp = () => {
       setIsSubmitting(false);
     }
   };
+
+  if (!isVerified) {
+    return (
+      <section
+        id="rsvp"
+        className="py-20 bg-stone-50"
+        style={{ backgroundImage: "url('/background-small.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="container mx-auto px-4 max-w-md">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <h2 className="text-3xl font-serif text-gray-800 mb-4">{t('title')}</h2>
+            <p className="mb-6 text-gray-600">{t('enterCodePrompt')}</p>
+            <div className="mb-4 text-left">
+              <label htmlFor="invitationCode" className="block text-gray-700 text-sm font-bold mb-2">
+                {t('invitationIdLabel')}
+              </label>
+              <input
+                id="invitationCode"
+                type="text"
+                value={invitationCode}
+                onChange={(e) => setInvitationCode(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCodeVerification()}
+                placeholder={t('invitationIdPlaceholder')}
+                className="w-full p-3 border border-gray-200 rounded-md"
+              />
+            </div>
+            <button
+              onClick={handleCodeVerification}
+              disabled={isVerifying || !invitationCode}
+              className="w-full p-3 bg-purple-700 text-white font-bold rounded-md hover:bg-purple-800 disabled:bg-gray-400 transition-colors duration-300"
+            >
+              {isVerifying ? t('verifyingButton') : t('verifyButton')}
+            </button>
+            {verificationError && (
+              <div className="mt-4 text-center p-3 rounded-md bg-red-100 text-red-800">
+                {verificationError}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
