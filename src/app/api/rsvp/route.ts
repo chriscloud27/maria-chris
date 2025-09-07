@@ -21,12 +21,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: parsedData.error.format() }, { status: 400 });
     }
 
-    const { name, email, rsvp, notes, song, boat } = parsedData.data;
+    const { name, email, rsvp, notes, song, boat, whatsapp } = parsedData.data;
 
     // Persist to Notion
     try {
-      console.log('Attempting to add or update RSVP to Notion:', { name, email, rsvp, notes, song, boat });
-      await addRSVP({ name, email, rsvp, notes, song, boat });
+      console.log('Attempting to add or update RSVP to Notion:', { name, email, rsvp, notes, song, boat, whatsapp });
+      await addRSVP({ name, email, rsvp, notes, song, boat, whatsapp });
       console.log('Successfully added or updated RSVP in Notion');
     } catch (pErr: unknown) {
       if (pErr instanceof Error) {

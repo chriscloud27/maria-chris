@@ -6,6 +6,7 @@ import { z } from 'zod';
 // - RSVP  -> rsvp (select: "Yes" | "No" | "Maybe")
 // - Notes -> notes (rich text)
 // - Song -> song (text)
+// - WhatsApp -> whatsapp (phone number)
 export const rsvpSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().email('Invalid email address'),
@@ -13,6 +14,7 @@ export const rsvpSchema = z.object({
   notes: z.string().max(1000).optional(),
   song: z.string().max(200).optional(),
   boat: z.boolean().optional(),
+  whatsapp: z.string().optional(),
   // honeypot is present for spam protection but ignored by persistence
   honeypot: z.string().optional(),
 });

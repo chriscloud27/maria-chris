@@ -162,6 +162,8 @@
     "attendanceMaybe": "Maybe",
     "songLabel": "Song request (optional)",
     "songPlaceholder": "Artist — Song Title",
+    "whatsappLabel": "WhatsApp number (optional)",
+    "whatsappPlaceholder": "+1 234 567 8901",
     "boatLabel": "I am joining the boat party (and I am bringing white cloths to it)",
     "messageLabel": "Message (optional)",
     "messagePlaceholder": "Dietary needs, kiddo ages, etc.",

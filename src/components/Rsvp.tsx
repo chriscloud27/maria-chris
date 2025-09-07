@@ -70,6 +70,7 @@ export const Rsvp = () => {
               setValue('notes', data.notes);
               setValue('song', data.song);
               setValue('boat', data.boat);
+              setValue('whatsapp', data.whatsapp);
             }
           }
         } catch (error) {
@@ -99,6 +100,7 @@ export const Rsvp = () => {
           setValue('notes', data.notes);
           setValue('song', data.song);
           setValue('boat', data.boat);
+          setValue('whatsapp', data.whatsapp);
           setIsVerified(true);
         }
       } else {
@@ -135,6 +137,7 @@ export const Rsvp = () => {
           notes: data.notes,
           song: data.song,
           boat: data.boat,
+          whatsapp: data.whatsapp,
         }),
       });
 
@@ -252,6 +255,21 @@ export const Rsvp = () => {
                 className={`w-full p-3 border rounded-md ${errors.email ? 'border-red-500' : 'border-gray-200'}`}
               />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+            </div>
+
+            {/* WhatsApp number */}
+            <div className="mb-4">
+              <label htmlFor="whatsapp" className="block text-gray-700 text-sm font-bold mb-2">
+                {t('whatsappLabel')}
+              </label>
+              <input
+                id="whatsapp"
+                {...register('whatsapp')}
+                type="tel"
+                placeholder={t('whatsappPlaceholder')}
+                className={`w-full p-3 border rounded-md ${errors.whatsapp ? 'border-red-500' : 'border-gray-200'}`}
+              />
+              {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>}
             </div>
 
             {/* RSVP select */}

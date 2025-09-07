@@ -162,6 +162,8 @@
     "attendanceMaybe": "Vielleicht",
     "songLabel": "Musikwunsch (optional)",
     "songPlaceholder": "Künstler — Songtitel",
+    "whatsappLabel": "WhatsApp-Nummer (optional)",
+    "whatsappPlaceholder": "+49 170 123 4567",
     "boatLabel": "Ich nehme an der Bootsparty teil (und bringe weiße Kleidung mit)",
     "messageLabel": "Nachricht (optional)",
     "messagePlaceholder": "Ernährungsbedürfnisse, Alter der Kinder, etc.",

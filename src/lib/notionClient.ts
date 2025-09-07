@@ -14,6 +14,7 @@ type RsvpData = {
   notes?: string;
   song?: string;
   boat?: boolean;
+  whatsapp?: string;
 };
 
 // This is the type for the properties object passed to notion.pages.create or notion.pages.update
@@ -24,6 +25,7 @@ type NotionProperties = {
   Notes?: { rich_text: [{ text: { content: string } }] };
   Song?: { rich_text: [{ text: { content: string } }] };
   Boat?: { select: { name: string } };
+  WhatsApp?: { phone_number: string };
 };
 
 async function findRSVPByEmail(email: string): Promise<string | null> {
@@ -46,7 +48,7 @@ async function findRSVPByEmail(email: string): Promise<string | null> {
 }
 
 export async function addRSVP(data: RsvpData) {
-  const { name, email, rsvp, notes, song, boat } = data;
+  const { name, email, rsvp, notes, song, boat, whatsapp } = data;
   const existingPageId = await findRSVPByEmail(email);
 
   const properties: NotionProperties = {
@@ -56,6 +58,7 @@ export async function addRSVP(data: RsvpData) {
     ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
     ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
     ...(boat !== undefined && { Boat: { select: { name: boat ? 'Yes' : 'No' } } }),
+    ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
   };
 
   if (existingPageId) {
@@ -99,6 +102,7 @@ export async function findRSVPByName(name: string) {
     const getEmail = (prop: NotionProperty): string => (prop.type === 'email' && prop.email) || '';
     const getSelect = (prop: NotionProperty): string => (prop.type === 'select' && prop.select?.name) || 'Yes';
     const getCheckbox = (prop: NotionProperty): boolean => (prop.type === 'checkbox' && prop.checkbox) || false;
+    const getPhoneNumber = (prop: NotionProperty): string => (prop.type === 'phone_number' && prop.phone_number) || '';
 
     return {
       name: getTitle(properties.Name),
@@ -107,6 +111,7 @@ export async function findRSVPByName(name: string) {
       notes: getRichText(properties.Notes),
       song: getRichText(properties.Song),
       boat: getCheckbox(properties.Boat),
+      whatsapp: getPhoneNumber(properties.WhatsApp),
     };
   }
 
@@ -144,6 +149,7 @@ export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'ti
     const getEmail = (prop: NotionProperty): string => (prop.type === 'email' && prop.email) || '';
     const getSelect = (prop: NotionProperty): string => (prop.type === 'select' && prop.select?.name) || 'Yes';
     const getCheckbox = (prop: NotionProperty): boolean => (prop.type === 'checkbox' && prop.checkbox) || false;
+    const getPhoneNumber = (prop: NotionProperty): string => (prop.type === 'phone_number' && prop.phone_number) || '';
 
     return {
       name: getTitle(properties.Name),
@@ -152,6 +158,7 @@ export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'ti
       notes: getRichText(properties.Notes),
       song: getRichText(properties.Song),
       boat: getCheckbox(properties.Boat),
+      whatsapp: getPhoneNumber(properties.WhatsApp),
       code: getRichText(properties.Code),
     };
   }

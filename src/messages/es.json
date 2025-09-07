@@ -162,6 +162,8 @@
     "attendanceMaybe": "Quizás",
     "songLabel": "Petición de canción (opcional)",
     "songPlaceholder": "Artista — Título de la canción",
+    "whatsappLabel": "Número de WhatsApp (opcional)",
+    "whatsappPlaceholder": "+57 300 123 4567",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",
