@@ -2,13 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { addRSVP } from '@/lib/notionClient';
 import { rsvpSchema } from '@/lib/schema';
 
-const rsvpDeadline = process.env.RSVP_DEADLINE; // e.g., '2026-05-10T23:59:59'
+// const rsvpDeadline = process.env.RSVP_DEADLINE; // e.g., '2026-05-10T23:59:59'
 
 export async function POST(req: NextRequest) {
   // Check if the deadline has passed
-  if (rsvpDeadline && new Date() > new Date(rsvpDeadline)) {
-    return NextResponse.json({ error: 'The RSVP deadline has passed.' }, { status: 400 });
-  }
+  // if (rsvpDeadline && new Date() > new Date(rsvpDeadline)) {
+  //   return NextResponse.json({ error: 'The RSVP deadline has passed.' }, { status: 400 });
+  // }
 
   try {
     const body = await req.json();
@@ -21,13 +21,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: parsedData.error.format() }, { status: 400 });
     }
 
-    const { name, email, rsvp, notes } = parsedData.data;
+    const { name, email, rsvp, notes, song, boat, whatsapp, code } = parsedData.data;
 
     // Persist to Notion
     try {
-      console.log('Attempting to add RSVP to Notion:', { name, email, rsvp, notes });
-      await addRSVP({ name, email, rsvp, notes });
-      console.log('Successfully added RSVP to Notion');
+      console.log('Attempting to add or update RSVP to Notion:', { name, email, rsvp, notes, song, boat, whatsapp, code });
+      await addRSVP({ name, email, rsvp, notes, song, boat, whatsapp, code });
+      console.log('Successfully added or updated RSVP in Notion');
     } catch (pErr: unknown) {
       if (pErr instanceof Error) {
         console.error('Notion Error:', pErr.message, JSON.stringify(pErr));

@@ -5,11 +5,18 @@ import { z } from 'zod';
 // - Email -> email
 // - RSVP  -> rsvp (select: "Yes" | "No" | "Maybe")
 // - Notes -> notes (rich text)
+// - Song -> song (text)
+// - WhatsApp -> whatsapp (phone number)
+// - Code -> code (text) - primary identifier
 export const rsvpSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().email('Invalid email address'),
   rsvp: z.enum(['Yes', 'No', 'Maybe']),
   notes: z.string().max(1000).optional(),
+  song: z.string().max(200).optional(),
+  boat: z.boolean().optional(),
+  whatsapp: z.string().optional(),
+  code: z.string().optional(),
   // honeypot is present for spam protection but ignored by persistence
   honeypot: z.string().optional(),
 });

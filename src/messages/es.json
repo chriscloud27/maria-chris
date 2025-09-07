@@ -20,7 +20,8 @@
     "arrival": "Llegada",
     "rsvp": "RSVP",
     "excursions": "Excursiones",
-    "faq": "Preguntas"
+    "faq": "Preguntas",
+    "story": "Historia"
   },
   "location": {
     "title": "Ubicación",
@@ -160,17 +161,26 @@
     "attendanceYes": "Sí",
     "attendanceNo": "No",
     "attendanceMaybe": "Quizás",
-    "songRequestLabel": "Petición de canción (opcional)",
-    "songRequestPlaceholder": "Artista — Título de la canción",
+    "songLabel": "Petición de canción (opcional)",
+    "songPlaceholder": "Artista — Título de la canción",
+    "whatsappLabel": "Número de WhatsApp (opcional)",
+    "whatsappPlaceholder": "+57 300 123 4567",
+    "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",
     "submitButton": "Enviar RSVP",
     "submittingButton": "Enviando...",
-    "successMessage": "¡Gracias! Tu RSVP ha sido enviada.",
+    "successMessage": "¡Gracias! Tu respuesta ha sido enviada.",
     "errorMessage": "Ocurrió un error. Por favor, inténtalo de nuevo.",
     "selectOption": "Por favor, selecciona una opción",
     "notesLabel": "Notas",
-    "notesPlaceholder": "Escribe aquí tus notas"
+    "notesPlaceholder": "Escribe aquí tus notas",
+    "enterCodePrompt": "Por favor, introduce tu código de invitación para confirmar tu asistencia.",
+    "invitationIdLabel": "ID de Invitación",
+    "invitationIdPlaceholder": "Introduce tu código aquí",
+    "verifyButton": "Verificar",
+    "verifyingButton": "Verificando...",
+    "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
   },
   "excursions": {
     "title": "Sugerencias de Excursiones",

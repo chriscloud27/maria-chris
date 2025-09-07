@@ -18,7 +18,7 @@ export function Schedule() {
   const days = t.raw("days") as ScheduleDay[];
 
   return (
-    <section className="py-16 bg-[url('/background-small.png')] bg-center bg-no-repeat bg-cover">
+    <section className="py-16">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-serif font-semibold mb-2">{t("title")}</h2>
         <p className="text-lg text-gray-700">{t("subtitle")}</p>

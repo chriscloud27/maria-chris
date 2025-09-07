@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { rsvpSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { CutleryIcon } from './icons/CutleryIcon';
 import { MusicIcon } from './icons/MusicIcon';
 import { StarIcon } from './icons/StarIcon';
@@ -16,20 +16,106 @@ type FormInputs = SchemaInputs & {
   honeypot?: string;
 };
 
+// Debounce hook
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
 export const Rsvp = () => {
   const t = useTranslations('rsvp');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
+  const [isVerified, setIsVerified] = useState(false);
+  const [invitationCode, setInvitationCode] = useState('');
+  const [verifiedCode, setVerifiedCode] = useState(''); // Store the verified code
+  const [verificationError, setVerificationError] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
+    setValue,
   } = useForm<FormInputs>({
     resolver: zodResolver(rsvpSchema),
     defaultValues: { rsvp: 'Yes' },
   });
+
+  const nameValue = watch('name');
+  const debouncedName = useDebounce(nameValue, 500);
+
+  const searchRsvp = useCallback(
+    async (name: string) => {
+      if (name && name.length >= 3 && !isVerified) {
+        try {
+          const res = await fetch(`/api/rsvp/search?name=${encodeURIComponent(name)}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.email) {
+              setValue('email', data.email);
+              setValue('rsvp', data.rsvp);
+              setValue('notes', data.notes || '');
+              setValue('song', data.song || '');
+              setValue('boat', data.boat || false);
+              setValue('whatsapp', data.whatsapp || '');
+            }
+          }
+        } catch (error) {
+          console.error('Failed to fetch RSVP data', error);
+        }
+      }
+    },
+    [setValue, isVerified],
+  );
+
+  useEffect(() => {
+    searchRsvp(debouncedName);
+  }, [debouncedName, searchRsvp]);
+
+  const handleCodeVerification = async () => {
+    if (!invitationCode) return;
+    setIsVerifying(true);
+    setVerificationError(null);
+    try {
+      const res = await fetch(`/api/rsvp/verify-code?code=${encodeURIComponent(invitationCode)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.email) {
+          setValue('name', data.name);
+          setValue('email', data.email);
+          setValue('rsvp', data.rsvp);
+          setValue('notes', data.notes || '');
+          setValue('song', data.song || '');
+          setValue('boat', data.boat || false);
+          setValue('whatsapp', data.whatsapp || '');
+          setVerifiedCode(invitationCode); // Store the verified code
+          setIsVerified(true);
+        }
+      } else {
+        const errorData = await res.json();
+        setVerificationError(errorData.error === 'Not Found' ? t('invalidCodeError') : t('errorMessage'));
+      }
+    } catch (error) {
+      console.error('Failed to verify code', error);
+      setVerificationError(t('errorMessage'));
+    } finally {
+      setIsVerifying(false);
+    }
+  };
 
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
@@ -51,6 +137,10 @@ export const Rsvp = () => {
           email: data.email,
           rsvp: data.rsvp,
           notes: data.notes,
+          song: data.song,
+          boat: data.boat,
+          whatsapp: data.whatsapp,
+          code: verifiedCode, // Include the verified code
         }),
       });
 
@@ -58,6 +148,9 @@ export const Rsvp = () => {
       if (res.ok) {
         setSubmitStatus({ success: true, message: t('successMessage') });
         reset();
+        setIsVerified(false); // Reset to show code entry again
+        setInvitationCode('');
+        setVerifiedCode(''); // Reset verified code
       } else {
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
@@ -67,6 +160,48 @@ export const Rsvp = () => {
       setIsSubmitting(false);
     }
   };
+
+  if (!isVerified) {
+    return (
+      <section
+        id="rsvp"
+        className="py-20"
+      >
+        <div className="container mx-auto px-4 max-w-md">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+            <h2 className="text-3xl font-serif text-gray-800 mb-4">{t('title')}</h2>
+            <p className="mb-6 text-gray-600">{t('enterCodePrompt')}</p>
+            <div className="mb-4 text-left">
+              <label htmlFor="invitationCode" className="block text-gray-700 text-sm font-bold mb-2">
+                {t('invitationIdLabel')}
+              </label>
+              <input
+                id="invitationCode"
+                type="text"
+                value={invitationCode}
+                onChange={(e) => setInvitationCode(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCodeVerification()}
+                placeholder={t('invitationIdPlaceholder')}
+                className="w-full p-3 border border-gray-200 rounded-md"
+              />
+            </div>
+            <button
+              onClick={handleCodeVerification}
+              disabled={isVerifying || !invitationCode}
+              className="w-full p-3 bg-purple-700 text-white font-bold rounded-md hover:bg-purple-800 disabled:bg-gray-400 transition-colors duration-300"
+            >
+              {isVerifying ? t('verifyingButton') : t('verifyButton')}
+            </button>
+            {verificationError && (
+              <div className="mt-4 text-center p-3 rounded-md bg-red-100 text-red-800">
+                {verificationError}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -125,6 +260,21 @@ export const Rsvp = () => {
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
             </div>
 
+            {/* WhatsApp number */}
+            <div className="mb-4">
+              <label htmlFor="whatsapp" className="block text-gray-700 text-sm font-bold mb-2">
+                {t('whatsappLabel')}
+              </label>
+              <input
+                id="whatsapp"
+                {...register('whatsapp')}
+                type="tel"
+                placeholder={t('whatsappPlaceholder')}
+                className={`w-full p-3 border rounded-md ${errors.whatsapp ? 'border-red-500' : 'border-gray-200'}`}
+              />
+              {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>}
+            </div>
+
             {/* RSVP select */}
             <div className="mb-4">
               <label htmlFor="rsvp" className="block text-gray-700 text-sm font-bold mb-2">
@@ -155,6 +305,34 @@ export const Rsvp = () => {
                 className="w-full p-3 border border-gray-200 rounded-md"
               />
               {errors.notes && <p className="text-red-500 text-xs mt-1">{errors.notes.message}</p>}
+            </div>
+
+            {/* Song request */}
+            <div className="mb-6">
+              <label htmlFor="song" className="block text-gray-700 text-sm font-bold mb-2">
+                {t('songLabel')}
+              </label>
+              <input
+                id="song"
+                {...register('song')}
+                type="text"
+                placeholder={t('songPlaceholder')}
+                className={`w-full p-3 border rounded-md ${errors.song ? 'border-red-500' : 'border-gray-200'}`}
+              />
+              {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
+            </div>
+
+            {/* Boat party checkbox */}
+            <div className="mb-6">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  {...register('boat')}
+                  className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                />
+                <span className="text-gray-700 text-sm font-bold">{t('boatLabel')}</span>
+              </label>
+              {errors.boat && <p className="text-red-500 text-xs mt-1">{errors.boat.message}</p>}
             </div>
 
             {/* Honeypot */}

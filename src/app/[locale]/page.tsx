@@ -1,3 +1,4 @@
+"use client"
 import { Hero } from "@/components/Hero";
 import { Location } from "@/components/Location";
 import { Hotels } from "@/components/Hotels";
@@ -11,13 +12,24 @@ import { Details } from "@/components/Details";
 import { Schedule } from "@/components/Schedule";
 import { Story } from "@/components/Story";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 
 export default function Index() {
   const t = useTranslations();
+
+  // enable smooth scrolling for anchor/hash link clicks
+  useEffect(() => {
+    const prev = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = "smooth";
+    return () => {
+      document.documentElement.style.scrollBehavior = prev || "";
+    };
+  }, []);
   
   return (
     <>
       <Nav navItems={[
+        { title: t('nav.story'), id: 'story' },
         { title: t('nav.details'), id: 'details' },
         { title: t('nav.schedule'), id: 'schedule' },
         { title: t('nav.location'), id: 'location' },
@@ -28,17 +40,17 @@ export default function Index() {
         { title: t('nav.faq'), id: 'faq' }
       ]} />
       <main>
-        <Hero />
-        <Story />
-        <Details />
-        <Schedule />
+        <section id="hero"><Hero /></section>
+        <section id="story"><Story /></section>
+        <section id="details"><Details /></section>
+        <section id="schedule"><Schedule /></section>
         <div className="container mx-auto px-4">
-          <Location />
-          <Hotels />
-          <Arrival />
-          <Rsvp />
-          <Excursions />
-          <Faq />
+          <section id="location"><Location /></section>
+          <section id="hotels"><Hotels /></section>
+          <section id="arrival"><Arrival /></section>
+          <section id="rsvp"><Rsvp /></section>
+          <section id="excursions"><Excursions /></section>
+          <section id="faq"><Faq /></section>
         </div>
       </main>
     </>
