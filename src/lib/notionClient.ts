@@ -15,6 +15,7 @@ type RsvpData = {
   song?: string;
   boat?: boolean;
   whatsapp?: string;
+  code?: string;
 };
 
 // This is the type for the properties object passed to notion.pages.create or notion.pages.update
@@ -26,6 +27,7 @@ type NotionProperties = {
   Song?: { rich_text: [{ text: { content: string } }] };
   Boat?: { select: { name: string } };
   WhatsApp?: { phone_number: string };
+  Code?: { rich_text: [{ text: { content: string } }] };
 };
 
 async function findRSVPByEmail(email: string): Promise<string | null> {
@@ -47,9 +49,49 @@ async function findRSVPByEmail(email: string): Promise<string | null> {
   return null;
 }
 
+async function findRSVPPageIdByCode(code: string): Promise<string | null> {
+  if (!code) return null;
+  
+  // First try rich_text
+  let response = await notion.databases.query({
+    database_id: notionConfig.databaseId,
+    filter: {
+      property: 'Code',
+      rich_text: {
+        equals: code,
+      },
+    },
+    page_size: 1,
+  });
+
+  if (response.results.length > 0) {
+    return response.results[0].id;
+  }
+
+  // If not found, try title
+  response = await notion.databases.query({
+    database_id: notionConfig.databaseId,
+    filter: {
+      property: 'Code',
+      title: {
+        equals: code,
+      },
+    },
+    page_size: 1,
+  });
+
+  if (response.results.length > 0) {
+    return response.results[0].id;
+  }
+
+  return null;
+}
+
 export async function addRSVP(data: RsvpData) {
-  const { name, email, rsvp, notes, song, boat, whatsapp } = data;
-  const existingPageId = await findRSVPByEmail(email);
+  const { name, email, rsvp, notes, song, boat, whatsapp, code } = data;
+  
+  // Use code as primary identifier, fall back to email if no code
+  const existingPageId = code ? await findRSVPPageIdByCode(code) : await findRSVPByEmail(email);
 
   const properties: NotionProperties = {
     Name: { title: [{ text: { content: name } }] },
@@ -59,6 +101,8 @@ export async function addRSVP(data: RsvpData) {
     ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
     ...(boat !== undefined && { Boat: { select: { name: boat ? 'Yes' : 'No' } } }),
     ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
+    // Only add Code if it's provided (for new records)
+    ...(code && !existingPageId && { Code: { rich_text: [{ text: { content: code } }] } }),
   };
 
   if (existingPageId) {

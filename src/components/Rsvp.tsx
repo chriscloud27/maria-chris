@@ -39,6 +39,7 @@ export const Rsvp = () => {
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
   const [isVerified, setIsVerified] = useState(false);
   const [invitationCode, setInvitationCode] = useState('');
+  const [verifiedCode, setVerifiedCode] = useState(''); // Store the verified code
   const [verificationError, setVerificationError] = useState<string | null>(null);
   const [isVerifying, setIsVerifying] = useState(false);
 
@@ -67,10 +68,10 @@ export const Rsvp = () => {
             if (data && data.email) {
               setValue('email', data.email);
               setValue('rsvp', data.rsvp);
-              setValue('notes', data.notes);
-              setValue('song', data.song);
-              setValue('boat', data.boat);
-              setValue('whatsapp', data.whatsapp);
+              setValue('notes', data.notes || '');
+              setValue('song', data.song || '');
+              setValue('boat', data.boat || false);
+              setValue('whatsapp', data.whatsapp || '');
             }
           }
         } catch (error) {
@@ -97,10 +98,11 @@ export const Rsvp = () => {
           setValue('name', data.name);
           setValue('email', data.email);
           setValue('rsvp', data.rsvp);
-          setValue('notes', data.notes);
-          setValue('song', data.song);
-          setValue('boat', data.boat);
-          setValue('whatsapp', data.whatsapp);
+          setValue('notes', data.notes || '');
+          setValue('song', data.song || '');
+          setValue('boat', data.boat || false);
+          setValue('whatsapp', data.whatsapp || '');
+          setVerifiedCode(invitationCode); // Store the verified code
           setIsVerified(true);
         }
       } else {
@@ -138,6 +140,7 @@ export const Rsvp = () => {
           song: data.song,
           boat: data.boat,
           whatsapp: data.whatsapp,
+          code: verifiedCode, // Include the verified code
         }),
       });
 
@@ -147,6 +150,7 @@ export const Rsvp = () => {
         reset();
         setIsVerified(false); // Reset to show code entry again
         setInvitationCode('');
+        setVerifiedCode(''); // Reset verified code
       } else {
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
