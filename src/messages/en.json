@@ -20,7 +20,8 @@
     "arrival": "Arrival",
     "rsvp": "RSVP",
     "excursions": "Excursions",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "story": "Story"
   },
   "location": {
     "title": "Location",

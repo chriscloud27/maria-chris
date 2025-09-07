@@ -6,7 +6,7 @@ export function Story() {
   const t = useTranslations('story');
 
   return (
-    <section className="py-20 bg-[url('/background-small.png')] bg-center bg-no-repeat bg-cover">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-stretch -mx-4">
           <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">

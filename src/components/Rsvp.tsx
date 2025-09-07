@@ -165,8 +165,7 @@ export const Rsvp = () => {
     return (
       <section
         id="rsvp"
-        className="py-20 bg-stone-50"
-        style={{ backgroundImage: "url('/background-small.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+        className="py-20"
       >
         <div className="container mx-auto px-4 max-w-md">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">

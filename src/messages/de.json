@@ -13,6 +13,8 @@
     "location": "Guatapé, Kolumbien"
   },
   "nav": {
+    "hero": "Hero",
+    "story": "Geschichte",
     "details": "Details",
     "schedule": "Ablaufplan",
     "location": "Ort",
