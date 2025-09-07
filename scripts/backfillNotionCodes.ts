@@ -3,11 +3,11 @@ import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '.env.local' });
 
-const apiKey = process.env.NOTION_TOKEN;
+const apiKey = process.env.NOTION_API_KEY;
 const databaseId = process.env.NOTION_DATABASE_ID;
 
 if (!apiKey || !databaseId) {
-  console.error('Error: Missing NOTION_TOKEN or NOTION_DATABASE_ID in your .env.local file.');
+  console.error('Error: Missing NOTION_API_KEY or NOTION_DATABASE_ID in your .env.local file.');
   process.exit(1);
 }
 

@@ -2,13 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { addRSVP } from '@/lib/notionClient';
 import { rsvpSchema } from '@/lib/schema';
 
-const rsvpDeadline = process.env.RSVP_DEADLINE; // e.g., '2026-05-10T23:59:59'
+// const rsvpDeadline = process.env.RSVP_DEADLINE; // e.g., '2026-05-10T23:59:59'
 
 export async function POST(req: NextRequest) {
   // Check if the deadline has passed
-  if (rsvpDeadline && new Date() > new Date(rsvpDeadline)) {
-    return NextResponse.json({ error: 'The RSVP deadline has passed.' }, { status: 400 });
-  }
+  // if (rsvpDeadline && new Date() > new Date(rsvpDeadline)) {
+  //   return NextResponse.json({ error: 'The RSVP deadline has passed.' }, { status: 400 });
+  // }
 
   try {
     const body = await req.json();
