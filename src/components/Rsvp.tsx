@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { rsvpSchema } from '@/lib/schema';
 import { z } from 'zod';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { CutleryIcon } from './icons/CutleryIcon';
 import { MusicIcon } from './icons/MusicIcon';
 import { StarIcon } from './icons/StarIcon';
@@ -37,6 +37,7 @@ export const Rsvp = () => {
   const t = useTranslations('rsvp');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
+  const [lastSubmission, setLastSubmission] = useState<Partial<FormInputs> | null>(null);
   const [isVerified, setIsVerified] = useState(false);
   const [invitationCode, setInvitationCode] = useState('');
   const [verifiedCode, setVerifiedCode] = useState(''); // Store the verified code
@@ -54,6 +55,9 @@ export const Rsvp = () => {
     resolver: zodResolver(rsvpSchema),
     defaultValues: { rsvp: 'Yes' },
   });
+
+  const statusRef = useRef<HTMLDivElement | null>(null);
+  const dismissTimerRef = useRef<number | null>(null);
 
   const nameValue = watch('name');
   const debouncedName = useDebounce(nameValue, 500);
@@ -117,13 +121,22 @@ export const Rsvp = () => {
     }
   };
 
+  // Allow user to go back and enter another invitation code
+  const handleEnterAnotherCode = () => {
+    setIsVerified(false);
+    setInvitationCode('');
+    setVerifiedCode('');
+    setSubmitStatus(null);
+  };
+
   const onSubmit = async (data: FormInputs) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     if (data.honeypot) {
       // treat as success to avoid revealing honeypot
-      setSubmitStatus({ success: true, message: t('successMessage') });
+  // don't store honeypot submissions as lastSubmission
+  setSubmitStatus({ success: true, message: 'your entry is successfully updated' });
       setIsSubmitting(false);
       return;
     }
@@ -146,19 +159,66 @@ export const Rsvp = () => {
 
       const payload = await res.json();
       if (res.ok) {
-        setSubmitStatus({ success: true, message: t('successMessage') });
+        // Show success message under the submit button. Keep the form visible
+        // so the status message can be seen by the user.
+        setLastSubmission({
+          name: data.name,
+          email: data.email,
+          rsvp: data.rsvp,
+          notes: data.notes,
+          song: data.song,
+          boat: data.boat,
+          whatsapp: data.whatsapp,
+        });
+        setSubmitStatus({ success: true, message: 'your entry is successfully updated' });
         reset();
-        setIsVerified(false); // Reset to show code entry again
-        setInvitationCode('');
-        setVerifiedCode(''); // Reset verified code
       } else {
-        setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
+        setSubmitStatus({ success: false, message: payload.error || 'error' });
       }
     } catch {
-      setSubmitStatus({ success: false, message: t('errorMessage') });
+      setSubmitStatus({ success: false, message: 'error' });
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // After showing a status, focus it (for screen readers) and auto-dismiss after 6s
+  useEffect(() => {
+    // clear any existing timer
+    if (dismissTimerRef.current) {
+      window.clearTimeout(dismissTimerRef.current);
+      dismissTimerRef.current = null;
+    }
+
+    if (submitStatus) {
+      // focus the status so keyboard/screenreader users notice it
+      requestAnimationFrame(() => statusRef.current?.focus());
+
+      // auto-dismiss success or error after 6 seconds
+      dismissTimerRef.current = window.setTimeout(() => {
+        setSubmitStatus(null);
+        dismissTimerRef.current = null;
+      }, 6000);
+    }
+
+    return () => {
+      if (dismissTimerRef.current) {
+        window.clearTimeout(dismissTimerRef.current);
+        dismissTimerRef.current = null;
+      }
+    };
+  }, [submitStatus]);
+
+  // Restore last submission values into the form (undo-like)
+  const handleUndo = () => {
+    if (!lastSubmission) return;
+    Object.entries(lastSubmission).forEach(([key, value]) => {
+      // key is one of the form fields
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      setValue(key, value);
+    });
+    setSubmitStatus(null);
   };
 
   if (!isVerified) {
@@ -352,17 +412,52 @@ export const Rsvp = () => {
                 {isSubmitting ? t('submittingButton') : t('submitButton')}
               </button>
             </div>
-          </form>
+            {/* status message shown directly under the submit button with an action to enter another code */}
+            {submitStatus && (
+              <div
+                ref={statusRef}
+                role="status"
+                aria-live="polite"
+                tabIndex={-1}
+                className={`mt-4 p-3 rounded-md flex items-center justify-between ${
+                  submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                }`}
+              >
+                <div className="flex items-center">
+                  {/* icon */}
+                  {submitStatus.success ? (
+                    <svg className="w-5 h-5 mr-3 text-green-800" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 00-1.414-1.414L8 11.172 4.707 7.879a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8z" clipRule="evenodd" />
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5 mr-3 text-red-800" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v4a1 1 0 002 0V7zm-1 8a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                  <span className="text-sm">{submitStatus.message}</span>
+                </div>
 
-          {submitStatus && (
-            <div
-              className={`mt-4 text-center p-3 rounded-md ${
-                submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-              }`}
-            >
-              {submitStatus.message}
-            </div>
-          )}
+                <div className="flex items-center">
+                  <button
+                    type="button"
+                    onClick={handleUndo}
+                    disabled={!lastSubmission}
+                    className="mr-2 inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-purple-700 bg-white hover:bg-purple-50 disabled:opacity-50"
+                  >
+                    undo
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleEnterAnotherCode}
+                    className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-purple-700 bg-white hover:bg-purple-50"
+                  >
+                    enter with another code
+                  </button>
+                </div>
+              </div>
+            )}
+          </form>
         </div>
       </div>
     </section>
