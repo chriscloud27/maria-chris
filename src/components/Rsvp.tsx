@@ -37,7 +37,6 @@ export const Rsvp = () => {
   const t = useTranslations('rsvp');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
-  const [lastSubmission, setLastSubmission] = useState<Partial<FormInputs> | null>(null);
   const [isVerified, setIsVerified] = useState(false);
   const [invitationCode, setInvitationCode] = useState('');
   const [verifiedCode, setVerifiedCode] = useState(''); // Store the verified code
@@ -136,7 +135,7 @@ export const Rsvp = () => {
     if (data.honeypot) {
       // treat as success to avoid revealing honeypot
   // don't store honeypot submissions as lastSubmission
-  setSubmitStatus({ success: true, message: 'your entry is successfully updated' });
+  setSubmitStatus({ success: true, message: t('successMessage') });
       setIsSubmitting(false);
       return;
     }
@@ -161,22 +160,13 @@ export const Rsvp = () => {
       if (res.ok) {
         // Show success message under the submit button. Keep the form visible
         // so the status message can be seen by the user.
-        setLastSubmission({
-          name: data.name,
-          email: data.email,
-          rsvp: data.rsvp,
-          notes: data.notes,
-          song: data.song,
-          boat: data.boat,
-          whatsapp: data.whatsapp,
-        });
-        setSubmitStatus({ success: true, message: 'your entry is successfully updated' });
+        setSubmitStatus({ success: true, message: t('successMessage') });
         reset();
       } else {
-        setSubmitStatus({ success: false, message: payload.error || 'error' });
+        setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
     } catch {
-      setSubmitStatus({ success: false, message: 'error' });
+      setSubmitStatus({ success: false, message: t('errorMessage') });
     } finally {
       setIsSubmitting(false);
     }
@@ -209,17 +199,7 @@ export const Rsvp = () => {
     };
   }, [submitStatus]);
 
-  // Restore last submission values into the form (undo-like)
-  const handleUndo = () => {
-    if (!lastSubmission) return;
-    Object.entries(lastSubmission).forEach(([key, value]) => {
-      // key is one of the form fields
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      setValue(key, value);
-    });
-    setSubmitStatus(null);
-  };
+  // (undo removed)
 
   if (!isVerified) {
     return (
@@ -438,15 +418,6 @@ export const Rsvp = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <button
-                    type="button"
-                    onClick={handleUndo}
-                    disabled={!lastSubmission}
-                    className="mr-2 inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-purple-700 bg-white hover:bg-purple-50 disabled:opacity-50"
-                  >
-                    undo
-                  </button>
-
                   <button
                     type="button"
                     onClick={handleEnterAnotherCode}
