@@ -64,5 +64,6 @@ test('omits Notes when notes not provided', async () => {
   await addRSVP(data);
 
   const calledWith = notion.pages.create.mock.calls[0][0];
-  expect(calledWith.properties.Notes).toBeUndefined();
+  const calledWithTyped = calledWith as NotionCreatePayload;
+  expect(calledWithTyped.properties.Notes).toBeUndefined();
 });
