@@ -13,8 +13,6 @@
     "location": "Guatapé, Kolumbien"
   },
   "nav": {
-    "hero": "Hero",
-    "story": "Geschichte",
     "details": "Details",
     "schedule": "Ablaufplan",
     "location": "Ort",
@@ -22,15 +20,8 @@
     "arrival": "Anreise",
     "rsvp": "RSVP",
     "excursions": "Ausflüge",
-    "faq": "FAQ"
-  },
-  "location": {
-    "title": "Ort",
-    "main": {
-      "name": "St. Margaretenkirche",
-      "address": "St.-Margareten-Straße 1, 81371 München, Deutschland"
-    },
-    "intro": "Eingebettet im Herzen Antioquias, nur zwei Stunden von Medellín entfernt, ist Guatapé das bunteste Dorf Kolumbiens – eine lebendige Leinwand aus farbenfrohen Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol gelegen, bietet dieses malerische Städtchen endlose Abenteuer: von Kajakfahren und Wakeboarden bis hin zum Erklimmen der berühmten 700 Stufen für einen Panoramablick auf die Berge. Nach einem Tag voller Erkundungen kannst du bei authentischen antioquianischen Spezialitäten und tropischen Cocktails entspannen, während die Sonne über dem Wasser untergeht."
+    "faq": "FAQ",
+    "story": "Geschichte"
   },
   "hotels": {
     "title": "Hotel Optionen",
@@ -215,10 +206,10 @@
   "dateMain": "Samstag, 20. Dezember 2025",
     "ceremonyTime": "Zeremonie um 15:00 Uhr",
     "venueTitle": "Veranstaltungsort",
-  "venueName": "wird noch bekanntgegeben",
-  "venueAddress1": "wird noch bekanntgegeben",
-  "venueAddress2": "Guatapé, Antioquia, Kolumbien",
-    "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
+  "venueName": "Casa Loma, Hotel Boutique",
+  "venueAddress1": "054447, Peñol, Antioquia",
+  "venueAddress2": "Kolumbien",
+    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Route anzeigen",
     "attireTitle": "Kleidung",
     "attireMain": "wird noch bekanntgegeben",
@@ -243,36 +234,33 @@
     "days": [
       {
         "dateLabel": "Fr, 19. Dez",
+        "subtitle": "Begrüßung & Verbindung - 🔥",
         "events": [
           {
-            "time": "10:00 Uhr",
-            "title": "Ankunft der engen Familie",
-            "description": "Entspannen, erholen und Erfrischungen genießen."
+            "time": "16:00 Uhr",
+            "title": "Gästeankunft & Check-In",
+            "description": "Beziehe dein Zimmer, um dich auf einen schönen Nachmittag vorzubereiten"
           },
           {
-            "time": "10:30 Uhr",
-            "title": "Kennenlernspiele",
-            "description": "Lustige Aktivitäten, um sich gegenseitig kennenzulernen."
+            "time": "18:30 Uhr",
+            "title": "Entspannung",
+            "description": "Genieße ein Erholungsprogramm, das dich für das Abendessen erfrischt."
           },
           {
-            "time": "13:00 Uhr",
-            "title": "Mittagessen",
-            "description": "Genießt ein entspanntes gemeinsames Essen mit internationalen Aromen."
+            "time": "19:30 Uhr",
+            "title": "Abendessen & Traditionelle Köstlichkeiten",
+            "description": "Probiere kolumbianische Weihnachtsleckereien und ein typisches Barbecue."
           },
           {
-            "time": "14:00 Uhr",
-            "title": "Unterhaltsame Aktivitäten",
-            "description": "Nehmt an Teamspielen, Gelächter und kulturellem Austausch teil."
-          },
-          {
-            "time": "17:30 Uhr",
-            "title": "Ausklang und entspannter Abend",
-            "description": "Lasst es ruhig angehen, entspannt euch und genießt den Abend."
+            "time": "21:00 Uhr",
+            "title": "Lagerfeuer & Ritual",
+            "description": "Versammelt euch am Feuer mit Musik und herzlichen Momenten zusammen."
           }
         ]
       },
       {
         "dateLabel": "Sa, 20. Dez",
+  "subtitle": "Der Große Tag - 🪨💨",
         "events": [
           {
             "time": "14:30 Uhr",
@@ -303,6 +291,7 @@
       },
       {
         "dateLabel": "So, 21. Dez",
+  "subtitle": "Weiße Party & Abschied - 💧",
         "events": [
           {
             "time": "11:00 Uhr",
