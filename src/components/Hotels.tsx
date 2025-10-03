@@ -13,7 +13,7 @@ export const Hotels = () => {
     }
   };
 
-  const hotelKeys = ['cristalinaCabana', 'hotel2', 'hotel3', 'guatapeViajero'];
+  const hotelKeys = ['monteGandolfo', 'viajeroHostal', 'altoLunaGlamping'];
 
   return (
     <section id="hotels" className="py-12">
@@ -41,6 +41,22 @@ export const Hotels = () => {
               <div className="bg-white dark:bg-gray-800 p-6">
                 {description && <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>}
 
+                {safe(`${key}.hint`) && (
+                  <p className="mb-3 text-sm text-gray-500 dark:text-gray-400">
+                    {safe(`${key}.hint`)}
+                    {safe(`${key}.hintLink`) && (
+                      <a
+                        href={safe(`${key}.hintLink`) ?? '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-2 text-purple-600 hover:underline"
+                      >
+                        {safe(`${key}.hintLinkText`) ?? safe('bookingLinkText') ?? 'More Details'}
+                      </a>
+                    )}
+                  </p>
+                )}
+
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                   {bookingLink && (
                     <a
@@ -49,7 +65,7 @@ export const Hotels = () => {
                       rel="noopener noreferrer"
                       className="inline-block bg-purple-600 hover:opacity-95 text-white py-3 px-4 rounded-full text-center"
                     >
-                      {safe('bookingLinkText') ?? 'Book'}
+                      {safe('bookingLinkText') ?? 'More Details'}
                     </a>
                   )}
 
@@ -58,9 +74,9 @@ export const Hotels = () => {
                       href={locationLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-purple-600 hover:underline"
+                      className="inline-block bg-purple-600 hover:opacity-95 text-white py-3 px-4 rounded-full text-center"
                     >
-                      Map
+                      {safe('mapText') ?? 'More Details'}
                     </a>
                   )}
                 </div>

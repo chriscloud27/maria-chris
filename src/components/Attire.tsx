@@ -40,9 +40,49 @@ export default function Attire() {
           </div>
           <h3 className="text-xl font-bold mb-2">{t("attireExampleTitle")}</h3>
           <div className="mb-2">
-            <p className="text-sm text-gray-600 mb-2">{t("attireWomen")}</p>
-            <p className="text-sm text-gray-600 mb-2">{t("attireMen")}</p>
-            <p className="text-sm text-gray-600 mb-3">{t("attireKids")}</p>
+            {/* Render label (before colon) in bold, keep the rest normal. If there's no colon, render whole string normally. */}
+            {(() => {
+              const renderBoldLabel = (s: string) => {
+                const parts = s.split(":");
+                if (parts.length > 1) {
+                  const label = parts.shift();
+                  const rest = parts.join(":");
+                  return (
+                    <p className="text-sm text-gray-600 mb-2">
+                      <strong>{label}:</strong>
+                      {rest}
+                    </p>
+                  );
+                }
+                return (
+                  <p className="text-sm text-gray-600 mb-2">{s}</p>
+                );
+              };
+
+              return (
+                <>
+                  {renderBoldLabel(t("attireWomen"))}
+                  {renderBoldLabel(t("attireMen"))}
+                  {/* kids has slightly different spacing in existing markup (mb-3)
+                      preserve that spacing for visual parity */}
+                  {(() => {
+                    const s = t("attireKids");
+                    const parts = s.split(":");
+                    if (parts.length > 1) {
+                      const label = parts.shift();
+                      const rest = parts.join(":");
+                      return (
+                        <p className="text-sm text-gray-600 mb-3">
+                          <strong>{label}:</strong>
+                          {rest}
+                        </p>
+                      );
+                    }
+                    return <p className="text-sm text-gray-600 mb-3">{s}</p>;
+                  })()}
+                </>
+              );
+            })()}
           </div>
           <div className="mt-auto flex gap-2">
             <a

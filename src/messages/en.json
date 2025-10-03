@@ -59,7 +59,8 @@
   },
   "hotels": {
     "title": "Hotel Options",
-    "bookingLinkText": "Book Now",
+  "bookingLinkText": "More Details",
+  "mapText": "More Details",
     "cristalinaCabana": {
       "name": "Cristalina Cabana",
       "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
@@ -83,6 +84,33 @@
       "bookingLink": "https://booking.com/guatapeviajero",
       "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
       "description": "very close by the event venue, picturesque, and amazing. No kids allowed."
+    },
+    "monteGandolfo": {
+      "name": "Monte Gandolfo",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
+      "description": "Apartamentos Monte Gandolfo is located in Guatapé, about 8.7 km from Piedra del Peñol. It offers free Wi‑Fi, a garden with a terrace, and access to a shared hot tub. Some units also include a kitchenette for self-catering.",
+      "hint": "Quiet, scenic spot — consider arranging transport as it’s a short drive from town.",
+      "hintLink": "",
+      "hintLinkText": "View on map"
+    },
+    "viajeroHostal": {
+      "name": "Viajero Hostal",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
+      "description": "Viajero Hostal in Guatapé overlooks the lake and offers a relaxed, social atmosphere. The communal areas are perfect for meeting fellow travelers, and the hostel is close to restaurants and local transport. For discounts, book in advance via their promotions page.",
+      "hint": "Book in advance for this discount.",
+      "hintLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      "hintLinkText": "Promotions"
+    },
+    "altoLunaGlamping": {
+      "name": "Alto Luna Glamping",
+      "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
+      "location": "",
+      "description": "Luna Nueva is a private cabin located in El Peñol, offering a unique experience of connection with nature and comfort. Surrounded by mountains and overlooking the reservoir, this cabin is the perfect place to disconnect from the urban bustle and immerse yourself in the tranquility of the Antioquia landscape. Enjoy panoramic views of the Peñol rock, the Guatapé reservoir and the replica of the old Peñol.",
+      "hint": "Remote cabin experience; limited facilities and booking fills up fast — consider reserving early.",
+      "hintLink": "",
+      "hintLinkText": "Book on Airbnb"
     },
     "searchOnBooking": "Search on Booking",
     "searchOnAirbnb": "Search on Airbnb",
@@ -251,24 +279,24 @@
     "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Get Directions",
     "attireTitle": "Attire",
-    "attireWomenLabel": "Women:",
-    "attireMenLabel": "Men:",
-    "attireOverview": "Colors",
-    "attireColors": "Day cocktail dress, palazzo or breezy linen/cotton outfits in soft, spring-like colors.",
-    "attireExampleTitle": "Cloths",
-    "attireWomen": "Women: warm blush, coral, terracotta, pastel sage, turquoise, sunflower yellow",
-    "attireMen": "Men: navy blue, light beige linen, classic grey, steel blue, taupe",
-    "attireKids": "Kids: white with greens",
+  "attireWomenLabel": "Women:",
+  "attireMenLabel": "Men:",
+  "attireOverview": "Colors",
+  "attireColors": "Light green, Teal green, Olive green, Dark green, Orange, Golden yellow, Fuchsia pink, Bright pink, Lilac, Dark violet, Bright violet, Lavender",
+  "attireExampleTitle": "Clothes",
+  "attireWomen": "Women: daytime cocktail dress, palazzo or breezy linen/cotton outfits in light, spring-like colors.",
+  "attireMen": "Men: guayabera or lightweight shirt in light/spring tones (lavender, blue, green) paired with linen or cotton trousers in beige/khaki.",
+  "attireKids": "Kids: white with green accents",
     "attireWomenMenButton": "Women / Men",
     "attireKidsButton": "Kids",
     "attireKidsTitle": "White boat party",
     "attireBoatText": "Welcome aboard our optional White boat party — comfortable white clothes, sporty or elegant.",
     "attireExampleButton": "Example",
     "attireMoreDetailsButton": "More details",
-    "attireNote": "",
+  "attireNote": "Dress light and bright — think spring colors.",
     "attireButtonText": "See More",
     "attireColorsButton": "Colors",
-    "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
+  "attireButtonLink": "https://au.pinterest.com/pin/6685099441633578/"
   },
   "story": {
     "title": "Our Story",

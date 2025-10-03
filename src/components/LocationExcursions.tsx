@@ -24,8 +24,8 @@ const TravelTip = ({
       {icon}
     </div>
     <div>
-      <h4 className="font-semibold text-lg text-gray-800">{title}</h4>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <h4 className="font-semibold text-lg">{title}</h4>
+      <p className="text-sm">{description}</p>
     </div>
   </div>
 );
@@ -81,7 +81,7 @@ export const LocationExcursions = () => {
             </h2>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
-          <p className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+          <p className="max-w-4xl mx-auto text-lg leading-relaxed">
             {tLocation('intro')}
           </p>
         </div>
@@ -91,12 +91,12 @@ export const LocationExcursions = () => {
           
           {/* Location Card with Map */}
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden">
-            <div className="p-6 bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+            <div className="p-6 bg-gradient-to-r ">
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 mr-3" />
                 <div>
                   <h3 className="text-xl font-bold">{tLocation('main.name')}</h3>
-                  <p className="text-purple-100">{tLocation('main.address')}</p>
+                  <p className="">{tLocation('main.address')}</p>
                 </div>
               </div>
             </div>
