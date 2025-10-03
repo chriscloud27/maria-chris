@@ -13,28 +13,28 @@
     "location": "Guatapé, Kolumbien"
   },
   "nav": {
-    "hero": "Hero",
-    "story": "Geschichte",
     "details": "Details",
     "schedule": "Ablaufplan",
-    "location": "Ort",
+    "location": "Ort & Tipps",
     "hotels": "Hotels",
     "arrival": "Anreise",
-    "rsvp": "RSVP",
+    "rsvp": "Party 🎉",
     "excursions": "Ausflüge",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "story": "Geschichte"
   },
   "location": {
     "title": "Ort",
     "main": {
-      "name": "St. Margaretenkirche",
-      "address": "St.-Margareten-Straße 1, 81371 München, Deutschland"
+      "name": "Casa Loma, Hotel Boutique",
+      "address": "054447, Peñol, Antioquia, Kolumbien"
     },
-    "intro": "Eingebettet im Herzen Antioquias, nur zwei Stunden von Medellín entfernt, ist Guatapé das bunteste Dorf Kolumbiens – eine lebendige Leinwand aus farbenfrohen Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol gelegen, bietet dieses malerische Städtchen endlose Abenteuer: von Kajakfahren und Wakeboarden bis hin zum Erklimmen der berühmten 700 Stufen für einen Panoramablick auf die Berge. Nach einem Tag voller Erkundungen kannst du bei authentischen antioquianischen Spezialitäten und tropischen Cocktails entspannen, während die Sonne über dem Wasser untergeht."
+    "intro": "Im Herzen von Antioquia gelegen, nur zwei Stunden von Medellín entfernt, ist Guatapé Kolumbiens farbenfrohstes Dorf – eine lebendige Leinwand aus lebhaften Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol entfernt gelegen, bietet diese malerische Stadt endlose Abenteuer, vom Kajakfahren und Wakesurfen bis hin zum Erklimmen der berühmten 700 Stufen für Panorama-Bergblicke. Nach einem Tag voller Erkundungen entspannen Sie sich mit authentischen antioquianischen Aromen und tropischen Cocktails, während die Sonne über dem Wasser untergeht."
   },
   "hotels": {
     "title": "Hotel Optionen",
-    "bookingLinkText": "Jetzt buchen",
+  "bookingLinkText": "Mehr Details",
+  "mapText": "Mehr Details",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
       "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
@@ -58,6 +58,33 @@
       "bookingLink": "https://booking.com/guatapeviajero",
       "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
       "description": "sehr nah am Veranstaltungsort, malerisch und großartig. Keine Kinder erlaubt."
+    },
+    "monteGandolfo": {
+      "name": "Monte Gandolfo",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
+      "description": "Die Apartamentos Monte Gandolfo in Guatapé liegen etwa 8,7 km von der Piedra del Peñol entfernt. Sie bieten kostenloses WLAN, einen Garten mit Terrasse und Zugang zu einem Gemeinschaftswhirlpool. Einige Wohneinheiten verfügen außerdem über eine Küche für Selbstverpflegung.",
+      "hint": "Ruhige, aussichtsreiche Lage — Transport organisieren, da es eine kurze Fahrt vom Ort entfernt liegt.",
+      "hintLink": "",
+      "hintLinkText": "Auf Karte ansehen"
+    },
+    "viajeroHostal": {
+      "name": "Viajero Hostal",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
+      "description": "Das Viajero Hostal in Guatapé bietet Seeblick und eine entspannte, soziale Atmosphäre. Die Gemeinschaftsbereiche eignen sich hervorragend zum Kennenlernen anderer Reisender, und das Hostel liegt in der Nähe von Restaurants und Verkehrsmitteln. Für Rabatte empfiehlt es sich, frühzeitig über ihre Aktionsseite zu buchen.",
+      "hint": "Mit Vorlauf buchen für diesen Rabatt.",
+      "hintLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      "hintLinkText": "Aktionen"
+    },
+    "altoLunaGlamping": {
+      "name": "Alto Luna Glamping",
+      "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
+      "location": "",
+      "description": "Luna Nueva ist eine private Hütte in El Peñol und bietet eine einzigartige Verbindung von Natur und Komfort. Umgeben von Bergen und mit Blick auf den Stausee ist sie der perfekte Ort, um dem Stadttrubel zu entfliehen und Ruhe zu finden. Genieße panoramische Aussichten auf den Peñol-Felsen, den Guatapé-Stausee und die Nachbildung des alten Peñol.",
+      "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung — bitte frühzeitig buchen.",
+      "hintLink": "",
+      "hintLinkText": "Bei Airbnb buchen"
     },
     "searchOnBooking": "Bei Booking suchen",
     "searchOnAirbnb": "Bei Airbnb suchen",
@@ -149,9 +176,8 @@
     ]
   },
   "rsvp": {
-    "title": "Bitte um Antwort",
+    "title": "fiesta 🎉",
     "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 10. Mai 2026 Bescheid.",
-    "dinnerInfo": "Die Menüauswahl wird nach der Zusage angefragt.",
     "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
     "kidsInfo": "Kinder sind willkommen; bitte gebt das Alter im Nachrichtenfeld an.",
     "formTitle": "RSVP-Formular",
@@ -166,6 +192,11 @@
     "songPlaceholder": "Künstler — Songtitel",
     "whatsappLabel": "WhatsApp-Nummer (optional)",
     "whatsappPlaceholder": "+49 170 123 4567",
+    "participationLabel": "",
+    "plusOneLabel": "Ich komme am großen Tag mit +1",
+    "connect19Label": "Ich komme am 19. Dez zu Welcome & Connect",
+    "bigDayLabel": "Ich komme zum großen Tag",
+    "boat21Label": "Ich komme am 21. Dez zur Weißen Party und Verabschiedung",
     "boatLabel": "Ich nehme an der Bootsparty teil (und bringe weiße Kleidung mit)",
     "messageLabel": "Nachricht (optional)",
     "messagePlaceholder": "Ernährungsbedürfnisse, Alter der Kinder, etc.",
@@ -176,7 +207,7 @@
   "successMessage": "dein Eintrag wurde erfolgreich aktualisiert",
   "errorMessage": "Fehler",
     "selectOption": "Bitte eine Option auswählen",
-    "enterCodePrompt": "Bitte gib deinen Einladungscode ein, um zuzusagen.",
+    "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "Einladungs-ID",
     "invitationIdPlaceholder": "Gib hier deinen Code ein",
     "verifyButton": "Bestätigen",
@@ -190,6 +221,32 @@
       "Wanderung zum Musterberg.",
       "Bootsfahrt auf dem Mustersee."
     ]
+  },
+  "travelTips": {
+    "bestTime": {
+      "title": "Beste Ankunftszeit",
+      "description": "Freitagnachmittag, um die Vorfeierlichkeiten zu genießen und die bunte Stadt zu erkunden"
+    },
+    "mustSee": {
+      "title": "Sehenswert",
+      "description": "Besteige die Piedra del Peñol (740 Stufen!) für atemberaubende Aussichten auf den Stausee"
+    },
+    "localTreats": {
+      "title": "Lokale Spezialitäten",
+      "description": "Probiere Arepas, Empanadas und frische Forelle aus dem See"
+    },
+    "weather": {
+      "title": "Wetter",
+      "description": "Dezember ist perfekt! 21-27°C, leichte Jacke für abends empfohlen"
+    },
+    "currency": {
+      "title": "Währung",
+      "description": "Kolumbianischer Peso (COP). USD wird in Touristengebieten weitgehend akzeptiert"
+    },
+    "language": {
+      "title": "Sprache",
+      "description": "Spanisch (wir haben Übersetzer bei der Hochzeit!)"
+    }
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
@@ -212,30 +269,49 @@
     "title": "Die Details",
     "subtitle": "Zeremonie, Empfang und alles dazwischen",
     "dateTitle": "Datum",
-  "dateMain": "Samstag, 20. Dezember 2025",
-    "ceremonyTime": "Zeremonie um 15:00 Uhr",
+  "dateMain": "19. Dez: Willkommen & Verbinden\n20. Dez: Der Große Tag\n21. Dez: Weiße Party & Abschied",
+    "ceremonyTime": "",
+  "showDetailsButton": "Details Anzeigen",
     "venueTitle": "Veranstaltungsort",
-  "venueName": "wird noch bekanntgegeben",
-  "venueAddress1": "wird noch bekanntgegeben",
-  "venueAddress2": "Guatapé, Antioquia, Kolumbien",
-    "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
+  "venueName": "Casa Loma, Hotel Boutique",
+  "venueAddress1": "054447, Peñol, Antioquia",
+  "venueAddress2": "Kolumbien",
+    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Route anzeigen",
     "attireTitle": "Kleidung",
-    "attireMain": "wird noch bekanntgegeben",
-    "attireNote": "wird noch bekanntgegeben"
+  "attireWomenLabel": "Frauen:",
+  "attireMenLabel": "Männer:",
+  "attireOverview": "Farben",
+  "attireColors": "Hellgrün, Petrol-Grün, Olivgrün, Dunkelgrün, Orange, Goldgelb, Fuchsia, Kräftiges Rosa, Flieder, Dunkles Violett, Helles Violett, Lavendel",
+  "attireExampleTitle": "Kleidung",
+    "attireWomen": "Frauen: Tageskleid, Palazzohose oder leichte Leinen-/Baumwollkleidung in hellen, frühlingshaften Tönen",
+    "attireMen": "Männer: Leichte Hemden oder Guayabera in Pastelltönen (Lavendel, Hellblau, Grün) kombiniert mit beigen/khakifarbenen Leinenhosen.",
+    "attireKids": "Kinder: Weiß mit grünen Akzenten",
+    "attireWomenMenButton": "Frauen / Männer",
+    "attireKidsButton": "Kinder",
+    "attireKidsTitle": "Weiße Bootsparty",
+    "attireBoatText": "Willkommen an Bord unserer optionalen Weißen Bootsparty — bequeme weiße Kleidung, sportlich oder elegant.",
+    "attireExampleButton": "Beispiel",
+    "attireMoreDetailsButton": "Mehr Details",
+  "attireNote": "Leicht und farbenfroh kleiden — frühlingshafte Stimmung.",
+    "attireButtonText": "Mehr Sehen",
+    "attireColorsButton": "Farben",
+    "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
   },
   "story": {
     "title": "Unsere Geschichte",
-    "subtitle": "Alles begann beim Digital Nomad Fest in Bulgarien.",
-    "paragraph2": "Maria ging aus nur einem Grund dorthin – um eine andere abenteuerlustige Seele zu finden, die genauso verrückt nach dem Reisen um die Welt war wie sie. Chris hingegen kam mit einer einzigen Frage: Wie wird man digitaler Nomade und verdient damit tatsächlich seinen Lebensunterhalt?",
-    "paragraph3": "Er hatte nicht die Absicht, jemanden kennenzulernen. Tatsächlich war Chris nach einem schlecht organisierten Speed-Dating-Event bereit zu gehen... bis er die Frau bemerkte, die ihm bereits aufgefallen war. Ein letztes Gespräch, bevor es zurück ins Hotel ging – und bam, es war ein Volltreffer!",
-    "paragraph4": "Von diesem Moment an haben Maria und Chris nie aufgehört zu reden. Besser noch: In ihren ersten zwölf gemeinsamen Monaten reisten sie in 14 Länder.",
-    "paragraph5": "Was mit einem Gespräch begann, wurde zu einem Leben voller Lachen, Abenteuer und Liebe. Und jetzt können wir es kaum erwarten, dieses nächste Kapitel mit euch allen zu feiern, die uns die Welt bedeuten."
+    "subtitle": "Es war einmal, Chris ging nach Kolumbien, während Maria in Australien lebte. Jahre später verließ Chris Europa, um Australien zu besuchen, genau in dem Moment, als Maria Australien verließ, um durch Europa zu reisen (großartiges Timing, Universum 👏)",
+    "paragraph2": "Maria ging zu einem Salsa-Festival in Kroatien auf der Suche nach ihrer Seelenverwandten. Und sie fand eine… es war Caro. Sofort beste Freundin! Zusammen gingen sie drei Jahre hintereinander zum Festival. Im vierten Jahr ließ Caro die Salsa aus und ging zu einer anderen Veranstaltung mit ihrem \"guten Freund\" (Spoiler: das war Chris 👀).",
+    "paragraph3": "Maria reiste weiter und landete schließlich bei einem Festival für digitale Nomaden in Bulgarien. Caro schrieb ihr: \"mein \"guter Freund\" ist dort, du solltest ihn treffen!\" ...aber teilte nie seinen Kontakt (danke, Caro). Das Universum hatte eindeutig einen Plan. An demselben Wochenende stießen Maria und Chris aufeinander, während sie versuchten, einer lauten und überfüllten Party zu entkommen. Sie fingen an zu reden, verloren das Zeitgefühl und bemerkten nicht, dass alle anderen bereits gegangen waren.",
+    "paragraph4": "Am nächsten Morgen ging Maria um 7 Uhr morgens joggen. Chris ging in den Park zum Training. Sie kreuzten sich wieder… und von diesem Moment an trennten sie sich nie wieder.",
+    "paragraph5": "In ihrem ersten Jahr reisten sie zusammen durch 14 Länder. Der Beweis, dass ein Gespräch zu einem ganzen Abenteuer werden kann. Was als \"nur ein Gespräch\" begann, wurde zu Liebe, Abenteuer und nun zu dieser Hochzeit, die wir gemeinsam zu feiern freuen. 🎉💍"
   },
-  "Countdown": {
+  "countdown": {
     "days": "Tage",
-    "hours": "Stunden",
-    "minutes": "Minuten"
+    "hrs": "Std",
+    "min": "Min",
+    "sec": "Sek",
+    "bigDay": "Der große Tag ist da!"
   },
   "schedule": {
     "title": "Ablaufplan",
@@ -243,71 +319,64 @@
     "days": [
       {
         "dateLabel": "Fr, 19. Dez",
+        "subtitle": "<i>Optional. Wenn ihr möchtet - </i><b>Begrüßung & Verbindung",
         "events": [
           {
-            "time": "10:00 Uhr",
-            "title": "Ankunft der engen Familie",
-            "description": "Entspannen, erholen und Erfrischungen genießen."
+            "time": "16:00 Uhr",
+            "title": "Gästeankunft & Check-In",
+            "description": "Macht euch bereit für einen schönen Abend."
           },
           {
-            "time": "10:30 Uhr",
-            "title": "Kennenlernspiele",
-            "description": "Lustige Aktivitäten, um sich gegenseitig kennenzulernen."
+            "time": "18:30 Uhr",
+            "title": "Begrüßung und Integration",
+            "description": "Brecht das Eis und lernt euch kennen."
           },
           {
-            "time": "13:00 Uhr",
-            "title": "Mittagessen",
-            "description": "Genießt ein entspanntes gemeinsames Essen mit internationalen Aromen."
-          },
-          {
-            "time": "14:00 Uhr",
-            "title": "Unterhaltsame Aktivitäten",
-            "description": "Nehmt an Teamspielen, Gelächter und kulturellem Austausch teil."
-          },
-          {
-            "time": "17:30 Uhr",
-            "title": "Ausklang und entspannter Abend",
-            "description": "Lasst es ruhig angehen, entspannt euch und genießt den Abend."
+            "time": "19:30 Uhr",
+            "title": "Natilla & Buñuelos",
+            "description": "Probiert kolumbianische Weihnachtsleckereien mit BBQ."
           }
         ]
       },
       {
         "dateLabel": "Sa, 20. Dez",
+  "subtitle": "<b>Der Große Tag</b>",
         "events": [
           {
-            "time": "14:30 Uhr",
-            "title": "Ankunft der Gäste",
-            "description": "Findet eure Plätze und genießt ein Willkommensgetränk."
-          },
-          {
-            "time": "15:00 Uhr",
-            "title": "Zeremonie",
-            "description": "Seid dabei, wenn wir 'Ja' sagen."
+            "time": "14:00 Uhr",
+            "title": "Religiöse Zeremonie",
+            "description": "Feiert die Hochzeitsmesse in der Kirche."
           },
           {
             "time": "16:00 Uhr",
-            "title": "Sektempfang",
-            "description": "Leichte Häppchen, Getränke und Musik."
+            "title": "Ankunft des Paares",
+            "description": "Begrüßt die Neuvermählten mit Applaus."
           },
           {
-            "time": "17:30 Uhr",
-            "title": "Empfang",
-            "description": "Abendessen, Reden und erste Tänze."
-          },
-          {
-            "time": "20:00 Uhr",
-            "title": "Tanzen",
-            "description": "Lasst uns die ganze Nacht feiern!"
+            "time": "17:00 Uhr – 22:00 Uhr",
+            "title": "Abendprogramm & Abendessen",
+            "description": "Ein festliches Programm für alle Gäste."
           }
         ]
       },
       {
         "dateLabel": "So, 21. Dez",
+  "subtitle": "<i>Optional. Wenn ihr möchtet - </i><b>Weiße Party & Abschied</b>",
         "events": [
           {
             "time": "11:00 Uhr",
-            "title": "Abschiedsbrunch",
-            "description": "Genießt einen entspannten Brunch, bevor wir uns verabschieden."
+            "title": "Besuch einer Kaffeeplantage",
+            "description": "Ein achtsamer Moment, um gemeinsam in den Tag zu starten."
+          },
+          {
+            "time": "12:00 Uhr",
+            "title": "Tuk Tuk Tour",
+            "description": "Genießt eine besondere Fahrt nach Guatapé."
+          },
+          {
+            "time": "14:00 Uhr",
+            "title": "Weiße Bootsparty",
+            "description": "Zieht euch weiß an und genießt Musik, Tanz, Cocktails und den Sonnenuntergang zusammen."
           }
         ]
       }

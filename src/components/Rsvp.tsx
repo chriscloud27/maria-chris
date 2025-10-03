@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { rsvpSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { CutleryIcon } from './icons/CutleryIcon';
 import { MusicIcon } from './icons/MusicIcon';
 import { StarIcon } from './icons/StarIcon';
 
@@ -46,13 +45,13 @@ export const Rsvp = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+  formState: { errors },
     reset,
     watch,
     setValue,
   } = useForm<FormInputs>({
     resolver: zodResolver(rsvpSchema),
-    defaultValues: { rsvp: 'Yes' },
+    mode: 'onChange', // Enable real-time validation
   });
 
   const statusRef = useRef<HTMLDivElement | null>(null);
@@ -69,11 +68,14 @@ export const Rsvp = () => {
           if (res.ok) {
             const data = await res.json();
             if (data && data.email) {
+              setValue('CO/DE', data['CO/DE'] || '');
               setValue('email', data.email);
-              setValue('rsvp', data.rsvp);
               setValue('notes', data.notes || '');
               setValue('song', data.song || '');
-              setValue('boat', data.boat || false);
+              setValue('+1', data['+1'] || false);
+              setValue('19-Connect', data['19-Connect'] || false);
+              setValue('BigDay', data['BigDay'] || false);
+              setValue('21-Boat', data['21-Boat'] || false);
               setValue('whatsapp', data.whatsapp || '');
             }
           }
@@ -97,16 +99,21 @@ export const Rsvp = () => {
       const res = await fetch(`/api/rsvp/verify-code?code=${encodeURIComponent(invitationCode)}`);
       if (res.ok) {
         const data = await res.json();
+        console.log('Verification data received:', data);
         if (data && data.email) {
+          setValue('CO/DE', data['CO/DE'] || invitationCode || 'DEFAULT'); // Use invitation code as fallback
           setValue('name', data.name);
           setValue('email', data.email);
-          setValue('rsvp', data.rsvp);
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
-          setValue('boat', data.boat || false);
+          setValue('+1', data['+1'] || false);
+          setValue('19-Connect', data['19-Connect'] || false);
+          setValue('BigDay', data['BigDay'] || false);
+          setValue('21-Boat', data['21-Boat'] || false);
           setValue('whatsapp', data.whatsapp || '');
           setVerifiedCode(invitationCode); // Store the verified code
           setIsVerified(true);
+          console.log('Form populated after verification');
         }
       } else {
         const errorData = await res.json();
@@ -129,6 +136,10 @@ export const Rsvp = () => {
   };
 
   const onSubmit = async (data: FormInputs) => {
+    console.log('Form submission started with data:', data);
+    console.log('Form errors:', errors);
+    console.log('Verified code:', verifiedCode);
+    
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -140,32 +151,42 @@ export const Rsvp = () => {
       return;
     }
 
+    const submitData = {
+      'CO/DE': data['CO/DE'] || 'DEFAULT', // Use a default value if CO/DE is not available
+      name: data.name,
+      email: data.email,
+      notes: data.notes,
+      song: data.song,
+      '+1': data['+1'],
+      '19-Connect': data['19-Connect'],
+      'BigDay': data['BigDay'], // Include BigDay field
+      '21-Boat': data['21-Boat'],
+      whatsapp: data.whatsapp,
+      code: verifiedCode, // Include the verified code
+    };
+
+    console.log('Submitting data to API:', submitData);
+
     try {
       const res = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          rsvp: data.rsvp,
-          notes: data.notes,
-          song: data.song,
-          boat: data.boat,
-          whatsapp: data.whatsapp,
-          code: verifiedCode, // Include the verified code
-        }),
+        body: JSON.stringify(submitData),
       });
 
       const payload = await res.json();
+      console.log('API response:', { status: res.status, payload });
       if (res.ok) {
         // Show success message under the submit button. Keep the form visible
         // so the status message can be seen by the user.
         setSubmitStatus({ success: true, message: t('successMessage') });
         reset();
       } else {
+        console.error('API error response:', payload);
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
-    } catch {
+    } catch (error) {
+      console.error('Network or other error:', error);
       setSubmitStatus({ success: false, message: t('errorMessage') });
     } finally {
       setIsSubmitting(false);
@@ -208,7 +229,7 @@ export const Rsvp = () => {
         className="py-20"
       >
         <div className="container mx-auto px-4 max-w-md">
-          <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+          <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 text-center">
             <h2 className="text-3xl font-serif text-gray-800 mb-4">{t('title')}</h2>
             <p className="mb-6 text-gray-600">{t('enterCodePrompt')}</p>
             <div className="mb-4 text-left">
@@ -256,22 +277,23 @@ export const Rsvp = () => {
 
           <ul className="space-y-4">
             <li className="flex items-start">
-              <CutleryIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
-              <span>{t('dinnerInfo')}</span>
-            </li>
-            <li className="flex items-start">
-              <MusicIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
+              <div className="flex-shrink-0 text-purple-600 bg-purple-50 p-2 rounded-lg mr-3 mt-1">
+                <MusicIcon className="w-5 h-5" />
+              </div>
               <span>{t('songInfo')}</span>
             </li>
             <li className="flex items-start">
-              <StarIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
+              <div className="flex-shrink-0 text-yellow-600 bg-yellow-50 p-2 rounded-lg mr-3 mt-1">
+                <StarIcon className="w-5 h-5" />
+              </div>
               <span>{t('kidsInfo')}</span>
             </li>
           </ul>
         </div>
 
-        <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100">
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
+
             {/* Name (Title) */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
@@ -315,21 +337,61 @@ export const Rsvp = () => {
               {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>}
             </div>
 
-            {/* RSVP select */}
-            <div className="mb-4">
-              <label htmlFor="rsvp" className="block text-gray-700 text-sm font-bold mb-2">
-                {t('attendanceLabel')}
-              </label>
-              <select
-                id="rsvp"
-                {...register('rsvp')}
-                className={`w-full p-3 border rounded-md bg-white ${errors.rsvp ? 'border-red-500' : 'border-gray-200'}`}
-              >
-                <option value="Yes">{t('attendanceYes')}</option>
-                <option value="No">{t('attendanceNo')}</option>
-                <option value="Maybe">{t('attendanceMaybe')}</option>
-              </select>
-              {errors.rsvp && <p className="text-red-500 text-xs mt-1">{errors.rsvp.message}</p>}
+            {/* Participation Section */}
+            <div className="mb-6">
+              <h3 className="text-gray-800 text-lg font-semibold mb-4">{t('participationLabel')}</h3>
+              
+              {/* 19-Connect */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('19-Connect')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('connect19Label')}</span>
+                </label>
+                {errors['19-Connect'] && <p className="text-red-500 text-xs mt-1">{errors['19-Connect'].message}</p>}
+              </div>
+
+              {/* BigDay */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('BigDay')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('bigDayLabel')}</span>
+                </label>
+                {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
+              </div>
+
+              {/* +1 */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('+1')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('plusOneLabel')}</span>
+                </label>
+                {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
+              </div>
+
+              {/* 21-Boat */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('21-Boat')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('boat21Label')}</span>
+                </label>
+                {errors['21-Boat'] && <p className="text-red-500 text-xs mt-1">{errors['21-Boat'].message}</p>}
+              </div>
             </div>
 
             {/* Notes (rich text) */}
@@ -362,19 +424,9 @@ export const Rsvp = () => {
               {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
             </div>
 
-            {/* Boat party checkbox */}
-            <div className="mb-6">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  {...register('boat')}
-                  className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                />
-                <span className="text-gray-700 text-sm font-bold">{t('boatLabel')}</span>
-              </label>
-              {errors.boat && <p className="text-red-500 text-xs mt-1">{errors.boat.message}</p>}
-            </div>
-
+            {/* Hidden CO/DE field */}
+            <input type="hidden" {...register('CO/DE')} />
+            
             {/* Honeypot */}
             <div className="hidden" aria-hidden="true">
               <label htmlFor="honeypot" className="sr-only">
@@ -387,10 +439,22 @@ export const Rsvp = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
+                onClick={() => console.log('Submit button clicked', { 
+                  isSubmitting, 
+                  verifiedCode, 
+                  formErrors: errors,
+                  formIsValid: Object.keys(errors).length === 0
+                })}
                 className="w-full p-3 bg-purple-700 text-white font-bold rounded-md hover:bg-purple-800 disabled:bg-gray-400 transition-colors duration-300"
               >
                 {isSubmitting ? t('submittingButton') : t('submitButton')}
               </button>
+              {/* Debug info - remove in production */}
+              {Object.keys(errors).length > 0 && (
+                <div className="mt-2 text-red-600 text-sm">
+                  Form errors: {JSON.stringify(errors)}
+                </div>
+              )}
             </div>
             {/* status message shown directly under the submit button with an action to enter another code */}
             {submitStatus && (

@@ -15,10 +15,10 @@
   "nav": {
     "details": "Details",
     "schedule": "Schedule",
-    "location": "Location",
+    "location": "Location & Tips",
     "hotels": "Hotels",
     "arrival": "Arrival",
-    "rsvp": "RSVP",
+    "rsvp": "Fiesta 🎉",
     "excursions": "Excursions",
     "faq": "FAQ",
     "story": "Story"
@@ -26,14 +26,41 @@
   "location": {
     "title": "Location",
     "main": {
-      "name": "St. Margaret's Church",
-      "address": "St. Margaret Street 1, 81371 Munich, Germany"
+      "name": "Casa Loma, Hotel Boutique",
+      "address": "054447, Peñol, Antioquia, Colombia"
     },
-    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia’s most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water."
+    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia's most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water."
+  },
+  "travelTips": {
+    "bestTime": {
+      "title": "Best Time to Arrive",
+      "description": "Friday afternoon to enjoy the pre-wedding festivities and explore the colorful town"
+    },
+    "mustSee": {
+      "title": "Must-See",
+      "description": "Climb El Peñón rock (740 steps!) for breathtaking views of the reservoir"
+    },
+    "localTreats": {
+      "title": "Local Treats",
+      "description": "Try arepas, empanadas, and fresh trout from the lake"
+    },
+    "weather": {
+      "title": "Weather",
+      "description": "December is perfect! 70-80°F, light jacket for evenings recommended"
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "Colombian Peso (COP). USD widely accepted in tourist areas"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Spanish (we'll have translators at the wedding!)"
+    }
   },
   "hotels": {
     "title": "Hotel Options",
-    "bookingLinkText": "Book Now",
+  "bookingLinkText": "More Details",
+  "mapText": "More Details",
     "cristalinaCabana": {
       "name": "Cristalina Cabana",
       "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
@@ -57,6 +84,33 @@
       "bookingLink": "https://booking.com/guatapeviajero",
       "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
       "description": "very close by the event venue, picturesque, and amazing. No kids allowed."
+    },
+    "monteGandolfo": {
+      "name": "Monte Gandolfo",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
+      "description": "Apartamentos Monte Gandolfo is located in Guatapé, about 8.7 km from Piedra del Peñol. It offers free Wi‑Fi, a garden with a terrace, and access to a shared hot tub. Some units also include a kitchenette for self-catering.",
+      "hint": "Quiet, scenic spot — consider arranging transport as it’s a short drive from town.",
+      "hintLink": "",
+      "hintLinkText": "View on map"
+    },
+    "viajeroHostal": {
+      "name": "Viajero Hostal",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
+      "description": "Viajero Hostal in Guatapé overlooks the lake and offers a relaxed, social atmosphere. The communal areas are perfect for meeting fellow travelers, and the hostel is close to restaurants and local transport. For discounts, book in advance via their promotions page.",
+      "hint": "Book in advance for this discount.",
+      "hintLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      "hintLinkText": "Promotions"
+    },
+    "altoLunaGlamping": {
+      "name": "Alto Luna Glamping",
+      "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
+      "location": "",
+      "description": "Luna Nueva is a private cabin located in El Peñol, offering a unique experience of connection with nature and comfort. Surrounded by mountains and overlooking the reservoir, this cabin is the perfect place to disconnect from the urban bustle and immerse yourself in the tranquility of the Antioquia landscape. Enjoy panoramic views of the Peñol rock, the Guatapé reservoir and the replica of the old Peñol.",
+      "hint": "Remote cabin experience; limited facilities and booking fills up fast — consider reserving early.",
+      "hintLink": "",
+      "hintLinkText": "Book on Airbnb"
     },
     "searchOnBooking": "Search on Booking",
     "searchOnAirbnb": "Search on Airbnb",
@@ -148,10 +202,9 @@
     ]
   },
   "rsvp": {
-    "title": "Kindly RSVP",
-    "invitation": "We can't wait to celebrate with you. Please respond by May 10, 2026.",
-    "dinnerInfo": "Dinner selections will be requested after RSVP is received.",
-    "songInfo": "Song requests welcome! Add your favorite tune below.",
+    "title": "Your Invitation 🎉",
+        "invitation": "Join us for our special celebration and help us make memories that will last a lifetime. We can't wait to share this magical day with you in beautiful Guatapé!",
+    "songInfo": "Do you have a special song request for our wedding? Let us know!",
     "kidsInfo": "Kids welcome; kindly note ages in the message field.",
     "formTitle": "RSVP Form",
     "formSubtitle": "We'll send a confirmation to your email.",
@@ -165,6 +218,11 @@
     "songPlaceholder": "Artist — Song Title",
     "whatsappLabel": "WhatsApp number (optional)",
     "whatsappPlaceholder": "+1 234 567 8901",
+    "participationLabel": "",
+    "plusOneLabel": "I'm coming on the Big Day with a +1",
+    "connect19Label": "I'm coming on the 19th Dec to Welcome & Connect",
+    "bigDayLabel": "I'm coming to the Big Day",
+    "boat21Label": "I'm coming on the 21st Dec to White Party & Farewell",
     "boatLabel": "I am joining the boat party (and I am bringing white cloths to it)",
     "messageLabel": "Message (optional)",
     "messagePlaceholder": "Dietary needs, kiddo ages, etc.",
@@ -172,10 +230,10 @@
     "notesPlaceholder": "Write your notes here",
     "submitButton": "Send RSVP",
     "submittingButton": "Submitting...",
-  "successMessage": "your entry is successfully updated",
-  "errorMessage": "error",
+    "successMessage": "your entry is successfully updated",
+    "errorMessage": "error",
     "selectOption": "Please select an option",
-    "enterCodePrompt": "Please enter your invitation code to RSVP.",
+    "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "Invitation ID",
     "invitationIdPlaceholder": "Enter your code here",
     "verifyButton": "Verify",
@@ -211,30 +269,49 @@
     "title": "The Details",
     "subtitle": "Ceremony, reception, and everything in between",
     "dateTitle": "Date",
-    "dateMain": "Saturday, December 20, 2025",
-    "ceremonyTime": "Ceremony at 3:00 PM",
+    "dateMain": "19th Dec: Welcome & Connect\n20th Dec: The Big Day\n21st Dec: White Party & Farewell",
+    "ceremonyTime": "",
+    "showDetailsButton": "Show Details",
     "venueTitle": "Venue",
-    "venueName": "To be announced",
-    "venueAddress1": "To be announced",
-    "venueAddress2": "Guatapé, Antioquia, Colombia",
-    "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
+    "venueName": "Casa Loma, Hotel Boutique",
+    "venueAddress1": "054447, Peñol, Antioquia",
+    "venueAddress2": "Colombia",
+    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Get Directions",
     "attireTitle": "Attire",
-    "attireMain": "to be announced",
-    "attireNote": "to be announced"
+  "attireWomenLabel": "Women:",
+  "attireMenLabel": "Men:",
+  "attireOverview": "Colors",
+  "attireColors": "Light green, Teal green, Olive green, Dark green, Orange, Golden yellow, Fuchsia pink, Bright pink, Lilac, Dark violet, Bright violet, Lavender",
+  "attireExampleTitle": "Clothes",
+  "attireWomen": "Women: daytime cocktail dress, palazzo or breezy linen/cotton outfits in light, spring-like colors.",
+  "attireMen": "Men: guayabera or lightweight shirt in light/spring tones (lavender, blue, green) paired with linen or cotton trousers in beige/khaki.",
+  "attireKids": "Kids: white with green accents",
+    "attireWomenMenButton": "Women / Men",
+    "attireKidsButton": "Kids",
+    "attireKidsTitle": "White boat party",
+    "attireBoatText": "Welcome aboard our optional White boat party — comfortable white clothes, sporty or elegant.",
+    "attireExampleButton": "Example",
+    "attireMoreDetailsButton": "More details",
+  "attireNote": "Dress light and bright — think spring colors.",
+    "attireButtonText": "See More",
+    "attireColorsButton": "Colors",
+  "attireButtonLink": "https://au.pinterest.com/pin/6685099441633578/"
   },
   "story": {
     "title": "Our Story",
-    "subtitle": "It all started at the Digital Nomad Fest in Bulgaria.",
-    "paragraph2": "Maria went there for one reason only – to find another adventurous soul as crazy about traveling the world as she was. Chris, on the other hand, came with a single question: how to be a digital nomad and actually make a living from it?",
-    "paragraph3": "He had no intention of meeting someone. In fact, after a poorly organized speed dating event, Chris was ready to leave… until he noticed the woman who had already caught his eye. One last conversation before heading back to the hotel – and bam, it was a match!",
-    "paragraph4": "From that moment, Maria and Chris have never stopped talking. Even better: in their very first twelve months together, they traveled to 14 countries.",
-    "paragraph5": "What began with one conversation became a life filled with laughter, adventure, and love. And now, we can’t wait to celebrate this next chapter with all of you who mean the world to us."
+    "subtitle": "Once upon a time, Chris went to Colombia while Maria was living in Australia. Few years later Chris left Europe to visit Australia in the exact moment when Maria left Australia to travel in Europe (great timing, universe 👏)",
+    "paragraph2": "Maria went to a salsa festival in Croatia looking for a soulmate. And she did find one… it was Caro. Instant best friend! Together they went to the festival three years in a row. In the fourth year Caro skipped the salsa and went to another event with her \"good friend\" (spoiler: that was Chris 👀).",
+    "paragraph3": "Maria kept traveling and eventually landed at a digital nomad festival in Bulgaria. Caro messaged her: \"my \"good friend\" is there, you should meet him!\" …but never shared his contact (thanks, Caro). The universe clearly had a plan. That same weekend, Maria and Chris bumped into each other while trying to escape a busy and noisy party. They started talking, lost track of time, and didn't notice everyone else had already left.",
+    "paragraph4": "The next morning, Maria went for a 7am run. Chris went to the park to work out. They crossed paths again… and from that moment, they never separated.",
+    "paragraph5": "In their first year, they traveled through 14 countries together. Proof that one conversation can turn into a whole adventure. What began as \"just one conversation\" turned into love, adventure, and now this wedding that we are looking forward to celebrating together. 🎉💍"
   },
-  "Countdown": {
-    "days": "Days",
-    "hours": "Hours",
-    "minutes": "Minutes"
+  "countdown": {
+    "days": "days",
+    "hrs": "hrs",
+    "min": "min",
+    "sec": "sec",
+    "bigDay": "The big day is here!"
   },
   "schedule": {
     "title": "Schedule",
@@ -242,71 +319,64 @@
     "days": [
       {
         "dateLabel": "Fri, Dec 19",
+    "subtitle": "<i>Optional.</i><b>Welcome & Connect</b>",
         "events": [
           {
-            "time": "10:00 AM",
-            "title": "Close Family Arrival",
-            "description": "Relax, unwind, and enjoy some refreshments."
+            "time": "4:00 PM",
+            "title": "Guest Arrival & Check-In",
+            "description": "Settle in, get ready for a beautiful evening."
           },
           {
-            "time": "10:30 AM",
-            "title": "Icebreakers",
-            "description": "Fun activities to get to know each other."
+            "time": "6:30 PM",
+            "title": "Welcoming and integration",
+            "description": "Gently break the ice breaker, get to know each other."
           },
           {
-            "time": "1:00 PM",
-            "title": "Lunch",
-            "description": "Enjoy a relaxed meal together with international flavors."
-          },
-          {
-            "time": "2:00 PM",
-            "title": "Fun Activities",
-            "description": "Join us for team games, laughter, and cultural exchanges."
-          },
-          {
-            "time": "5:30 PM",
-            "title": "End and easy evening",
-            "description": "Take it easy, relax, and enjoy the evening."
+            "time": "7:30 PM",
+            "title": "Natilla & Buñuelos",
+            "description": "Taste Colombian Christmas delights with BBQ."
           }
         ]
       },
       {
         "dateLabel": "Sat, Dec 20",
+        "subtitle": "<b>The Big Day</b>",
         "events": [
           {
-            "time": "2:30 PM",
-            "title": "Guest Arrival",
-            "description": "Find your seat and enjoy a welcome refreshment."
-          },
-          {
-            "time": "3:00 PM",
-            "title": "Ceremony",
-            "description": "Join us as we say 'I do'."
+            "time": "2:00 PM",
+            "title": "Religious Ceremony",
+            "description": "Celebrate the wedding mass in the church."
           },
           {
             "time": "4:00 PM",
-            "title": "Cocktail Hour",
-            "description": "Light bites, drinks, and music."
+            "title": "Couple's Arrival",
+            "description": "Welcome the newlyweds with applause."
           },
           {
-            "time": "5:30 PM",
-            "title": "Reception",
-            "description": "Dinner, speeches, and first dances."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Dancing",
-            "description": "Let's celebrate all night!"
+            "time": "5:00 PM – 10:00 PM",
+            "title": "Evening Program & Dinner",
+            "description": "A festive program for all guests."
           }
         ]
       },
       {
         "dateLabel": "Sun, Dec 21",
+  "subtitle": "<i>Optional.</i><b>White Party & Farewell</br>",
         "events": [
           {
             "time": "11:00 AM",
-            "title": "Farewell Brunch",
-            "description": "Enjoy a relaxed brunch before saying goodbye."
+            "title": "Visit a coffee plantage",
+            "description": "A mindful moment to start the day together."
+          },
+          {
+            "time": "12:00 PM",
+            "title": "Tuk Tuk Tour",
+            "description": "Enjoying a special ride to Guatapé."
+          },
+          {
+            "time": "2:00 PM",
+            "title": "White Boat Party",
+            "description": "Dress in white and enjoy music, dancing, cocktails, and the sunset together."
           }
         ]
       }

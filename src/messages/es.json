@@ -15,10 +15,10 @@
   "nav": {
     "details": "Detalles",
     "schedule": "Programa",
-    "location": "Ubicación",
+    "location": "Ubicación y Consejos",
     "hotels": "Hoteles",
     "arrival": "Llegada",
-    "rsvp": "RSVP",
+    "rsvp": "Fiesta 🎉",
     "excursions": "Excursiones",
     "faq": "Preguntas",
     "story": "Historia"
@@ -26,14 +26,41 @@
   "location": {
     "title": "Ubicación",
     "main": {
-      "name": "Iglesia de Santa Margarita",
-      "address": "Calle Santa Margarita 1, 81371 Múnich, Alemania"
+      "name": "Casa Loma, Hotel Boutique",
+      "address": "054447, Peñol, Antioquia, Colombia"
     },
-    "intro": "Ubicado en el corazón de Antioquia, a solo dos horas de Medellín, Guatapé es el pueblo más colorido de Colombia: un lienzo viviente de casas vibrantes, encantadores zócalos y vistas impresionantes al lago. Situado a orillas del embalse Peñol-Guatapé y a solo 10 km de la imponente Piedra del Peñol, este pintoresco pueblo ofrece aventuras sin fin, desde kayak y wake surf hasta subir los famosos 700 escalones para disfrutar de vistas panorámicas de las montañas. Tras un día de exploración, relájate con auténticos sabores antioqueños y cócteles tropicales mientras el sol se pone sobre el agua."
+    "intro": "Ubicado en el corazón de Antioquia, a solo dos horas de Medellín, Guatapé es el pueblo más colorido de Colombia: un lienzo viviente de casas vibrantes, encantadores zócalos y vistas impresionantes al lago. Situado a orillas del embalse Peñol-Guatapé y a solo 10 km de la imponente Piedra del Peñol, este pintoresco pueblo ofrece aventuras sin fin, desde kayak y wakesurf hasta subir los famosos 700 escalones para disfrutar de vistas panorámicas de las montañas. Tras un día de exploración, relájate con auténticos sabores antioqueños y cócteles tropicales mientras el sol se pone sobre el agua."
+  },
+  "travelTips": {
+    "bestTime": {
+      "title": "Mejor Momento para Llegar",
+      "description": "Viernes por la tarde para disfrutar de las festividades previas a la boda y explorar el colorido pueblo"
+    },
+    "mustSee": {
+      "title": "Imperdible",
+      "description": "Sube a la Piedra del Peñol (¡740 escalones!) para vistas impresionantes del embalse"
+    },
+    "localTreats": {
+      "title": "Delicias Locales",
+      "description": "Prueba arepas, empanadas y trucha fresca del lago"
+    },
+    "weather": {
+      "title": "Clima",
+      "description": "¡Diciembre es perfecto! 21-27°C, se recomienda chaqueta ligera para las noches"
+    },
+    "currency": {
+      "title": "Moneda",
+      "description": "Peso Colombiano (COP). USD ampliamente aceptado en áreas turísticas"
+    },
+    "language": {
+      "title": "Idioma",
+      "description": "Español (¡tendremos traductores en la boda!)"
+    }
   },
   "hotels": {
     "title": "Opciones de Hotel",
-    "bookingLinkText": "Reservar ahora",
+  "bookingLinkText": "Más detalles",
+  "mapText": "Más detalles",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
       "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
@@ -56,7 +83,34 @@
       "name": "Guatapé Viajero",
       "bookingLink": "https://booking.com/guatapeviajero",
       "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
-      "description": "muy cerca del lugar del evento, pintoresco y asombroso. No se permiten niños."
+      "description": "Muy cerca del lugar del evento, pintoresco y asombroso. No se permiten niños."
+    },
+    "monteGandolfo": {
+      "name": "Monte Gandolfo",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
+      "description": "Apartamentos Monte Gandolfo está en Guatapé, a unos 8.7 km de la Piedra del Peñol. Ofrece Wi‑Fi gratis, un jardín con terraza y acceso a un jacuzzi compartido. Algunas unidades cuentan con cocina para poder cocinar por tu cuenta.",
+      "hint": "Lugar tranquilo y con vistas — organiza transporte, ya que está a un corto trayecto en coche del pueblo.",
+      "hintLink": "",
+      "hintLinkText": "Ver en mapa"
+    },
+    "viajeroHostal": {
+      "name": "Viajero Hostal",
+      "bookingLink": "",
+      "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
+      "description": "Viajero Hostal en Guatapé tiene vistas al lago y un ambiente social y relajado. Las zonas comunes son perfectas para conocer a otros viajeros y está cerca de restaurantes y transporte local. Para descuentos, reserva con antelación a través de su página de promociones.",
+      "hint": "Reserva con antelación para este descuento.",
+      "hintLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      "hintLinkText": "Promociones"
+    },
+    "altoLunaGlamping": {
+      "name": "Alto Luna Glamping",
+      "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
+      "location": "",
+      "description": "Luna Nueva es una cabaña privada ubicada en El Peñol que ofrece una experiencia única de conexión con la naturaleza y confort. Rodeada de montañas y con vistas al embalse, es el lugar perfecto para desconectar del bullicio urbano. Disfruta de vistas panorámicas de la Piedra del Peñol, el embalse de Guatapé y la réplica del antiguo Peñol.",
+      "hint": "Estancia remota; con instalaciones limitadas y alta demanda — considera reservar con antelación.",
+      "hintLink": "",
+      "hintLinkText": "Reservar en Airbnb"
     },
     "searchOnBooking": "Buscar en Booking",
     "searchOnAirbnb": "Buscar en Airbnb",
@@ -76,18 +130,9 @@
         "title": "En avión",
         "imageAlt": "Avión sobre montañas",
         "content": {
-          "item1": {
-            "title": "Vuelos internacionales",
-            "text": "Vuela al Aeropuerto Internacional José María Córdova (MDE) en Medellín"
-          },
-          "item2": {
-            "title": "Traslado terrestre",
-            "text": "Viaje panorámico de 2 horas hasta Guatapé"
-          },
-          "item3": {
-            "title": "Aerolíneas",
-            "text": "Avianca, LATAM, Copa Airlines, American Airlines"
-          }
+          "item1": { "title": "Vuelos internacionales", "text": "Vuela al Aeropuerto Internacional José María Córdova (MDE) en Medellín" },
+          "item2": { "title": "Traslado terrestre", "text": "Viaje panorámico de 2 horas hasta Guatapé" },
+          "item3": { "title": "Aerolíneas", "text": "Avianca, LATAM, Copa Airlines, American Airlines" }
         },
         "buttonText": "Buscar vuelos",
         "buttonLink": "#"
@@ -96,18 +141,9 @@
         "title": "En coche",
         "imageAlt": "Carretera sinuosa en Guatapé",
         "content": {
-          "item1": {
-            "title": "Desde Medellín",
-            "text": "2 horas por la Autopista Medellín-Bogotá (¡hermosas vistas montañosas!)"
-          },
-          "item2": {
-            "title": "Alquiler de coches",
-            "text": "Disponible en el aeropuerto MDE: Hertz, Avis, Budget, Localiza"
-          },
-          "item3": {
-            "title": "Consejo",
-            "text": "¡Haz una parada en el pueblo El Peñón por empanadas y café!"
-          }
+          "item1": { "title": "Desde Medellín", "text": "2 horas por la Autopista Medellín-Bogotá (¡hermosas vistas montañosas!)" },
+          "item2": { "title": "Alquiler de coches", "text": "Disponible en el aeropuerto MDE: Hertz, Avis, Budget, Localiza" },
+          "item3": { "title": "Consejo", "text": "¡Haz una parada en el pueblo El Peñón por empanadas y café!" }
         },
         "buttonText": "Obtener direcciones",
         "buttonLink": "#"
@@ -116,18 +152,9 @@
         "title": "Transporte público",
         "imageAlt": "Chiva colorida en Colombia",
         "content": {
-          "item1": {
-            "title": "Metro + Bus",
-            "text": "Toma el Metro hasta la terminal Norte, luego bus a Guatapé (3 horas en total)"
-          },
-          "item2": {
-            "title": "Directo",
-            "text": "Buses Sotrasanvicente desde Terminal del Norte cada 30 minutos"
-          },
-          "item3": {
-            "title": "Opción de aventura",
-            "text": "¡Toma una chiva colorida para una experiencia colombiana completa!"
-          }
+          "item1": { "title": "Metro + Bus", "text": "Toma el Metro hasta la terminal Norte, luego bus a Guatapé (3 horas en total)" },
+          "item2": { "title": "Directo", "text": "Buses Sotrasanvicente desde Terminal del Norte cada 30 minutos" },
+          "item3": { "title": "Opción de aventura", "text": "¡Toma una chiva colorida para una experiencia colombiana completa!" }
         },
         "buttonText": "Horarios de autobús",
         "buttonLink": "#"
@@ -137,20 +164,13 @@
   "prePostEvents": {
     "title": "Eventos Pre y Post-Boda",
     "events": [
-      {
-        "name": "Reunión Pre-Boda",
-        "description": "Reunión informal el 14 de agosto a las 19h en el bar del hotel."
-      },
-      {
-        "name": "Brunch del Día Después",
-        "description": "Acompáñanos a un brunch el 16 de agosto a las 11h en el hotel."
-      }
+      { "name": "Reunión Pre-Boda", "description": "Reunión informal el 14 de agosto a las 19h en el bar del hotel." },
+      { "name": "Brunch del Día Después", "description": "Acompáñanos a un brunch el 16 de agosto a las 11h en el hotel." }
     ]
   },
   "rsvp": {
-    "title": "Confirma tu asistencia",
+    "title": "Tu Invitacion 🎉",
     "invitation": "Estamos ansiosos por celebrar contigo. Por favor, responde antes del 10 de mayo de 2026.",
-    "dinnerInfo": "Las opciones de cena se solicitarán después de recibir la confirmación.",
     "songInfo": "¡Se aceptan peticiones de canciones! Añade tu canción favorita a continuación.",
     "kidsInfo": "Los niños son bienvenidos; por favor, indica sus edades en el campo de mensaje.",
     "formTitle": "Formulario RSVP",
@@ -165,76 +185,85 @@
     "songPlaceholder": "Artista — Título de la canción",
     "whatsappLabel": "Número de WhatsApp (opcional)",
     "whatsappPlaceholder": "+57 300 123 4567",
+    "participationLabel": "",
+    "plusOneLabel": "Vengo el Gran Día con un +1",
+    "connect19Label": "Vengo el 19 de Dic a Welcome & Connect",
+    "bigDayLabel": "Vengo al Gran Día",
+    "boat21Label": "Vengo el 21 de Dic a Fiesta Blanca y Despedida",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",
     "submitButton": "Enviar RSVP",
     "submittingButton": "Enviando...",
-  "successMessage": "tu entrada se ha actualizado correctamente",
-  "errorMessage": "error",
+    "successMessage": "tu entrada se ha actualizado correctamente",
+    "errorMessage": "error",
     "selectOption": "Por favor, selecciona una opción",
     "notesLabel": "Notas",
     "notesPlaceholder": "Escribe aquí tus notas",
-    "enterCodePrompt": "Por favor, introduce tu código de invitación para confirmar tu asistencia.",
+    "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "ID de Invitación",
     "invitationIdPlaceholder": "Introduce tu código aquí",
     "verifyButton": "Verificar",
     "verifyingButton": "Verificando...",
     "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
   },
-  "excursions": {
-    "title": "Sugerencias de Excursiones",
-    "tips": [
-      "Visitar el centro histórico de la ciudad.",
-      "Excursión a la Montaña Ejemplo.",
-      "Paseo en barco por el Lago Ejemplo."
-    ]
-  },
-  "faq": {
-    "title": "Preguntas Frecuentes",
-    "questions": [
-      {
-        "question": "¿Hay un código de vestimenta?",
-        "answer": "Agradeceríamos vestimenta festiva."
-      },
-      {
-        "question": "¿Son bienvenidos los niños?",
-        "answer": "Sí, los niños son bienvenidos."
-      },
-      {
-        "question": "¿A quién puedo contactar si tengo preguntas?",
-        "answer": "Por favor, contáctanos directamente."
-      }
-    ]
-  },
+  "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
+  "faq": { "title": "Preguntas Frecuentes", "questions": [
+    { "question": "¿Hay un código de vestimenta?", "answer": "Agradeceríamos vestimenta festiva." },
+    { "question": "¿Son bienvenidos los niños?", "answer": "Sí, los niños son bienvenidos." },
+    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." }
+  ] },
   "details": {
     "title": "Los Detalles",
     "subtitle": "Ceremonia, recepción y todo lo demás",
     "dateTitle": "Fecha",
-  "dateMain": "Sábado, 20 de diciembre de 2025",
-    "ceremonyTime": "Ceremonia a las 15:00",
+    "dateMain": "19 Dic: Bienvenida y Conexión\n20 Dic: El Gran Día\n21 Dic: Fiesta Blanca y Despedida",
+    "ceremonyTime": "",
+    "showDetailsButton": "Ver Detalles",
+    "dinnerTime": "Cena 19:30",
+    "partyTime": "Fiesta 21:00",
     "venueTitle": "Lugar",
-  "venueName": "Por anunciar",
-  "venueAddress1": "Por anunciar",
-  "venueAddress2": "Guatapé, Antioquia, Colombia",
-    "venueMapLink": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4456.925486060353!2d-75.22962012500957!3d6.223829993764233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjUuOCJOIDc1wrAxMyczNy40Ilc!5e1!3m2!1sen!2sde!4v1754822522914!5m2!1sen!2sde",
+    "venueName": "Casa Loma, Hotel Boutique",
+    "venueAddress1": "054447, Peñol, Antioquia",
+    "venueAddress2": "Colombia",
+    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Cómo llegar",
-    "attireTitle": "mas tarde",
-    "attireMain": "mas tarde",
-    "attireNote": "mas tarde"
+    "attireTitle": "Atuendo",
+  "attireWomenLabel": "Mujeres:",
+  "attireMenLabel": "Hombres:",
+  "attireOverview": "Colores",
+  "attireColors": "Verde claro, verde teal, verde oliva, verde oscuro, naranja, amarillo dorado, fucsia, rosa brillante, lila, violeta oscuro, violeta brillante, lavanda",
+  "attireExampleTitle": "Prendas",
+  "attireWomen": "Mujeres: Vestido cocktail de día, palazzo o ropa fresca en lino/algodón con colores claros y primaverales",
+  "attireMen": "Hombres: Guayabera o camisa ligera en tonos claros/primaverales (lavanda, azul, verde) con pantalón de lino o algodón beige/khaki.",
+  "attireKids": "Niños: blanco con acentos verdes",
+    "attireWomenMenButton": "Mujeres / Hombres",
+    "attireKidsButton": "Niños",
+    "attireKidsTitle": "Fiesta en Barco Blanca",
+    "attireBoatText": "Te invitamos a nuestra opcional Fiesta en Barco Blanca — ropa blanca cómoda, deportiva o elegante.",
+    "attireExampleButton": "Ejemplo",
+    "attireMoreDetailsButton": "Más detalles",
+  "attireNote": "Vístete ligero y con colores vivos — estilo primaveral.",
+    "attireButtonText": "Ver Más",
+    "attireColorsButton": "Colores",
+    "attireButtonLink": "https://pin.it/i/5NzR4QggM/",
+    "getOverviewButtonText": "Obtener resumen",
+    "getOverviewButtonLink": "#schedule"
   },
   "story": {
     "title": "Nuestra Historia",
-    "subtitle": "Todo comenzó en el Digital Nomad Fest en Bulgaria.",
-    "paragraph2": "María fue allí por una sola razón: encontrar otra alma aventurera tan loca por viajar por el mundo como ella. Chris, por otro lado, llegó con una sola pregunta: ¿cómo ser un nómada digital y realmente ganarse la vida con ello?",
-    "paragraph3": "No tenía intención de conocer a nadie. De hecho, después de un evento de speed dating mal organizado, Chris estaba listo para irse... hasta que notó a la mujer que ya le había llamado la atención. Una última conversación antes de regresar al hotel – y ¡bam, fue una conexión instantánea!",
-    "paragraph4": "Desde ese momento, María y Chris nunca han dejado de hablar. Mejor aún: en sus primeros doce meses juntos, viajaron a 14 paíse.",
-    "paragraph5": "Lo que comenzó con una conversación se convirtió en una vida llena de risas, aventuras y amor. Y ahora, no podemos esperar para celebrar este próximo capítulo con todos ustedes que significan el mundo para nosotros."
+    "subtitle": "Érase una vez, Chris fue a Colombia mientras María vivía en Australia. Años después Chris dejó Europa para visitar Australia en el momento exacto en que María dejó Australia para viajar por Europa (gran sincronización, universo 👏)",
+    "paragraph2": "María fue a un festival de salsa en Croacia buscando su alma gemela. Y la encontró… era Caro. ¡Mejor amiga al instante! Juntas fueron al festival tres años seguidos. En el cuarto año Caro se saltó la salsa y fue a otro evento con su \"buen amigo\" (spoiler: ese era Chris 👀).",
+    "paragraph3": "María siguió viajando y finalmente llegó a un festival de nómadas digitales en Bulgaria. Caro le escribió: \"¡mi \"buen amigo\" está allí, deberías conocerlo!\" ...pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María y Chris se encontraron mientras trataban de escapar de una fiesta ruidosa y abarrotada. Empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
+    "paragraph4": "A la mañana siguiente, María salió a correr a las 7 de la mañana. Chris fue al parque a hacer ejercicio. Se cruzaron de nuevo… y desde ese momento, nunca se separaron.",
+    "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura. Lo que comenzó como \"solo una conversación\" se convirtió en amor, aventura y ahora esta boda que esperamos celebrar juntos. 🎉💍"
   },
-  "Countdown": {
-    "days": "Días",
-    "hours": "Horas",
-    "minutes": "Minutos"
+  "countdown": {
+    "days": "días",
+    "hrs": "hrs",
+    "min": "min",
+    "sec": "seg",
+    "bigDay": "¡El gran día está aquí!"
   },
   "schedule": {
     "title": "Programa",
@@ -242,72 +271,29 @@
     "days": [
       {
         "dateLabel": "Vie, 19 dic",
+        "subtitle": "Opcional. Si te gusta - Bienvenida & Conexión",
         "events": [
-          {
-            "time": "10:00 AM",
-            "title": "Llegada de la familia cercana",
-            "description": "Relájate, descansa y disfruta de unos refrescos."
-          },
-          {
-            "time": "10:30 AM",
-            "title": "Rompehielos",
-            "description": "Actividades divertidas para conocernos."
-          },
-          {
-            "time": "1:00 PM",
-            "title": "Almuerzo",
-            "description": "Disfruta de una comida relajada juntos con sabores internacionales."
-          },
-          {
-            "time": "2:00 PM",
-            "title": "Actividades divertidas",
-            "description": "Únete a nosotros para juegos en equipo, risas e intercambios culturales."
-          },
-          {
-            "time": "5:30 PM",
-            "title": "Fin y tarde tranquila",
-            "description": "Tómatelo con calma, relájate y disfruta de la noche."
-          }
+          { "time": "16:00", "title": "Llegada de invitados y check-in", "description": "Instálate, prepárate para una hermosa tarde." },
+          { "time": "18:30", "title": "Bienvenida e integración", "description": "Rompamos el hielo suavemente, conozcámonos unos a otros." },
+          { "time": "19:30", "title": "Natilla y Buñuelos", "description": "Prueba las delicias navideñas colombianas con BBQ." }
         ]
       },
       {
         "dateLabel": "Sáb, 20 dic",
+        "subtitle": "<b>El Gran Día</b>",
         "events": [
-          {
-            "time": "2:30 PM",
-            "title": "Llegada de invitados",
-            "description": "Encuentra tu asiento y disfruta de un refresco de bienvenida."
-          },
-          {
-            "time": "3:00 PM",
-            "title": "Ceremonia",
-            "description": "Acompáñanos mientras decimos 'Sí, quiero'."
-          },
-          {
-            "time": "4:00 PM",
-            "title": "Hora del cóctel",
-            "description": "Bocadillos, bebidas y música."
-          },
-          {
-            "time": "5:30 PM",
-            "title": "Recepción",
-            "description": "Cena, discursos y primeros bailes."
-          },
-          {
-            "time": "8:00 PM",
-            "title": "Baile",
-            "description": "¡Celebremos toda la noche!"
-          }
+          { "time": "14:00", "title": "Ceremonia Religiosa", "description": "Celebra la misa de boda en la iglesia." },
+          { "time": "16:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
+          { "time": "17:00 – 22:00", "title": "Programa Vespertino y Cena", "description": "Un programa festivo para todos los invitados." }
         ]
       },
       {
         "dateLabel": "Dom, 21 dic",
+        "subtitle": "<i>Opcional. Si te gusta - </i><b>Despedida</br>",
         "events": [
-          {
-            "time": "11:00 AM",
-            "title": "Brunch de despedida",
-            "description": "Disfruta de un brunch relajado antes de despedirnos."
-          }
+          { "time": "11:00 AM", "title": "Visita a una plantación de café", "description": "Un momento consciente para comenzar el día juntos." },
+          { "time": "12:00 PM", "title": "Tour en Tuk Tuk", "description": "Disfrutando de un paseo especial hacia Guatapé." },
+          { "time": "2:00 PM", "title": "Fiesta en Barco Blanca", "description": "Vístete de blanco y disfruta de música, baile, cócteles y la puesta de sol juntos." }
         ]
       }
     ]

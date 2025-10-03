@@ -8,26 +8,34 @@ import {
 export const notion = new Client({ auth: notionConfig.token });
 
 type RsvpData = {
+  'CO/DE': string;
+  code?: string;
   name: string;
   email: string;
+  whatsapp?: string;
   rsvp: string;
+  '+1'?: boolean;
+  '19-Connect'?: boolean;
+  'BigDay'?: boolean;
+  '21-Boat'?: boolean;
   notes?: string;
   song?: string;
-  boat?: boolean;
-  whatsapp?: string;
-  code?: string;
 };
 
 // This is the type for the properties object passed to notion.pages.create or notion.pages.update
 type NotionProperties = {
+  'CO/DE': { rich_text: [{ text: { content: string } }] };
+  Code?: { rich_text: [{ text: { content: string } }] };
   Name: { title: [{ text: { content: string } }] };
   Email: { email: string };
+  WhatsApp?: { phone_number: string };
   RSVP: { select: { name: string } };
+  '+1'?: { checkbox: boolean };
+  '19-Connect'?: { checkbox: boolean };
+  'BigDay'?: { checkbox: boolean };
+  '21-Boat'?: { checkbox: boolean };
   Notes?: { rich_text: [{ text: { content: string } }] };
   Song?: { rich_text: [{ text: { content: string } }] };
-  Boat?: { select: { name: string } };
-  WhatsApp?: { phone_number: string };
-  Code?: { rich_text: [{ text: { content: string } }] };
 };
 
 async function findRSVPByEmail(email: string): Promise<string | null> {
@@ -88,19 +96,23 @@ async function findRSVPPageIdByCode(code: string): Promise<string | null> {
 }
 
 export async function addRSVP(data: RsvpData) {
-  const { name, email, rsvp, notes, song, boat, whatsapp, code } = data;
+  const { 'CO/DE': coDe, code, name, email, whatsapp, rsvp, '+1': plusOne, '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song } = data;
   
   // Use code as primary identifier, fall back to email if no code
   const existingPageId = code ? await findRSVPPageIdByCode(code) : await findRSVPByEmail(email);
 
   const properties: NotionProperties = {
+    'CO/DE': { rich_text: [{ text: { content: coDe } }] },
     Name: { title: [{ text: { content: name } }] },
     Email: { email },
     RSVP: { select: { name: rsvp } },
+    ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
+    ...(plusOne !== undefined && { '+1': { checkbox: plusOne } }),
+    ...(connect19 !== undefined && { '19-Connect': { checkbox: connect19 } }),
+    ...(bigDay !== undefined && { 'BigDay': { checkbox: bigDay } }),
+    ...(boat21 !== undefined && { '21-Boat': { checkbox: boat21 } }),
     ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
     ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
-    ...(boat !== undefined && { Boat: { select: { name: boat ? 'Yes' : 'No' } } }),
-    ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
     // Only add Code if it's provided (for new records)
     ...(code && !existingPageId && { Code: { rich_text: [{ text: { content: code } }] } }),
   };
@@ -149,13 +161,18 @@ export async function findRSVPByName(name: string) {
     const getPhoneNumber = (prop: NotionProperty): string => (prop.type === 'phone_number' && prop.phone_number) || '';
 
     return {
+      'CO/DE': getRichText(properties['CO/DE']),
+      code: getRichText(properties.Code),
       name: getTitle(properties.Name),
       email: getEmail(properties.Email),
+      whatsapp: getPhoneNumber(properties.WhatsApp),
       rsvp: getSelect(properties.RSVP),
+      '+1': getCheckbox(properties['+1']),
+      '19-Connect': getCheckbox(properties['19-Connect']),
+      'BigDay': getCheckbox(properties['BigDay']),
+      '21-Boat': getCheckbox(properties['21-Boat']),
       notes: getRichText(properties.Notes),
       song: getRichText(properties.Song),
-      boat: getCheckbox(properties.Boat),
-      whatsapp: getPhoneNumber(properties.WhatsApp),
     };
   }
 
@@ -196,14 +213,18 @@ export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'ti
     const getPhoneNumber = (prop: NotionProperty): string => (prop.type === 'phone_number' && prop.phone_number) || '';
 
     return {
+      'CO/DE': getRichText(properties['CO/DE']),
+      code: getRichText(properties.Code),
       name: getTitle(properties.Name),
       email: getEmail(properties.Email),
+      whatsapp: getPhoneNumber(properties.WhatsApp),
       rsvp: getSelect(properties.RSVP),
+      '+1': getCheckbox(properties['+1']),
+      '19-Connect': getCheckbox(properties['19-Connect']),
+      'BigDay': getCheckbox(properties['BigDay']),
+      '21-Boat': getCheckbox(properties['21-Boat']),
       notes: getRichText(properties.Notes),
       song: getRichText(properties.Song),
-      boat: getCheckbox(properties.Boat),
-      whatsapp: getPhoneNumber(properties.WhatsApp),
-      code: getRichText(properties.Code),
     };
   }
 

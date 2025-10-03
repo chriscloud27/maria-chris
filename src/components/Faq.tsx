@@ -30,7 +30,10 @@ const Faq = () => {
 
   return (
     <section className="py-20 container mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-12">{t('title')}</h2>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold mb-2">{t('title')}</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
+      </div>
       <div className="space-y-4">
         {faqData.map((item, index) => {
           const id = `faq-${index}`;
