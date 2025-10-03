@@ -208,7 +208,7 @@ export const Rsvp = () => {
         className="py-20"
       >
         <div className="container mx-auto px-4 max-w-md">
-          <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+          <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 text-center">
             <h2 className="text-3xl font-serif text-gray-800 mb-4">{t('title')}</h2>
             <p className="mb-6 text-gray-600">{t('enterCodePrompt')}</p>
             <div className="mb-4 text-left">
@@ -270,7 +270,7 @@ export const Rsvp = () => {
           </ul>
         </div>
 
-        <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100">
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             {/* Name (Title) */}
             <div className="mb-4">

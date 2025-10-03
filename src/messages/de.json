@@ -15,13 +15,21 @@
   "nav": {
     "details": "Details",
     "schedule": "Ablaufplan",
-    "location": "Ort",
+    "location": "Ort & Tipps",
     "hotels": "Hotels",
     "arrival": "Anreise",
     "rsvp": "Party 🎉",
     "excursions": "Ausflüge",
     "faq": "FAQ",
     "story": "Geschichte"
+  },
+  "location": {
+    "title": "Ort",
+    "main": {
+      "name": "Casa Loma, Hotel Boutique",
+      "address": "054447, Peñol, Antioquia, Kolumbien"
+    },
+    "intro": "Im Herzen von Antioquia gelegen, nur zwei Stunden von Medellín entfernt, ist Guatapé Kolumbiens farbenfrohstes Dorf – eine lebendige Leinwand aus lebhaften Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol entfernt gelegen, bietet diese malerische Stadt endlose Abenteuer, vom Kajakfahren und Wakesurfen bis hin zum Erklimmen der berühmten 700 Stufen für Panorama-Bergblicke. Nach einem Tag voller Erkundungen entspannen Sie sich mit authentischen antioquianischen Aromen und tropischen Cocktails, während die Sonne über dem Wasser untergeht."
   },
   "hotels": {
     "title": "Hotel Optionen",
@@ -181,6 +189,32 @@
       "Wanderung zum Musterberg.",
       "Bootsfahrt auf dem Mustersee."
     ]
+  },
+  "travelTips": {
+    "bestTime": {
+      "title": "Beste Ankunftszeit",
+      "description": "Freitagnachmittag, um die Vorfeierlichkeiten zu genießen und die bunte Stadt zu erkunden"
+    },
+    "mustSee": {
+      "title": "Sehenswert",
+      "description": "Besteige die Piedra del Peñol (740 Stufen!) für atemberaubende Aussichten auf den Stausee"
+    },
+    "localTreats": {
+      "title": "Lokale Spezialitäten",
+      "description": "Probiere Arepas, Empanadas und frische Forelle aus dem See"
+    },
+    "weather": {
+      "title": "Wetter",
+      "description": "Dezember ist perfekt! 21-27°C, leichte Jacke für abends empfohlen"
+    },
+    "currency": {
+      "title": "Währung",
+      "description": "Kolumbianischer Peso (COP). USD wird in Touristengebieten weitgehend akzeptiert"
+    },
+    "language": {
+      "title": "Sprache",
+      "description": "Spanisch (wir haben Übersetzer bei der Hochzeit!)"
+    }
   },
   "faq": {
     "title": "Häufig gestellte Fragen",

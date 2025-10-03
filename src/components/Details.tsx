@@ -9,11 +9,12 @@ export function Details() {
     <section className="py-16">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-serif font-semibold mb-2">{t("title")}</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
         <p className="text-lg text-gray-700">{t("subtitle")}</p>
       </div>
       <div className="container mx-auto px-4 flex flex-col md:flex-row gap-6 justify-center">
         {/* Date Card */}
-        <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
+        <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <FaRegCalendarAlt className="text-green-900 text-2xl" />
           </div>
@@ -22,7 +23,7 @@ export function Details() {
           <p className="">{t("ceremonyTime")}</p>
         </div>
         {/* Venue Card */}
-        <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
+        <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <GoLocation className="text-green-900 text-2xl" />
           </div>
@@ -38,7 +39,7 @@ export function Details() {
           </a>
         </div>
         {/* Attire Card */}
-        <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
+        <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <PiDressLight className="text-green-900 text-2xl" />
           </div>

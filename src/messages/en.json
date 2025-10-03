@@ -15,7 +15,7 @@
   "nav": {
     "details": "Details",
     "schedule": "Schedule",
-    "location": "Location",
+    "location": "Location & Tips",
     "hotels": "Hotels",
     "arrival": "Arrival",
     "rsvp": "Fiesta 🎉",
@@ -26,10 +26,36 @@
   "location": {
     "title": "Location",
     "main": {
-      "name": "St. Margaret's Church",
-      "address": "St. Margaret Street 1, 81371 Munich, Germany"
+      "name": "Casa Loma, Hotel Boutique",
+      "address": "054447, Peñol, Antioquia, Colombia"
     },
-    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia’s most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water."
+    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia's most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water."
+  },
+  "travelTips": {
+    "bestTime": {
+      "title": "Best Time to Arrive",
+      "description": "Friday afternoon to enjoy the pre-wedding festivities and explore the colorful town"
+    },
+    "mustSee": {
+      "title": "Must-See",
+      "description": "Climb El Peñón rock (740 steps!) for breathtaking views of the reservoir"
+    },
+    "localTreats": {
+      "title": "Local Treats",
+      "description": "Try arepas, empanadas, and fresh trout from the lake"
+    },
+    "weather": {
+      "title": "Weather",
+      "description": "December is perfect! 70-80°F, light jacket for evenings recommended"
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "Colombian Peso (COP). USD widely accepted in tourist areas"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Spanish (we'll have translators at the wedding!)"
+    }
   },
   "hotels": {
     "title": "Hotel Options",
@@ -172,8 +198,8 @@
     "notesPlaceholder": "Write your notes here",
     "submitButton": "Send RSVP",
     "submittingButton": "Submitting...",
-  "successMessage": "your entry is successfully updated",
-  "errorMessage": "error",
+    "successMessage": "your entry is successfully updated",
+    "errorMessage": "error",
     "selectOption": "Please select an option",
     "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "Invitation ID",
@@ -214,10 +240,10 @@
     "dateMain": "Saturday, December 20, 2025",
     "ceremonyTime": "Ceremony at 3:00 PM",
     "venueTitle": "Venue",
-  "venueName": "Casa Loma, Hotel Boutique",
-  "venueAddress1": "054447, Peñol, Antioquia",
-  "venueAddress2": "Colombia",
-  "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
+    "venueName": "Casa Loma, Hotel Boutique",
+    "venueAddress1": "054447, Peñol, Antioquia",
+    "venueAddress2": "Colombia",
+    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Get Directions",
     "attireTitle": "Attire",
     "attireMain": "to be announced",
@@ -229,7 +255,7 @@
     "paragraph2": "Maria went there for one reason only – to find another adventurous soul as crazy about traveling the world as she was. Chris, on the other hand, came with a single question: how to be a digital nomad and actually make a living from it?",
     "paragraph3": "He had no intention of meeting someone. In fact, after a poorly organized speed dating event, Chris was ready to leave… until he noticed the woman who had already caught his eye. One last conversation before heading back to the hotel – and bam, it was a match!",
     "paragraph4": "From that moment, Maria and Chris have never stopped talking. Even better: in their very first twelve months together, they traveled to 14 countries.",
-    "paragraph5": "What began with one conversation became a life filled with laughter, adventure, and love. And now, we can’t wait to celebrate this next chapter with all of you who mean the world to us."
+    "paragraph5": "What began with one conversation became a life filled with laughter, adventure, and love. And now, we can't wait to celebrate this next chapter with all of you who mean the world to us."
   },
   "Countdown": {
     "days": "Days",

@@ -18,7 +18,7 @@ const Card = ({
   buttonText: string;
   buttonLink: string;
 }) => (
-  <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+  <div className="bg-white rounded-2xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden flex flex-col">
     <div className="relative h-48">
       <Image
         src={imageSrc}
@@ -135,9 +135,12 @@ export const Arrival = () => {
   return (
     <section id="arrival" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          {t('headerTitle')}
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-2">
+            {t('headerTitle')}
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Card {...arrivalData.air} />
           <Card {...arrivalData.car} />

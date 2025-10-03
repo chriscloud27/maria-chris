@@ -17,7 +17,10 @@ export const Hotels = () => {
 
   return (
     <section id="hotels" className="py-12">
-      <h2 className="text-2xl font-bold text-center">{safe('title') ?? 'Hotels'}</h2>
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-serif font-semibold mb-2">{safe('title') ?? 'Hotels'}</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
+      </div>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {hotelKeys.map((key) => {
@@ -27,7 +30,7 @@ export const Hotels = () => {
           const locationLink = safe(`${key}.location`);
 
           return (
-            <div key={key} className="rounded-lg shadow overflow-hidden">
+            <div key={key} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden">
               <div className="bg-black text-white p-6 flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-2xl">
                   🛏️

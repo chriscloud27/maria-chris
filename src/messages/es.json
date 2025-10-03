@@ -15,7 +15,7 @@
   "nav": {
     "details": "Detalles",
     "schedule": "Programa",
-    "location": "Ubicación",
+    "location": "Ubicación y Consejos",
     "hotels": "Hoteles",
     "arrival": "Llegada",
     "rsvp": "Fiesta 🎉",
@@ -26,10 +26,36 @@
   "location": {
     "title": "Ubicación",
     "main": {
-      "name": "Iglesia de Santa Margarita",
-      "address": "Calle Santa Margarita 1, 81371 Múnich, Alemania"
+      "name": "Casa Loma, Hotel Boutique",
+      "address": "054447, Peñol, Antioquia, Colombia"
     },
     "intro": "Ubicado en el corazón de Antioquia, a solo dos horas de Medellín, Guatapé es el pueblo más colorido de Colombia: un lienzo viviente de casas vibrantes, encantadores zócalos y vistas impresionantes al lago. Situado a orillas del embalse Peñol-Guatapé y a solo 10 km de la imponente Piedra del Peñol, este pintoresco pueblo ofrece aventuras sin fin, desde kayak y wakesurf hasta subir los famosos 700 escalones para disfrutar de vistas panorámicas de las montañas. Tras un día de exploración, relájate con auténticos sabores antioqueños y cócteles tropicales mientras el sol se pone sobre el agua."
+  },
+  "travelTips": {
+    "bestTime": {
+      "title": "Mejor Momento para Llegar",
+      "description": "Viernes por la tarde para disfrutar de las festividades previas a la boda y explorar el colorido pueblo"
+    },
+    "mustSee": {
+      "title": "Imperdible",
+      "description": "Sube a la Piedra del Peñol (¡740 escalones!) para vistas impresionantes del embalse"
+    },
+    "localTreats": {
+      "title": "Delicias Locales",
+      "description": "Prueba arepas, empanadas y trucha fresca del lago"
+    },
+    "weather": {
+      "title": "Clima",
+      "description": "¡Diciembre es perfecto! 21-27°C, se recomienda chaqueta ligera para las noches"
+    },
+    "currency": {
+      "title": "Moneda",
+      "description": "Peso Colombiano (COP). USD ampliamente aceptado en áreas turísticas"
+    },
+    "language": {
+      "title": "Idioma",
+      "description": "Español (¡tendremos traductores en la boda!)"
+    }
   },
   "hotels": {
     "title": "Opciones de Hotel",
