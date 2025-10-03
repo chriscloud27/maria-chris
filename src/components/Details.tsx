@@ -1,7 +1,7 @@
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { PiDressLight } from "react-icons/pi";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Details() {
   const t = useTranslations("details");
@@ -24,8 +24,9 @@ export function Details() {
             <div className="font-bold text-purple-700">20th Dec: The Big Day</div>
             <div>21st Dec: White Party & Farewell</div>
           </div>
+          {/* route to the attire page for the current locale */}
           <a
-            href="#schedule"
+            href={`/${useLocale() || "en"}#schedule`}
             className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
           >
             {t("showDetailsButton")}
@@ -59,28 +60,10 @@ export function Details() {
           </div>
           <div className="flex flex-wrap gap-2 items-start">
             <a
-              href={t("attireButtonLink")}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#attire"
               className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
             >
-              {t("attireExampleButton")}
-            </a>
-            <a
-              href="https://pin.it/i/45Mdn5A2M/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-            >
-              {t("attireKidsButton")}
-            </a>
-            <a
-              href="https://au.pinterest.com/pin/6685099441633578/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-            >
-              {t("attireColorsButton")}
+              {t("showDetailsButton")}
             </a>
           </div>
         </div>

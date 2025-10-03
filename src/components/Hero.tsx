@@ -11,7 +11,13 @@ export const Hero = () => {
     <section
       id="hero"
       className="flex flex-col items-center justify-center h-screen text-foreground relative overflow-hidden"
-      style={{ backgroundColor: '#ffffff' }}
+      style={{ 
+        backgroundImage: 'url(/background.png)', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#f0f0f0'
+      }}
     >
       {/* Decorative leaf in top left corner */}
       <div className="absolute -top-10 -left-4 z-10">

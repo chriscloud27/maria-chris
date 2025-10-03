@@ -118,8 +118,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter), var(--font-nunito), sans-serif;
-    /* Use a plain white background instead of the decorative image */
-    background-image: none;
+    /* Main background image */
+    background-image: url('/background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /* Fallback background color */
     background-color: #ffffff;
     min-height: 100vh;
   }
@@ -182,8 +187,9 @@
   /* Optimierung für iOS Safari */
   @supports (-webkit-touch-callout: none) {
     body {
-      /* Für iOS Safari: no background image to avoid jumping */
-      background-image: none;
+      /* Für iOS Safari: Use the same background image but with scroll attachment to prevent jumping */
+      background-image: url('/background.png');
+      background-attachment: scroll; /* Verhindert Ruckeln auf iOS */
     }
   }
 }

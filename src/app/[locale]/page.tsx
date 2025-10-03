@@ -7,6 +7,7 @@ import { Arrival } from "@/components/Arrival";
 import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
 import { Details } from "@/components/Details";
+import Attire from "@/components/Attire";
 import { Schedule } from "@/components/Schedule";
 import { Story } from "@/components/Story";
 import { Footer } from "@/components/Footer";
@@ -61,8 +62,8 @@ export default function Index() {
         <section id="story"><Story /></section>
         <section id="details"><Details /></section>
         <section id="schedule"><Schedule /></section>
-        <div className="container mx-auto px-4">
-          <LocationExcursions />
+        <div className="container mx-auto px-4"><LocationExcursions />
+        <section id="attire"><Attire /></section>
           <section id="hotels"><Hotels /></section>
           <section id="arrival"><Arrival /></section>
           <section id="rsvp"><Rsvp /></section>
