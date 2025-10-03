@@ -91,6 +91,7 @@
       "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
       "description": "Apartamentos Monte Gandolfo está en Guatapé, a unos 8.7 km de la Piedra del Peñol. Ofrece Wi‑Fi gratis, un jardín con terraza y acceso a un jacuzzi compartido. Algunas unidades cuentan con cocina para poder cocinar por tu cuenta.",
       "hint": "Lugar tranquilo y con vistas — organiza transporte, ya que está a un corto trayecto en coche del pueblo.",
+      "hintLink": "",
       "hintLinkText": "Ver en mapa"
     },
     "viajeroHostal": {
@@ -108,6 +109,7 @@
       "location": "",
       "description": "Luna Nueva es una cabaña privada ubicada en El Peñol que ofrece una experiencia única de conexión con la naturaleza y confort. Rodeada de montañas y con vistas al embalse, es el lugar perfecto para desconectar del bullicio urbano. Disfruta de vistas panorámicas de la Piedra del Peñol, el embalse de Guatapé y la réplica del antiguo Peñol.",
       "hint": "Estancia remota; con instalaciones limitadas y alta demanda — considera reservar con antelación.",
+      "hintLink": "",
       "hintLinkText": "Reservar en Airbnb"
     },
     "searchOnBooking": "Buscar en Booking",

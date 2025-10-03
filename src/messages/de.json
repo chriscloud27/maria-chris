@@ -65,6 +65,7 @@
       "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
       "description": "Die Apartamentos Monte Gandolfo in Guatapé liegen etwa 8,7 km von der Piedra del Peñol entfernt. Sie bieten kostenloses WLAN, einen Garten mit Terrasse und Zugang zu einem Gemeinschaftswhirlpool. Einige Wohneinheiten verfügen außerdem über eine Küche für Selbstverpflegung.",
       "hint": "Ruhige, aussichtsreiche Lage — Transport organisieren, da es eine kurze Fahrt vom Ort entfernt liegt.",
+      "hintLink": "",
       "hintLinkText": "Auf Karte ansehen"
     },
     "viajeroHostal": {
@@ -82,6 +83,7 @@
       "location": "",
       "description": "Luna Nueva ist eine private Hütte in El Peñol und bietet eine einzigartige Verbindung von Natur und Komfort. Umgeben von Bergen und mit Blick auf den Stausee ist sie der perfekte Ort, um dem Stadttrubel zu entfliehen und Ruhe zu finden. Genieße panoramische Aussichten auf den Peñol-Felsen, den Guatapé-Stausee und die Nachbildung des alten Peñol.",
       "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung — bitte frühzeitig buchen.",
+      "hintLink": "",
       "hintLinkText": "Bei Airbnb buchen"
     },
     "searchOnBooking": "Bei Booking suchen",
