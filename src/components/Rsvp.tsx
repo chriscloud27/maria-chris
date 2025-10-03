@@ -45,7 +45,7 @@ export const Rsvp = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+  formState: { errors },
     reset,
     watch,
     setValue,
