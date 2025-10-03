@@ -4,7 +4,6 @@ import { LocationExcursions } from "@/components/LocationExcursions";
 import { Hotels } from "@/components/Hotels";
 import { Arrival } from "@/components/Arrival";
 // import { PrePostEvents } from "@/components/PrePostEvents";
-import { Rsvp } from "@/components/Rsvp";
 import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
 import { Details } from "@/components/Details";
@@ -13,6 +12,23 @@ import { Story } from "@/components/Story";
 import { Footer } from "@/components/Footer";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
+import dynamic from 'next/dynamic';
+
+// Import Rsvp component with SSR disabled to prevent hydration issues
+const Rsvp = dynamic(() => import("@/components/Rsvp").then(mod => ({ default: mod.Rsvp })), {
+  ssr: false,
+  loading: () => (
+    <div className="py-20">
+      <div className="container mx-auto px-4 max-w-md">
+        <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 text-center">
+          <div className="flex justify-center items-center py-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-700"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+});
 
 export default function Index() {
   const t = useTranslations();

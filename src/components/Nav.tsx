@@ -35,7 +35,7 @@ export const Nav = ({ navItems }: NavProps) => {
   const sections = navItems ?? defaultSections;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-transparent backdrop-blur-md border-b border-gray-200/10 shadow-sm hover:shadow-md transition-all duration-300 z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-md border-b border-gray-200/20 shadow-sm hover:shadow-md transition-all duration-300 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="#hero" className="text-xl font-script flex items-center">
@@ -66,7 +66,7 @@ export const Nav = ({ navItems }: NavProps) => {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-transparent backdrop-blur-md border-b border-gray-200/10 shadow-lg">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200/20 shadow-lg">
           <div className="flex flex-col items-center space-y-4 py-4">
             {sections.map(section => (
               <Link 

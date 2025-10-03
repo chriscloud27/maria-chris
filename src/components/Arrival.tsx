@@ -23,9 +23,8 @@ const Card = ({
       <Image
         src={imageSrc}
         alt={imageAlt}
-        layout="fill"
-        objectFit="cover"
-        className="w-full h-full"
+        fill
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
         <div className="text-white text-2xl font-bold flex items-center gap-3">

@@ -45,12 +45,13 @@ export const Rsvp = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
     watch,
     setValue,
   } = useForm<FormInputs>({
     resolver: zodResolver(rsvpSchema),
+    mode: 'onChange', // Enable real-time validation
   });
 
   const statusRef = useRef<HTMLDivElement | null>(null);
@@ -98,19 +99,21 @@ export const Rsvp = () => {
       const res = await fetch(`/api/rsvp/verify-code?code=${encodeURIComponent(invitationCode)}`);
       if (res.ok) {
         const data = await res.json();
+        console.log('Verification data received:', data);
         if (data && data.email) {
-          setValue('CO/DE', data['CO/DE'] || '');
+          setValue('CO/DE', data['CO/DE'] || invitationCode || 'DEFAULT'); // Use invitation code as fallback
           setValue('name', data.name);
           setValue('email', data.email);
-          setValue('rsvp', data.rsvp);
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
           setValue('+1', data['+1'] || false);
           setValue('19-Connect', data['19-Connect'] || false);
+          setValue('BigDay', data['BigDay'] || false);
           setValue('21-Boat', data['21-Boat'] || false);
           setValue('whatsapp', data.whatsapp || '');
           setVerifiedCode(invitationCode); // Store the verified code
           setIsVerified(true);
+          console.log('Form populated after verification');
         }
       } else {
         const errorData = await res.json();
@@ -133,6 +136,10 @@ export const Rsvp = () => {
   };
 
   const onSubmit = async (data: FormInputs) => {
+    console.log('Form submission started with data:', data);
+    console.log('Form errors:', errors);
+    console.log('Verified code:', verifiedCode);
+    
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -144,35 +151,42 @@ export const Rsvp = () => {
       return;
     }
 
+    const submitData = {
+      'CO/DE': data['CO/DE'] || 'DEFAULT', // Use a default value if CO/DE is not available
+      name: data.name,
+      email: data.email,
+      notes: data.notes,
+      song: data.song,
+      '+1': data['+1'],
+      '19-Connect': data['19-Connect'],
+      'BigDay': data['BigDay'], // Include BigDay field
+      '21-Boat': data['21-Boat'],
+      whatsapp: data.whatsapp,
+      code: verifiedCode, // Include the verified code
+    };
+
+    console.log('Submitting data to API:', submitData);
+
     try {
       const res = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          'CO/DE': data['CO/DE'],
-          name: data.name,
-          email: data.email,
-          rsvp: data.rsvp,
-          notes: data.notes,
-          song: data.song,
-          '+1': data['+1'],
-          '19-Connect': data['19-Connect'],
-          '21-Boat': data['21-Boat'],
-          whatsapp: data.whatsapp,
-          code: verifiedCode, // Include the verified code
-        }),
+        body: JSON.stringify(submitData),
       });
 
       const payload = await res.json();
+      console.log('API response:', { status: res.status, payload });
       if (res.ok) {
         // Show success message under the submit button. Keep the form visible
         // so the status message can be seen by the user.
         setSubmitStatus({ success: true, message: t('successMessage') });
         reset();
       } else {
+        console.error('API error response:', payload);
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
       }
-    } catch {
+    } catch (error) {
+      console.error('Network or other error:', error);
       setSubmitStatus({ success: false, message: t('errorMessage') });
     } finally {
       setIsSubmitting(false);
@@ -263,11 +277,15 @@ export const Rsvp = () => {
 
           <ul className="space-y-4">
             <li className="flex items-start">
-              <MusicIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
+              <div className="flex-shrink-0 text-purple-600 bg-purple-50 p-2 rounded-lg mr-3 mt-1">
+                <MusicIcon className="w-5 h-5" />
+              </div>
               <span>{t('songInfo')}</span>
             </li>
             <li className="flex items-start">
-              <StarIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
+              <div className="flex-shrink-0 text-yellow-600 bg-yellow-50 p-2 rounded-lg mr-3 mt-1">
+                <StarIcon className="w-5 h-5" />
+              </div>
               <span>{t('kidsInfo')}</span>
             </li>
           </ul>
@@ -406,6 +424,9 @@ export const Rsvp = () => {
               {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
             </div>
 
+            {/* Hidden CO/DE field */}
+            <input type="hidden" {...register('CO/DE')} />
+            
             {/* Honeypot */}
             <div className="hidden" aria-hidden="true">
               <label htmlFor="honeypot" className="sr-only">
@@ -418,10 +439,22 @@ export const Rsvp = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
+                onClick={() => console.log('Submit button clicked', { 
+                  isSubmitting, 
+                  verifiedCode, 
+                  formErrors: errors,
+                  formIsValid: Object.keys(errors).length === 0
+                })}
                 className="w-full p-3 bg-purple-700 text-white font-bold rounded-md hover:bg-purple-800 disabled:bg-gray-400 transition-colors duration-300"
               >
                 {isSubmitting ? t('submittingButton') : t('submitButton')}
               </button>
+              {/* Debug info - remove in production */}
+              {Object.keys(errors).length > 0 && (
+                <div className="mt-2 text-red-600 text-sm">
+                  Form errors: {JSON.stringify(errors)}
+                </div>
+              )}
             </div>
             {/* status message shown directly under the submit button with an action to enter another code */}
             {submitStatus && (

@@ -241,8 +241,9 @@
     "title": "The Details",
     "subtitle": "Ceremony, reception, and everything in between",
     "dateTitle": "Date",
-    "dateMain": "Saturday, December 20, 2025",
-    "ceremonyTime": "Ceremony at 3:00 PM",
+    "dateMain": "19th Dec: Welcome & Connect\n20th Dec: The Big Day\n21st Dec: White Party & Farewell",
+    "ceremonyTime": "",
+    "showDetailsButton": "Show Details",
     "venueTitle": "Venue",
     "venueName": "Casa Loma, Hotel Boutique",
     "venueAddress1": "054447, Peñol, Antioquia",
@@ -250,8 +251,13 @@
     "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Get Directions",
     "attireTitle": "Attire",
-    "attireMain": "to be announced",
-    "attireNote": "to be announced"
+    "attireWomenLabel": "Women:",
+    "attireMenLabel": "Men:",
+    "attireWomen": "warm blush, coral, terracotta, pastel sage, turquoise, sunflower yellow",
+    "attireMen": "navy blue, light beige linen, classic grey, steel blue, taupe",
+    "attireNote": "",
+    "attireButtonText": "See More",
+    "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
   },
   "story": {
     "title": "Our Story",

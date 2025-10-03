@@ -19,8 +19,17 @@ export function Details() {
             <FaRegCalendarAlt className="text-green-900 text-2xl" />
           </div>
           <h3 className="text-xl font-bold mb-2">{t("dateTitle")}</h3>
-          <p className="mb-1">{t("dateMain")}</p>
-          <p className="">{t("ceremonyTime")}</p>
+          <div className="text-sm leading-relaxed space-y-1 mb-4">
+            <div>19th Dec: Welcome & Connect</div>
+            <div className="font-bold text-purple-700">20th Dec: The Big Day</div>
+            <div>21st Dec: White Party & Farewell</div>
+          </div>
+          <a
+            href="#schedule"
+            className="px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+          >
+            {t("showDetailsButton")}
+          </a>
         </div>
         {/* Venue Card */}
         <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
@@ -44,8 +53,20 @@ export function Details() {
             <PiDressLight className="text-green-900 text-2xl" />
           </div>
           <h3 className="text-xl font-bold mb-2">{t("attireTitle")}</h3>
-          <p className="mb-1">{t("attireMain")}</p>
-          <p>{t("attireNote")}</p>
+          <div className="mb-2">
+            <p className="font-medium">{t("attireWomenLabel")}</p>
+            <p className="text-sm text-gray-600 mb-2">{t("attireWomen")}</p>
+            <p className="font-medium">{t("attireMenLabel")}</p>
+            <p className="text-sm text-gray-600 mb-3">{t("attireMen")}</p>
+          </div>
+          <a
+            href={t("attireButtonLink")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+          >
+            {t("attireButtonText")}
+          </a>
         </div>
       </div>
     </section>
