@@ -115,7 +115,7 @@ export const LocationExcursions = () => {
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Map of Parque Lleras, Medellín"
+                  title="Casa Loma, Hotel Boutique"
                   className="hover:scale-105 transition-transform duration-500"
                 ></iframe>
               </div>

@@ -206,12 +206,22 @@
     "attireWomen": "rosa cálido, coral, terracota, salvia pastel, turquesa, amarillo girasol",
     "attireMen": "azul marino, lino beige claro, gris clásico, azul acero, taupe",
     "attireNote": "",
-    "attireButtonText": "Ver Más",
+  "attireButtonText": "Ver Más",
+  "attireExampleButton": "Ejemplo",
+  "attireKidsButton": "Niños",
+  "attireColorsButton": "Colores",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/",
     "getOverviewButtonText": "Obtener resumen",
     "getOverviewButtonLink": "#schedule"
   },
-  "story": { "title": "Nuestra Historia", "subtitle": "Todo comenzó en el Digital Nomad Fest en Bulgaria.", "paragraph2": "María fue allí por una sola razón: encontrar otra alma aventurera tan loca por viajar por el mundo como ella. Chris, por otro lado, llegó con una sola pregunta: ¿cómo ser un nómada digital y realmente ganarse la vida con ello?", "paragraph3": "No tenía intención de conocer a nadie. De hecho, después de un evento de speed dating mal organizado, Chris estaba listo para irse... hasta que notó a la mujer que ya le había llamado la atención. Una última conversación antes de regresar al hotel – y ¡bam, fue una conexión instantánea!", "paragraph4": "Desde ese momento, María y Chris nunca han dejado de hablar. Mejor aún: en sus primeros doce meses juntos, viajaron a 14 paíse.", "paragraph5": "Lo que comenzó con una conversación se convirtió en una vida llena de risas, aventuras y amor. Y ahora, no podemos esperar para celebrar este próximo capítulo con todos ustedes que significan el mundo para nosotros." },
+  "story": {
+    "title": "Nuestra Historia",
+    "subtitle": "Érase una vez, Chris fue a Colombia mientras María vivía en Australia. Años después Chris dejó Europa para visitar Australia en el momento exacto en que María dejó Australia para viajar por Europa (gran sincronización, universo 👏)",
+    "paragraph2": "María fue a un festival de salsa en Croacia buscando su alma gemela. Y la encontró… era Caro. ¡Mejor amiga al instante! Juntas fueron al festival tres años seguidos. En el cuarto año Caro se saltó la salsa y fue a otro evento con su \"buen amigo\" (spoiler: ese era Chris 👀).",
+    "paragraph3": "María siguió viajando y finalmente llegó a un festival de nómadas digitales en Bulgaria. Caro le escribió: \"¡mi \"buen amigo\" está allí, deberías conocerlo!\" ...pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María y Chris se encontraron mientras trataban de escapar de una fiesta ruidosa y abarrotada. Empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
+    "paragraph4": "A la mañana siguiente, María salió a correr a las 7 de la mañana. Chris fue al parque a hacer ejercicio. Se cruzaron de nuevo… y desde ese momento, nunca se separaron.",
+    "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura. Lo que comenzó como \"solo una conversación\" se convirtió en amor, aventura y ahora esta boda que esperamos celebrar juntos. 🎉💍"
+  },
   "countdown": {
     "days": "días",
     "hrs": "hrs",

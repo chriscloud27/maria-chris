@@ -257,15 +257,18 @@
     "attireMen": "navy blue, light beige linen, classic grey, steel blue, taupe",
     "attireNote": "",
     "attireButtonText": "See More",
+    "attireExampleButton": "Example",
+    "attireKidsButton": "Kids",
+    "attireColorsButton": "Colors",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
   },
   "story": {
     "title": "Our Story",
-    "subtitle": "It all started at the Digital Nomad Fest in Bulgaria.",
-    "paragraph2": "Maria went there for one reason only – to find another adventurous soul as crazy about traveling the world as she was. Chris, on the other hand, came with a single question: how to be a digital nomad and actually make a living from it?",
-    "paragraph3": "He had no intention of meeting someone. In fact, after a poorly organized speed dating event, Chris was ready to leave… until he noticed the woman who had already caught his eye. One last conversation before heading back to the hotel – and bam, it was a match!",
-    "paragraph4": "From that moment, Maria and Chris have never stopped talking. Even better: in their very first twelve months together, they traveled to 14 countries.",
-    "paragraph5": "What began with one conversation became a life filled with laughter, adventure, and love. And now, we can't wait to celebrate this next chapter with all of you who mean the world to us."
+    "subtitle": "Once upon a time, Chris went to Colombia while Maria was living in Australia. Few years later Chris left Europe to visit Australia in the exact moment when Maria left Australia to travel in Europe (great timing, universe 👏)",
+    "paragraph2": "Maria went to a salsa festival in Croatia looking for a soulmate. And she did find one… it was Caro. Instant best friend! Together they went to the festival three years in a row. In the fourth year Caro skipped the salsa and went to another event with her \"good friend\" (spoiler: that was Chris 👀).",
+    "paragraph3": "Maria kept traveling and eventually landed at a digital nomad festival in Bulgaria. Caro messaged her: \"my \"good friend\" is there, you should meet him!\" …but never shared his contact (thanks, Caro). The universe clearly had a plan. That same weekend, Maria and Chris bumped into each other while trying to escape a busy and noisy party. They started talking, lost track of time, and didn't notice everyone else had already left.",
+    "paragraph4": "The next morning, Maria went for a 7am run. Chris went to the park to work out. They crossed paths again… and from that moment, they never separated.",
+    "paragraph5": "In their first year, they traveled through 14 countries together. Proof that one conversation can turn into a whole adventure. What began as \"just one conversation\" turned into love, adventure, and now this wedding that we are looking forward to celebrating together. 🎉💍"
   },
   "countdown": {
     "days": "days",
@@ -280,7 +283,7 @@
     "days": [
       {
         "dateLabel": "Fri, Dec 19",
-        "subtitle": "<i>Optional. If you like - </i><b>Welcome & Connect</b>",
+    "subtitle": "<i>Optional.</i><b>Welcome & Connect</b>",
         "events": [
           {
             "time": "4:00 PM",
@@ -322,7 +325,7 @@
       },
       {
         "dateLabel": "Sun, Dec 21",
-        "subtitle": "<i>Optional. If you like - </i><b>White Party & Farewell</br>",
+  "subtitle": "<i>Optional.</i><b>White Party & Farewell</br>",
         "events": [
           {
             "time": "11:00 AM",

@@ -26,7 +26,7 @@ export function Details() {
           </div>
           <a
             href="#schedule"
-            className="px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+            className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
           >
             {t("showDetailsButton")}
           </a>
@@ -39,10 +39,8 @@ export function Details() {
           <h3 className="text-xl font-bold mb-2">{t("venueTitle")}</h3>
           <p>{t("venueName")}<br />{t("venueAddress1")}<br />{t("venueAddress2")}</p>
           <a
-            href={t("venueMapLink")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition"
+            href="#location"
+            className="mt-4 inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
           >
             {t("getDirections")}
           </a>
@@ -59,14 +57,32 @@ export function Details() {
             <p className="font-medium">{t("attireMenLabel")}</p>
             <p className="text-sm text-gray-600 mb-3">{t("attireMen")}</p>
           </div>
-          <a
-            href={t("attireButtonLink")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-          >
-            {t("attireButtonText")}
-          </a>
+          <div className="flex flex-wrap gap-2 items-start">
+            <a
+              href={t("attireButtonLink")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+            >
+              {t("attireExampleButton")}
+            </a>
+            <a
+              href="https://pin.it/i/45Mdn5A2M/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+            >
+              {t("attireKidsButton")}
+            </a>
+            <a
+              href="https://au.pinterest.com/pin/6685099441633578/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+            >
+              {t("attireColorsButton")}
+            </a>
+          </div>
         </div>
       </div>
     </section>

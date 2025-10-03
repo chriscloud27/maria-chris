@@ -257,15 +257,18 @@
     "attireMen": "Marineblau, helles Beige-Leinen, klassisches Grau, Stahlblau, Taupe",
     "attireNote": "",
     "attireButtonText": "Mehr Sehen",
+    "attireExampleButton": "Beispiel",
+    "attireKidsButton": "Kinder",
+    "attireColorsButton": "Farben",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
   },
   "story": {
     "title": "Unsere Geschichte",
-    "subtitle": "Alles begann beim Digital Nomad Fest in Bulgarien.",
-    "paragraph2": "Maria ging aus nur einem Grund dorthin – um eine andere abenteuerlustige Seele zu finden, die genauso verrückt nach dem Reisen um die Welt war wie sie. Chris hingegen kam mit einer einzigen Frage: Wie wird man digitaler Nomade und verdient damit tatsächlich seinen Lebensunterhalt?",
-    "paragraph3": "Er hatte nicht die Absicht, jemanden kennenzulernen. Tatsächlich war Chris nach einem schlecht organisierten Speed-Dating-Event bereit zu gehen... bis er die Frau bemerkte, die ihm bereits aufgefallen war. Ein letztes Gespräch, bevor es zurück ins Hotel ging – und bam, es war ein Volltreffer!",
-    "paragraph4": "Von diesem Moment an haben Maria und Chris nie aufgehört zu reden. Besser noch: In ihren ersten zwölf gemeinsamen Monaten reisten sie in 14 Länder.",
-    "paragraph5": "Was mit einem Gespräch begann, wurde zu einem Leben voller Lachen, Abenteuer und Liebe. Und jetzt können wir es kaum erwarten, dieses nächste Kapitel mit euch allen zu feiern, die uns die Welt bedeuten."
+    "subtitle": "Es war einmal, Chris ging nach Kolumbien, während Maria in Australien lebte. Jahre später verließ Chris Europa, um Australien zu besuchen, genau in dem Moment, als Maria Australien verließ, um durch Europa zu reisen (großartiges Timing, Universum 👏)",
+    "paragraph2": "Maria ging zu einem Salsa-Festival in Kroatien auf der Suche nach ihrer Seelenverwandten. Und sie fand eine… es war Caro. Sofort beste Freundin! Zusammen gingen sie drei Jahre hintereinander zum Festival. Im vierten Jahr ließ Caro die Salsa aus und ging zu einer anderen Veranstaltung mit ihrem \"guten Freund\" (Spoiler: das war Chris 👀).",
+    "paragraph3": "Maria reiste weiter und landete schließlich bei einem Festival für digitale Nomaden in Bulgarien. Caro schrieb ihr: \"mein \"guter Freund\" ist dort, du solltest ihn treffen!\" ...aber teilte nie seinen Kontakt (danke, Caro). Das Universum hatte eindeutig einen Plan. An demselben Wochenende stießen Maria und Chris aufeinander, während sie versuchten, einer lauten und überfüllten Party zu entkommen. Sie fingen an zu reden, verloren das Zeitgefühl und bemerkten nicht, dass alle anderen bereits gegangen waren.",
+    "paragraph4": "Am nächsten Morgen ging Maria um 7 Uhr morgens joggen. Chris ging in den Park zum Training. Sie kreuzten sich wieder… und von diesem Moment an trennten sie sich nie wieder.",
+    "paragraph5": "In ihrem ersten Jahr reisten sie zusammen durch 14 Länder. Der Beweis, dass ein Gespräch zu einem ganzen Abenteuer werden kann. Was als \"nur ein Gespräch\" begann, wurde zu Liebe, Abenteuer und nun zu dieser Hochzeit, die wir gemeinsam zu feiern freuen. 🎉💍"
   },
   "countdown": {
     "days": "Tage",

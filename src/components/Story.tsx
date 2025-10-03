@@ -13,7 +13,7 @@ export function Story() {
                         <div className="bg-white/80 p-8 rounded-2xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 h-full">
               <h2 className="text-4xl font-serif font-semibold mb-2">{t('title')}</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full mb-6"></div>
-              <p className="text-lg text-gray-500 mb-6">{t('subtitle')}</p>
+              <p className="text-lg text-gray-700 mb-6">{t('subtitle')}</p>
                 {/* <p className="text-gray-700 leading-relaxed mb-4">
                 {t('paragraph1')}
                 </p> */}
