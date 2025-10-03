@@ -141,9 +141,8 @@
     ]
   },
   "rsvp": {
-    "title": "fiesta 🎉",
+    "title": "Tu Invitacion 🎉",
     "invitation": "Estamos ansiosos por celebrar contigo. Por favor, responde antes del 10 de mayo de 2026.",
-    "dinnerInfo": "Las opciones de cena se solicitarán después de recibir la confirmación.",
     "songInfo": "¡Se aceptan peticiones de canciones! Añade tu canción favorita a continuación.",
     "kidsInfo": "Los niños son bienvenidos; por favor, indica sus edades en el campo de mensaje.",
     "formTitle": "Formulario RSVP",
@@ -158,6 +157,11 @@
     "songPlaceholder": "Artista — Título de la canción",
     "whatsappLabel": "Número de WhatsApp (opcional)",
     "whatsappPlaceholder": "+57 300 123 4567",
+    "participationLabel": "",
+    "plusOneLabel": "Vengo el Gran Día con un +1",
+    "connect19Label": "Vengo el 19 de Dic a Welcome & Connect",
+    "bigDayLabel": "Vengo al Gran Día",
+    "boat21Label": "Vengo el 21 de Dic a Fiesta Blanca y Despedida",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",

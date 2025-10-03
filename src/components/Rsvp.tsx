@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { rsvpSchema } from '@/lib/schema';
 import { z } from 'zod';
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { CutleryIcon } from './icons/CutleryIcon';
 import { MusicIcon } from './icons/MusicIcon';
 import { StarIcon } from './icons/StarIcon';
 
@@ -52,7 +51,6 @@ export const Rsvp = () => {
     setValue,
   } = useForm<FormInputs>({
     resolver: zodResolver(rsvpSchema),
-    defaultValues: { rsvp: 'Yes' },
   });
 
   const statusRef = useRef<HTMLDivElement | null>(null);
@@ -69,11 +67,14 @@ export const Rsvp = () => {
           if (res.ok) {
             const data = await res.json();
             if (data && data.email) {
+              setValue('CO/DE', data['CO/DE'] || '');
               setValue('email', data.email);
-              setValue('rsvp', data.rsvp);
               setValue('notes', data.notes || '');
               setValue('song', data.song || '');
-              setValue('boat', data.boat || false);
+              setValue('+1', data['+1'] || false);
+              setValue('19-Connect', data['19-Connect'] || false);
+              setValue('BigDay', data['BigDay'] || false);
+              setValue('21-Boat', data['21-Boat'] || false);
               setValue('whatsapp', data.whatsapp || '');
             }
           }
@@ -98,12 +99,15 @@ export const Rsvp = () => {
       if (res.ok) {
         const data = await res.json();
         if (data && data.email) {
+          setValue('CO/DE', data['CO/DE'] || '');
           setValue('name', data.name);
           setValue('email', data.email);
           setValue('rsvp', data.rsvp);
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
-          setValue('boat', data.boat || false);
+          setValue('+1', data['+1'] || false);
+          setValue('19-Connect', data['19-Connect'] || false);
+          setValue('21-Boat', data['21-Boat'] || false);
           setValue('whatsapp', data.whatsapp || '');
           setVerifiedCode(invitationCode); // Store the verified code
           setIsVerified(true);
@@ -145,12 +149,15 @@ export const Rsvp = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          'CO/DE': data['CO/DE'],
           name: data.name,
           email: data.email,
           rsvp: data.rsvp,
           notes: data.notes,
           song: data.song,
-          boat: data.boat,
+          '+1': data['+1'],
+          '19-Connect': data['19-Connect'],
+          '21-Boat': data['21-Boat'],
           whatsapp: data.whatsapp,
           code: verifiedCode, // Include the verified code
         }),
@@ -256,10 +263,6 @@ export const Rsvp = () => {
 
           <ul className="space-y-4">
             <li className="flex items-start">
-              <CutleryIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
-              <span>{t('dinnerInfo')}</span>
-            </li>
-            <li className="flex items-start">
               <MusicIcon className="w-6 h-6 mr-3 mt-1 text-gray-600" />
               <span>{t('songInfo')}</span>
             </li>
@@ -272,6 +275,7 @@ export const Rsvp = () => {
 
         <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100">
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
+
             {/* Name (Title) */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
@@ -315,21 +319,61 @@ export const Rsvp = () => {
               {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>}
             </div>
 
-            {/* RSVP select */}
-            <div className="mb-4">
-              <label htmlFor="rsvp" className="block text-gray-700 text-sm font-bold mb-2">
-                {t('attendanceLabel')}
-              </label>
-              <select
-                id="rsvp"
-                {...register('rsvp')}
-                className={`w-full p-3 border rounded-md bg-white ${errors.rsvp ? 'border-red-500' : 'border-gray-200'}`}
-              >
-                <option value="Yes">{t('attendanceYes')}</option>
-                <option value="No">{t('attendanceNo')}</option>
-                <option value="Maybe">{t('attendanceMaybe')}</option>
-              </select>
-              {errors.rsvp && <p className="text-red-500 text-xs mt-1">{errors.rsvp.message}</p>}
+            {/* Participation Section */}
+            <div className="mb-6">
+              <h3 className="text-gray-800 text-lg font-semibold mb-4">{t('participationLabel')}</h3>
+              
+              {/* 19-Connect */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('19-Connect')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('connect19Label')}</span>
+                </label>
+                {errors['19-Connect'] && <p className="text-red-500 text-xs mt-1">{errors['19-Connect'].message}</p>}
+              </div>
+
+              {/* BigDay */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('BigDay')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('bigDayLabel')}</span>
+                </label>
+                {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
+              </div>
+
+              {/* +1 */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('+1')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('plusOneLabel')}</span>
+                </label>
+                {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
+              </div>
+
+              {/* 21-Boat */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('21-Boat')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('boat21Label')}</span>
+                </label>
+                {errors['21-Boat'] && <p className="text-red-500 text-xs mt-1">{errors['21-Boat'].message}</p>}
+              </div>
             </div>
 
             {/* Notes (rich text) */}
@@ -360,19 +404,6 @@ export const Rsvp = () => {
                 className={`w-full p-3 border rounded-md ${errors.song ? 'border-red-500' : 'border-gray-200'}`}
               />
               {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
-            </div>
-
-            {/* Boat party checkbox */}
-            <div className="mb-6">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  {...register('boat')}
-                  className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                />
-                <span className="text-gray-700 text-sm font-bold">{t('boatLabel')}</span>
-              </label>
-              {errors.boat && <p className="text-red-500 text-xs mt-1">{errors.boat.message}</p>}
             </div>
 
             {/* Honeypot */}
