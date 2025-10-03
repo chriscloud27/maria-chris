@@ -18,7 +18,7 @@
     "location": "Location",
     "hotels": "Hotels",
     "arrival": "Arrival",
-    "rsvp": "RSVP",
+    "rsvp": "Fiesta 🎉",
     "excursions": "Excursions",
     "faq": "FAQ",
     "story": "Story"
@@ -148,7 +148,7 @@
     ]
   },
   "rsvp": {
-    "title": "Kindly RSVP",
+    "title": "fiesta 🎉",
     "invitation": "We can't wait to celebrate with you. Please respond by May 10, 2026.",
     "dinnerInfo": "Dinner selections will be requested after RSVP is received.",
     "songInfo": "Song requests welcome! Add your favorite tune below.",
@@ -175,7 +175,7 @@
   "successMessage": "your entry is successfully updated",
   "errorMessage": "error",
     "selectOption": "Please select an option",
-    "enterCodePrompt": "Please enter your invitation code to RSVP.",
+    "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "Invitation ID",
     "invitationIdPlaceholder": "Enter your code here",
     "verifyButton": "Verify",
@@ -242,51 +242,41 @@
     "days": [
       {
         "dateLabel": "Fri, Dec 19",
-        "subtitle": "Welcome & Connect",
+        "subtitle": "<i>Optional. If you like - </i><b>Welcome & Connect</b>",
         "events": [
           {
             "time": "4:00 PM",
             "title": "Guest Arrival & Check-In",
-            "description": "Settle in to get ready for a beautiful afternoon"
+            "description": "Settle in, get ready for a beautiful evening."
           },
           {
             "time": "6:30 PM",
-            "title": "Relaxation",
-            "description": "Enjoy a recreating program refreshing you for dinner."
+            "title": "Welcoming and integration",
+            "description": "Gently break the ice breaker, get to know each other."
           },
           {
             "time": "7:30 PM",
-            "title": "Dinner & Traditional Treats",
-            "description": "Taste Colombian Christmas delights and a typical BBQ."
-          },
-          {
-            "time": "9:00 PM",
-            "title": "Bonfire & Ritual",
-            "description": "Gather around the fire with music and heartfelt moments together."
+            "title": "Natilla & Buñuelos",
+            "description": "Taste Colombian Christmas delights with BBQ."
           }
         ]
       },
       {
         "dateLabel": "Sat, Dec 20",
-        "subtitle": "The Big Day",
+        "subtitle": "<b>The Big Day</b>",
         "events": [
           {
-            "time": "12:00 PM",
-            "title": "Traditional Lunch",
-            "description": "Delicious Colombian cuisine"
-          },
-          {
-            "time": "3:00 PM",
+            "time": "2:00 PM",
             "title": "Religious Ceremony",
             "description": "Celebrate the wedding mass in the church."
           },
           {
-            "time": "4:30 PM",
-            "title": "Couple’s Arrival",
-            "description": "Welcome the newlyweds with joy."
+            "time": "4:00 PM",
+            "title": "Couple's Arrival",
+            "description": "Welcome the newlyweds with applause."
           },
           {
-            "time": "5:00 PM - 10:00 PM",
+            "time": "5:00 PM – 10:00 PM",
             "title": "Evening Program & Dinner",
             "description": "A festive program for all guests."
           }
@@ -294,20 +284,20 @@
       },
       {
         "dateLabel": "Sun, Dec 21",
-        "subtitle": "White Party & Farewell",
+        "subtitle": "<i>Optional. If you like - </i><b>White Party & Farewell</br>",
         "events": [
           {
-            "time": "11:00 AM - 11:30 AM",
+            "time": "11:00 AM",
             "title": "Visit a coffee plantage",
             "description": "A mindful moment to start the day together."
           },
           {
-            "time": "12:00 PM - 1:00 PM",
+            "time": "12:00 PM",
             "title": "Tuk Tuk Tour",
             "description": "Enjoying a special ride to Guatapé."
           },
           {
-            "time": "2:00 PM - 5:00 PM",
+            "time": "2:00 PM",
             "title": "White Boat Party",
             "description": "Dress in white and enjoy music, dancing, cocktails, and the sunset together."
           }

@@ -18,7 +18,7 @@
     "location": "Ort",
     "hotels": "Hotels",
     "arrival": "Anreise",
-    "rsvp": "RSVP",
+    "rsvp": "Party 🎉",
     "excursions": "Ausflüge",
     "faq": "FAQ",
     "story": "Geschichte"
@@ -140,7 +140,7 @@
     ]
   },
   "rsvp": {
-    "title": "Bitte um Antwort",
+    "title": "fiesta 🎉",
     "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 10. Mai 2026 Bescheid.",
     "dinnerInfo": "Die Menüauswahl wird nach der Zusage angefragt.",
     "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
@@ -167,7 +167,7 @@
   "successMessage": "dein Eintrag wurde erfolgreich aktualisiert",
   "errorMessage": "Fehler",
     "selectOption": "Bitte eine Option auswählen",
-    "enterCodePrompt": "Bitte gib deinen Einladungscode ein, um zuzusagen.",
+    "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "Einladungs-ID",
     "invitationIdPlaceholder": "Gib hier deinen Code ein",
     "verifyButton": "Bestätigen",
@@ -234,69 +234,64 @@
     "days": [
       {
         "dateLabel": "Fr, 19. Dez",
-        "subtitle": "Begrüßung & Verbindung - 🔥",
+        "subtitle": "<i>Optional. Wenn ihr möchtet - </i><b>Begrüßung & Verbindung",
         "events": [
           {
             "time": "16:00 Uhr",
             "title": "Gästeankunft & Check-In",
-            "description": "Beziehe dein Zimmer, um dich auf einen schönen Nachmittag vorzubereiten"
+            "description": "Macht euch bereit für einen schönen Abend."
           },
           {
             "time": "18:30 Uhr",
-            "title": "Entspannung",
-            "description": "Genieße ein Erholungsprogramm, das dich für das Abendessen erfrischt."
+            "title": "Begrüßung und Integration",
+            "description": "Brecht das Eis und lernt euch kennen."
           },
           {
             "time": "19:30 Uhr",
-            "title": "Abendessen & Traditionelle Köstlichkeiten",
-            "description": "Probiere kolumbianische Weihnachtsleckereien und ein typisches Barbecue."
-          },
-          {
-            "time": "21:00 Uhr",
-            "title": "Lagerfeuer & Ritual",
-            "description": "Versammelt euch am Feuer mit Musik und herzlichen Momenten zusammen."
+            "title": "Natilla & Buñuelos",
+            "description": "Probiert kolumbianische Weihnachtsleckereien mit BBQ."
           }
         ]
       },
       {
         "dateLabel": "Sa, 20. Dez",
-  "subtitle": "Der Große Tag - 🪨💨",
+  "subtitle": "<b>Der Große Tag</b>",
         "events": [
           {
-            "time": "14:30 Uhr",
-            "title": "Ankunft der Gäste",
-            "description": "Findet eure Plätze und genießt ein Willkommensgetränk."
-          },
-          {
-            "time": "15:00 Uhr",
-            "title": "Zeremonie",
-            "description": "Seid dabei, wenn wir 'Ja' sagen."
+            "time": "14:00 Uhr",
+            "title": "Religiöse Zeremonie",
+            "description": "Feiert die Hochzeitsmesse in der Kirche."
           },
           {
             "time": "16:00 Uhr",
-            "title": "Sektempfang",
-            "description": "Leichte Häppchen, Getränke und Musik."
+            "title": "Ankunft des Paares",
+            "description": "Begrüßt die Neuvermählten mit Applaus."
           },
           {
-            "time": "17:30 Uhr",
-            "title": "Empfang",
-            "description": "Abendessen, Reden und erste Tänze."
-          },
-          {
-            "time": "20:00 Uhr",
-            "title": "Tanzen",
-            "description": "Lasst uns die ganze Nacht feiern!"
+            "time": "17:00 Uhr – 22:00 Uhr",
+            "title": "Abendprogramm & Abendessen",
+            "description": "Ein festliches Programm für alle Gäste."
           }
         ]
       },
       {
         "dateLabel": "So, 21. Dez",
-  "subtitle": "Weiße Party & Abschied - 💧",
+  "subtitle": "<i>Optional. Wenn ihr möchtet - </i><b>Weiße Party & Abschied</b>",
         "events": [
           {
             "time": "11:00 Uhr",
-            "title": "Abschiedsbrunch",
-            "description": "Genießt einen entspannten Brunch, bevor wir uns verabschieden."
+            "title": "Besuch einer Kaffeeplantage",
+            "description": "Ein achtsamer Moment, um gemeinsam in den Tag zu starten."
+          },
+          {
+            "time": "12:00 Uhr",
+            "title": "Tuk Tuk Tour",
+            "description": "Genießt eine besondere Fahrt nach Guatapé."
+          },
+          {
+            "time": "14:00 Uhr",
+            "title": "Weiße Bootsparty",
+            "description": "Zieht euch weiß an und genießt Musik, Tanz, Cocktails und den Sonnenuntergang zusammen."
           }
         ]
       }
