@@ -257,10 +257,12 @@
     "paragraph4": "Von diesem Moment an haben Maria und Chris nie aufgehört zu reden. Besser noch: In ihren ersten zwölf gemeinsamen Monaten reisten sie in 14 Länder.",
     "paragraph5": "Was mit einem Gespräch begann, wurde zu einem Leben voller Lachen, Abenteuer und Liebe. Und jetzt können wir es kaum erwarten, dieses nächste Kapitel mit euch allen zu feiern, die uns die Welt bedeuten."
   },
-  "Countdown": {
+  "countdown": {
     "days": "Tage",
-    "hours": "Stunden",
-    "minutes": "Minuten"
+    "hrs": "Std",
+    "min": "Min",
+    "sec": "Sek",
+    "bigDay": "Der große Tag ist da!"
   },
   "schedule": {
     "title": "Ablaufplan",

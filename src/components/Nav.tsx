@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
+import { Heart } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 import HamburgerIcon from './icons/HamburgerIcon';
 
@@ -37,7 +38,8 @@ export const Nav = ({ navItems }: NavProps) => {
     <nav className="fixed top-0 left-0 right-0 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200/10 shadow-sm hover:shadow-md transition-all duration-300 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link href="#hero" className="text-xl font-script">
+          <Link href="#hero" className="text-xl font-script flex items-center">
+            <Heart className="w-5 h-5 text-red-500 mr-2" />
             {c('name1')} & {c('name2')} 
             {/* {c('activity')} */}
           </Link>

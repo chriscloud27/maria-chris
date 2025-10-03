@@ -68,7 +68,7 @@ export const Arrival = () => {
       imageSrc: '/arrival.jpeg',
       imageAlt: t('cards.air.imageAlt'),
       title: t('cards.air.title'),
-      icon: <span className="text-xl font-bold text-purple-800">A</span>,
+      icon: <span className="text-xl font-bold text-purple-800">✈️</span>,
       content: [
         {
           title: t('cards.air.content.item1.title'),

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
+import Countdown from './Countdown';
 
 export const Hero = () => {
   const t = useTranslations('hero');
@@ -49,8 +50,10 @@ export const Hero = () => {
       <p className="font-heading text-lg md:text-xl tracking-[0.1em] text-muted-foreground mb-12">
         {t('title')}
       </p>
+      {/* Countdown Timer */}
+        <Countdown targetDate="2025-12-20T14:00:00" />
 
-      {/* Date Section - Elegant invitation style */}
+        {/* Date Section - Elegant invitation style */}
       <div className="text-center mb-8">
         <p className="font-heading text-xl md:text-2xl tracking-[0.3em] uppercase mb-4">{t('month')}</p>
         <div className="border-t border-b border-foreground py-6 px-12 mb-4">

@@ -30,7 +30,7 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(
     calculateTimeLeft(targetDate)
   );
-  const t = useTranslations("Countdown");
+  const t = useTranslations("countdown");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -41,19 +41,16 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
   });
 
   if (!timeLeft) {
-    return null;
+    return (
+      <div className="text-center font-script text-2xl md:text-3xl lg:text-4xl text-foreground -mt-6 mb-12">
+        💍 {t('bigDay')} 🥂
+      </div>
+    );
   }
 
   return (
-    <div className="text-center">
-      <div className="text-4xl md:text-6xl font-bold text-white">
-        <span>{timeLeft.days}</span>
-        <span className="text-xl md:text-2xl">{t("days")}</span>{" "}
-        <span>{timeLeft.hours}</span>
-        <span className="text-xl md:text-2xl">{t("hours")}</span>{" "}
-        <span>{timeLeft.minutes}</span>
-        <span className="text-xl md:text-2xl">{t("minutes")}</span>
-      </div>
+    <div className="text-center font-script text-2xl md:text-3xl lg:text-4xl text-foreground -mt-6 mb-12">
+      💍 {timeLeft.days} {t('days')} : {timeLeft.hours.toString().padStart(2, '0')} {t('hrs')} : {timeLeft.minutes.toString().padStart(2, '0')} {t('min')} : {timeLeft.seconds.toString().padStart(2, '0')} {t('sec')} 🥂
     </div>
   );
 };
