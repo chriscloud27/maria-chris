@@ -27,18 +27,18 @@ const calculateTimeLeft = (targetDate: string): TimeLeft | null => {
 };
 
 const Countdown = ({ targetDate }: { targetDate: string }) => {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(
-    calculateTimeLeft(targetDate)
-  );
+  // Start with null so server-render and initial client render match.
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
   const t = useTranslations("countdown");
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft(targetDate));
-    }, 1000);
+    // update immediately after mount, then every second
+    const update = () => setTimeLeft(calculateTimeLeft(targetDate));
+    update();
+    const timer = setInterval(update, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, [targetDate]);
 
   if (!timeLeft) {
     return (
