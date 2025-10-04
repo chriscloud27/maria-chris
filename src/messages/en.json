@@ -29,7 +29,9 @@
       "name": "Casa Loma, Hotel Boutique",
       "address": "054447, Peñol, Antioquia, Colombia"
     },
-    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia's most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water."
+    "intro": "Nestled in the heart of Antioquia, just two hours from Medellín, Guatapé is Colombia's most colorful village — a living canvas of vibrant houses, charming zócalos, and breathtaking lake views. Set on the shores of the Peñol-Guatapé Reservoir and only 10 km from the towering Piedra del Peñol, this picturesque town offers endless adventures, from kayaking and wake surfing to climbing the famous 700 steps for panoramic mountain vistas. After a day of exploring, unwind with authentic Antioquian flavors and tropical cocktails as the sun sets over the water.",
+    "roadWarningPrefix": "Please note:",
+    "roadWarning": "The road may not be suitable for every car. Vehicles should have higher clearance or be 4x4 to pass."
   },
   "travelTips": {
     "bestTime": {
@@ -267,7 +269,7 @@
       ,
       {
         "question": "What should I pack?",
-        "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes, clothes for yoga/sports, and good energy."
+        "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy."
       },
       {
         "question": "What to bring?",
@@ -337,7 +339,7 @@
     "days": [
       {
         "dateLabel": "Fri, Dec 19",
-    "subtitle": "<i>Optional.</i><b>Welcome & Connect</b>",
+    "subtitle": "<i>Optional: </i><b>Welcome & Connect 🔥</b>",
         "events": [
           {
             "time": "4:00 PM",
@@ -358,7 +360,7 @@
       },
       {
         "dateLabel": "Sat, Dec 20",
-        "subtitle": "<b>The Big Day</b>",
+        "subtitle": "<b>The Big Day 🪨🌬️</b>",
         "events": [
           {
             "time": "2:00 PM",
@@ -379,7 +381,7 @@
       },
       {
         "dateLabel": "Sun, Dec 21",
-  "subtitle": "<i>Optional.</i><b>White Party & Farewell</br>",
+  "subtitle": "<i>Optional: </i><b>White Party & Farewell 💧</br>",
         "events": [
           {
             "time": "11:00 AM",

@@ -119,6 +119,11 @@ export const LocationExcursions = () => {
                   className="hover:scale-105 transition-transform duration-500"
                 ></iframe>
               </div>
+
+              {/* Warning / accessibility note about the road */}
+              <div className="p-4 bg-white/70 border-t border-purple-100 text-sm text-gray-700">
+                <strong>{tLocation('roadWarningPrefix')}</strong> {tLocation('roadWarning')}
+              </div>
               {/* Purple overlay border on hover */}
               <div className="absolute inset-0 border-4 border-transparent hover:border-purple-400/50 transition-colors duration-300 pointer-events-none rounded-b-2xl"></div>
             </div>

@@ -29,7 +29,9 @@
       "name": "Casa Loma, Hotel Boutique",
       "address": "054447, Peñol, Antioquia, Kolumbien"
     },
-    "intro": "Im Herzen von Antioquia gelegen, nur zwei Stunden von Medellín entfernt, ist Guatapé Kolumbiens farbenfrohstes Dorf – eine lebendige Leinwand aus lebhaften Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol entfernt gelegen, bietet diese malerische Stadt endlose Abenteuer, vom Kajakfahren und Wakesurfen bis hin zum Erklimmen der berühmten 700 Stufen für Panorama-Bergblicke. Nach einem Tag voller Erkundungen entspannen Sie sich mit authentischen antioquianischen Aromen und tropischen Cocktails, während die Sonne über dem Wasser untergeht."
+    "intro": "Im Herzen von Antioquia gelegen, nur zwei Stunden von Medellín entfernt, ist Guatapé Kolumbiens farbenfrohstes Dorf – eine lebendige Leinwand aus lebhaften Häusern, charmanten Zócalos und atemberaubenden Seeblicken. Am Ufer des Peñol-Guatapé-Stausees und nur 10 km von der imposanten Piedra del Peñol entfernt gelegen, bietet diese malerische Stadt endlose Abenteuer, vom Kajakfahren und Wakesurfen bis hin zum Erklimmen der berühmten 700 Stufen für Panorama-Bergblicke. Nach einem Tag voller Erkundungen entspannen Sie sich mit authentischen antioquianischen Aromen und tropischen Cocktails, während die Sonne über dem Wasser untergeht.",
+    "roadWarningPrefix": "Bitte beachten:",
+    "roadWarning": "Die Straße ist möglicherweise nicht für jedes Auto geeignet. Fahrzeuge sollten eine höhere Bodenfreiheit haben oder ein 4x4 sein, um passieren zu können."
   },
   "hotels": {
     "title": "Hotel Optionen",
@@ -267,7 +269,7 @@
       ,
       {
         "question": "Was sollte ich einpacken?",
-        "answer": "Bequeme Schuhe (keine High Heels — es gibt Gras und viel zu laufen) und Badebekleidung."
+        "answer": "Badebekleidung, bequeme Schuhe (keine High Heels — es gibt Gras und viel zu laufen), warme Kleidung für die Nacht, da es kühl werden kann, Kleidung für Yoga/Sport und gute Energie."
       },
       {
         "question": "Was mitbringen?",
@@ -337,7 +339,7 @@
     "days": [
       {
         "dateLabel": "Fr, 19. Dez",
-        "subtitle": "<i>Optional. Wenn ihr möchtet - </i><b>Begrüßung & Verbindung",
+        "subtitle": "<i>Optional: </i><b>Begrüßung & Verbindung 🔥</b>",
         "events": [
           {
             "time": "16:00 Uhr",
@@ -358,7 +360,7 @@
       },
       {
         "dateLabel": "Sa, 20. Dez",
-  "subtitle": "<b>Der Große Tag</b>",
+  "subtitle": "<b>Der Große Tag 🪨🌬️</b>",
         "events": [
           {
             "time": "14:00 Uhr",
@@ -379,7 +381,7 @@
       },
       {
         "dateLabel": "So, 21. Dez",
-  "subtitle": "<i>Optional. Wenn ihr möchtet - </i><b>Weiße Party & Abschied</b>",
+  "subtitle": "<i>Optional: </i><b>Weiße Party & Abschied 💧</b>",
         "events": [
           {
             "time": "11:00 Uhr",
