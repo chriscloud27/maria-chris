@@ -17,6 +17,7 @@
     "schedule": "Ablaufplan",
     "location": "Ort & Tipps",
     "hotels": "Hotels",
+    "attire": "Kleidung",
     "arrival": "Anreise",
     "rsvp": "Party 🎉",
     "excursions": "Ausflüge",
@@ -29,15 +30,20 @@
       "name": "Casa Loma, Hotel Boutique",
       "address": "054447, Peñol, Antioquia, Kolumbien"
     },
-  "intro": "Wir lieben es, zu reisen und zauberhafte Orte zu entdecken. Guatapé ist für uns der perfekte Ort, um unsere Liebe zu feiern: ein farbenfrohes, fröhliches Dorf, umgeben von Wasser, Bergen und Himmel. Dieser besondere Ort fängt die Energie der vier Elemente ein und lädt zu Abenteuern, Schönheit und Nähe ein. Wir möchten diesen unvergesslichen Moment mit Familie und Freunden teilen, die atemberaubenden Ausblicke genießen, durch die lebendigen Straßen spazieren und den einzigartigen Geist erleben, der Guatapé so lebendig macht.",
+    "intro": "Wir lieben es, zu reisen und zauberhafte Orte zu entdecken. Guatapé ist für uns der perfekte Ort, um unsere Liebe zu feiern: ein farbenfrohes, fröhliches Dorf, umgeben von Wasser, Bergen und Himmel. Dieser besondere Ort fängt die Energie der vier Elemente ein und lädt zu Abenteuern, Schönheit und Nähe ein. Wir möchten diesen unvergesslichen Moment mit Familie und Freunden teilen, die atemberaubenden Ausblicke genießen, durch die lebendigen Straßen spazieren und den einzigartigen Geist erleben, der Guatapé so lebendig macht.",
     "roadWarningPrefix": "Bitte beachten:",
     "roadWarning": "Die Straße ist möglicherweise nicht für jedes Auto geeignet. Fahrzeuge sollten eine höhere Bodenfreiheit haben oder ein 4x4 sein, um passieren zu können."
+    ,"tipsHeading": "Reisetipps"
   },
   "hotels": {
     "title": "Hotel Optionen",
-  "subtitle": "Wir teilen einige Optionen, die du in Betracht ziehen kannst. Du kannst natürlich auch andere Unterkünfte in der Nähe des Veranstaltungsorts erkunden, die besser zu deinem Geschmack oder Budget passen — es gibt viele Möglichkeiten.",
-  "bookingLinkText": "Mehr Details",
-  "mapText": "Mehr Details",
+    "subtitle": "Wir teilen einige Optionen, die du in Betracht ziehen kannst. Du kannst natürlich auch andere Unterkünfte in der Nähe des Veranstaltungsorts erkunden, die besser zu deinem Geschmack oder Budget passen — es gibt viele Möglichkeiten.",
+    "option1Title": "Option $",
+    "option2Title": "Option $$",
+    "option3Title": "Option $$$",
+    "seeMore": "Mehr anzeigen",
+    "bookingLinkText": "Mehr Details",
+    "mapText": "Mehr Details",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
       "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
@@ -179,7 +185,7 @@
     ]
   },
   "rsvp": {
-  "title": "Zusage 🎉",
+    "title": "Zusage 🎉",
     "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 10. Mai 2026 Bescheid.",
     "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
     "kidsInfo": "Kinder sind willkommen; bitte gebt das Alter im Nachrichtenfeld an.",
@@ -207,8 +213,8 @@
     "notesPlaceholder": "Schreibe hier deine Notizen",
     "submitButton": "RSVP senden",
     "submittingButton": "Wird gesendet...",
-  "successMessage": "dein Eintrag wurde erfolgreich aktualisiert",
-  "errorMessage": "Fehler",
+    "successMessage": "dein Eintrag wurde erfolgreich aktualisiert",
+    "errorMessage": "Fehler",
     "selectOption": "Bitte eine Option auswählen",
     "enterCodePrompt": "Tu código especial",
     "invitationIdLabel": "Einladungs-ID",
@@ -265,15 +271,14 @@
       {
         "question": "An wen kann ich mich bei Fragen wenden?",
         "answer": "Bitte kontaktiert uns direkt."
-      }
-      ,
+      },
       {
         "question": "Was sollte ich einpacken?",
         "answer": "Badebekleidung, bequeme Schuhe (keine High Heels — es gibt Gras und viel zu laufen), warme Kleidung für die Nacht, da es kühl werden kann, Kleidung für Yoga/Sport und gute Energie."
       },
       {
-        "question": "Was mitbringen?",
-        "answer": "Badebekleidung, bequeme Schuhe, warme Kleidung, Kleidung für Yoga/Sport und gute Energie."
+        "question": "Wie ist das Wetter in Guatapé?",
+        "answer": "Tagsüber angenehm warm, abends kann es kühl werden. Bringt also etwas Leichtes für den Tag und eine Jacke oder Pullover für die Nacht mit."
       },
       {
         "question": "Welche Geschenke?",
@@ -285,35 +290,35 @@
     "title": "Übersicht",
     "subtitle": "Zeremonie, Empfang und alles dazwischen",
     "dateTitle": "Datum",
-  "dateMain": "19. Dez: Willkommen & Verbinden\n20. Dez: Der Große Tag\n21. Dez: Weiße Party & Abschied",
-  "dateLine1": "19. Dez (optional): Willkommen & Verbinden",
-  "dateLine2": "20. Dez: Der Große Tag",
-  "dateLine3": "21. Dez (optional): Weiße Party & Abschied",
+    "dateMain": "19. Dez: Willkommen & Verbinden\n20. Dez: Der Große Tag\n21. Dez: Weiße Party & Abschied",
+    "dateLine1": "19. Dez (optional): Willkommen & Verbinden",
+    "dateLine2": "20. Dez: Der Große Tag",
+    "dateLine3": "21. Dez (optional): Weiße Party & Abschied",
     "ceremonyTime": "",
-  "showDetailsButton": "Details Anzeigen",
+    "showDetailsButton": "Details Anzeigen",
     "venueTitle": "Veranstaltungsort",
-  "venueName": "Casa Loma, Hotel Boutique",
-  "venueAddress1": "054447, Peñol, Antioquia",
-  "venueAddress2": "Kolumbien",
+    "venueName": "Casa Loma, Hotel Boutique",
+    "venueAddress1": "054447, Peñol, Antioquia",
+    "venueAddress2": "Kolumbien",
     "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
     "getDirections": "Route anzeigen",
     "attireTitle": "Kleidung",
-  "attireWomenLabel": "Frauen:",
-  "attireMenLabel": "Männer:",
-  "attireOverview": "Farben",
-  "attireColors": "Hellgrün, Petrol-Grün, Olivgrün, Dunkelgrün, Orange, Goldgelb, Fuchsia, Kräftiges Rosa, Flieder, Dunkles Violett, Helles Violett, Lavendel",
-  "attireExampleTitle": "Kleidung",
-  "attireWomen": "Frauen in hellen, frühlingshaften Tönen (blush, coral, salbeigrün, türkis oder sanftes gelb)",
-  "attireMen": "Männer mit Guayabera oder leichtem Hemd in Lavendel, Blau oder Grün und beigem/khaki-farbenem Hosen",
-  "attireKids": "Kinder in Weiß mit grünen Akzenten",
-  "attireSummary": "Frühlingshafte Farben für Frauen; leichte Hemden und beige für Männer; Kinder in Weiß.",
+    "attireWomenLabel": "Frauen:",
+    "attireMenLabel": "Männer:",
+    "attireOverview": "Farben",
+    "attireColors": "Hellgrün, Petrol-Grün, Olivgrün, Dunkelgrün, Orange, Goldgelb, Fuchsia, Kräftiges Rosa, Flieder, Dunkles Violett, Helles Violett, Lavendel",
+    "attireExampleTitle": "Kleidung",
+    "attireWomen": "Frauen in hellen, frühlingshaften Tönen (blush, coral, salbeigrün, türkis oder sanftes gelb)",
+    "attireMen": "Männer mit Guayabera oder leichtem Hemd in Lavendel, Blau oder Grün und beigem/khaki-farbenem Hosen",
+    "attireKids": "Kinder in Weiß mit grünen Akzenten",
+    "attireSummary": "Frühlingshafte Farben für Frauen; leichte Hemden und beige für Männer; Kinder in Weiß.",
     "attireWomenMenButton": "Frauen / Männer",
     "attireKidsButton": "Kinder",
     "attireKidsTitle": "Weiße Bootsparty",
     "attireBoatText": "Willkommen an Bord unserer optionalen Weißen Bootsparty — bequeme weiße Kleidung, sportlich oder elegant.",
     "attireExampleButton": "Beispiel",
     "attireMoreDetailsButton": "Mehr Details",
-  "attireNote": "Leicht und farbenfroh kleiden — frühlingshafte Stimmung.",
+    "attireNote": "Leicht und farbenfroh kleiden — frühlingshafte Stimmung.",
     "attireButtonText": "Mehr Sehen",
     "attireColorsButton": "Farben",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
@@ -360,7 +365,7 @@
       },
       {
         "dateLabel": "Sa, 20. Dez",
-  "subtitle": "<b>Der Große Tag 🪨🌬️</b>",
+        "subtitle": "<b>Der Große Tag 🪨🌬️</b>",
         "events": [
           {
             "time": "14:00 Uhr",
@@ -381,7 +386,7 @@
       },
       {
         "dateLabel": "So, 21. Dez",
-  "subtitle": "<i>Optional: </i><b>Weiße Party & Abschied 💧</b>",
+        "subtitle": "<i>Optional: </i><b>Weiße Party & Abschied 💧</b>",
         "events": [
           {
             "time": "11:00 Uhr",

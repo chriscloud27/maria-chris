@@ -17,6 +17,7 @@
     "schedule": "Schedule",
     "location": "Location & Tips",
     "hotels": "Hotels",
+    "attire": "Attire",
     "arrival": "Arrival",
   "rsvp": "Confirmation 🎉",
     "excursions": "Excursions",
@@ -32,6 +33,7 @@
     "intro": "We love traveling and discovering magical places, and we couldn’t imagine a better setting to celebrate our love than Guatapé — a colorful, joyful village surrounded by water, mountains, and sky. This special place captures the energy of the four elements, inviting adventure, beauty, and connection. We want to share this unforgettable moment with our family and friends, enjoying the breathtaking views, vibrant streets, and the unique spirit that makes Guatapé so full of life and adventures.",
     "roadWarningPrefix": "Please note:",
     "roadWarning": "The road may not be suitable for every car. Vehicles should have higher clearance or be 4x4 to pass."
+    ,"tipsHeading": "Travel Tips"
   },
   "travelTips": {
     "bestTime": {
@@ -62,6 +64,10 @@
   "hotels": {
     "title": "Hotel Options",
   "subtitle": "Here are a few options you might consider. Of course, you can also explore other nearby places close to the venue that better match your taste or budget — there are many options available.",
+  "option1Title": "Option $",
+  "option2Title": "Option $$",
+  "option3Title": "Option $$$",
+  "seeMore": "See more",
   "bookingLinkText": "More Details",
   "mapText": "More Details",
     "cristalinaCabana": {
@@ -272,8 +278,8 @@
         "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy."
       },
       {
-        "question": "What to bring?",
-        "answer": "Swimmers, comfortable shoes, warm clothes, clothes for yoga/sports, good energy."
+        "question": "What's the weather like in Guatapé?",
+        "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening."
       },
       {
         "question": "Which gifts?",
