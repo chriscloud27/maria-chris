@@ -14,13 +14,10 @@ import { z } from 'zod';
 // - Notes -> notes (rich text)
 // - Song -> song (text)
 export const rsvpSchema = z.object({
-  'CO/DE': z.string().min(1, 'CO/DE is required'),
   code: z.string().optional(),
   name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Invalid email address'),
   whatsapp: z.string().optional(),
   rsvp: z.enum(['Yes', 'No', 'Maybe']).optional(),
-  '+1': z.boolean().optional(),
   '19-Connect': z.boolean().optional(),
   'BigDay': z.boolean().optional(),
   '21-Boat': z.boolean().optional(),

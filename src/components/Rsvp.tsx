@@ -67,12 +67,9 @@ export const Rsvp = () => {
           const res = await fetch(`/api/rsvp/search?name=${encodeURIComponent(name)}`);
           if (res.ok) {
             const data = await res.json();
-            if (data && data.email) {
-              setValue('CO/DE', data['CO/DE'] || '');
-              setValue('email', data.email);
+            if (data) {
               setValue('notes', data.notes || '');
               setValue('song', data.song || '');
-              setValue('+1', data['+1'] || false);
               setValue('19-Connect', data['19-Connect'] || false);
               setValue('BigDay', data['BigDay'] || false);
               setValue('21-Boat', data['21-Boat'] || false);
@@ -97,16 +94,13 @@ export const Rsvp = () => {
     setVerificationError(null);
     try {
       const res = await fetch(`/api/rsvp/verify-code?code=${encodeURIComponent(invitationCode)}`);
-      if (res.ok) {
+          if (res.ok) {
         const data = await res.json();
         console.log('Verification data received:', data);
-        if (data && data.email) {
-          setValue('CO/DE', data['CO/DE'] || invitationCode || 'DEFAULT'); // Use invitation code as fallback
+        if (data) {
           setValue('name', data.name);
-          setValue('email', data.email);
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
-          setValue('+1', data['+1'] || false);
           setValue('19-Connect', data['19-Connect'] || false);
           setValue('BigDay', data['BigDay'] || false);
           setValue('21-Boat', data['21-Boat'] || false);
@@ -152,12 +146,10 @@ export const Rsvp = () => {
     }
 
     const submitData = {
-      'CO/DE': data['CO/DE'] || 'DEFAULT', // Use a default value if CO/DE is not available
       name: data.name,
-      email: data.email,
       notes: data.notes,
       song: data.song,
-      '+1': data['+1'],
+  /* +1 removed */
       '19-Connect': data['19-Connect'],
       'BigDay': data['BigDay'], // Include BigDay field
       '21-Boat': data['21-Boat'],
@@ -308,19 +300,7 @@ export const Rsvp = () => {
               {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
             </div>
 
-            {/* Email */}
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-                {t('emailLabel')}
-              </label>
-              <input
-                id="email"
-                {...register('email')}
-                type="email"
-                className={`w-full p-3 border rounded-md ${errors.email ? 'border-red-500' : 'border-gray-200'}`}
-              />
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-            </div>
+            {/* Email removed */}
 
             {/* WhatsApp number */}
             <div className="mb-4">
@@ -367,18 +347,7 @@ export const Rsvp = () => {
                 {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
               </div>
 
-              {/* +1 */}
-              <div className="mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('+1')}
-                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  />
-                  <span className="text-gray-700 text-sm font-bold">{t('plusOneLabel')}</span>
-                </label>
-                {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
-              </div>
+              {/* +1 removed */}
 
               {/* 21-Boat */}
               <div className="mb-4">
@@ -424,8 +393,7 @@ export const Rsvp = () => {
               {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
             </div>
 
-            {/* Hidden CO/DE field */}
-            <input type="hidden" {...register('CO/DE')} />
+            {/* CO/DE removed */}
             
             {/* Honeypot */}
             <div className="hidden" aria-hidden="true">

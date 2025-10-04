@@ -21,12 +21,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: parsedData.error.format() }, { status: 400 });
     }
 
-    const { 'CO/DE': coDe, code, name, email, whatsapp, rsvp, '+1': plusOne, '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song } = parsedData.data;
+  const { code, name, whatsapp, rsvp, '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song } = parsedData.data;
 
     // Persist to Notion
     try {
-      console.log('Attempting to add or update RSVP to Notion:', { 'CO/DE': coDe, code, name, email, whatsapp, rsvp: rsvp || 'Yes', '+1': plusOne, '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song });
-      await addRSVP({ 'CO/DE': coDe, code, name, email, whatsapp, rsvp: rsvp || 'Yes', '+1': plusOne, '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song });
+  console.log('Attempting to add or update RSVP to Notion:', { code, name, whatsapp, rsvp: rsvp || 'Yes', '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song });
+  await addRSVP({ code, name, whatsapp, rsvp: rsvp || 'Yes', '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song });
       console.log('Successfully added or updated RSVP in Notion');
     } catch (pErr: unknown) {
       if (pErr instanceof Error) {
