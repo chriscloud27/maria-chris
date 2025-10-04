@@ -29,7 +29,9 @@
       "name": "Casa Loma, Hotel Boutique",
       "address": "054447, Peñol, Antioquia, Colombia"
     },
-    "intro": "Ubicado en el corazón de Antioquia, a solo dos horas de Medellín, Guatapé es el pueblo más colorido de Colombia: un lienzo viviente de casas vibrantes, encantadores zócalos y vistas impresionantes al lago. Situado a orillas del embalse Peñol-Guatapé y a solo 10 km de la imponente Piedra del Peñol, este pintoresco pueblo ofrece aventuras sin fin, desde kayak y wakesurf hasta subir los famosos 700 escalones para disfrutar de vistas panorámicas de las montañas. Tras un día de exploración, relájate con auténticos sabores antioqueños y cócteles tropicales mientras el sol se pone sobre el agua."
+  "intro": "Nos encanta viajar y descubrir lugares mágicos, y no podríamos imaginar un mejor escenario para celebrar nuestro amor que Guatapé: un pueblo colorido y alegre rodeado de agua, montañas y cielo. Este lugar especial captura la energía de los cuatro elementos e invita a la aventura, la belleza y la conexión. Queremos compartir este momento inolvidable con nuestra familia y amigos, disfrutando de sus vistas impresionantes, sus calles vibrantes y ese espíritu único que hace que Guatapé esté lleno de vida.",
+  "roadWarningPrefix": "Por favor ten en cuenta:",
+  "roadWarning": "La carretera puede no ser adecuada para todos los coches. El vehículo debe tener una altura suficiente o ser 4x4 para poder pasar."
   },
   "travelTips": {
     "bestTime": {
@@ -214,12 +216,12 @@
     { "question": "¿Son bienvenidos los niños?", "answer": "Sí, los niños son bienvenidos." },
     { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." }
     ,
-    { "question": "¿Qué debería empacar?", "answer": "Zapatos cómodos (no tacones — habrá césped y mucho caminar) y traje de baño." },
+  { "question": "¿Qué debería empacar?", "answer": "Traje de baño, zapatos cómodos (no tacones — habrá césped y mucho caminar), ropa abrigada para la noche ya que hará fresco, ropa para yoga/deporte y buena energía." },
     { "question": "¿Qué traer?", "answer": "Traje de baño, zapatos cómodos, ropa abrigada, ropa para yoga/deporte y buena energía." },
     { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." }
   ] },
   "details": {
-    "title": "Los Detalles",
+    "title": "Información General",
     "subtitle": "Ceremonia, recepción y todo lo demás",
     "dateTitle": "Fecha",
   "dateMain": "19 Dic: Bienvenida y Conexión\n20 Dic: El Gran Día\n21 Dic: Fiesta Blanca y Despedida",
@@ -280,7 +282,7 @@
     "days": [
       {
         "dateLabel": "Vie, 19 dic",
-        "subtitle": "Opcional. Si te gusta - Bienvenida & Conexión",
+        "subtitle": "Opcional: Si te gusta - Bienvenida & Conexión 🔥",
         "events": [
           { "time": "16:00", "title": "Llegada de invitados y check-in", "description": "Instálate, prepárate para una hermosa tarde." },
           { "time": "18:30", "title": "Bienvenida e integración", "description": "Rompamos el hielo suavemente, conozcámonos unos a otros." },
@@ -289,7 +291,7 @@
       },
       {
         "dateLabel": "Sáb, 20 dic",
-        "subtitle": "<b>El Gran Día</b>",
+        "subtitle": "<b>El Gran Día 🪨🌬️</b>",
         "events": [
           { "time": "14:00", "title": "Ceremonia Religiosa", "description": "Celebra la misa de boda en la iglesia." },
           { "time": "16:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
@@ -298,7 +300,7 @@
       },
       {
         "dateLabel": "Dom, 21 dic",
-        "subtitle": "<i>Opcional. Si te gusta - </i><b>Despedida</br>",
+        "subtitle": "<i>Opcional: Si te gusta - </i><b>Despedida 💧</br>",
         "events": [
           { "time": "11:00 AM", "title": "Visita a una plantación de café", "description": "Un momento consciente para comenzar el día juntos." },
           { "time": "12:00 PM", "title": "Tour en Tuk Tuk", "description": "Disfrutando de un paseo especial hacia Guatapé." },

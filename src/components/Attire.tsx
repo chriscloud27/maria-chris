@@ -15,7 +15,7 @@ export default function Attire() {
 
       <div className="container mx-auto px-4 flex flex-col md:flex-row gap-6 justify-center">
         {/* Colors Card (Box 1) */}
-        <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
+  <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-0">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <FaPalette className="text-green-900 text-2xl" />
           </div>
@@ -34,7 +34,7 @@ export default function Attire() {
         </div>
 
         {/* Cloths Card (Box 2) */}
-        <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
+  <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-0">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <PiDressLight className="text-green-900 text-2xl" />
           </div>
@@ -90,7 +90,7 @@ export default function Attire() {
           </div>
           <div className="mt-auto flex gap-2">
             <a
-              href={t("attireButtonLink")}
+              href="https://au.pinterest.com/pin/4151824652621908/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
@@ -98,7 +98,7 @@ export default function Attire() {
               {t("attireWomenMenButton")}
             </a>
             <a
-              href="https://pin.it/i/45Mdn5A2M/"
+              href="https://www.pinterest.com/pin/138907969754227796"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
@@ -109,7 +109,7 @@ export default function Attire() {
         </div>
 
         {/* White Boat Party Card (Box 3) */}
-        <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start min-w-[280px] max-w-sm mx-auto">
+  <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-0">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <FaChild className="text-green-900 text-2xl" />
           </div>
@@ -117,7 +117,7 @@ export default function Attire() {
           <p className="text-sm text-gray-600 mb-4">{t("attireBoatText")}</p>
           <div className="mt-auto">
             <a
-              href={t("attireButtonLink")}
+              href="https://au.pinterest.com/pin/107804985306291399"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
