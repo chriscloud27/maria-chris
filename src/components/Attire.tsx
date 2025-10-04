@@ -43,6 +43,9 @@ export default function Attire() {
             {/* Render label (before colon) in bold, keep the rest normal. If there's no colon, render whole string normally. */}
             {(() => {
               const renderBoldLabel = (s: string) => {
+                // If the translation is empty or only whitespace, don't render anything
+                if (!s || s.trim().length === 0) return null;
+
                 const parts = s.split(":");
                 if (parts.length > 1) {
                   const label = parts.shift();
@@ -67,6 +70,7 @@ export default function Attire() {
                       preserve that spacing for visual parity */}
                   {(() => {
                     const s = t("attireKids");
+                    if (!s || s.trim().length === 0) return null;
                     const parts = s.split(":");
                     if (parts.length > 1) {
                       const label = parts.shift();

@@ -20,9 +20,9 @@ export function Details() {
           </div>
           <h3 className="text-xl font-bold mb-2">{t("dateTitle")}</h3>
           <div className="text-sm leading-relaxed space-y-1 mb-4">
-            <div>19th Dec: Welcome & Connect</div>
-            <div className="font-bold text-purple-700">20th Dec: The Big Day</div>
-            <div>21st Dec: White Party & Farewell</div>
+            <div>{t('dateLine1')}</div>
+            <div className="font-bold text-purple-700">{t('dateLine2')}</div>
+            <div>{t('dateLine3')}</div>
           </div>
           {/* route to the attire page for the current locale */}
           <a
@@ -53,10 +53,7 @@ export function Details() {
           </div>
           <h3 className="text-xl font-bold mb-2">{t("attireTitle")}</h3>
           <div className="mb-2">
-            <p className="font-medium">{t("attireWomenLabel")}</p>
-            <p className="text-sm text-gray-600 mb-2">{t("attireWomen")}</p>
-            <p className="font-medium">{t("attireMenLabel")}</p>
-            <p className="text-sm text-gray-600 mb-3">{t("attireMen")}</p>
+            <p className="text-sm text-gray-600 mb-2">{t("attireSummary")}</p>
           </div>
           <div className="flex flex-wrap gap-2 items-start">
             <a
