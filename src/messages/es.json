@@ -18,7 +18,7 @@
     "location": "Ubicación y Consejos",
     "hotels": "Hoteles",
     "arrival": "Llegada",
-    "rsvp": "Fiesta 🎉",
+  "rsvp": "Confirmar 🎉",
     "excursions": "Excursiones",
     "faq": "Preguntas",
     "story": "Historia"
@@ -213,6 +213,10 @@
     { "question": "¿Hay un código de vestimenta?", "answer": "Agradeceríamos vestimenta festiva." },
     { "question": "¿Son bienvenidos los niños?", "answer": "Sí, los niños son bienvenidos." },
     { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." }
+    ,
+    { "question": "¿Qué debería empacar?", "answer": "Zapatos cómodos (no tacones — habrá césped y mucho caminar) y traje de baño." },
+    { "question": "¿Qué traer?", "answer": "Traje de baño, zapatos cómodos, ropa abrigada, ropa para yoga/deporte y buena energía." },
+    { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." }
   ] },
   "details": {
     "title": "Los Detalles",
@@ -258,8 +262,8 @@
   "story": {
     "title": "Nuestra Historia",
     "subtitle": "Un par de años atrás, Chris fue a Colombia mientras María vivía en Australia. Años después Chris dejó Europa para visitar Australia en el momento exacto en que María dejó Australia para viajar por Europa (gran sincronización, universo 👏)",
-    "paragraph2": "María fue a un festival de salsa en Croacia buscando su alma gemela. Y la encontró… era Caro. ¡Mejor amiga al instante! Juntas fueron al festival tres años seguidos. Al cuarto año Caro no fue al festival de salsa por ir a otro evento con un \"amigo\" (spoiler: ese era Chris 👀). María igual fue y después fue a un festival de nómadas digitales en Bulgaria. Al llegar Caro le escribió: mi \"amigo\" está ahí, deberías conocerlo!\"... pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María quería irse de una fiesta llena y ruidosa, cuando Chris se le acercó ya en la salida y empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
-    "paragraph3": "Al llegar Caro le escribió: mi \"amigo\" está ahí, deberías conocerlo!\"... pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María quería irse de una fiesta llena y ruidosa, cuando Chris se le acercó ya en la salida y empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
+    "paragraph2": "María fue a un festival de salsa en Croacia buscando su alma gemela. Y la encontró… era Caro. ¡Mejor amiga al instante! Juntas fueron al festival tres años seguidos. Al cuarto año Caro no fue al festival de salsa por ir a otro evento con un \"amigo\" (spoiler: ese era Chris 👀). María igual fue y su siguiente parada era un festival de nómadas digitales en Bulgaria. Cuando Caro se dio cuenta le escribió:",
+    "paragraph3": "Mi \"amigo\" está ahí, deberías conocerlo!\"... pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María quería irse de una fiesta llena y ruidosa, cuando Chris se le acercó ya en la salida y empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
     "paragraph4": "A la mañana siguiente, María salió a correr a las 7 de la mañana. Chris fue al parque a hacer ejercicio. Se cruzaron de nuevo… y desde ese momento, nunca se separaron.",
     "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura. Lo que comenzó como \"solo una conversación\" se convirtió en amor, aventura y ahora esta boda que esperamos celebrar juntos. 🎉💍"
   },

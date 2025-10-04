@@ -18,7 +18,7 @@
     "location": "Location & Tips",
     "hotels": "Hotels",
     "arrival": "Arrival",
-    "rsvp": "Fiesta 🎉",
+  "rsvp": "Confirmation 🎉",
     "excursions": "Excursions",
     "faq": "FAQ",
     "story": "Story"
@@ -263,6 +263,19 @@
       {
         "question": "Who can I contact with questions?",
         "answer": "Please contact us directly."
+      }
+      ,
+      {
+        "question": "What should I pack?",
+        "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes, clothes for yoga/sports, and good energy."
+      },
+      {
+        "question": "What to bring?",
+        "answer": "Swimmers, comfortable shoes, warm clothes, clothes for yoga/sports, good energy."
+      },
+      {
+        "question": "Which gifts?",
+        "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
       }
     ]
   },
