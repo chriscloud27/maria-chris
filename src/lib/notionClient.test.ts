@@ -53,14 +53,13 @@ test('calls notion.pages.create with expected payload including notes', async ()
   // Name property is now used for the page title
   expect(calledWith.parent.database_id).toBe('test-db-id');
   expect(calledWith.properties.Name.title[0].text.content).toBe(data.name);
-  expect(calledWith.properties.Email.email).toBe(data.email);
   expect(calledWith.properties.RSVP.select.name).toBe(data.rsvp);
   expect(calledWith.properties.Notes!.rich_text[0].text.content).toBe(data.notes);
 });
 
 test('omits Notes when notes not provided', async () => {
   notion.pages.create = jest.fn().mockResolvedValue({});
-  const data = { name: 'Jane', email: 'jane@example.com', rsvp: 'No' as RSVPValue };
+  const data = { name: 'Jane', rsvp: 'No' as RSVPValue };
   await addRSVP(data);
 
   const calledWith = notion.pages.create.mock.calls[0][0];

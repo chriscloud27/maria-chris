@@ -3,14 +3,12 @@ import * as React from 'react';
 interface RsvpConfirmationEmailProps {
   name: string;
   rsvp: 'Yes' | 'No' | 'Maybe';
-  email?: string;
   notes?: string;
 }
 
 const RsvpConfirmationEmail: React.FC<Readonly<RsvpConfirmationEmailProps>> = ({
   name,
   rsvp,
-  email,
   notes,
 }) => (
   <div>
@@ -19,11 +17,7 @@ const RsvpConfirmationEmail: React.FC<Readonly<RsvpConfirmationEmailProps>> = ({
     <p>
       RSVP: <strong>{rsvp}</strong>
     </p>
-    {email && (
-      <p>
-        Email: <strong>{email}</strong>
-      </p>
-    )}
+    {/* Email removed */}
     {notes && (
       <p>
         Notes: <em>{notes}</em>
@@ -54,7 +48,6 @@ export function renderRsvpConfirmationHtml(props: RsvpConfirmationEmailProps): s
 
   const name = escapeHtml(props.name);
   const rsvp = escapeHtml(props.rsvp);
-  const email = props.email ? `<p>Email: <strong>${escapeHtml(props.email)}</strong></p>` : '';
   const notes = props.notes ? `<p>Notes: <em>${escapeHtml(props.notes)}</em></p>` : '';
 
   return [
@@ -65,7 +58,6 @@ export function renderRsvpConfirmationHtml(props: RsvpConfirmationEmailProps): s
     `<h1>Hi ${name},</h1>`,
     '<p>Thank you — your RSVP has been recorded in our RSVP database.</p>',
     `<p>RSVP: <strong>${rsvp}</strong></p>`,
-    email,
     notes,
     "<p>We can't wait to celebrate with you!</p>",
     '<p>Best,</p>',
