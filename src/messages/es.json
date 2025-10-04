@@ -59,6 +59,7 @@
   },
   "hotels": {
     "title": "Opciones de Hotel",
+  "subtitle": "Te compartimos algunas opciones que puedes considerar. Sin embargo, por supuesto, puedes explorar otras alternativas cercanas al venue que se ajusten mejor a tu gusto o presupuesto — hay muchas opciones disponibles.",
   "bookingLinkText": "Más detalles",
   "mapText": "Más detalles",
     "cristalinaCabana": {
