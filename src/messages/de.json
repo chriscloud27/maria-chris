@@ -177,7 +177,7 @@
     ]
   },
   "rsvp": {
-    "title": "fiesta 🎉",
+  "title": "Zusage 🎉",
     "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 10. Mai 2026 Bescheid.",
     "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
     "kidsInfo": "Kinder sind willkommen; bitte gebt das Alter im Nachrichtenfeld an.",
@@ -264,6 +264,19 @@
         "question": "An wen kann ich mich bei Fragen wenden?",
         "answer": "Bitte kontaktiert uns direkt."
       }
+      ,
+      {
+        "question": "Was sollte ich einpacken?",
+        "answer": "Bequeme Schuhe (keine High Heels — es gibt Gras und viel zu laufen) und Badebekleidung."
+      },
+      {
+        "question": "Was mitbringen?",
+        "answer": "Badebekleidung, bequeme Schuhe, warme Kleidung, Kleidung für Yoga/Sport und gute Energie."
+      },
+      {
+        "question": "Welche Geschenke?",
+        "answer": "Wir möchten euch wissen lassen, dass das größte Geschenk für uns eure Anreise und eure Anwesenheit an unserem besonderen Tag ist."
+      }
     ]
   },
   "details": {
@@ -305,11 +318,11 @@
   },
   "story": {
     "title": "Unsere Geschichte",
-    "subtitle": "Es war einmal, Chris ging nach Kolumbien, während Maria in Australien lebte. Jahre später verließ Chris Europa, um Australien zu besuchen, genau in dem Moment, als Maria Australien verließ, um durch Europa zu reisen (großartiges Timing, Universum 👏)",
-    "paragraph2": "Maria ging zu einem Salsa-Festival in Kroatien auf der Suche nach ihrer Seelenverwandten. Und sie fand eine… es war Caro. Sofort beste Freundin! Zusammen gingen sie drei Jahre hintereinander zum Festival. Im vierten Jahr ließ Caro die Salsa aus und ging zu einer anderen Veranstaltung mit ihrem \"guten Freund\" (Spoiler: das war Chris 👀).",
-    "paragraph3": "Maria reiste weiter und landete schließlich bei einem Festival für digitale Nomaden in Bulgarien. Caro schrieb ihr: \"mein \"guter Freund\" ist dort, du solltest ihn treffen!\" ...aber teilte nie seinen Kontakt (danke, Caro). Das Universum hatte eindeutig einen Plan. An demselben Wochenende stießen Maria und Chris aufeinander, während sie versuchten, einer lauten und überfüllten Party zu entkommen. Sie fingen an zu reden, verloren das Zeitgefühl und bemerkten nicht, dass alle anderen bereits gegangen waren.",
-    "paragraph4": "Am nächsten Morgen ging Maria um 7 Uhr morgens joggen. Chris ging in den Park zum Training. Sie kreuzten sich wieder… und von diesem Moment an trennten sie sich nie wieder.",
-    "paragraph5": "In ihrem ersten Jahr reisten sie zusammen durch 14 Länder. Der Beweis, dass ein Gespräch zu einem ganzen Abenteuer werden kann. Was als \"nur ein Gespräch\" begann, wurde zu Liebe, Abenteuer und nun zu dieser Hochzeit, die wir gemeinsam zu feiern freuen. 🎉💍"
+    "subtitle": "",
+    "paragraph2": "Es war einmal… Chris zog es nach Kolumbien, während Maria gemütlich in Australien lebte. Jahre später beschloss Chris, Europa zu verlassen, um Australien zu besuchen – genau in dem Moment, als Maria Australien verließ, um durch Europa zu reisen. (Timing: 0 Punkte. Universum: 10 von 10 Punkten 👏)",
+    "paragraph3": "Maria tanzte sich derweil beim Salsa-Festival in Kroatien durchs Leben – auf der Suche nach ihrem Seelenverwandten. Und tatsächlich fand sie eine… Caro. Sie wurden auf Anhieb beste Freundinnen! 💃 Drei Jahre hintereinander besuchten die beiden das Festival – Sonne, Tanz, Freundschaft, Lachen. Im vierten Jahr aber sagte Caro plötzlich: „Ich komm diesmal nicht mit – ich geh zu einem anderen Event mit einem guten Freund.” (Spoiler: dieser „gute Freund“ war Chris. 👀)",
+    "paragraph4": "Maria zog weiter – und landete irgendwann auf einem Festival für digitale Nomaden in Bulgarien. Caro schrieb: „Mein guter Freund ist auch dort! Ihr solltet euch treffen!“ Aber – sie schickte nie seinen Kontakt. (Danke, Caro. Ganz großartig. 😅) Doch das Universum hatte schon längst einen Plan. An genau diesem Wochenende stolperten Maria und Chris zufällig ineinander, beide auf der Flucht vor einer viel zu lauten Party. Sie kamen ins Gespräch… und redeten so lange, bis sie merkten, dass alle anderen längst gegangen waren.",
+    "paragraph5": "Am nächsten Morgen, 7 Uhr: Maria joggte. Chris? Im Park beim Training. Und ja – sie trafen sich wieder. Seitdem? Unzertrennlich. ❤️ Im ersten Jahr reisten sie gemeinsam durch 14 Länder, bewiesen, dass ein Gespräch alles verändern kann – und dass das Universum manchmal einfach den besten Humor hat. Was als „nur ein Gespräch“ begann, wurde zu Liebe, Abenteuer und dieser Hochzeit, die wir jetzt mit euch feiern wollen. 🎉💍"
   },
   "countdown": {
     "days": "Tage",
