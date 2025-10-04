@@ -50,6 +50,7 @@ export default function Index() {
         { title: t('nav.details'), id: 'details' },
         { title: t('nav.schedule'), id: 'schedule' },
         { title: t('nav.location'), id: 'location' },
+        { title: t('nav.attire'), id: 'attire' },
         { title: t('nav.hotels'), id: 'hotels' },
         { title: t('nav.arrival'), id: 'arrival' },
         { title: t('nav.rsvp'), id: 'rsvp' },

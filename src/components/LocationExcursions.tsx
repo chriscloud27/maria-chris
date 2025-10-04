@@ -76,8 +76,8 @@ export const LocationExcursions = () => {
         {/* Combined Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <h2 className="text-4xl font-bold text-black">
-              {tLocation('title')} & Travel Tips
+              <h2 className="text-4xl font-bold text-black">
+              {tLocation('title')} & {tLocation('tipsHeading')}
             </h2>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>

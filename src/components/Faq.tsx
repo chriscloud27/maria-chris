@@ -51,9 +51,7 @@ const Faq = () => {
   const [openStates, setOpenStates] = useState(() => faqData.map(() => false));
 
   const toggleExpand = (index: number) => {
-    const newOpenStates = [...openStates];
-    newOpenStates[index] = !newOpenStates[index];
-    setOpenStates(newOpenStates);
+    setOpenStates((prev) => prev.map((v, i) => (i === index ? !v : v)));
   };
 
   return (
@@ -68,24 +66,30 @@ const Faq = () => {
           const isOpen = openStates[index];
 
           return (
-            <div key={index} className="border-b border-gray-200">
+            <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
               <button
                 type="button"
-                className="w-full flex items-center justify-between p-4 text-left font-semibold"
+                className="w-full flex items-center justify-between p-4 text-left font-semibold hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
                 aria-expanded={isOpen}
                 aria-controls={id}
                 onClick={() => toggleExpand(index)}
               >
-                <h3 className="text-xl">{item.question}</h3>
-                <span className={`ml-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true">
-                  ▼
+                <h3 className="text-lg sm:text-xl">{item.question}</h3>
+                <span
+                  className={`ml-4 transform transition-transform duration-200 text-purple-600 ${isOpen ? 'rotate-180' : ''}`}
+                  aria-hidden="true"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
                 </span>
               </button>
+
               <div
                 id={id}
-                className={`overflow-hidden transition-[height] duration-200 ease-in-out ${isOpen ? 'h-auto' : 'h-0'}`}
+                className={`px-4 overflow-hidden transition-[max-height] duration-300 ease-in-out ${isOpen ? 'max-h-96 py-4' : 'max-h-0'}`}
               >
-                <div className="p-4">
+                <div className="text-sm text-gray-700 leading-relaxed">
                   {item.answer}
                 </div>
               </div>
