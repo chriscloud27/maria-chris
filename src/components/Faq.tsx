@@ -5,40 +5,22 @@ import { useTranslations } from 'next-intl';
 const Faq = () => {
   const t = useTranslations('faq');
 
-  // Prefer reading the `questions` array directly from translations when
-  // available (clean and avoids probing many indices). If the translator
-  // doesn't expose the array, fall back to the safe indexed loop.
   const faqData = (() => {
-    // Attempt to read the entire questions array
-    // `t('questions')` may return an object/array depending on i18n implementation.
-    try {
-  const raw = t('questions') as unknown;
-      if (Array.isArray(raw)) {
-        // Map array entries to the expected shape using runtime type checks
-        return raw
-          .map((entry) => {
-            if (typeof entry === 'object' && entry !== null) {
-              const e = entry as Record<string, unknown>;
-              const question = typeof e.question === 'string' ? e.question : String(e.question ?? '');
-              const answer = typeof e.answer === 'string' ? e.answer : String(e.answer ?? '');
-              return { question, answer };
-            }
-            return { question: '', answer: '' };
-          })
-          .filter((it) => !!it.question);
-      }
-    } catch {
-      // ignore and fall back
-    }
-
-    // Fallback: indexed probing (safe, small max to avoid infinite loops)
     const items: { question: string; answer: string }[] = [];
     const maxItems = 6;
+    
     for (let i = 0; i < maxItems; i++) {
       const qKey = `questions.${i}.question`;
       const aKey = `questions.${i}.answer`;
-      const question = t(qKey);
-      const answer = t(aKey);
+      let question: string;
+      let answer: string;
+      try {
+        question = t(qKey);
+        answer = t(aKey);
+      } catch {
+        // missing translation for this index -> stop collecting
+        break;
+      }
 
       if (!question || question === qKey) break;
 

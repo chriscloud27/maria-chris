@@ -259,33 +259,32 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "questions": [
-      {
+    "questions": {
+      "0": {
         "question": "Is there a dress code?",
         "answer": "We would appreciate festive attire."
       },
-      {
+      "1": {
         "question": "Are children welcome?",
         "answer": "Yes, children are welcome."
       },
-      {
+      "2": {
         "question": "Who can I contact with questions?",
         "answer": "Please contact us directly."
-      }
-      ,
-      {
+      },
+      "3": {
         "question": "What should I pack?",
         "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy."
       },
-      {
+      "4": {
         "question": "What's the weather like in Guatapé?",
         "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening."
       },
-      {
+      "5": {
         "question": "Which gifts?",
         "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
       }
-    ]
+    }
   },
   "details": {
     "title": "General Information",
@@ -364,6 +363,7 @@
           }
         ]
       },
+      
       {
         "dateLabel": "Sat, Dec 20",
         "subtitle": "<b>The Big Day 🪨🌬️</b>",
@@ -407,5 +407,30 @@
         ]
       }
     ]
+  }
+  ,
+  "chatbot": {
+    "intro": "Hi! Ask me about RSVP, hotels, location, attire, or FAQ and I'll point you to the right section.",
+    "openButton": "Chat",
+    "title": "Wedding Assistant",
+    "placeholder": "Ask a question...",
+    "send": "Send",
+    "examples": {
+      "0": "Change meal to vegetarian",
+      "1": "Where can we stay?",
+      "2": "What's the dress code?"
+    },
+    "askName": "Your name (optional)",
+    "askCode": "Invitation code (optional)",
+    "startButton": "Start chat",
+  "welcome_greeting": "Hi{{name, prepend=\" \"}} — how can I help? You can ask about RSVP, hotels, or FAQs.",
+  "title_short": "Let me help you",
+  "closeButton": "Close chat",
+    "no_match": "Sorry, I couldn't find an answer.",
+  "back_to_menu": "Back to menu",
+    "fallback_whatsapp": "Still need help? Join our WhatsApp group.",
+    "whatsapp_button": "Open WhatsApp",
+    "networkError": "Network error. Try again later.",
+    "iconAlt": "Whale"
   }
 }

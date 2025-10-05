@@ -259,32 +259,32 @@
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
-    "questions": [
-      {
+    "questions": {
+      "0": {
         "question": "Gibt es einen Dresscode?",
         "answer": "Wir würden uns über festliche Kleidung freuen."
       },
-      {
+      "1": {
         "question": "Sind Kinder willkommen?",
         "answer": "Ja, Kinder sind herzlich willkommen."
       },
-      {
+      "2": {
         "question": "An wen kann ich mich bei Fragen wenden?",
         "answer": "Bitte kontaktiert uns direkt."
       },
-      {
+      "3": {
         "question": "Was sollte ich einpacken?",
         "answer": "Badebekleidung, bequeme Schuhe (keine High Heels — es gibt Gras und viel zu laufen), warme Kleidung für die Nacht, da es kühl werden kann, Kleidung für Yoga/Sport und gute Energie."
       },
-      {
+      "4": {
         "question": "Wie ist das Wetter in Guatapé?",
         "answer": "Tagsüber angenehm warm, abends kann es kühl werden. Bringt also etwas Leichtes für den Tag und eine Jacke oder Pullover für die Nacht mit."
       },
-      {
+      "5": {
         "question": "Welche Geschenke?",
         "answer": "Wir möchten euch wissen lassen, dass das größte Geschenk für uns eure Anreise und eure Anwesenheit an unserem besonderen Tag ist."
       }
-    ]
+    }
   },
   "details": {
     "title": "Übersicht",
@@ -406,5 +406,30 @@
         ]
       }
     ]
+  }
+  ,
+  "chatbot": {
+    "intro": "Hallo! Frag mich gern nach RSVP, Hotels, Anreise, Kleidung oder FAQ und ich zeige dir die passende Stelle.",
+    "openButton": "Chat",
+    "title": "Hochzeitsassistent",
+    "placeholder": "Stell eine Frage...",
+    "send": "Senden",
+    "examples": {
+      "0": "Essen zu vegetarisch ändern",
+      "1": "Wo können wir übernachten?",
+      "2": "Gibt es einen Dresscode?"
+    },
+    "askName": "Dein Name (optional)",
+    "askCode": "Einladungscode (optional)",
+    "startButton": "Chat starten",
+  "welcome_greeting": "Hallo{{name, prepend=\" \"}} — wie kann ich helfen? Frag nach RSVP, Hotels oder FAQs.",
+  "title_short": "Lass mich helfen",
+  "closeButton": "Chat schließen",
+    "no_match": "Tut mir leid, dazu konnte ich keine Antwort finden.",
+  "back_to_menu": "Zurück zum Menü",
+    "fallback_whatsapp": "Braucht du noch Hilfe? Tritt unserer WhatsApp-Gruppe bei.",
+    "whatsapp_button": "WhatsApp öffnen",
+    "networkError": "Netzwerkfehler. Versuche es später nochmal.",
+    "iconAlt": "Wal"
   }
 }

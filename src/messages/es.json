@@ -217,15 +217,35 @@
     "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
   },
   "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
-  "faq": { "title": "Preguntas Frecuentes", "questions": [
-    { "question": "¿Hay un código de vestimenta?", "answer": "Agradeceríamos vestimenta festiva." },
-    { "question": "¿Son bienvenidos los niños?", "answer": "Sí, los niños son bienvenidos." },
-    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." }
-    ,
-  { "question": "¿Qué debería empacar?", "answer": "Traje de baño, zapatos cómodos (no tacones — habrá césped y mucho caminar), ropa abrigada para la noche ya que hará fresco, ropa para yoga/deporte y buena energía." },
-  { "question": "¿Cómo es el clima en Guatapé?", "answer": "Durante el día hace una temperatura agradable; por la noche puede refrescar. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
-    { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." }
-  ] },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "0": {
+        "question": "¿Hay un código de vestimenta?",
+        "answer": "Agradeceríamos vestimenta festiva."
+      },
+      "1": {
+        "question": "¿Son bienvenidos los niños?",
+        "answer": "Sí, los niños son bienvenidos."
+      },
+      "2": {
+        "question": "¿A quién puedo contactar si tengo preguntas?",
+        "answer": "Por favor, contáctanos directamente."
+      },
+      "3": {
+        "question": "¿Qué debería empacar?",
+        "answer": "Traje de baño, zapatos cómodos (no tacones — habrá césped y mucho caminar), ropa abrigada para la noche ya que hará fresco, ropa para yoga/deporte y buena energía."
+      },
+      "4": {
+        "question": "¿Cómo es el clima en Guatapé?",
+        "answer": "Durante el día hace una temperatura agradable; por la noche puede refrescar. Trae algo ligero para el día y una chaqueta o suéter para la noche."
+      },
+      "5": {
+        "question": "¿Qué regalos?",
+        "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial."
+      }
+    }
+  },
   "details": {
     "title": "Información General",
     "subtitle": "Ceremonia, recepción y todo lo demás",
@@ -314,5 +334,30 @@
         ]
       }
     ]
+  }
+  ,
+  "chatbot": {
+    "intro": "¡Hola! Pregúntame sobre RSVP, hoteles, la ubicación, atuendo o preguntas frecuentes y te diré dónde encontrar la información.",
+    "openButton": "Chat",
+    "title": "Asistente de la Boda",
+    "placeholder": "Haz una pregunta...",
+    "send": "Enviar",
+    "examples": {
+      "0": "Cambiar comida a vegetariana",
+      "1": "¿Dónde podemos alojarnos?",
+      "2": "¿Cuál es el código de vestimenta?"
+    },
+    "askName": "Tu nombre (opcional)",
+    "askCode": "Código de invitación (opcional)",
+    "startButton": "Iniciar chat",
+  "welcome_greeting": "¡Hola{{name, prepend=\" \"}}! — ¿en qué puedo ayudarte? Pregunta por RSVP, hoteles o preguntas.",
+  "title_short": "Déjame ayudarte",
+  "closeButton": "Cerrar chat",
+    "no_match": "Lo siento, no pude encontrar una respuesta.",
+  "back_to_menu": "Volver al menú",
+    "fallback_whatsapp": "¿Aún necesitas ayuda? Únete a nuestro grupo de WhatsApp.",
+    "whatsapp_button": "Abrir WhatsApp",
+    "networkError": "Error de red. Intenta más tarde.",
+    "iconAlt": "Ballena"
   }
 }
