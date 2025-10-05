@@ -212,7 +212,7 @@
   },
   "rsvp": {
     "title": "Your Invitation 🎉",
-        "invitation": "Join us for our special celebration and help us make memories that will last a lifetime. We can't wait to share this magical day with you in beautiful Guatapé!",
+      "invitation": "We can't wait to celebrate with you. Please let us know by October 31, 2025.",
     "songInfo": "Do you have a special song request for our wedding? Let us know!",
     "kidsInfo": "Kids welcome; kindly note ages in the message field.",
     "formTitle": "RSVP Form",
@@ -242,7 +242,7 @@
     "successMessage": "your entry is successfully updated",
     "errorMessage": "error",
     "selectOption": "Please select an option",
-    "enterCodePrompt": "Tu código especial",
+    "enterCodePrompt": "Your invitation code",
     "invitationIdLabel": "Invitation ID",
     "invitationIdPlaceholder": "Enter your code here",
     "verifyButton": "Verify",
@@ -284,6 +284,10 @@
       {
         "question": "Which gifts?",
         "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
+      },
+      {
+        "question": "Until when do I need to confirm my attendance?",
+        "answer": "Please let us know by October 31, 2025."
       }
     ]
   },

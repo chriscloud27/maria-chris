@@ -179,7 +179,7 @@
   },
   "rsvp": {
     "title": "Tu Invitacion 🎉",
-    "invitation": "Estamos ansiosos por celebrar contigo. Por favor, responde antes del 10 de mayo de 2026.",
+  "invitation": "Estamos ansiosos por celebrar contigo. Por favor, confírmanos antes del 31 de octubre de 2025.",
     "songInfo": "¡Se aceptan peticiones de canciones! Añade tu canción favorita a continuación.",
     "kidsInfo": "Los niños son bienvenidos; por favor, indica sus edades en el campo de mensaje.",
     "formTitle": "Formulario RSVP",
@@ -224,8 +224,9 @@
     ,
   { "question": "¿Qué debería empacar?", "answer": "Traje de baño, zapatos cómodos (no tacones — habrá césped y mucho caminar), ropa abrigada para la noche ya que hará fresco, ropa para yoga/deporte y buena energía." },
   { "question": "¿Cómo es el clima en Guatapé?", "answer": "Durante el día hace una temperatura agradable; por la noche puede refrescar. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
-    { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." }
-  ] },
+    { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." },
+    { "question": "¿Hasta cuándo debo confirmar mi asistencia?", "answer": "Por favor, confírmanos antes del 31 de octubre de 2025." }
+    ] },
   "details": {
     "title": "Información General",
     "subtitle": "Ceremonia, recepción y todo lo demás",

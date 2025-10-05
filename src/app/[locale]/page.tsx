@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { LocationExcursions } from "@/components/LocationExcursions";
 import { Hotels } from "@/components/Hotels";
 import { Arrival } from "@/components/Arrival";
-// import { PrePostEvents } from "@/components/PrePostEvents";
 import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
 import { Details } from "@/components/Details";

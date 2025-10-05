@@ -33,7 +33,7 @@ const Faq = () => {
 
     // Fallback: indexed probing (safe, small max to avoid infinite loops)
     const items: { question: string; answer: string }[] = [];
-    const maxItems = 6;
+    const maxItems = 7;
     for (let i = 0; i < maxItems; i++) {
       const qKey = `questions.${i}.question`;
       const aKey = `questions.${i}.answer`;
