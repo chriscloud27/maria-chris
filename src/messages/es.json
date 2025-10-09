@@ -179,7 +179,7 @@
   },
   "rsvp": {
     "title": "Tu Invitacion 🎉",
-    "invitation": "Estamos ansiosos por celebrar contigo. Por favor, responde antes del 10 de mayo de 2026.",
+  "invitation": "Estamos ansiosos por celebrar contigo. Por favor, confírmanos antes del 31 de octubre de 2025.",
     "songInfo": "¡Se aceptan peticiones de canciones! Añade tu canción favorita a continuación.",
     "kidsInfo": "Los niños son bienvenidos; por favor, indica sus edades en el campo de mensaje.",
     "formTitle": "Formulario RSVP",
@@ -195,37 +195,40 @@
     "whatsappLabel": "Número de WhatsApp (opcional)",
     "whatsappPlaceholder": "+57 300 123 4567",
     "participationLabel": "",
-    "plusOneLabel": "Vengo el Gran Día con un +1",
-    "connect19Label": "Vengo el 19 de Dic a Welcome & Connect",
-    "bigDayLabel": "Vengo al Gran Día",
+    "plusOneLabel": "Vendré con un acompañante (+1)",
+  "accommodationLabel": "Sí, me voy a quedar y necesito acomodación. No, yo me resuelvo.",
+    "connect19Label": "Vengo el 19 de Dic a Bienvenida & Conexión",
+    "bigDayLabel": "Vengo el 20 de Dic al Gran Día",
     "boat21Label": "Vengo el 21 de Dic a Fiesta Blanca y Despedida",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",
     "submitButton": "Enviar RSVP",
     "submittingButton": "Enviando...",
-    "successMessage": "tu entrada se ha actualizado correctamente",
+    "successMessage": "Actualizado correctamente.",
     "errorMessage": "error",
     "selectOption": "Por favor, selecciona una opción",
     "notesLabel": "Notas",
     "notesPlaceholder": "Escribe aquí tus notas",
-    "enterCodePrompt": "Tu código especial",
+    "enterCodePrompt": "Codigo de Invitación",
     "invitationIdLabel": "ID de Invitación",
     "invitationIdPlaceholder": "Introduce tu código aquí",
     "verifyButton": "Verificar",
     "verifyingButton": "Verificando...",
     "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
+    ,"enterAnotherCode": "Introduce otro código"
+    ,"moreOptionsHeading": "Más opciones (opcional)"
   },
   "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
   "faq": { "title": "Preguntas Frecuentes", "questions": [
-    { "question": "¿Hay un código de vestimenta?", "answer": "Agradeceríamos vestimenta festiva." },
-    { "question": "¿Son bienvenidos los niños?", "answer": "Sí, los niños son bienvenidos." },
-    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." }
-    ,
-  { "question": "¿Qué debería empacar?", "answer": "Traje de baño, zapatos cómodos (no tacones — habrá césped y mucho caminar), ropa abrigada para la noche ya que hará fresco, ropa para yoga/deporte y buena energía." },
-  { "question": "¿Cómo es el clima en Guatapé?", "answer": "Durante el día hace una temperatura agradable; por la noche puede refrescar. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
-    { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." }
-  ] },
+    { "question": "Is there a dress code?", "answer": "We would appreciate festive attire." },
+    { "question": "Are children welcome?", "answer": "Yes, children are welcome." },
+    { "question": "Who can I contact with questions?", "answer": "Please contact us directly." },
+    { "question": "What should I pack?", "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy." },
+    { "question": "What's the weather like in Guatapé?", "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening." },
+    { "question": "Which gifts?", "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day." },
+    { "question": "Until when do I need to confirm my attendance?", "answer": "Please let us know by October 31, 2025." }
+    ] },
   "details": {
     "title": "Información General",
     "subtitle": "Ceremonia, recepción y todo lo demás",
@@ -273,7 +276,7 @@
     "paragraph2": "María fue a un festival de salsa en Croacia buscando su alma gemela. Y la encontró… era Caro. ¡Mejor amiga al instante! Juntas fueron al festival tres años seguidos. Al cuarto año Caro no fue al festival de salsa por ir a otro evento con un \"amigo\" (spoiler: ese era Chris 👀). María igual fue y su siguiente parada era un festival de nómadas digitales en Bulgaria. Cuando Caro se dio cuenta le escribió:",
     "paragraph3": "Mi \"amigo\" está ahí, deberías conocerlo!\"... pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María quería irse de una fiesta llena y ruidosa, cuando Chris se le acercó ya en la salida y empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
     "paragraph4": "A la mañana siguiente, María salió a correr a las 7 de la mañana. Chris fue al parque a hacer ejercicio. Se cruzaron de nuevo… y desde ese momento, nunca se separaron.",
-    "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura. Lo que comenzó como \"solo una conversación\" se convirtió en amor, aventura y ahora esta boda que esperamos celebrar juntos. 🎉💍"
+    "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura, en amor, y ahora nuestra boda que esperamos celebrar juntos. 🎉💍"
   },
   "countdown": {
     "days": "días",
@@ -301,7 +304,7 @@
         "events": [
           { "time": "14:00", "title": "Ceremonia Religiosa", "description": "Celebra la misa de boda en la iglesia." },
           { "time": "16:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
-          { "time": "17:00 – 22:00", "title": "Programa Vespertino y Cena", "description": "Un programa festivo para todos los invitados." }
+          { "time": "17:00 – 22:00", "title": "Cena y Evento", "description": "Un programa festivo para todos los invitados." }
         ]
       },
       {
@@ -310,7 +313,7 @@
         "events": [
           { "time": "11:00 AM", "title": "Visita a una plantación de café", "description": "Un momento consciente para comenzar el día juntos." },
           { "time": "12:00 PM", "title": "Tour en Tuk Tuk", "description": "Disfrutando de un paseo especial hacia Guatapé." },
-          { "time": "2:00 PM", "title": "Fiesta en Barco Blanca", "description": "Vístete de blanco y disfruta de música, baile, cócteles y la puesta de sol juntos." }
+          { "time": "1:30 PM", "title": "Fiesta en Barco Blanca", "description": "Vístete de blanco y disfruta de música, baile, cócteles y la puesta de sol juntos." }
         ]
       }
     ]

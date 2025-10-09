@@ -212,7 +212,7 @@
   },
   "rsvp": {
     "title": "Your Invitation 🎉",
-        "invitation": "Join us for our special celebration and help us make memories that will last a lifetime. We can't wait to share this magical day with you in beautiful Guatapé!",
+      "invitation": "We can't wait to celebrate with you. Please let us know by October 31, 2025.",
     "songInfo": "Do you have a special song request for our wedding? Let us know!",
     "kidsInfo": "Kids welcome; kindly note ages in the message field.",
     "formTitle": "RSVP Form",
@@ -228,7 +228,8 @@
     "whatsappLabel": "WhatsApp number (optional)",
     "whatsappPlaceholder": "+1 234 567 8901",
     "participationLabel": "",
-    "plusOneLabel": "I'm coming on the Big Day with a +1",
+  "plusOneLabel": "I will bring a +1",
+  "accommodationLabel": "Yes, I'll stay and need accommodation. No, I can arrange my own.",
     "connect19Label": "I'm coming on the 19th Dec to Welcome & Connect",
     "bigDayLabel": "I'm coming to the Big Day",
     "boat21Label": "I'm coming on the 21st Dec to White Party & Farewell",
@@ -242,12 +243,14 @@
     "successMessage": "your entry is successfully updated",
     "errorMessage": "error",
     "selectOption": "Please select an option",
-    "enterCodePrompt": "Tu código especial",
+    "enterCodePrompt": "Your invitation code",
     "invitationIdLabel": "Invitation ID",
     "invitationIdPlaceholder": "Enter your code here",
     "verifyButton": "Verify",
     "verifyingButton": "Verifying...",
     "invalidCodeError": "Try again or ask Maria and Chris for your code"
+    ,"enterAnotherCode": "Enter another code"
+    ,"moreOptionsHeading": "More options (optional)"
   },
   "excursions": {
     "title": "Excursion Tips",
@@ -271,8 +274,7 @@
       {
         "question": "Who can I contact with questions?",
         "answer": "Please contact us directly."
-      }
-      ,
+      },
       {
         "question": "What should I pack?",
         "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy."
@@ -284,6 +286,10 @@
       {
         "question": "Which gifts?",
         "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
+      },
+      {
+        "question": "Until when do I need to confirm my attendance?",
+        "answer": "Please let us know by October 31, 2025."
       }
     ]
   },
@@ -400,7 +406,7 @@
             "description": "Enjoying a special ride to Guatapé."
           },
           {
-            "time": "2:00 PM",
+            "time": "1:30 PM",
             "title": "White Boat Party",
             "description": "Dress in white and enjoy music, dancing, cocktails, and the sunset together."
           }
