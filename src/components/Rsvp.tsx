@@ -70,6 +70,7 @@ export const Rsvp = () => {
             if (data) {
               setValue('notes', data.notes || '');
               setValue('song', data.song || '');
+              setValue('+1', data['+1'] || false);
               setValue('19-Connect', data['19-Connect'] || false);
               setValue('BigDay', data['BigDay'] || false);
               setValue('21-Boat', data['21-Boat'] || false);
@@ -101,6 +102,7 @@ export const Rsvp = () => {
           setValue('name', data.name);
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
+          setValue('+1', data['+1'] || false);
           setValue('19-Connect', data['19-Connect'] || false);
           setValue('BigDay', data['BigDay'] || false);
           setValue('21-Boat', data['21-Boat'] || false);
@@ -149,7 +151,7 @@ export const Rsvp = () => {
       name: data.name,
       notes: data.notes,
       song: data.song,
-  /* +1 removed */
+      '+1': data['+1'],
       '19-Connect': data['19-Connect'],
       'BigDay': data['BigDay'], // Include BigDay field
       '21-Boat': data['21-Boat'],
@@ -257,11 +259,7 @@ export const Rsvp = () => {
   }
 
   return (
-    <section
-      id="rsvp"
-      className="py-20 bg-stone-50"
-      style={{ backgroundImage: "url('/background-small.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
-    >
+    <section id="rsvp">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-start">
         <div className="text-gray-700">
           <h2 className="text-4xl font-serif text-gray-800 mb-4">{t('title')}</h2>
@@ -347,7 +345,18 @@ export const Rsvp = () => {
                 {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
               </div>
 
-              {/* +1 removed */}
+              {/* +1 */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('+1')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('plusOneLabel')}</span>
+                </label>
+                {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
+              </div>
 
               {/* 21-Boat */}
               <div className="mb-4">
