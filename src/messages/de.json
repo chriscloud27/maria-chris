@@ -224,6 +224,7 @@
     "verifyingButton": "Wird überprüft...",
     "invalidCodeError": "Versuche es erneut oder frage Maria und Chris nach deinem Code"
     ,"enterAnotherCode": "Gib einen anderen Code ein"
+    ,"moreOptionsHeading": "Weitere Optionen (optional)"
   },
   "excursions": {
     "title": "Ausflugstipps",
@@ -263,32 +264,32 @@
     "title": "Häufig gestellte Fragen",
     "questions": [
       {
-        "question": "Gibt es einen Dresscode?",
-        "answer": "Wir würden uns über festliche Kleidung freuen."
+        "question": "Is there a dress code?",
+        "answer": "We would appreciate festive attire."
       },
       {
-        "question": "Sind Kinder willkommen?",
-        "answer": "Ja, Kinder sind herzlich willkommen."
+        "question": "Are children welcome?",
+        "answer": "Yes, children are welcome."
       },
       {
-        "question": "An wen kann ich mich bei Fragen wenden?",
-        "answer": "Bitte kontaktiert uns direkt."
+        "question": "Who can I contact with questions?",
+        "answer": "Please contact us directly."
       },
       {
-        "question": "Was sollte ich einpacken?",
-        "answer": "Badebekleidung, bequeme Schuhe (keine High Heels — es gibt Gras und viel zu laufen), warme Kleidung für die Nacht, da es kühl werden kann, Kleidung für Yoga/Sport und gute Energie."
+        "question": "What should I pack?",
+        "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy."
       },
       {
-        "question": "Wie ist das Wetter in Guatapé?",
-        "answer": "Tagsüber angenehm warm, abends kann es kühl werden. Bringt also etwas Leichtes für den Tag und eine Jacke oder Pullover für die Nacht mit."
+        "question": "What's the weather like in Guatapé?",
+        "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening."
       },
       {
-        "question": "Welche Geschenke?",
-        "answer": "Wir möchten euch wissen lassen, dass das größte Geschenk für uns eure Anreise und eure Anwesenheit an unserem besonderen Tag ist."
+        "question": "Which gifts?",
+        "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
       },
       {
-        "question": "Bis wann soll ich meine Teilnahme bestätigen?",
-        "answer": "Bitte gebt uns bis zum 31. Oktober 2025 Bescheid."
+        "question": "Until when do I need to confirm my attendance?",
+        "answer": "Please let us know by October 31, 2025."
       }
     ]
   },

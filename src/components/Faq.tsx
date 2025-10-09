@@ -9,7 +9,7 @@ const Faq = () => {
   // because next-intl forbids message values that resolve to arrays.
   const faqData = (() => {
     const items: { question: string; answer: string }[] = [];
-    const maxItems = 12; // allow more items if translations include many Qs
+    const maxItems = 7; // allow more items if translations include many Qs
 
     for (let i = 0; i < maxItems; i++) {
       const qKey = `questions.${i}.question`;

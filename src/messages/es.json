@@ -217,17 +217,17 @@
     "verifyingButton": "Verificando...",
     "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
     ,"enterAnotherCode": "Introduce otro código"
+    ,"moreOptionsHeading": "Más opciones (opcional)"
   },
   "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
   "faq": { "title": "Preguntas Frecuentes", "questions": [
-    { "question": "¿Hay un código de vestimenta?", "answer": "Agradeceríamos vestimenta festiva." },
-    { "question": "¿Son bienvenidos los niños?", "answer": "Sí, los niños son bienvenidos." },
-    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." }
-    ,
-  { "question": "¿Qué debería empacar?", "answer": "Traje de baño, zapatos cómodos (no tacones — habrá césped y mucho caminar), ropa abrigada para la noche ya que hará fresco, ropa para yoga/deporte y buena energía." },
-  { "question": "¿Cómo es el clima en Guatapé?", "answer": "Durante el día hace una temperatura agradable; por la noche puede refrescar. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
-    { "question": "¿Qué regalos?", "answer": "Queremos que sepan que el mayor regalo para nosotros es vuestro viaje y vuestra presencia en nuestro día especial." },
-    { "question": "¿Hasta cuándo debo confirmar mi asistencia?", "answer": "Por favor, confírmanos antes del 31 de octubre de 2025." }
+    { "question": "Is there a dress code?", "answer": "We would appreciate festive attire." },
+    { "question": "Are children welcome?", "answer": "Yes, children are welcome." },
+    { "question": "Who can I contact with questions?", "answer": "Please contact us directly." },
+    { "question": "What should I pack?", "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy." },
+    { "question": "What's the weather like in Guatapé?", "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening." },
+    { "question": "Which gifts?", "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day." },
+    { "question": "Until when do I need to confirm my attendance?", "answer": "Please let us know by October 31, 2025." }
     ] },
   "details": {
     "title": "Información General",
