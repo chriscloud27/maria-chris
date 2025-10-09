@@ -46,7 +46,6 @@ export const Rsvp = () => {
     register,
     handleSubmit,
   formState: { errors },
-    reset,
     watch,
     setValue,
   } = useForm<FormInputs>({
@@ -55,7 +54,6 @@ export const Rsvp = () => {
   });
 
   const statusRef = useRef<HTMLDivElement | null>(null);
-  const dismissTimerRef = useRef<number | null>(null);
 
   const nameValue = watch('name');
   const debouncedName = useDebounce(nameValue, 500);
@@ -71,6 +69,7 @@ export const Rsvp = () => {
               setValue('notes', data.notes || '');
               setValue('song', data.song || '');
               setValue('+1', data['+1'] || false);
+              setValue('AccommodationNeeded', data.AccommodationNeeded || false);
               setValue('19-Connect', data['19-Connect'] || false);
               setValue('BigDay', data['BigDay'] || false);
               setValue('21-Boat', data['21-Boat'] || false);
@@ -103,6 +102,7 @@ export const Rsvp = () => {
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
           setValue('+1', data['+1'] || false);
+          setValue('AccommodationNeeded', data.AccommodationNeeded || false);
           setValue('19-Connect', data['19-Connect'] || false);
           setValue('BigDay', data['BigDay'] || false);
           setValue('21-Boat', data['21-Boat'] || false);
@@ -152,6 +152,7 @@ export const Rsvp = () => {
       notes: data.notes,
       song: data.song,
       '+1': data['+1'],
+      AccommodationNeeded: data.AccommodationNeeded,
       '19-Connect': data['19-Connect'],
       'BigDay': data['BigDay'], // Include BigDay field
       '21-Boat': data['21-Boat'],
@@ -171,10 +172,9 @@ export const Rsvp = () => {
       const payload = await res.json();
       console.log('API response:', { status: res.status, payload });
       if (res.ok) {
-        // Show success message under the submit button. Keep the form visible
-        // so the status message can be seen by the user.
+        // Show success message under the submit button. Keep the form values
+        // intact so the user can verify what was sent.
         setSubmitStatus({ success: true, message: t('successMessage') });
-        reset();
       } else {
         console.error('API error response:', payload);
         setSubmitStatus({ success: false, message: payload.error || t('errorMessage') });
@@ -189,29 +189,13 @@ export const Rsvp = () => {
 
   // After showing a status, focus it (for screen readers) and auto-dismiss after 6s
   useEffect(() => {
-    // clear any existing timer
-    if (dismissTimerRef.current) {
-      window.clearTimeout(dismissTimerRef.current);
-      dismissTimerRef.current = null;
-    }
-
+    // When submitStatus changes, focus the status region so screenreaders
+    // and keyboard users notice it. Do NOT auto-dismiss — leave the status
+    // visible until the user takes action (for example, using the "enter with
+    // another code" control).
     if (submitStatus) {
-      // focus the status so keyboard/screenreader users notice it
       requestAnimationFrame(() => statusRef.current?.focus());
-
-      // auto-dismiss success or error after 6 seconds
-      dismissTimerRef.current = window.setTimeout(() => {
-        setSubmitStatus(null);
-        dismissTimerRef.current = null;
-      }, 6000);
     }
-
-    return () => {
-      if (dismissTimerRef.current) {
-        window.clearTimeout(dismissTimerRef.current);
-        dismissTimerRef.current = null;
-      }
-    };
   }, [submitStatus]);
 
   // (undo removed)
@@ -357,6 +341,18 @@ export const Rsvp = () => {
                 </label>
                 {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
               </div>
+              {/* AccommodationNeeded */}
+              <div className="mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('AccommodationNeeded')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm font-bold">{t('accommodationLabel')}</span>
+                </label>
+                {errors['AccommodationNeeded'] && <p className="text-red-500 text-xs mt-1">{errors['AccommodationNeeded'].message}</p>}
+              </div>
 
               {/* 21-Boat */}
               <div className="mb-4">
@@ -464,7 +460,7 @@ export const Rsvp = () => {
                     onClick={handleEnterAnotherCode}
                     className="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-purple-700 bg-white hover:bg-purple-50"
                   >
-                    enter with another code
+                    {t('enterAnotherCode')}
                   </button>
                 </div>
               </div>

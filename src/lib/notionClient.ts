@@ -12,6 +12,7 @@ type RsvpData = {
   name: string;
   whatsapp?: string;
   '+1'?: boolean;
+  AccommodationNeeded?: boolean;
   '19-Connect'?: boolean;
   'BigDay'?: boolean;
   '21-Boat'?: boolean;
@@ -30,6 +31,7 @@ type NotionProperties = {
   // These are stored in Notion as select properties with options like 'Yes'/'No'.
   '19-Connect'?: { select: { name: string } };
   '+1'?: { select: { name: string } };
+  AccommodationNeeded?: { select: { name: string } };
   '20-BigDay'?: { select: { name: string } };
   '21-Boat'?: { select: { name: string } };
   Notes?: { rich_text: [{ text: { content: string } }] };
@@ -86,6 +88,7 @@ export async function addRSVP(data: RsvpData) {
     ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
   // +1 is stored as a select (Yes/No) in Notion to match other event fields
   '+1': { select: { name: data['+1'] ? 'Yes' : 'No' } },
+  AccommodationNeeded: { select: { name: data.AccommodationNeeded ? 'Yes' : 'No' } },
   // These are informational in Notion — only set them when true to avoid
   // sending explicit 'No' / false values which are unnecessary.
   // Persist as select options 'Yes' or 'No' — Notion will validate these as selects.
@@ -184,7 +187,8 @@ export async function findRSVPByName(name: string) {
       code: getRichText(properties.Code),
       name: getTitle(properties.Name),
       whatsapp: getPhoneNumber(properties.WhatsApp),
-      '+1': propIsYes(properties['+1']),
+  '+1': propIsYes(properties['+1']),
+  AccommodationNeeded: propIsYes(properties['AccommodationNeeded']),
   // rsvp is not stored in Notion; skip
   '19-Connect': propIsYes(properties['19-Connect']),
   'BigDay': propIsYes(properties['20-BigDay']),
@@ -233,6 +237,8 @@ export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'ti
       name: getTitle(properties.Name),
       whatsapp: getPhoneNumber(properties.WhatsApp),
   // rsvp is not stored in Notion; skip
+  '+1': propIsYes(properties['+1']),
+  AccommodationNeeded: propIsYes(properties['AccommodationNeeded']),
   '19-Connect': propIsYes(properties['19-Connect']),
   'BigDay': propIsYes(properties['20-BigDay']),
   '21-Boat': propIsYes(properties['21-Boat']),

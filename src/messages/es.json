@@ -196,25 +196,27 @@
     "whatsappPlaceholder": "+57 300 123 4567",
     "participationLabel": "",
     "plusOneLabel": "Vendré con un acompañante (+1)",
-    "connect19Label": "Vengo el 19 de Dic a Welcome & Connect",
-    "bigDayLabel": "Vengo al Gran Día",
+  "accommodationLabel": "Sí, me voy a quedar y necesito acomodación. No, yo me resuelvo.",
+    "connect19Label": "Vengo el 19 de Dic a Bienvenida & Conexión",
+    "bigDayLabel": "Vengo el 20 de Dic al Gran Día",
     "boat21Label": "Vengo el 21 de Dic a Fiesta Blanca y Despedida",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",
     "submitButton": "Enviar RSVP",
     "submittingButton": "Enviando...",
-    "successMessage": "tu entrada se ha actualizado correctamente",
+    "successMessage": "Actualizado correctamente.",
     "errorMessage": "error",
     "selectOption": "Por favor, selecciona una opción",
     "notesLabel": "Notas",
     "notesPlaceholder": "Escribe aquí tus notas",
-    "enterCodePrompt": "Tu código especial",
+    "enterCodePrompt": "Codigo de Invitación",
     "invitationIdLabel": "ID de Invitación",
     "invitationIdPlaceholder": "Introduce tu código aquí",
     "verifyButton": "Verificar",
     "verifyingButton": "Verificando...",
     "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
+    ,"enterAnotherCode": "Introduce otro código"
   },
   "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
   "faq": { "title": "Preguntas Frecuentes", "questions": [
@@ -274,7 +276,7 @@
     "paragraph2": "María fue a un festival de salsa en Croacia buscando su alma gemela. Y la encontró… era Caro. ¡Mejor amiga al instante! Juntas fueron al festival tres años seguidos. Al cuarto año Caro no fue al festival de salsa por ir a otro evento con un \"amigo\" (spoiler: ese era Chris 👀). María igual fue y su siguiente parada era un festival de nómadas digitales en Bulgaria. Cuando Caro se dio cuenta le escribió:",
     "paragraph3": "Mi \"amigo\" está ahí, deberías conocerlo!\"... pero nunca compartió su contacto (gracias, Caro). El universo claramente tenía un plan. Ese mismo fin de semana, María quería irse de una fiesta llena y ruidosa, cuando Chris se le acercó ya en la salida y empezaron a hablar, perdieron la noción del tiempo y no se dieron cuenta de que todos los demás ya se habían ido.",
     "paragraph4": "A la mañana siguiente, María salió a correr a las 7 de la mañana. Chris fue al parque a hacer ejercicio. Se cruzaron de nuevo… y desde ese momento, nunca se separaron.",
-    "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura. Lo que comenzó como \"solo una conversación\" se convirtió en amor, aventura y ahora esta boda que esperamos celebrar juntos. 🎉💍"
+    "paragraph5": "En su primer año, viajaron juntos por 14 países. Prueba de que una conversación puede convertirse en toda una aventura, en amor, y ahora nuestra boda que esperamos celebrar juntos. 🎉💍"
   },
   "countdown": {
     "days": "días",

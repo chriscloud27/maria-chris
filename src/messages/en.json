@@ -229,6 +229,7 @@
     "whatsappPlaceholder": "+1 234 567 8901",
     "participationLabel": "",
   "plusOneLabel": "I will bring a +1",
+  "accommodationLabel": "Yes, I'll stay and need accommodation. No, I can arrange my own.",
     "connect19Label": "I'm coming on the 19th Dec to Welcome & Connect",
     "bigDayLabel": "I'm coming to the Big Day",
     "boat21Label": "I'm coming on the 21st Dec to White Party & Farewell",
@@ -248,6 +249,7 @@
     "verifyButton": "Verify",
     "verifyingButton": "Verifying...",
     "invalidCodeError": "Try again or ask Maria and Chris for your code"
+    ,"enterAnotherCode": "Enter another code"
   },
   "excursions": {
     "title": "Excursion Tips",

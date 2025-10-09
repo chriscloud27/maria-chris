@@ -19,6 +19,7 @@ export const rsvpSchema = z.object({
   whatsapp: z.string().optional(),
   rsvp: z.enum(['Yes', 'No', 'Maybe']).optional(),
   '+1': z.boolean().optional(),
+  AccommodationNeeded: z.boolean().optional(),
   '19-Connect': z.boolean().optional(),
   'BigDay': z.boolean().optional(),
   '21-Boat': z.boolean().optional(),
