@@ -217,7 +217,7 @@
     "verifyingButton": "Verificando...",
     "invalidCodeError": "Inténtalo de nuevo o pide tu código a María y Chris"
     ,"enterAnotherCode": "Introduce otro código"
-    ,"moreOptionsHeading": "Más opciones (opcional)"
+    ,"moreOptionsHeading": "Más opciones (opcional, cargo extra)"
   },
   "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
   "faq": { "title": "Preguntas Frecuentes", "questions": [
