@@ -302,69 +302,78 @@ export const Rsvp = () => {
             {/* Participation Section */}
             <div className="mb-6">
               <h3 className="text-gray-800 text-lg font-semibold mb-4">{t('participationLabel')}</h3>
-              
-              {/* 19-Connect */}
+
+              {/* BigDay headline + checkbox */}
               <div className="mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('19-Connect')}
-                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  />
-                  <span className="text-gray-700 text-sm font-bold">{t('connect19Label')}</span>
-                </label>
-                {errors['19-Connect'] && <p className="text-red-500 text-xs mt-1">{errors['19-Connect'].message}</p>}
+                <h4 className="text-gray-700 text-md font-semibold mb-2">{t('bigDayLabel')}</h4>
+                <div className="pl-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      {...register('BigDay')}
+                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span className="text-gray-700 text-sm">{t('bigDayLabel')}</span>
+                  </label>
+                  {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
+                </div>
               </div>
 
-              {/* BigDay */}
+              {/* More options group */}
               <div className="mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('BigDay')}
-                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  />
-                  <span className="text-gray-700 text-sm font-bold">{t('bigDayLabel')}</span>
-                </label>
-                {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
-              </div>
+                <h4 className="text-gray-700 text-md font-semibold mb-2">{t('moreOptionsHeading')}</h4>
 
-              {/* +1 */}
-              <div className="mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('+1')}
-                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  />
-                  <span className="text-gray-700 text-sm font-bold">{t('plusOneLabel')}</span>
-                </label>
-                {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
-              </div>
-              {/* AccommodationNeeded */}
-              <div className="mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('AccommodationNeeded')}
-                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  />
-                  <span className="text-gray-700 text-sm font-bold">{t('accommodationLabel')}</span>
-                </label>
-                {errors['AccommodationNeeded'] && <p className="text-red-500 text-xs mt-1">{errors['AccommodationNeeded'].message}</p>}
-              </div>
+                {/* 19-Connect */}
+                <div className="mb-3 pl-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      {...register('19-Connect')}
+                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span className="text-gray-700 text-sm">{t('connect19Label')}</span>
+                  </label>
+                  {errors['19-Connect'] && <p className="text-red-500 text-xs mt-1">{errors['19-Connect'].message}</p>}
+                </div>
 
-              {/* 21-Boat */}
-              <div className="mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('21-Boat')}
-                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  />
-                  <span className="text-gray-700 text-sm font-bold">{t('boat21Label')}</span>
-                </label>
-                {errors['21-Boat'] && <p className="text-red-500 text-xs mt-1">{errors['21-Boat'].message}</p>}
+                {/* +1 */}
+                <div className="mb-3 pl-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      {...register('+1')}
+                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span className="text-gray-700 text-sm">{t('plusOneLabel')}</span>
+                  </label>
+                  {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
+                </div>
+
+                {/* AccommodationNeeded */}
+                <div className="mb-3 pl-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      {...register('AccommodationNeeded')}
+                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span className="text-gray-700 text-sm">{t('accommodationLabel')}</span>
+                  </label>
+                  {errors['AccommodationNeeded'] && <p className="text-red-500 text-xs mt-1">{errors['AccommodationNeeded'].message}</p>}
+                </div>
+
+                {/* 21-Boat */}
+                <div className="mb-3 pl-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      {...register('21-Boat')}
+                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                    />
+                    <span className="text-gray-700 text-sm">{t('boat21Label')}</span>
+                  </label>
+                  {errors['21-Boat'] && <p className="text-red-500 text-xs mt-1">{errors['21-Boat'].message}</p>}
+                </div>
               </div>
             </div>
 

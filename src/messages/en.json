@@ -250,6 +250,7 @@
     "verifyingButton": "Verifying...",
     "invalidCodeError": "Try again or ask Maria and Chris for your code"
     ,"enterAnotherCode": "Enter another code"
+    ,"moreOptionsHeading": "More options (optional)"
   },
   "excursions": {
     "title": "Excursion Tips",
