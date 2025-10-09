@@ -304,7 +304,7 @@
         "events": [
           { "time": "14:00", "title": "Ceremonia Religiosa", "description": "Celebra la misa de boda en la iglesia." },
           { "time": "16:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
-          { "time": "17:00 – 22:00", "title": "Programa Vespertino y Cena", "description": "Un programa festivo para todos los invitados." }
+          { "time": "17:00 – 22:00", "title": "Cena y Evento", "description": "Un programa festivo para todos los invitados." }
         ]
       },
       {
@@ -313,7 +313,7 @@
         "events": [
           { "time": "11:00 AM", "title": "Visita a una plantación de café", "description": "Un momento consciente para comenzar el día juntos." },
           { "time": "12:00 PM", "title": "Tour en Tuk Tuk", "description": "Disfrutando de un paseo especial hacia Guatapé." },
-          { "time": "2:00 PM", "title": "Fiesta en Barco Blanca", "description": "Vístete de blanco y disfruta de música, baile, cócteles y la puesta de sol juntos." }
+          { "time": "1:30 PM", "title": "Fiesta en Barco Blanca", "description": "Vístete de blanco y disfruta de música, baile, cócteles y la puesta de sol juntos." }
         ]
       }
     ]
