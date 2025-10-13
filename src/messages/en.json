@@ -285,7 +285,7 @@
       },
       {
         "question": "Which gifts?",
-        "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
+        "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day. If you still want to give us something, please consider that we are digital nomads who travel very light."
       },
       {
         "question": "Until when do I need to confirm my attendance?",
@@ -330,8 +330,8 @@
     "attireColorsButton": "Colors",
   "attireButtonLink": "https://au.pinterest.com/pin/6685099441633578/"
     ,
-  "scheduleBox1Note": "Bring anything for BBQ or snacks to share.",
-  "scheduleBox2Note": "You are invited.",
+  "scheduleBox1Note": "Bring anything for BBQ or snacks to share 🍖",
+  "scheduleBox2Note": "You are our guest 🥳",
   "scheduleBox3Note": "100.000 COP per person"
   ,
   "attireWomenShoesButton": "Woman shoes"
