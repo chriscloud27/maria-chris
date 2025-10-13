@@ -19,15 +19,21 @@ const Card = ({
   buttonLink: string;
 }) => (
   <div className="bg-white rounded-2xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden flex flex-col">
-    <div className="relative h-48">
+      <div className="relative h-48">
       <Image
         src={imageSrc}
         alt={imageAlt}
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <div className="text-white text-2xl font-bold flex items-center gap-3">
+      <div
+        className="absolute inset-0 bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${imageSrc})` }}
+      >
+        {/* overlay for better contrast */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative text-white text-2xl font-bold flex items-center gap-3">
           <div className="w-10 h-10 bg-gray-200 bg-opacity-50 rounded-full flex items-center justify-center">
             {icon}
           </div>
@@ -64,7 +70,7 @@ export const Arrival = () => {
 
   const arrivalData = {
     air: {
-      imageSrc: '/arrival.jpeg',
+      imageSrc: '/colombian-mountains-airplane.png',
       imageAlt: t('cards.air.imageAlt'),
       title: t('cards.air.title'),
       icon: <span className="text-xl font-bold text-purple-800">✈️</span>,
@@ -86,7 +92,7 @@ export const Arrival = () => {
       buttonLink: t('cards.air.buttonLink'),
     },
     car: {
-      imageSrc: '/location.jpeg',
+      imageSrc: '/colombian-mountain-road.png',
       imageAlt: t('cards.car.imageAlt'),
       title: t('cards.car.title'),
       icon: <span className="text-xl">🚗</span>,
@@ -108,7 +114,7 @@ export const Arrival = () => {
       buttonLink: t('cards.car.buttonLink'),
     },
     transport: {
-      imageSrc: '/excursion.jpeg',
+      imageSrc: '/colorful-chiva-mountains.png',
       imageAlt: t('cards.transport.imageAlt'),
       title: t('cards.transport.title'),
       icon: <span className="text-xl">🚌</span>,

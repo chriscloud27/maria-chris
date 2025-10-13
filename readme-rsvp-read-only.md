@@ -1,4 +1,4 @@
-# RSVP — Notion Read-Only Integration
+# RSVP - Notion Read-Only Integration
 
 This document describes only the read-only portion of the Notion integration used by the RSVP flow (search / verify-code). It documents the server-side helpers that query Notion and the expected Notion property mappings.
 
@@ -30,14 +30,14 @@ This document describes only the read-only portion of the Notion integration use
   - Queries the database for `Email` equals `email` and returns the first page id or `null`.
 
 ## Notion property mapping (expected)
-- `Name` — Notion `title` (page title)
-- `Email` — Notion `email`
-- `RSVP` — Notion `select` (values like `Attending`, `Not Attending`, `Maybe`)
-- `Notes` — Notion `rich_text`
-- `Song` — Notion `rich_text`
-- `Boat` — Notion `checkbox` (boolean expected)
-- `WhatsApp` — Notion `phone_number`
-- `Code` — Notion `rich_text` (or sometimes `title` depending on your Notion schema)
+- `Name` - Notion `title` (page title)
+- `Email` - Notion `email`
+- `RSVP` - Notion `select` (values like `Attending`, `Not Attending`, `Maybe`)
+- `Notes` - Notion `rich_text`
+- `Song` - Notion `rich_text`
+- `Boat` - Notion `checkbox` (boolean expected)
+- `WhatsApp` - Notion `phone_number`
+- `Code` - Notion `rich_text` (or sometimes `title` depending on your Notion schema)
 
 ## Where these are used
 - `src/app/api/rsvp/search/route.ts` calls `findRSVPByName` and returns a JSON object to the client for prefill.

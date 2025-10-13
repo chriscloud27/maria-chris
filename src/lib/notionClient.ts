@@ -89,9 +89,9 @@ export async function addRSVP(data: RsvpData) {
   // +1 is stored as a select (Yes/No) in Notion to match other event fields
   '+1': { select: { name: data['+1'] ? 'Yes' : 'No' } },
   AccommodationNeeded: { select: { name: data.AccommodationNeeded ? 'Yes' : 'No' } },
-  // These are informational in Notion — only set them when true to avoid
+  // These are informational in Notion - only set them when true to avoid
   // sending explicit 'No' / false values which are unnecessary.
-  // Persist as select options 'Yes' or 'No' — Notion will validate these as selects.
+  // Persist as select options 'Yes' or 'No' - Notion will validate these as selects.
   '19-Connect': { select: { name: connect19 ? 'Yes' : 'No' } },
   '20-BigDay': { select: { name: bigDay ? 'Yes' : 'No' } },
   '21-Boat': { select: { name: boat21 ? 'Yes' : 'No' } },
@@ -116,9 +116,9 @@ export async function addRSVP(data: RsvpData) {
 
 type NotionProperty = PageObjectResponse['properties'][string];
 
-// select helper removed — using checkbox properties for these fields now
+// select helper removed - using checkbox properties for these fields now
 
-// checkbox guard removed — using propIsYes for normalization
+// checkbox guard removed - using propIsYes for normalization
 
 // Interpret a Notion property as boolean 'Yes' if:
 // - it's a checkbox and checked, or

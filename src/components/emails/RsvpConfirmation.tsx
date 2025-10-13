@@ -13,7 +13,7 @@ const RsvpConfirmationEmail: React.FC<Readonly<RsvpConfirmationEmailProps>> = ({
 }) => (
   <div>
     <h1>Hi {name},</h1>
-    <p>Thank you — your RSVP has been recorded in our RSVP database.</p>
+    <p>Thank you - your RSVP has been recorded in our RSVP database.</p>
     <p>
       RSVP: <strong>{rsvp}</strong>
     </p>
@@ -56,7 +56,7 @@ export function renderRsvpConfirmationHtml(props: RsvpConfirmationEmailProps): s
     '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>',
     '<body>',
     `<h1>Hi ${name},</h1>`,
-    '<p>Thank you — your RSVP has been recorded in our RSVP database.</p>',
+    '<p>Thank you - your RSVP has been recorded in our RSVP database.</p>',
     `<p>RSVP: <strong>${rsvp}</strong></p>`,
     notes,
     "<p>We can't wait to celebrate with you!</p>",
