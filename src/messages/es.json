@@ -32,7 +32,7 @@
     },
   "intro": "Nos encanta viajar y descubrir lugares mágicos, y no podríamos imaginar un mejor escenario para celebrar nuestro amor que Guatapé: un pueblo colorido y alegre rodeado de agua, montañas y cielo. Este lugar especial captura la energía de los cuatro elementos e invita a la aventura, la belleza y la conexión. Queremos compartir este momento inolvidable con nuestra familia y amigos, disfrutando de sus vistas impresionantes, sus calles vibrantes y ese espíritu único que hace que Guatapé esté lleno de vida y aventuras.",
   "roadWarningPrefix": "Por favor ten en cuenta:",
-  "roadWarning": "La carretera puede no ser adecuada para todos los coches. El vehículo debe tener una altura suficiente o ser 4x4 para poder pasar.",
+  "roadWarning": "Puede pasar la carretera.",
   "tipsHeading": "Consejos de viaje"
   },
   "travelTips": {
@@ -63,7 +63,7 @@
   },
   "hotels": {
     "title": "Opciones de Hotel",
-  "subtitle": "Te compartimos algunas opciones que puedes considerar. Sin embargo, por supuesto, puedes explorar otras alternativas cercanas al venue que se ajusten mejor a tu gusto o presupuesto — hay muchas opciones disponibles.",
+  "subtitle": "Te compartimos algunas opciones que puedes considerar. Sin embargo, por supuesto, puedes explorar otras alternativas cercanas al venue que se ajusten mejor a tu gusto o presupuesto - hay muchas opciones disponibles.",
   "option1Title": "Opción $",
   "option2Title": "Opción $$",
   "option3Title": "Opción $$$",
@@ -99,7 +99,7 @@
       "bookingLink": "",
       "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
       "description": "Apartamentos Monte Gandolfo está en Guatapé, a unos 8.7 km de la Piedra del Peñol. Ofrece Wi‑Fi gratis, un jardín con terraza y acceso a un jacuzzi compartido. Algunas unidades cuentan con cocina para poder cocinar por tu cuenta.",
-      "hint": "Lugar tranquilo y con vistas — organiza transporte, ya que está a un corto trayecto en coche del pueblo.",
+      "hint": "Lugar tranquilo y con vistas - organiza transporte, ya que está a un corto trayecto en coche del pueblo.",
       "hintLink": "",
       "hintLinkText": "Ver en mapa"
     },
@@ -117,7 +117,7 @@
       "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
       "location": "",
       "description": "Luna Nueva es una cabaña privada ubicada en El Peñol que ofrece una experiencia única de conexión con la naturaleza y confort. Rodeada de montañas y con vistas al embalse, es el lugar perfecto para desconectar del bullicio urbano. Disfruta de vistas panorámicas de la Piedra del Peñol, el embalse de Guatapé y la réplica del antiguo Peñol.",
-      "hint": "Estancia remota; con instalaciones limitadas y alta demanda — considera reservar con antelación.",
+      "hint": "Estancia remota; con instalaciones limitadas y alta demanda - considera reservar con antelación.",
       "hintLink": "",
       "hintLinkText": "Reservar en Airbnb"
     },
@@ -191,13 +191,13 @@
     "attendanceNo": "No",
     "attendanceMaybe": "Quizás",
     "songLabel": "Petición de canción (opcional)",
-    "songPlaceholder": "Artista — Título de la canción",
+    "songPlaceholder": "Artista - Título de la canción",
     "whatsappLabel": "Número de WhatsApp (opcional)",
     "whatsappPlaceholder": "+57 300 123 4567",
     "participationLabel": "",
     "plusOneLabel": "Vendré con un acompañante (+1)",
   "accommodationLabel": "Sí, me voy a quedar y necesito acomodación. No, yo me resuelvo.",
-    "connect19Label": "Vengo el 19 de Dic a Bienvenida & Conexión",
+    "connect19Label": "Vengo el 19 de Dic a Bienvenida & Conexión.",
     "bigDayLabel": "Vengo el 20 de Dic al Gran Día",
     "boat21Label": "Vengo el 21 de Dic a Fiesta Blanca y Despedida",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
@@ -221,13 +221,13 @@
   },
   "excursions": { "title": "Sugerencias de Excursiones", "tips": ["Visitar el centro histórico de la ciudad.", "Excursión a la Montaña Ejemplo.", "Paseo en barco por el Lago Ejemplo."] },
   "faq": { "title": "Preguntas Frecuentes", "questions": [
-    { "question": "Is there a dress code?", "answer": "We would appreciate festive attire." },
-    { "question": "Are children welcome?", "answer": "Yes, children are welcome." },
-    { "question": "Who can I contact with questions?", "answer": "Please contact us directly." },
-    { "question": "What should I pack?", "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy." },
-    { "question": "What's the weather like in Guatapé?", "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening." },
-    { "question": "Which gifts?", "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day." },
-    { "question": "Until when do I need to confirm my attendance?", "answer": "Please let us know by October 31, 2025." }
+    { "question": "¿Hay un código de vestimenta?", "answer": "Mira la sección de atuendo de esa página." },
+    { "question": "¿Los niños son bienvenidos?", "answer": "Sí, los niños son bienvenidos. Por favor informanos que asistirán." },
+    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." },
+    { "question": "¿Qué debo empacar?", "answer": "Traje de baño, zapatos cómodos (sin tacones, habrá césped y mucho para caminar), ropa abrigada para la noche ya que hará frío, ropa para yoga/deportes y buena energía. La noche puede ser fría. Trae una manta si es posible." },
+    { "question": "¿Qué tal es el clima en Guatapé?", "answer": "Durante el día es agradablemente cálido; las noches pueden ser frescas. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
+    { "question": "¿Qué regalos?", "answer": "Queremos que sepas que el mejor regalo para nosotros es tu viaje y presencia en nuestro día especial." },
+    { "question": "¿Hasta cuándo necesito confirmar mi asistencia?", "answer": "Por favor, haznoslo saber antes del 31 de octubre de 2025." }
     ] },
   "details": {
     "title": "Información General",
@@ -253,22 +253,28 @@
   "attireOverview": "Colores",
   "attireColors": "Verde claro, verde teal, verde oliva, verde oscuro, naranja, amarillo dorado, fucsia, rosa brillante, lila, violeta oscuro, violeta brillante, lavanda",
   "attireExampleTitle": "Prendas",
-  "attireWomen": "Mujeres en tonos claros y primaverales (blush, coral, verde salvia, turquesa o amarillo suave), hombres con guayabera o camisa ligera en tonos lavanda, azul o verde y pantalón beige/khaki, y niños en blanco con toques de verde",
-  "attireMen": "",
-  "attireKids": "",
+  "attireWomen": "<0>Mujeres<0> en tonos claros y primaverales (blush, coral, verde salvia, turquesa o amarillo suave).  Evita los tacones finos ya que son difíciles de caminar en el césped; recomendamos plataformas o tacones anchos.",
+  "attireMen": "<0>Hombres<0> con guayabera o camisa ligera en tonos lavanda, azul o verde y pantalón beige/khaki.",
+  "attireKids": "<0>Niños<0> en blanco con toques de verde.",
   "attireSummary": "Colores primaverales para mujeres; camisas ligeras y pantalón beige para hombres; niños en blanco.",
     "attireWomenMenButton": "Mujeres / Hombres",
     "attireKidsButton": "Niños",
     "attireKidsTitle": "Fiesta en Barco Blanca",
-    "attireBoatText": "Te invitamos a nuestra opcional Fiesta en Barco Blanca — ropa blanca cómoda, deportiva o elegante.",
+    "attireBoatText": "Te invitamos a nuestra opcional fiesta en barco Blanca - ropa blanca cómoda, deportiva o elegante.",
     "attireExampleButton": "Ejemplo",
     "attireMoreDetailsButton": "Más detalles",
-  "attireNote": "Vístete ligero y con colores vivos — estilo primaveral.",
+  "attireNote": "Vístete ligero y con colores vivos - estilo primaveral.",
     "attireButtonText": "Ver Más",
     "attireColorsButton": "Colores",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/",
     "getOverviewButtonText": "Obtener resumen",
     "getOverviewButtonLink": "#schedule"
+    ,
+  "scheduleBox1Note": "Trae algo para el BBQ o snacks para compartir.",
+  "scheduleBox2Note": "Estás invitado.",
+  "scheduleBox3Note": "100.000 COP por persona"
+  ,
+  "attireWomenShoesButton": "Zapatos mujer"
   },
   "story": {
     "title": "Nuestra Historia",
@@ -317,5 +323,9 @@
         ]
       }
     ]
+  }
+  ,
+  "footer": {
+    "copyright": "© {year} {name1} & {name2}. Hecho con amor ❤️"
   }
 }

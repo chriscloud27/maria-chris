@@ -190,7 +190,7 @@ export const Rsvp = () => {
   // After showing a status, focus it (for screen readers) and auto-dismiss after 6s
   useEffect(() => {
     // When submitStatus changes, focus the status region so screenreaders
-    // and keyboard users notice it. Do NOT auto-dismiss — leave the status
+    // and keyboard users notice it. Do NOT auto-dismiss - leave the status
     // visible until the user takes action (for example, using the "enter with
     // another code" control).
     if (submitStatus) {

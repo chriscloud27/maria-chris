@@ -1,11 +1,11 @@
-# Notion Integration — Structure & Workflow (Next.js)
+# Notion Integration - Structure & Workflow (Next.js)
 
 Summary: a concise pattern for integrating a Notion database into a Next.js app. Use environment variables for credentials, API route handlers to talk to Notion, and a client-side form that calls those handlers for search, verification, and create/update.
 
 ## 1. Environment
 - Add credentials to environment:
-  - `NOTION_API_KEY` — integration token (do not commit).
-  - `NOTION_DATABASE_ID` — target database id.
+  - `NOTION_API_KEY` - integration token (do not commit).
+  - `NOTION_DATABASE_ID` - target database id.
 - local file: `.env.local`
   ```
   NOTION_API_KEY=your_secret_token
@@ -15,9 +15,9 @@ Summary: a concise pattern for integrating a Notion database into a Next.js app.
 ## 2. API routes (server-side)
 - Location: `src/app/api/rsvp/*` (App Router) or `pages/api/rsvp/*` (Pages Router).
 - Responsibilities:
-  - `GET /api/rsvp/search?name=...` — query database for partial name matches; return fields (name, email, rsvp, notes, song, boat, whatsapp).
-  - `GET /api/rsvp/verify-code?code=...` — query database for `Code` equals provided code; return full record or 404.
-  - `POST /api/rsvp` — create or update Notion page with posted form data.
+  - `GET /api/rsvp/search?name=...` - query database for partial name matches; return fields (name, email, rsvp, notes, song, boat, whatsapp).
+  - `GET /api/rsvp/verify-code?code=...` - query database for `Code` equals provided code; return full record or 404.
+  - `POST /api/rsvp` - create or update Notion page with posted form data.
 - Implementation notes:
   - Use `@notionhq/client`:
     ```js
@@ -45,17 +45,17 @@ Summary: a concise pattern for integrating a Notion database into a Next.js app.
 ## 4. Mapping & property types
 - Map UI fields to Notion properties; example:
 ## 4. Mapping & property types
-- `Code` -> `Rich Text` or `Number` — unique invitation code used for verification. Store as `rich_text` if it contains letters, or `number` for numeric-only codes.
-- `Name` -> `Title` (Notion `title`) — main person name used as the page title.
+- `Code` -> `Rich Text` or `Number` - unique invitation code used for verification. Store as `rich_text` if it contains letters, or `number` for numeric-only codes.
+- `Name` -> `Title` (Notion `title`) - main person name used as the page title.
 - `Email` -> `Email` (Notion `email`).
 - `Phone` -> `Phone` (Notion `phone_number`).
-- `RSVP` -> `Select` (Notion `select`) — suggested options: `Attending`, `Not Attending`, `Maybe`.
-- `Guests` -> `Number` (Notion `number`) — number of additional guests.
-- `Boat` -> `Checkbox` (Notion `checkbox`) — whether a boat transfer is requested.
-- `Song` -> `Rich Text` (Notion `rich_text`) — song request.
-- `Notes` -> `Rich Text` (Notion `rich_text`) — freeform notes (dietary needs, accessibility, etc.).
+- `RSVP` -> `Select` (Notion `select`) - suggested options: `Attending`, `Not Attending`, `Maybe`.
+- `Guests` -> `Number` (Notion `number`) - number of additional guests.
+- `Boat` -> `Checkbox` (Notion `checkbox`) - whether a boat transfer is requested.
+- `Song` -> `Rich Text` (Notion `rich_text`) - song request.
+- `Notes` -> `Rich Text` (Notion `rich_text`) - freeform notes (dietary needs, accessibility, etc.).
 - `WhatsApp` -> `Phone` (Notion `phone_number`) or `Checkbox` if you only need a yes/no flag.
-- `Released` -> `Checkbox` (Notion `checkbox`) — `true` when this row should be shown/imported publicly.
+- `Released` -> `Checkbox` (Notion `checkbox`) - `true` when this row should be shown/imported publicly.
 
 Ensure server converts JS types to Notion property format in API handlers. Example conversions:
 

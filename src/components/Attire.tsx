@@ -30,6 +30,7 @@ export default function Attire() {
             >
               {t("attireExampleButton")}
             </a>
+            
           </div>
         </div>
 
@@ -40,50 +41,57 @@ export default function Attire() {
           </div>
           <h3 className="text-xl font-bold mb-2">{t("attireExampleTitle")}</h3>
           <div className="mb-2">
-            {/* Render label (before colon) in bold, keep the rest normal. If there's no colon, render whole string normally. */}
+            {/*
+              Support two patterns in translations:
+              1) Numeric element markers like <0>text</0> or (sometimes) <0>text<0>
+                 - Treat the enclosed text as bold. These are often emitted by
+                   translation tooling that represents elements as numeric tags.
+              2) Legacy colon-based label formatting: "Label: rest"
+                 - Keep existing behavior where the portion before the first ':'
+                   is rendered bold.
+            */}
             {(() => {
-              const renderBoldLabel = (s: string) => {
-                // If the translation is empty or only whitespace, don't render anything
+              const renderWithMarkersOrColon = (s: string | undefined, extraClass = "mb-2") => {
                 if (!s || s.trim().length === 0) return null;
+                const str = String(s);
 
-                const parts = s.split(":");
+                // If the translation contains numeric markers like <0>, convert them
+                // to <strong> so we can render the HTML. Support either closing
+                // form </0> or the uncommon shorthand <0>...<0>.
+                if (/<\d+>/.test(str)) {
+                  const html = str
+                    .replace(/<(\d+)>(.*?)<\/\1>/g, '<strong>$2</strong>')
+                    .replace(/<(\d+)>(.*?)<\1>/g, '<strong>$2</strong>');
+                  return (
+                    <p
+                      className={`text-sm text-gray-600 ${extraClass}`}
+                      // translations are local/trusted; render the small HTML snippet
+                      dangerouslySetInnerHTML={{ __html: html }}
+                    />
+                  );
+                }
+
+                // Fallback: keep previous colon-based bold label behavior
+                const parts = str.split(":");
                 if (parts.length > 1) {
                   const label = parts.shift();
                   const rest = parts.join(":");
                   return (
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className={`text-sm text-gray-600 ${extraClass}`}>
                       <strong>{label}:</strong>
                       {rest}
                     </p>
                   );
                 }
-                return (
-                  <p className="text-sm text-gray-600 mb-2">{s}</p>
-                );
+
+                return <p className={`text-sm text-gray-600 ${extraClass}`}>{str}</p>;
               };
 
               return (
                 <>
-                  {renderBoldLabel(t("attireWomen"))}
-                  {renderBoldLabel(t("attireMen"))}
-                  {/* kids has slightly different spacing in existing markup (mb-3)
-                      preserve that spacing for visual parity */}
-                  {(() => {
-                    const s = t("attireKids");
-                    if (!s || s.trim().length === 0) return null;
-                    const parts = s.split(":");
-                    if (parts.length > 1) {
-                      const label = parts.shift();
-                      const rest = parts.join(":");
-                      return (
-                        <p className="text-sm text-gray-600 mb-3">
-                          <strong>{label}:</strong>
-                          {rest}
-                        </p>
-                      );
-                    }
-                    return <p className="text-sm text-gray-600 mb-3">{s}</p>;
-                  })()}
+                  {renderWithMarkersOrColon(t("attireWomen"))}
+                  {renderWithMarkersOrColon(t("attireMen"))}
+                  {renderWithMarkersOrColon(t("attireKids"), "mb-3")}
                 </>
               );
             })()}
@@ -105,6 +113,15 @@ export default function Attire() {
             >
               {t("attireKidsButton")}
             </a>
+            <a
+              href="https://www.pinterest.com/pin/291185932180375333"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+            >
+              {t("attireWomenShoesButton")}
+            </a>
+            
           </div>
         </div>
 
@@ -124,6 +141,7 @@ export default function Attire() {
             >
               {t("attireMoreDetailsButton")}
             </a>
+            
           </div>
         </div>
       </div>

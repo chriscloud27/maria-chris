@@ -19,7 +19,7 @@
     "hotels": "Hotels",
     "attire": "Kleidung",
     "arrival": "Anreise",
-    "rsvp": "Party 🎉",
+    "rsvp": "Bestätigung 🎉",
     "excursions": "Ausflüge",
     "faq": "FAQ",
     "story": "Geschichte"
@@ -32,12 +32,12 @@
     },
     "intro": "Wir lieben es, zu reisen und zauberhafte Orte zu entdecken. Guatapé ist für uns der perfekte Ort, um unsere Liebe zu feiern: ein farbenfrohes, fröhliches Dorf, umgeben von Wasser, Bergen und Himmel. Dieser besondere Ort fängt die Energie der vier Elemente ein und lädt zu Abenteuern, Schönheit und Nähe ein. Wir möchten diesen unvergesslichen Moment mit Familie und Freunden teilen, die atemberaubenden Ausblicke genießen, durch die lebendigen Straßen spazieren und den einzigartigen Geist erleben, der Guatapé so lebendig macht.",
     "roadWarningPrefix": "Bitte beachten:",
-    "roadWarning": "Die Straße ist möglicherweise nicht für jedes Auto geeignet. Fahrzeuge sollten eine höhere Bodenfreiheit haben oder ein 4x4 sein, um passieren zu können."
+    "roadWarning": "Die Straße ist befahrbar."
     ,"tipsHeading": "Reisetipps"
   },
   "hotels": {
     "title": "Hotel Optionen",
-    "subtitle": "Wir teilen einige Optionen, die du in Betracht ziehen kannst. Du kannst natürlich auch andere Unterkünfte in der Nähe des Veranstaltungsorts erkunden, die besser zu deinem Geschmack oder Budget passen — es gibt viele Möglichkeiten.",
+    "subtitle": "Wir teilen einige Optionen, die du in Betracht ziehen kannst. Du kannst natürlich auch andere Unterkünfte in der Nähe des Veranstaltungsorts erkunden, die besser zu deinem Geschmack oder Budget passen - es gibt viele Möglichkeiten.",
     "option1Title": "Option $",
     "option2Title": "Option $$",
     "option3Title": "Option $$$",
@@ -73,7 +73,7 @@
       "bookingLink": "",
       "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
       "description": "Die Apartamentos Monte Gandolfo in Guatapé liegen etwa 8,7 km von der Piedra del Peñol entfernt. Sie bieten kostenloses WLAN, einen Garten mit Terrasse und Zugang zu einem Gemeinschaftswhirlpool. Einige Wohneinheiten verfügen außerdem über eine Küche für Selbstverpflegung.",
-      "hint": "Ruhige, aussichtsreiche Lage — Transport organisieren, da es eine kurze Fahrt vom Ort entfernt liegt.",
+      "hint": "Ruhige, aussichtsreiche Lage - Transport organisieren, da es eine kurze Fahrt vom Ort entfernt liegt.",
       "hintLink": "",
       "hintLinkText": "Auf Karte ansehen"
     },
@@ -91,7 +91,7 @@
       "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
       "location": "",
       "description": "Luna Nueva ist eine private Hütte in El Peñol und bietet eine einzigartige Verbindung von Natur und Komfort. Umgeben von Bergen und mit Blick auf den Stausee ist sie der perfekte Ort, um dem Stadttrubel zu entfliehen und Ruhe zu finden. Genieße panoramische Aussichten auf den Peñol-Felsen, den Guatapé-Stausee und die Nachbildung des alten Peñol.",
-      "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung — bitte frühzeitig buchen.",
+      "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung - bitte frühzeitig buchen.",
       "hintLink": "",
       "hintLinkText": "Bei Airbnb buchen"
     },
@@ -188,7 +188,7 @@
     "title": "Zusage 🎉",
     "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 31. Oktober 2025 Bescheid.",
     "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
-    "kidsInfo": "Kinder sind willkommen; bitte gebt das Alter im Nachrichtenfeld an.",
+    "kidsInfo": "Kinder sind willkommen. Bitte gebt das das Alter im Nachrichtenfeld an.",
     "formTitle": "RSVP-Formular",
     "formSubtitle": "Wir senden eine Bestätigung an deine E-Mail.",
     "nameLabel": "Vollständiger Name",
@@ -198,13 +198,13 @@
     "attendanceNo": "Leider ablehnen",
     "attendanceMaybe": "Vielleicht",
     "songLabel": "Musikwunsch (optional)",
-    "songPlaceholder": "Künstler — Songtitel",
+    "songPlaceholder": "Künstler - Songtitel",
     "whatsappLabel": "WhatsApp-Nummer (optional)",
     "whatsappPlaceholder": "+49 170 123 4567",
     "participationLabel": "",
   "plusOneLabel": "Ich bringe eine Begleitung (+1)",
     "accommodationLabel": "Ja: Ich bleibe und benötige eine Unterkunft. Nein: Ich kann selbst für meine Unterkunft sorgen.",
-    "connect19Label": "Ich komme am 19. Dez zu Welcome & Connect",
+    "connect19Label": "Ich komme am 19. Dez zu Welcome & Connect.",
     "bigDayLabel": "Ich komme zum großen Tag",
     "boat21Label": "Ich komme am 21. Dez zur Weißen Party und Verabschiedung",
     "boatLabel": "Ich nehme an der Bootsparty teil (und bringe weiße Kleidung mit)",
@@ -264,32 +264,32 @@
     "title": "Häufig gestellte Fragen",
     "questions": [
       {
-        "question": "Is there a dress code?",
-        "answer": "We would appreciate festive attire."
+      "question": "Gibt es eine Kleiderordnung?",
+      "answer": "Wir würden uns über festliche Kleidung freuen."
       },
       {
-        "question": "Are children welcome?",
-        "answer": "Yes, children are welcome."
+      "question": "Sind Kinder willkommen?",
+      "answer": "Ja, Kinder sind herzlich willkommen."
       },
       {
-        "question": "Who can I contact with questions?",
-        "answer": "Please contact us directly."
+      "question": "Wer kann bei Fragen kontaktiert werden?",
+      "answer": "Bitte kontaktiert uns direkt."
       },
       {
-        "question": "What should I pack?",
-        "answer": "Swimmers, comfortable shoes (no heels — there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy."
+      "question": "Was soll ich einpacken?",
+      "answer": "Badesachen, bequeme Schuhe (keine Absätze – es wird Gras und viel Lauferei geben), warme Kleidung für die Nacht, da es kühl wird, Kleidung für Yoga/Sport und gute Energie. Die Nacht kann kalt sein. Bringt wenn möglich eine Decke mit."
       },
       {
-        "question": "What's the weather like in Guatapé?",
-        "answer": "During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening."
+      "question": "Wie ist das Wetter in Guatapé?",
+      "answer": "Tagsüber ist es angenehm warm, abends kann es kühl werden. Bringt etwas Leichtes für den Tag und eine Jacke oder einen Pullover für den Abend mit."
       },
       {
-        "question": "Which gifts?",
-        "answer": "We want you to know that the greatest gift for us is your journey and presence at our special day."
+      "question": "Welche Geschenke?",
+      "answer": "Wir möchten, dass ihr wisst, dass das größte Geschenk für uns eure Reise und eure Anwesenheit an unserem besonderen Tag ist."
       },
       {
-        "question": "Until when do I need to confirm my attendance?",
-        "answer": "Please let us know by October 31, 2025."
+      "question": "Bis wann muss ich meine Teilnahme bestätigen?",
+      "answer": "Bitte teilt uns dies bis zum 31. Oktober 2025 mit."
       }
     ]
   },
@@ -315,20 +315,26 @@
     "attireOverview": "Farben",
     "attireColors": "Hellgrün, Petrol-Grün, Olivgrün, Dunkelgrün, Orange, Goldgelb, Fuchsia, Kräftiges Rosa, Flieder, Dunkles Violett, Helles Violett, Lavendel",
     "attireExampleTitle": "Kleidung",
-    "attireWomen": "Frauen in hellen, frühlingshaften Tönen (blush, coral, salbeigrün, türkis oder sanftes gelb)",
-    "attireMen": "Männer mit Guayabera oder leichtem Hemd in Lavendel, Blau oder Grün und beigem/khaki-farbenem Hosen",
-    "attireKids": "Kinder in Weiß mit grünen Akzenten",
+    "attireWomen": "<0>Frauen<0> in hellen, frühlingshaften Tönen (zartrosa, koralle, salbeigrün, türkis oder sanftes gelb). Lasst die feinen Absätze zu Hause, da es schwierig ist, damit auf dem Rasen zu laufen; wir empfehlen Plateauschuhe oder breite Absätze.",
+    "attireMen": "<0>Männer<0> mit Guayabera oder leichtem Hemd in Lavendel, Blau oder Grün und beigem/khaki-farbenem Hosen",
+    "attireKids": "<0>Kinder<0> in Weiß mit grünen Akzenten",
     "attireSummary": "Frühlingshafte Farben für Frauen; leichte Hemden und beige für Männer; Kinder in Weiß.",
     "attireWomenMenButton": "Frauen / Männer",
     "attireKidsButton": "Kinder",
     "attireKidsTitle": "Weiße Bootsparty",
-    "attireBoatText": "Willkommen an Bord unserer optionalen Weißen Bootsparty — bequeme weiße Kleidung, sportlich oder elegant.",
+    "attireBoatText": "Willkommen an Bord unserer optionalen weißen Bootsparty: bequeme weiße Kleidung, sportlich oder elegant.",
     "attireExampleButton": "Beispiel",
     "attireMoreDetailsButton": "Mehr Details",
-    "attireNote": "Leicht und farbenfroh kleiden — frühlingshafte Stimmung.",
+    "attireNote": "Leicht und farbenfroh kleiden - frühlingshafte Stimmung",
     "attireButtonText": "Mehr Sehen",
     "attireColorsButton": "Farben",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
+    ,
+  "scheduleBox1Note": "Bringt gerne etwas fürs BBQ oder Snacks zum Teilen.",
+  "scheduleBox2Note": "Ihr seid eingeladen.",
+  "scheduleBox3Note": "100.000 COP pro Person"
+    ,
+    "attireWomenShoesButton": "Damen Schuhe"
   },
   "story": {
     "title": "Unsere Geschichte",
@@ -413,5 +419,9 @@
         ]
       }
     ]
+  }
+  ,
+  "footer": {
+    "copyright": "© {year} {name1} & {name2}. Mit Liebe gemacht ❤️"
   }
 }

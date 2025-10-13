@@ -18,6 +18,7 @@ export const Footer = ({ navItems }: FooterProps) => {
   const t = useTranslations('nav');
   const c = useTranslations('couple');
   const h = useTranslations('hero');
+  const f = useTranslations('footer');
 
   const defaultSections: FooterNavItem[] = [
     { title: t('story'), id: 'story' },
@@ -48,7 +49,7 @@ export const Footer = ({ navItems }: FooterProps) => {
               </span>
             </div>
             <p className="text-sm text-gray-600">
-              {h('subtitle')} — {h('location')}
+              {h('subtitle')} - {h('location')}
             </p>
           </div>
 
@@ -74,9 +75,13 @@ export const Footer = ({ navItems }: FooterProps) => {
 
         {/* Bottom: Copyright */}
         <div className="border-t border-gray-200 mt-6 pt-6 text-center">
-          <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} {c('name1')} & {c('name2')}. Made with love.
-          </p>
+            <p className="text-xs text-gray-500">
+              {f('copyright', {
+                year: new Date().getFullYear(),
+                name1: c('name1'),
+                name2: c('name2'),
+              })}
+            </p>
         </div>
 
       </div>

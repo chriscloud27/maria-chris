@@ -17,6 +17,8 @@ type ScheduleDay = {
 export function Schedule() {
   const t = useTranslations("schedule");
   const days = t.raw("days") as ScheduleDay[];
+  // details translations contain the small notes we want to display in each card
+  const d = useTranslations("details");
 
   return (
     <section className="py-16">
@@ -46,6 +48,19 @@ export function Schedule() {
                 </li>
               ))}
             </ol>
+            {/* Render a small note at the bottom of each card. Use the details translations
+                which include the attire box notes mapped to the schedule cards by index. */}
+            <div className="mt-4 text-center">
+              {i === 0 && (
+                <p className="text-sm text-gray-600 mt-1" dangerouslySetInnerHTML={{ __html: String(d('scheduleBox1Note')) }} />
+              )}
+              {i === 1 && (
+                <p className="text-sm text-gray-600 mt-1" dangerouslySetInnerHTML={{ __html: String(d('scheduleBox2Note')) }} />
+              )}
+              {i === 2 && (
+                <p className="text-sm text-gray-600 mt-1" dangerouslySetInnerHTML={{ __html: String(d('scheduleBox3Note')) }} />
+              )}
+            </div>
           </div>
         ))}
       </div>
