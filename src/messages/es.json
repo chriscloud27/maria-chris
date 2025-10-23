@@ -70,29 +70,27 @@
   "seeMore": "Ver más",
   "bookingLinkText": "Más detalles",
   "mapText": "Más detalles",
+  "locationText": "Ubicación",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
       "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
       "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
-      "description": "Una espaciosa villa de 4 habitaciones con comodidades modernas, jardín privado, área de barbacoa y vistas impresionantes al lago, las montañas y el monumento para una estancia relajada y escénica junto al embalse."
+      "description": "Una espaciosa villa de 4 habitaciones con comodidades modernas, jardín privado, área de barbacoa y vistas impresionantes al lago, las montañas y el monumento para una estancia relajada y escénica junto al embalse.",
+      "hint": "Perfecto para grupos o familias - villa espaciosa con vistas impresionantes."
     },
     "hotel2": {
       "name": "Posada Luna",
       "bookingLink": "https://booking.com/luna",
       "description": "Una acogedora posada con habitaciones cómodas y un ambiente familiar, perfecta para una estancia cercana al lugar del evento.",
-      "location": "https://maps.app.goo.gl/example-hotel2-location"
+      "location": "https://maps.app.goo.gl/example-hotel2-location",
+      "hint": "Ambiente acogedor y amigable, cerca del lugar del evento."
     },
     "hotel3": {
       "name": "Pensión Estrellas",
       "bookingLink": "https://booking.com/estrellas",
       "description": "Una encantadora pensión con habitaciones sencillas, desayuno incluido y un trato familiar.",
-      "location": "https://maps.app.goo.gl/example-hotel3-location"
-    },
-    "guatapeViajero": {
-      "name": "Guatapé Viajero",
-      "bookingLink": "https://booking.com/guatapeviajero",
-      "location": "https://maps.app.goo.gl/example-guatape-viajero-location",
-      "description": "Muy cerca del lugar del evento, pintoresco y asombroso. No se permiten niños."
+      "location": "https://maps.app.goo.gl/example-hotel3-location",
+      "hint": "Encantadora pensión con desayuno incluido para una estancia hogareña."
     },
     "monteGandolfo": {
       "name": "Monte Gandolfo",
@@ -105,7 +103,7 @@
     },
     "viajeroHostal": {
       "name": "Viajero Hostal",
-      "bookingLink": "",
+      "bookingLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
       "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
       "description": "Viajero Hostal en Guatapé tiene vistas al lago y un ambiente social y relajado. Las zonas comunes son perfectas para conocer a otros viajeros y está cerca de restaurantes y transporte local. Para descuentos, reserva con antelación a través de su página de promociones.",
       "hint": "Reserva con antelación para este descuento.",
@@ -115,7 +113,7 @@
     "altoLunaGlamping": {
       "name": "Alto Luna Glamping",
       "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
-      "location": "",
+      "location": "https://maps.app.goo.gl/example-alto-luna-location",
       "description": "Luna Nueva es una cabaña privada ubicada en El Peñol que ofrece una experiencia única de conexión con la naturaleza y confort. Rodeada de montañas y con vistas al embalse, es el lugar perfecto para desconectar del bullicio urbano. Disfruta de vistas panorámicas de la Piedra del Peñol, el embalse de Guatapé y la réplica del antiguo Peñol.",
       "hint": "Estancia remota; con instalaciones limitadas y alta demanda - considera reservar con antelación.",
       "hintLink": "",

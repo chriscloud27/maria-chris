@@ -1,7 +1,5 @@
 import 'dotenv/config';
 
-type RSVPValue = 'Yes' | 'No' | 'Maybe';
-
 // Derive types from the actual module shape to avoid `any`
 type ModuleType = typeof import('./notionClient');
 type AddRSVPFn = ModuleType['addRSVP'];
@@ -18,8 +16,7 @@ type NotionCreatePayload = {
   parent: { database_id: string };
   properties: {
     Name: { title: { text: { content: string } }[] };
-    Email: { email: string };
-    RSVP: { select: { name: string } };
+    '20-BigDay': { select: { name: string } };
     Notes?: { rich_text: { text: { content: string } }[] };
   };
 };
@@ -44,7 +41,7 @@ beforeEach(async () => {
 });
 
 test('calls notion.pages.create with expected payload including notes', async () => {
-  const data = { name: 'John Doe', email: 'john@example.com', rsvp: 'Yes' as RSVPValue, notes: 'See you' };
+  const data = { name: 'John Doe', email: 'john@example.com', BigDay: true, notes: 'See you' };
   await addRSVP(data);
 
   expect(notion.pages.create).toHaveBeenCalledTimes(1);
@@ -53,13 +50,13 @@ test('calls notion.pages.create with expected payload including notes', async ()
   // Name property is now used for the page title
   expect(calledWith.parent.database_id).toBe('test-db-id');
   expect(calledWith.properties.Name.title[0].text.content).toBe(data.name);
-  expect(calledWith.properties.RSVP.select.name).toBe(data.rsvp);
+  expect(calledWith.properties['20-BigDay'].select.name).toBe('Yes');
   expect(calledWith.properties.Notes!.rich_text[0].text.content).toBe(data.notes);
 });
 
 test('omits Notes when notes not provided', async () => {
   notion.pages.create = jest.fn().mockResolvedValue({});
-  const data = { name: 'Jane', rsvp: 'No' as RSVPValue };
+  const data = { name: 'Jane', BigDay: false };
   await addRSVP(data);
 
   const calledWith = notion.pages.create.mock.calls[0][0];

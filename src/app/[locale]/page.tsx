@@ -62,8 +62,8 @@ export default function Index() {
         <section id="story"><Story /></section>
         <section id="details"><Details /></section>
         <section id="schedule"><Schedule /></section>
-        <div className="container mx-auto px-4"><LocationExcursions />
         <section id="attire"><Attire /></section>
+        <div className="container mx-auto px-4"><LocationExcursions />
           <section id="hotels"><Hotels /></section>
           <section id="arrival"><Arrival /></section>
           <section id="rsvp"><Rsvp /></section>

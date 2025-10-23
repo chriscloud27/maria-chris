@@ -1,48 +1,47 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 
+interface Hotel {
+  name: string;
+  bookingLink?: string;
+  location?: string;
+  description: string;
+  hint?: string;
+  hintLink?: string;
+  hintLinkText?: string;
+}
+
 export const Hotels = () => {
   const t = useTranslations('hotels');
 
-  // Static hotel options (names/urls kept static but titles/labels localized)
   const options = [
     {
       titleKey: 'option1Title',
       image: '/Monte-Gandolfo.png',
-      places: [
-        { name: 'Monte Gondolfo', url: 'https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8' },
-        { name: 'Hotel Nova', url: 'https://maps.app.goo.gl/dVeoa2GSJtkXLMjt8?g_st=ipc' },
-      ],
+      places: ['cristalinaCabana', 'monteGandolfo'],
     },
     {
       titleKey: 'option2Title',
       image: '/viajero.png',
-      places: [
-        { name: 'Viajero', url: 'https://maps.app.goo.gl/JorKrdR4DnhVNBKM7' },
-        { name: 'Alto Luna Glamping', url: 'https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7' },
-      ],
+      places: ['viajeroHostal', 'altoLunaGlamping'],
     },
     {
       titleKey: 'option3Title',
       image: '/vivanti.png',
-      places: [
-        { name: 'Atma Eco Villas', url: 'https://maps.app.goo.gl/E9gKBEWMmiCJCDrs9' },
-        { name: 'Vivanti Resort', url: 'https://maps.app.goo.gl/1GhQbpWnnbCfV5eA9' },
-      ],
+      places: ['hotel2', 'hotel3'],
     },
   ];
 
   return (
     <section id="hotels" className="py-12">
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-serif font-semibold mb-2">{t('title')}</h2>
+        <h2 className="text-4xl font-bold text-black">{t('title')}</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
         <p className="max-w-4xl mx-auto text-lg leading-relaxed">{t('subtitle')}</p>
       </div>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {options.map((opt, idx) => {
-          const dollarPrefix = '$'.repeat(idx + 1);
+        {options.map((opt) => {
           return (
             <div key={opt.titleKey} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden">
               <div className="relative h-40">
@@ -55,28 +54,47 @@ export const Hotels = () => {
                 {/* centered title overlay (icon + title) */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative text-white text-2xl font-bold flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">{dollarPrefix}</div>
-                    <span className="text-center">{dollarPrefix} {t(opt.titleKey)}</span>
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"></div>
+                    <span className="text-center">{t(opt.titleKey)}</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white dark:bg-gray-800 p-6">
-                <ul className="mb-4 text-gray-600 dark:text-gray-300 space-y-2">
-                  {opt.places.map((p) => (
-                    <li key={p.url} className="flex items-center justify-between">
-                      <span>{p.name}</span>
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-600 hover:underline ml-3"
-                      >
-                        {t('seeMore')}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                {opt.places.map((placeKey) => {
+                  const hotel = t.raw(placeKey) as Hotel;
+                  return (
+                    <div key={placeKey} className="mb-6 last:mb-0">
+                      <h4 className="font-semibold text-lg mb-1 text-gray-800 dark:text-gray-200">{hotel.name}</h4>
+                      <p className="text-gray-600 dark:text-gray-300 mb-2 text-sm">{hotel.description}</p>
+                      {hotel.hint && (
+                        <p className="text-xs text-purple-600 dark:text-purple-400 mb-2 italic">{hotel.hint}</p>
+                      )}
+                      <div className="flex flex-wrap gap-2">
+                        {hotel.bookingLink && (
+                          <a
+                            href={hotel.bookingLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-purple-600 text-white px-3 py-1 rounded text-sm hover:bg-purple-700 transition-colors"
+                          >
+                            {t('bookingLinkText')}
+                          </a>
+                        )}
+                        {hotel.location && (
+                          <a
+                            href={hotel.location}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                          >
+                            {t('locationText')}
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );
