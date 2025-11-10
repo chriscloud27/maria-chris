@@ -313,8 +313,8 @@
   "attireOverview": "Colors",
   "attireColors": "Light green, Teal green, Olive green, Dark green, Orange, Golden yellow, Fuchsia pink, Bright pink, Lilac, Dark violet, Bright violet, Lavender",
   "attireExampleTitle": "Clothes",
-  "attireWomen": "<0>Women<0> in light, spring-like tones (blush, coral, sage green, turquoise or soft yellow). Since pointed heels are difficult to walk on grass, we recommend wearing platforms or block heels.",
-  "attireMen": "<0>Men<0> in a guayabera or lightweight shirt in lavender, blue, or green paired with beige/khaki trousers.",
+  "attireWomen": "<0>Women<0> in light, spring-like tones. We recommend wearing platforms or block heels.",
+  "attireMen": "<0>Men<0> in a lightweight shirt in lavender, blue, or green paired with beige trousers.",
   "attireKids": "<0>Kids<0> in white with touches of green.",
   "attireSummary": "Spring colors for women; light shirts and beige for men; kids in white.",
     "attireWomenMenButton": "Women / Men",
@@ -379,18 +379,18 @@
         "subtitle": "<b>The Big Day 🪨🌬️</b>",
         "events": [
           {
-            "time": "2:00 PM",
-            "title": "Religious Ceremony",
+            "time": "11:00 AM",
+            "title": "Guatape Church",
             "description": "Celebrate the wedding mass in the church."
           },
           {
-            "time": "4:00 PM",
+            "time": "1:00 PM",
             "title": "Couple's Arrival",
             "description": "Welcome the newlyweds with applause."
           },
           {
-            "time": "5:00 PM – 10:00 PM",
-            "title": "Evening Program & Dinner",
+            "time": "2:00 PM – 7:00 PM",
+            "title": "Lunch & Afternoon Program",
             "description": "A festive program for all guests."
           }
         ]

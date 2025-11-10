@@ -1,0 +1,32 @@
+# Knowledge Database
+
+| Question | Answer | Department | Tags | Updated_at |
+|----------|--------|------------|-------|------------|
+| Is there a dress code? | We would appreciate festive attire. | Attire | wedding, dress, attire | 2025-10-24 |
+| Are children welcome? | Yes, children are welcome. Please inform us if they will attend. | General | children, family | 2025-10-24 |
+| Who can I contact with questions? | Please contact us directly. | General | contact | 2025-10-24 |
+| What should I pack? | Swimmers, comfortable shoes (no heels - there will be grass and a lot of walking), warm clothes for the night as it will be chill, clothes for yoga/sports, and good energy. The night may be cold. Bring a blanket if possible. | Travel | packing, weather | 2025-10-24 |
+| What's the weather like in Guatapé? | During the day it's pleasantly warm; evenings can get cool. Bring something light for the daytime and a jacket or sweater for the evening. | Travel | weather, guatape | 2025-10-24 |
+| Which gifts? | We want you to know that the greatest gift for us is your journey and presence at our special day. If you still want to give us something, please consider that we are digital nomads who travel very light. | General | gifts | 2025-10-24 |
+| Until when do I need to confirm my attendance? | Please let us know by October 31, 2025. | RSVP | deadline | 2025-10-24 |
+| What is the best time to arrive? | Friday afternoon to enjoy the pre-wedding festivities and explore the colorful town. | Travel | arrival, timing | 2025-10-24 |
+| What must I see? | Climb El Peñón rock (740 steps!) for breathtaking views of the reservoir. | Travel | sights, rock | 2025-10-24 |
+| What local treats should I try? | Try arepas, empanadas, and fresh trout from the lake. | Travel | food, local | 2025-10-24 |
+| What's the weather in December? | December is perfect! 70-80°F, light jacket for evenings recommended. | Travel | weather | 2025-10-24 |
+| What currency is used? | Colombian Peso (COP). USD widely accepted in tourist areas. | Travel | money, currency | 2025-10-24 |
+| What language is spoken? | Spanish (we'll have translators at the wedding!). | Travel | language, communication | 2025-10-24 |
+| How to get here by air? | Fly to José María Córdova International Airport (MDE) in Medellín, then 2-hour scenic drive to Guatapé. Airlines: Avianca, LATAM, Copa Airlines, American Airlines. | Travel | transportation, air | 2025-10-24 |
+| How to get here by car? | From Medellín, 2 hours via Autopista Medellín-Bogotá (beautiful mountain views!). Car rental available at MDE airport: Hertz, Avis, Budget, Localiza. Pro tip: Stop in El Peñón village for empanadas and coffee! | Travel | transportation, car | 2025-10-24 |
+| How to get here by public transport? | Take Metro to Norte terminal, then bus to Guatapé (3 hours total). Direct buses from Terminal del Norte every 30 mins. Adventure option: Take a colorful "chiva" party bus for the full Colombian experience! | Travel | transportation, bus | 2025-10-24 |
+| What is the venue? | Casa Loma, Hotel Boutique, 054447, Peñol, Antioquia, Colombia. | General | venue, location | 2025-10-24 |
+| What are the attire colors? | Light green, Teal green, Olive green, Dark green, Orange, Golden yellow, Fuchsia pink, Bright pink, Lilac, Dark violet, Bright violet, Lavender. | Attire | colors | 2025-10-24 |
+| What should women wear? | Women in light, spring-like tones (blush, coral, sage green, turquoise or soft yellow). Since pointed heels are difficult to walk on grass, we recommend wearing platforms or block heels. | Attire | women, clothes | 2025-10-24 |
+| What should men wear? | Men in a guayabera or lightweight shirt in lavender, blue, or green paired with beige/khaki trousers. | Attire | men, clothes | 2025-10-24 |
+| What should kids wear? | Kids in white with touches of green. | Attire | kids, clothes | 2025-10-24 |
+| What to wear for the white boat party? | Welcome aboard our optional White boat party - comfortable white clothes, sporty or elegant. | Attire | boat, party, white | 2025-10-24 |
+| What is the schedule for December 19? | 4:00 PM: Guest Arrival & Check-In - Settle in, get ready for a beautiful evening. 6:30 PM: Welcoming and integration - Gently break the ice breaker, get to know each other. 7:30 PM: Natilla & Buñuelos - Taste Colombian Christmas delights with BBQ. | Schedule | events, welcome | 2025-10-24 |
+| What is the schedule for December 20? | 2:00 PM: Religious Ceremony - Celebrate the wedding mass in the church. 4:00 PM: Couple's Arrival - Welcome the newlyweds with applause. 5:00 PM – 10:00 PM: Evening Program & Dinner - A festive program for all guests. | Schedule | events, big day | 2025-10-24 |
+| What is the schedule for December 21? | 11:00 AM: Visit a coffee plantage - A mindful moment to start the day together. 12:00 PM: Tuk Tuk Tour - Enjoying a special ride to Guatapé. 1:30 PM: White Boat Party - Dress in white and enjoy music, dancing, cocktails, and the sunset together. | Schedule | events, farewell | 2025-10-24 |
+| What hotel options are available? | Cristalina Cabana: A spacious 4-bedroom villa with modern amenities, private garden, BBQ area, and breathtaking lake, mountain, and landmark views. Moon Inn: A cozy inn with comfortable rooms and a friendly atmosphere. Stars Guesthouse: A charming guesthouse with simple rooms, breakfast included. Monte Gandolfo: Apartamentos with free Wi-Fi, garden, terrace, hot tub. Viajero Hostal: Overlooks the lake, relaxed atmosphere. Alto Luna Glamping: Private cabin with panoramic views. | Accommodation | hotels, options | 2025-10-24 |
+| What is the location description? | Guatapé is a colorful, joyful village surrounded by water, mountains, and sky. This special place captures the energy of the four elements, inviting adventure, beauty, and connection. | General | location, guatape | 2025-10-24 |
+| What is the story of the couple? | Once upon a time, Chris went to Colombia while Maria was living in Australia. Few years later Chris left Europe to visit Australia in the exact moment when Maria left Australia to travel in Europe. Maria went to a salsa festival in Croatia looking for a soulmate and found Caro. In the fourth year Caro went with Chris. Maria landed at a digital nomad festival in Bulgaria, bumped into Chris, started talking, lost track of time. Next morning crossed paths again. Traveled through 14 countries together. | General | story, couple | 2025-10-24 |

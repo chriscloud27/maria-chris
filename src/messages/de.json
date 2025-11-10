@@ -313,8 +313,8 @@
     "attireOverview": "Farben",
     "attireColors": "Hellgrün, Petrol-Grün, Olivgrün, Dunkelgrün, Orange, Goldgelb, Fuchsia, Kräftiges Rosa, Flieder, Dunkles Violett, Helles Violett, Lavendel",
     "attireExampleTitle": "Kleidung",
-    "attireWomen": "<0>Frauen<0> in hellen, frühlingshaften Tönen (zartrosa, koralle, salbeigrün, türkis oder sanftes gelb). Lasst die feinen Absätze zu Hause, da es schwierig ist, damit auf dem Rasen zu laufen; wir empfehlen Plateauschuhe oder breite Absätze.",
-    "attireMen": "<0>Männer<0> mit Guayabera oder leichtem Hemd in Lavendel, Blau oder Grün und beigem/khaki-farbenem Hosen",
+    "attireWomen": "<0>Frauen<0> in hellen, frühlingshaften Tönen. Wir empfehlen Plateauschuhe oder breite Absätze.",
+    "attireMen": "<0>Männer<0> mit leichtem Hemd in Lavendel, Blau oder Grün und beigefarbenem Hosen",
     "attireKids": "<0>Kinder<0> in Weiß mit grünen Akzenten",
     "attireSummary": "Frühlingshafte Farben für Frauen; leichte Hemden und beige für Männer; Kinder in Weiß.",
     "attireWomenMenButton": "Frauen / Männer",
@@ -379,18 +379,18 @@
         "subtitle": "<b>Der Große Tag 🪨🌬️</b>",
         "events": [
           {
-            "time": "14:00 Uhr",
-            "title": "Religiöse Zeremonie",
+            "time": "11:00 Uhr",
+            "title": "Kirche Guatapé",
             "description": "Feiert die Hochzeitsmesse in der Kirche."
           },
           {
-            "time": "16:00 Uhr",
+            "time": "13:00 Uhr",
             "title": "Ankunft des Paares",
             "description": "Begrüßt die Neuvermählten mit Applaus."
           },
           {
-            "time": "17:00 Uhr – 22:00 Uhr",
-            "title": "Abendprogramm & Abendessen",
+            "time": "14:00 Uhr – 19:00 Uhr",
+            "title": "Mittagessen & Programm am Nachmittag",
             "description": "Ein festliches Programm für alle Gäste."
           }
         ]
