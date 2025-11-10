@@ -251,8 +251,8 @@
   "attireOverview": "Colores",
   "attireColors": "Verde claro, verde teal, verde oliva, verde oscuro, naranja, amarillo dorado, fucsia, rosa brillante, lila, violeta oscuro, violeta brillante, lavanda",
   "attireExampleTitle": "Prendas",
-  "attireWomen": "<0>Mujeres<0> en tonos claros y primaverales (blush, coral, verde salvia, turquesa o amarillo suave).  Evita los tacones finos ya que son difíciles de caminar en el césped; recomendamos plataformas o tacones anchos.",
-  "attireMen": "<0>Hombres<0> con guayabera o camisa ligera en tonos lavanda, azul o verde y pantalón beige/khaki.",
+  "attireWomen": "<0>Mujeres<0> en tonos vividos. Recomendamos plataformas o tacones anchos.",
+  "attireMen": "<0>Hombres<0> con camisa ligera en tonos lavanda, azul o verde y pantalón beige.",
   "attireKids": "<0>Niños<0> en blanco con toques de verde.",
   "attireSummary": "Colores primaverales para mujeres; camisas ligeras y pantalón beige para hombres; niños en blanco.",
     "attireWomenMenButton": "Mujeres / Hombres",
@@ -306,9 +306,9 @@
         "dateLabel": "Sáb, 20 dic",
         "subtitle": "<b>El Gran Día 🪨🌬️</b>",
         "events": [
-          { "time": "14:00", "title": "Ceremonia Religiosa", "description": "Celebra la misa de boda en la iglesia." },
-          { "time": "16:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
-          { "time": "17:00 – 22:00", "title": "Cena y Evento", "description": "Un programa festivo para todos los invitados." }
+          { "time": "11:00", "title": "Iglesia Guatapé", "description": "Celebra la misa de boda en la iglesia." },
+          { "time": "13:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
+          { "time": "14:00 – 19:00", "title": "Almuerzo y Programa de la Tarde", "description": "Un programa festivo para todos los invitados." }
         ]
       },
       {
