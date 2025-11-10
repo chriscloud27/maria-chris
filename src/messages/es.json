@@ -307,8 +307,8 @@
         "subtitle": "<b>El Gran Día 🪨🌬️</b>",
         "events": [
           { "time": "11:00", "title": "Iglesia Guatapé", "description": "Celebra la misa de boda en la iglesia." },
-          { "time": "13:00", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
-          { "time": "14:00 – 19:00", "title": "Almuerzo y Programa de la Tarde", "description": "Un programa festivo para todos los invitados." }
+          { "time": "1:00 PM", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
+          { "time": "2:00 – 7:00 PM", "title": "Almuerzo y Programa de la Tarde", "description": "Un programa festivo para todos los invitados." }
         ]
       },
       {
