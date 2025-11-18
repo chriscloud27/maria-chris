@@ -22,7 +22,12 @@
     "rsvp": "Bestätigung 🎉",
     "excursions": "Ausflüge",
     "faq": "FAQ",
+    "media": "Fotos & Videos",
     "story": "Geschichte"
+  },
+  "media": {
+    "title": "Fotos & Videos 📸",
+    "description": "Ladet hier eure Lieblingsmomente hoch! Wir würden uns freuen, die Hochzeit durch eure Augen zu sehen."
   },
   "location": {
     "title": "Ort",

@@ -22,7 +22,12 @@
   "rsvp": "Confirmar 🎉",
     "excursions": "Excursiones",
     "faq": "Preguntas",
+    "media": "Fotos y Videos",
     "story": "Historia"
+  },
+  "media": {
+    "title": "Fotos y Videos 📸",
+    "description": "¡Sube aquí tus momentos favoritos! Nos encantaría ver la boda a través de tus ojos."
   },
   "location": {
     "title": "Ubicación",
