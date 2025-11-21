@@ -47,50 +47,40 @@
     "locationText": "Standort",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
-      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
-      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
-      "description": "Eine geräumige 4-Schlafzimmer-Villa mit modernen Annehmlichkeiten, eigenem Garten, Grillbereich und atemberaubendem Blick auf See, Berge und Wahrzeichen für einen entspannten und malerischen Aufenthalt am Stausee.",
+      "description": "Geräumige Villa mit Grillbereich und Blick auf See, Berge und Wahrzeichen.",
       "hint": "Perfekt für Gruppen oder Familien - geräumige Villa mit atemberaubenden Ausblicken."
     },
-    "hotel2": {
-      "name": "Gasthof Mond",
-      "bookingLink": "https://booking.com/mond",
-      "description": "Ein gemütlicher Gasthof mit komfortablen Zimmern und freundlicher Atmosphäre, perfekt für einen Aufenthalt in der Nähe der Veranstaltung.",
-      "location": "https://maps.app.goo.gl/example-hotel2-location",
-      "hint": "Gemütliche und freundliche Atmosphäre, nah am Veranstaltungsort."
+    "fincamariangel": {
+      "name": "Finca Hotel Mariaangel",
+      "description": "Hotel 8 Minuten vom Veranstaltungsort entfernt mit komfortablen Zimmern, Pool, Restaurant und herrlichem Blick auf den See.",
+      "hint": "Nicht gelistet. Am besten direkt anrufen."
     },
-    "hotel3": {
-      "name": "Pension Sterne",
-      "bookingLink": "https://booking.com/sterne",
-      "description": "Eine charmante Pension mit einfachen Zimmern, Frühstück inklusive und familiärer Atmosphäre.",
-      "location": "https://maps.app.goo.gl/example-hotel3-location",
-      "hint": "Charmantes Gästehaus mit Frühstück für einen heimeligen Aufenthalt."
+    "portomarina": {
+      "name": "Hotel Porto Marina",
+      "description": "Erstklassiger Service auf Prominenten-Niveau.",
+      "hint": "Luxuriöse Zimmer mit Balkonen, privatem Strand mit peruanischer/karibischer Küche und Cocktails."
     },
     "monteGandolfo": {
       "name": "Monte Gandolfo",
-      "bookingLink": "",
-      "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
-      "description": "Die Apartamentos Monte Gandolfo in Guatapé liegen etwa 8,7 km von der Piedra del Peñol entfernt. Sie bieten kostenloses WLAN, einen Garten mit Terrasse und Zugang zu einem Gemeinschaftswhirlpool. Einige Wohneinheiten verfügen außerdem über eine Küche für Selbstverpflegung.",
+      "description": "Nahe Piedra del Peñol mit Garten, Terrasse und Zugang zu Gemeinschaftswhirlpool, einige mit Küche.",
       "hint": "Ruhige, aussichtsreiche Lage - Transport organisieren, da es eine kurze Fahrt vom Ort entfernt liegt.",
-      "hintLink": "",
       "hintLinkText": "Auf Karte ansehen"
     },
     "viajeroHostal": {
       "name": "Viajero Hostal",
-      "bookingLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
-      "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
-      "description": "Das Viajero Hostal in Guatapé bietet Seeblick und eine entspannte, soziale Atmosphäre. Die Gemeinschaftsbereiche eignen sich hervorragend zum Kennenlernen anderer Reisender, und das Hostel liegt in der Nähe von Restaurants und Verkehrsmitteln. Für Rabatte empfiehlt es sich, frühzeitig über ihre Aktionsseite zu buchen.",
-      "hint": "Mit Vorlauf buchen für diesen Rabatt.",
-      "hintLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      "description": "Seeblick, entspannte sozialer Atmosphäre, Gemeinschaftsbereichen zum Kennenlernen und Restaurants.",
+      "hint": "Mit Vorlauf buchen für einen Rabatt.",
       "hintLinkText": "Aktionen"
+    },
+    "recuerdos": {
+      "name": "Hotel Recuerdos",
+      "description": "Hotel mit beheiztem Außenpool, Bar, Fitnessraum, türkischem Bad, Nachtclub und modernen Zimmern, Whirlpools und Blick auf den See.",
+      "hint": "Shuttles zum internationalen Flughafen können gegen Gebühr arrangiert werden. Kostenlose Parkplätze."
     },
     "altoLunaGlamping": {
       "name": "Alto Luna Glamping",
-      "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
-      "location": "https://maps.app.goo.gl/example-alto-luna-location",
-      "description": "Luna Nueva ist eine private Hütte in El Peñol und bietet eine einzigartige Verbindung von Natur und Komfort. Umgeben von Bergen und mit Blick auf den Stausee ist sie der perfekte Ort, um dem Stadttrubel zu entfliehen und Ruhe zu finden. Genieße panoramische Aussichten auf den Peñol-Felsen, den Guatapé-Stausee und die Nachbildung des alten Peñol.",
+      "description": "Private Hütte. Der perfekte Ort, um Ruhe zu finden und panoramische Aussichten auf den Peñol-Felsen zu genießen.",
       "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung - bitte frühzeitig buchen.",
-      "hintLink": "",
       "hintLinkText": "Bei Airbnb buchen"
     },
     "searchOnBooking": "Bei Booking suchen",

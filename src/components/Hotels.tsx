@@ -11,8 +11,47 @@ interface Hotel {
   hintLinkText?: string;
 }
 
+interface HotelData {
+  bookingLink?: string;
+  location?: string;
+  hintLink?: string;
+}
+
 export const Hotels = () => {
   const t = useTranslations('hotels');
+
+  const hotels: Record<string, HotelData> = {
+    cristalinaCabana: {
+      bookingLink: "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
+      location: "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+    },
+    monteGandolfo: {
+      bookingLink: "https://engine.lobbypms.com/apartamentos-monte-gandolfo?start-date=2025-10-27&end-date=2025-10-28&currency=EUR&lang=en",
+      location: "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
+      hintLink: "",
+    },
+    viajeroHostal: {
+      bookingLink: "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      location: "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
+      hintLink: "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+    },
+    recuerdos: {
+      bookingLink: "https://www.booking.com/Share-qilgHR",
+      location: "https://maps.app.goo.gl/sYUo4AADaHoidUBH9",
+    },
+    altoLunaGlamping: {
+      bookingLink: "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
+      location: "https://maps.app.goo.gl/jEcrwYqxhLarpMdm7",
+    },
+    fincamariangel: {
+      bookingLink: "",
+      location: "https://maps.app.goo.gl/5WMKyjw1UqwwczNEA",
+    },
+    portomarina: {
+      bookingLink: "https://www.booking.com/Share-fbUfHfI",
+      location: "https://maps.app.goo.gl/hhCdmqUYwPSwTMov5",
+    },
+  };
 
   const options = [
     {
@@ -23,12 +62,12 @@ export const Hotels = () => {
     {
       titleKey: 'option2Title',
       image: '/viajero.png',
-      places: ['viajeroHostal', 'altoLunaGlamping'],
+      places: ['viajeroHostal', 'recuerdos', 'altoLunaGlamping'],
     },
     {
       titleKey: 'option3Title',
       image: '/vivanti.png',
-      places: ['hotel2', 'hotel3'],
+      places: ['fincamariangel', 'portomarina'],
     },
   ];
 
@@ -43,7 +82,7 @@ export const Hotels = () => {
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {options.map((opt) => {
           return (
-            <div key={opt.titleKey} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden">
+            <div key={opt.titleKey} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden bg-white dark:bg-gray-800">
               <div className="relative h-40">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
@@ -60,9 +99,11 @@ export const Hotels = () => {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6">
+              <div className="p-6">
                 {opt.places.map((placeKey) => {
-                  const hotel = t.raw(placeKey) as Hotel;
+                  const translated = t.raw(placeKey) as Omit<Hotel, 'bookingLink' | 'location' | 'hintLink'>;
+                  const staticData = hotels[placeKey] || {};
+                  const hotel = { ...translated, ...staticData } as Hotel;
                   return (
                     <div key={placeKey} className="mb-6 last:mb-0">
                       <h4 className="font-semibold text-lg mb-1 text-gray-800 dark:text-gray-200">{hotel.name}</h4>

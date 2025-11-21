@@ -72,51 +72,41 @@
   "mapText": "More Details",
   "locationText": "Location",
     "cristalinaCabana": {
-      "name": "Cristalina Cabana",
-      "bookingLink": "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
-      "location": "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
-      "description": "A spacious 4-bedroom villa with modern amenities, private garden, BBQ area, and breathtaking lake, mountain, and landmark views for a relaxed and scenic stay by the reservoir.",
-      "hint": "Perfect for groups or families - spacious villa with stunning views."
+      "name": "Cabaña Cristalina",
+      "description": "Spacious villa with BBQ area and views of the lake, mountains, and landmarks.",
+      "hint": "Perfect for groups or families - spacious villa with breathtaking views."
     },
-    "hotel2": {
-      "name": "Moon Inn",
-      "bookingLink": "https://booking.com/moon",
-      "description": "A cozy inn with comfortable rooms and a friendly atmosphere, perfect for a stay close to the event.",
-      "location": "https://maps.app.goo.gl/example-hotel2-location",
-      "hint": "Cozy and friendly atmosphere, close to the event venue."
+    "fincamariangel": {
+      "name": "Finca Hotel Mariaangel",
+      "description": "Hotel 8 minutes from the venue with comfortable rooms, pool, restaurant, and magnificent lake views.",
+      "hint": "Not listed online. Best to call directly."
     },
-    "hotel3": {
-      "name": "Stars Guesthouse",
-      "bookingLink": "https://booking.com/stars",
-      "description": "A charming guesthouse with simple rooms, breakfast included, and a homely feel.",
-      "location": "https://maps.app.goo.gl/example-hotel3-location",
-      "hint": "Charming guesthouse with breakfast included for a homely stay."
+    "portomarina": {
+      "name": "Hotel Porto Marina",
+      "description": "Top-tier service at celebrity level.",
+      "hint": "Luxurious rooms with balconies, private beach with Peruvian/Caribbean cuisine and cocktails."
     },
     "monteGandolfo": {
       "name": "Monte Gandolfo",
-      "bookingLink": "https://engine.lobbypms.com/apartamentos-monte-gandolfo?start-date=2025-10-27&end-date=2025-10-28&currency=EUR&lang=en",
-      "location": "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
-      "description": "Apartamentos Monte Gandolfo is located in Guatapé, about 8.7 km from Piedra del Peñol. It offers free Wi‑Fi, a garden with a terrace, and access to a shared hot tub. Some units also include a kitchenette for self-catering.",
-      "hint": "Quiet, scenic spot - consider arranging transport as it’s a short drive from town.",
-      "hintLink": "",
+      "description": "Near Piedra del Peñol with garden, terrace, and access to shared hot tub, some with kitchen.",
+      "hint": "Quiet, scenic location - arrange transport as it's a short drive from town.",
       "hintLinkText": "View on map"
     },
     "viajeroHostal": {
       "name": "Viajero Hostal",
-      "bookingLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
-      "location": "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
-      "description": "Viajero Hostal in Guatapé overlooks the lake and offers a relaxed, social atmosphere. The communal areas are perfect for meeting fellow travelers, and the hostel is close to restaurants and local transport. For discounts, book in advance via their promotions page.",
-      "hint": "Book in advance for this discount.",
-      "hintLink": "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+      "description": "Lake views, relaxed social atmosphere, communal areas to meet people, and restaurants.",
+      "hint": "Book in advance for a discount.",
       "hintLinkText": "Promotions"
+    },
+    "recuerdos": {
+      "name": "Hotel Recuerdos",
+      "description": "Hotel with heated outdoor pool, bar, gym, Turkish bath, nightclub, and modern rooms, hot tubs, and lake views.",
+      "hint": "Shuttles to the international airport can be arranged for a fee. Free parking."
     },
     "altoLunaGlamping": {
       "name": "Alto Luna Glamping",
-      "bookingLink": "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
-      "location": "https://maps.app.goo.gl/example-alto-luna-location",
-      "description": "Luna Nueva is a private cabin located in El Peñol, offering a unique experience of connection with nature and comfort. Surrounded by mountains and overlooking the reservoir, this cabin is the perfect place to disconnect from the urban bustle and immerse yourself in the tranquility of the Antioquia landscape. Enjoy panoramic views of the Peñol rock, the Guatapé reservoir and the replica of the old Peñol.",
-      "hint": "Remote cabin experience; limited facilities and booking fills up fast - consider reserving early.",
-      "hintLink": "",
+      "description": "Private cabin. The perfect place to find peace and enjoy panoramic views of Peñol Rock.",
+      "hint": "Remote cabin; limited amenities and fills up quickly - please book early.",
       "hintLinkText": "Book on Airbnb"
     },
     "searchOnBooking": "Search on Booking",
