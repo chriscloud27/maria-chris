@@ -82,7 +82,7 @@ export const Hotels = () => {
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {options.map((opt) => {
           return (
-            <div key={opt.titleKey} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden">
+            <div key={opt.titleKey} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden bg-white dark:bg-gray-800">
               <div className="relative h-40">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
@@ -99,7 +99,7 @@ export const Hotels = () => {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6">
+              <div className="p-6">
                 {opt.places.map((placeKey) => {
                   const translated = t.raw(placeKey) as Omit<Hotel, 'bookingLink' | 'location' | 'hintLink'>;
                   const staticData = hotels[placeKey] || {};
