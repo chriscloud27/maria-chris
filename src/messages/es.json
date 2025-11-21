@@ -73,35 +73,40 @@
   "locationText": "Ubicación",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
-      "description": "Una espaciosa villa de 4 habitaciones con comodidades modernas, jardín privado, área de barbacoa y vistas impresionantes al lago, las montañas y el monumento para una estancia relajada y escénica junto al embalse.",
-      "hint": "Perfecto para grupos o familias - villa espaciosa con vistas impresionantes."
+      "description": "Villa espaciosa con zona de BBQ y vista al lago, montañas y sitios emblemáticos.",
+      "hint": "Perfecta para grupos o familias - villa espaciosa con vistas impresionantes."
     },
     "fincamariangel": {
       "name": "Finca Hotel Mariaangel",
-      "description": "Hotel 8 minutes from the venue with comfortable rooms, pool, restaurant and stunning lake views.",
-      "hint": "Not listed online. Best to call directly."
+      "description": "Hotel a 8 minutos del lugar con habitaciones cómodas, piscina, restaurante y hermosa vista al lago.",
+      "hint": "No está listado. Mejor llamar directamente."
     },
     "portomarina": {
       "name": "Hotel Porto Marina",
-      "description": "Experience world-class celebrity-level service at Porto Marina Hotel",
-      "hint": "Luxurious rooms with balconies, private beach with Peruvian/Caribbean cuisine and cocktails."
+      "description": "Servicio de primera categoría a nivel de celebridades.",
+      "hint": "Habitaciones lujosas con balcones, playa privada con cocina peruana/caribeña y cócteles."
     },
     "monteGandolfo": {
       "name": "Monte Gandolfo",
-      "description": "Apartamentos Monte Gandolfo está en Guatapé, a unos 8.7 km de la Piedra del Peñol. Ofrece Wi‑Fi gratis, un jardín con terraza y acceso a un jacuzzi compartido. Algunas unidades cuentan con cocina para poder cocinar por tu cuenta.",
-      "hint": "Lugar tranquilo y con vistas - organiza transporte, ya que está a un corto trayecto en coche del pueblo.",
-      "hintLinkText": "Ver en mapa"
+      "description": "Cerca de la Piedra del Peñol con jardín, terraza y acceso a jacuzzi comunitario, algunas con cocina.",
+      "hint": "Ubicación tranquila con vistas - organizar transporte ya que está a un corto trayecto del pueblo.",
+      "hintLinkText": "Ver en el mapa"
     },
     "viajeroHostal": {
       "name": "Viajero Hostal",
-      "description": "El Viajero Hostal en Guatapé ofrece vistas al lago y una atmósfera relajada y social. Las áreas comunes son perfectas para conocer a otros viajeros, y el hostal está cerca de restaurantes y transporte local. Para descuentos, se recomienda reservar con anticipación a través de su página de promociones.",
-      "hint": "Reserva con anticipación para este descuento.",
+      "description": "Vista al lago, ambiente social relajado, áreas comunes para conocer gente y restaurantes.",
+      "hint": "Reserva con anticipación para obtener descuento.",
       "hintLinkText": "Promociones"
+    },
+    "recuerdos": {
+      "name": "Hotel Recuerdos",
+      "description": "Hotel con piscina exterior climatizada, bar, gimnasio, baño turco, discoteca y habitaciones modernas, jacuzzis y vista al lago.",
+      "hint": "Los traslados al aeropuerto internacional se pueden organizar con costo adicional. Parqueadero gratuito."
     },
     "altoLunaGlamping": {
       "name": "Alto Luna Glamping",
-      "description": "Luna Nueva es una cabaña privada ubicada en El Peñol que ofrece una experiencia única de conexión con la naturaleza y confort. Rodeada de montañas y con vistas al embalse, es el lugar perfecto para desconectar del bullicio urbano. Disfruta de vistas panorámicas de la Piedra del Peñol, el embalse de Guatapé y la réplica del antiguo Peñol.",
-      "hint": "Estancia remota; con instalaciones limitadas y alta demanda - considera reservar con antelación.",
+      "description": "Cabaña privada. El lugar perfecto para encontrar tranquilidad y disfrutar de vistas panorámicas de la Piedra del Peñol.",
+      "hint": "Cabaña alejada; comodidades limitadas y se llena rápido - por favor reservar con anticipación.",
       "hintLinkText": "Reservar en Airbnb"
     },
     "searchOnBooking": "Buscar en Booking",

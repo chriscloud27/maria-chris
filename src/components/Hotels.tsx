@@ -11,10 +11,16 @@ interface Hotel {
   hintLinkText?: string;
 }
 
+interface HotelData {
+  bookingLink?: string;
+  location?: string;
+  hintLink?: string;
+}
+
 export const Hotels = () => {
   const t = useTranslations('hotels');
 
-  const hotels = {
+  const hotels: Record<string, HotelData> = {
     cristalinaCabana: {
       bookingLink: "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
       location: "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
@@ -28,6 +34,10 @@ export const Hotels = () => {
       bookingLink: "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
       location: "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
       hintLink: "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
+    },
+    recuerdos: {
+      bookingLink: "https://www.booking.com/Share-qilgHR",
+      location: "https://maps.app.goo.gl/sYUo4AADaHoidUBH9",
     },
     altoLunaGlamping: {
       bookingLink: "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
@@ -52,7 +62,7 @@ export const Hotels = () => {
     {
       titleKey: 'option2Title',
       image: '/viajero.png',
-      places: ['viajeroHostal', 'altoLunaGlamping'],
+      places: ['viajeroHostal', 'recuerdos', 'altoLunaGlamping'],
     },
     {
       titleKey: 'option3Title',

@@ -47,7 +47,7 @@
     "locationText": "Standort",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
-      "description": "Eine geräumige 4-Schlafzimmer-Villa mit modernen Annehmlichkeiten, eigenem Garten, Grillbereich und atemberaubendem Blick auf See, Berge und Wahrzeichen für einen entspannten und malerischen Aufenthalt am Stausee.",
+      "description": "Geräumige Villa mit Grillbereich und Blick auf See, Berge und Wahrzeichen.",
       "hint": "Perfekt für Gruppen oder Familien - geräumige Villa mit atemberaubenden Ausblicken."
     },
     "fincamariangel": {
@@ -57,24 +57,29 @@
     },
     "portomarina": {
       "name": "Hotel Porto Marina",
-      "description": "Erleben Sie erstklassigen Service auf Prominenten-Niveau im Porto Marina Hotel",
+      "description": "Erstklassiger Service auf Prominenten-Niveau.",
       "hint": "Luxuriöse Zimmer mit Balkonen, privatem Strand mit peruanischer/karibischer Küche und Cocktails."
     },
     "monteGandolfo": {
       "name": "Monte Gandolfo",
-      "description": "Die Apartamentos Monte Gandolfo in Guatapé liegen etwa 8,7 km von der Piedra del Peñol entfernt. Sie bieten kostenloses WLAN, einen Garten mit Terrasse und Zugang zu einem Gemeinschaftswhirlpool. Einige Wohneinheiten verfügen außerdem über eine Küche für Selbstverpflegung.",
+      "description": "Nahe Piedra del Peñol mit Garten, Terrasse und Zugang zu Gemeinschaftswhirlpool, einige mit Küche.",
       "hint": "Ruhige, aussichtsreiche Lage - Transport organisieren, da es eine kurze Fahrt vom Ort entfernt liegt.",
       "hintLinkText": "Auf Karte ansehen"
     },
     "viajeroHostal": {
       "name": "Viajero Hostal",
-      "description": "Das Viajero Hostal in Guatapé bietet Seeblick und eine entspannte, soziale Atmosphäre. Die Gemeinschaftsbereiche eignen sich hervorragend zum Kennenlernen anderer Reisender, und das Hostel liegt in der Nähe von Restaurants und Verkehrsmitteln. Für Rabatte empfiehlt es sich, frühzeitig über ihre Aktionsseite zu buchen.",
-      "hint": "Mit Vorlauf buchen für diesen Rabatt.",
+      "description": "Seeblick, entspannte sozialer Atmosphäre, Gemeinschaftsbereichen zum Kennenlernen und Restaurants.",
+      "hint": "Mit Vorlauf buchen für einen Rabatt.",
       "hintLinkText": "Aktionen"
+    },
+    "recuerdos": {
+      "name": "Hotel Recuerdos",
+      "description": "Hotel mit beheiztem Außenpool, Bar, Fitnessraum, türkischem Bad, Nachtclub und modernen Zimmern, Whirlpools und Blick auf den See.",
+      "hint": "Shuttles zum internationalen Flughafen können gegen Gebühr arrangiert werden. Kostenlose Parkplätze."
     },
     "altoLunaGlamping": {
       "name": "Alto Luna Glamping",
-      "description": "Luna Nueva ist eine private Hütte in El Peñol und bietet eine einzigartige Verbindung von Natur und Komfort. Umgeben von Bergen und mit Blick auf den Stausee ist sie der perfekte Ort, um dem Stadttrubel zu entfliehen und Ruhe zu finden. Genieße panoramische Aussichten auf den Peñol-Felsen, den Guatapé-Stausee und die Nachbildung des alten Peñol.",
+      "description": "Private Hütte. Der perfekte Ort, um Ruhe zu finden und panoramische Aussichten auf den Peñol-Felsen zu genießen.",
       "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung - bitte frühzeitig buchen.",
       "hintLinkText": "Bei Airbnb buchen"
     },
