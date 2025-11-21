@@ -3,7 +3,11 @@ import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 import Countdown from './Countdown';
 
-export const Hero = () => {
+interface HeroProps {
+  onCountdownFinish?: () => void;
+}
+
+export const Hero = ({ onCountdownFinish }: HeroProps = {}) => {
   const t = useTranslations('hero');
   const c = useTranslations('couple');
 
@@ -51,7 +55,7 @@ export const Hero = () => {
         {t('title')}
       </p>
       {/* Countdown Timer */}
-        <Countdown targetDate="2025-12-20T14:00:00" />
+        <Countdown targetDate="2025-12-20T14:00:00" onCountdownFinish={onCountdownFinish} />
 
         {/* Date Section - Elegant invitation style */}
       <div className="text-center mb-8">

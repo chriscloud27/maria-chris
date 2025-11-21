@@ -27,7 +27,12 @@ const calculateTimeLeft = (targetDate: string): TimeLeft | null => {
   return timeLeft;
 };
 
-const Countdown = ({ targetDate }: { targetDate: string }) => {
+interface CountdownProps {
+  targetDate: string;
+  onCountdownFinish?: () => void;
+}
+
+const Countdown = ({ targetDate, onCountdownFinish }: CountdownProps) => {
   // Start with null so server-render and initial client render match.
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
   const [hasTriggeredConfetti, setHasTriggeredConfetti] = useState(false);
@@ -53,6 +58,7 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
     // Trigger confetti ONLY when countdown reaches zero (not on initial load)
     if (isInitialized && !timeLeft && !hasTriggeredConfetti) {
       setHasTriggeredConfetti(true);
+      onCountdownFinish?.();
       
       // Fireworks effect
       const duration = 15 * 1000; // 15 seconds
@@ -86,7 +92,7 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
         });
       }, 250);
     }
-  }, [isInitialized, timeLeft, hasTriggeredConfetti]);
+  }, [isInitialized, timeLeft, hasTriggeredConfetti, onCountdownFinish]);
 
   if (!timeLeft) {
     return (
