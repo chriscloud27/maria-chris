@@ -10,6 +10,7 @@ import Attire from "@/components/Attire";
 import { Schedule } from "@/components/Schedule";
 import { Story } from "@/components/Story";
 import { Footer } from "@/components/Footer";
+import { MediaUpload } from "@/components/MediaUpload";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import dynamic from 'next/dynamic';
@@ -53,6 +54,7 @@ export default function Index() {
         { title: t('nav.hotels'), id: 'hotels' },
         { title: t('nav.arrival'), id: 'arrival' },
         { title: t('nav.rsvp'), id: 'rsvp' },
+        { title: t('nav.media'), id: 'media' },
         { title: t('nav.faq'), id: 'faq' }
       ]} />
       {/* Spacer div to prevent content from being hidden behind fixed header */}
@@ -67,6 +69,14 @@ export default function Index() {
           <section id="hotels"><Hotels /></section>
           <section id="arrival"><Arrival /></section>
           <section id="rsvp"><Rsvp /></section>
+          <section id="media">
+            <MediaUpload 
+              eventId="maria-chris" 
+              apiBaseUrl="/api/mediaupload" 
+              title={t('media.title')} 
+              description={t('media.description')} 
+            />
+          </section>
           <section id="faq"><Faq /></section>
         </div>
       </main>

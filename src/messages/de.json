@@ -22,7 +22,30 @@
     "rsvp": "Bestätigung 🎉",
     "excursions": "Ausflüge",
     "faq": "FAQ",
+    "media": "Fotos & Videos",
     "story": "Geschichte"
+  },
+  "media": {
+    "title": "Fotos & Videos 📸",
+    "description": "Ladet hier eure Lieblingsmomente hoch! Wir würden uns freuen, die Hochzeit durch eure Augen zu sehen.",
+    "upload": {
+      "selectFiles": "Klicke, um Fotos oder Videos auszuwählen",
+      "filesSelected": "Datei",
+      "filesSelectedPlural": "Dateien",
+      "selected": "ausgewählt",
+      "maxSize": "Max. 10MB pro Datei • JPG, PNG, MP4",
+      "uploadButton": "Medien hochladen",
+      "uploading": "Wird hochgeladen...",
+      "uploadSuccess": "Upload erfolgreich! Danke fürs Teilen.",
+      "uploadFailed": "Upload fehlgeschlagen",
+      "uploadPartial": "{uploaded} Dateien hochgeladen. {failed} fehlgeschlagen.",
+      "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+      "moreFiles": "weitere"
+    },
+    "gallery": {
+      "title": "Geteilte Momente",
+      "noPhotos": "Noch keine Fotos. Sei der Erste, der teilt!"
+    }
   },
   "location": {
     "title": "Ort",

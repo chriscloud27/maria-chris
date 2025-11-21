@@ -22,7 +22,30 @@
   "rsvp": "Confirmar 🎉",
     "excursions": "Excursiones",
     "faq": "Preguntas",
+    "media": "Fotos y Videos",
     "story": "Historia"
+  },
+  "media": {
+    "title": "Fotos y Videos 📸",
+    "description": "¡Sube aquí tus momentos favoritos! Nos encantaría ver la boda a través de tus ojos.",
+    "upload": {
+      "selectFiles": "Haz clic para seleccionar fotos o videos",
+      "filesSelected": "archivo",
+      "filesSelectedPlural": "archivos",
+      "selected": "seleccionado",
+      "maxSize": "Máx. 10MB cada uno • JPG, PNG, MP4",
+      "uploadButton": "Subir medios",
+      "uploading": "Subiendo...",
+      "uploadSuccess": "¡Subida exitosa! Gracias por compartir.",
+      "uploadFailed": "Error al subir",
+      "uploadPartial": "Se subieron {uploaded} archivos. {failed} fallaron.",
+      "errorGeneric": "Algo salió mal. Por favor, inténtalo de nuevo.",
+      "moreFiles": "más"
+    },
+    "gallery": {
+      "title": "Momentos Compartidos",
+      "noPhotos": "Aún no hay fotos. ¡Sé el primero en compartir!"
+    }
   },
   "location": {
     "title": "Ubicación",
