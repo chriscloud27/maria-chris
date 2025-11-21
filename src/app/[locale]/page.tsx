@@ -60,7 +60,11 @@ export default function Index() {
       {/* Spacer div to prevent content from being hidden behind fixed header */}
       <div className="h-20"></div>
       <main>
-        <section id="hero"><Hero /></section>
+        {/* After the countdown stopped: 
+            Hide: schedule, attire, locationexcursions, hotels, arrival, rsvp
+            Show: mediaupload, confetti effect (done in Countdown.tsx)
+        */}
+        <section id="hero"><Hero /></section> 
         <section id="story"><Story /></section>
         <section id="details"><Details /></section>
         <section id="schedule"><Schedule /></section>

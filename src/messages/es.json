@@ -44,7 +44,9 @@
     },
     "gallery": {
       "title": "Momentos Compartidos",
-      "noPhotos": "Aún no hay fotos. ¡Sé el primero en compartir!"
+      "noPhotos": "Aún no hay fotos. ¡Sé el primero en compartir!",
+      "playRandom": "Reproducir aleatorio",
+      "playInOrder": "Reproducir en orden"
     }
   },
   "location": {

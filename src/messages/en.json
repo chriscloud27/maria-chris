@@ -44,7 +44,9 @@
     },
     "gallery": {
       "title": "Shared Moments",
-      "noPhotos": "No photos yet. Be the first to share!"
+      "noPhotos": "No photos yet. Be the first to share!",
+      "playRandom": "Play Random",
+      "playInOrder": "Play in Order"
     }
   },
   "location": {

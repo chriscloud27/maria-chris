@@ -44,7 +44,9 @@
     },
     "gallery": {
       "title": "Geteilte Momente",
-      "noPhotos": "Noch keine Fotos. Sei der Erste, der teilt!"
+      "noPhotos": "Noch keine Fotos. Sei der Erste, der teilt!",
+      "playRandom": "Zufällig abspielen",
+      "playInOrder": "In Reihenfolge abspielen"
     }
   },
   "location": {
