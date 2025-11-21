@@ -121,7 +121,7 @@
     /* Main background image */
     background-image: url('/background.png');
     background-size: cover;
-    background-position: center center;
+    background-position: top;
     background-repeat: no-repeat;
     background-attachment: scroll;
     /* Fallback background color */
