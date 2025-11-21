@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Upload, Image as ImageIcon, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface MediaFile {
   id: string;
@@ -20,6 +21,7 @@ interface MediaUploadProps {
 }
 
 export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUploadProps) {
+  const t = useTranslations('media');
   const [files, setFiles] = useState<FileList | null>(null);
   const [uploading, setUploading] = useState(false);
   const [gallery, setGallery] = useState<MediaFile[]>([]);
@@ -93,16 +95,16 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || 'Upload failed');
+        throw new Error(data.error || t('upload.uploadFailed'));
       }
 
       if (data.errors && data.errors.length > 0) {
         setMessage({ 
           type: 'success', // Still success but with warnings
-          text: `Uploaded ${data.files.length} files. ${data.errors.length} failed.` 
+          text: t('upload.uploadPartial', { uploaded: data.files.length, failed: data.errors.length })
         });
       } else {
-        setMessage({ type: 'success', text: 'Upload successful! Thanks for sharing.' });
+        setMessage({ type: 'success', text: t('upload.uploadSuccess') });
       }
       
       setFiles(null);
@@ -123,7 +125,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
       }, 2000);
 
     } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
+      const errorMessage = error instanceof Error ? error.message : t('upload.errorGeneric');
       setMessage({ type: 'error', text: errorMessage });
     } finally {
       setUploading(false);
@@ -168,7 +170,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
                 ))}
                 {previewUrls.length > 6 && (
                   <div className="flex items-center justify-center bg-gray-100 rounded-lg h-24 text-gray-500 text-sm font-medium">
-                    +{previewUrls.length - 6} more
+                    +{previewUrls.length - 6} {t('upload.moreFiles')}
                   </div>
                 )}
               </div>
@@ -177,10 +179,10 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
             )}
             <span className="text-gray-600 font-medium">
               {files && files.length > 0 
-                ? `${files.length} file${files.length > 1 ? 's' : ''} selected` 
-                : 'Click to select photos or videos'}
+                ? `${files.length} ${files.length > 1 ? t('upload.filesSelectedPlural') : t('upload.filesSelected')} ${t('upload.selected')}` 
+                : t('upload.selectFiles')}
             </span>
-            <span className="text-xs text-gray-400">Max 10MB each • JPG, PNG, MP4</span>
+            <span className="text-xs text-gray-400">{t('upload.maxSize')}</span>
           </label>
         </div>
 
@@ -205,17 +207,17 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
           {uploading ? (
             <>
               <Loader2 className="animate-spin" size={20} />
-              Uploading...
+              {t('upload.uploading')}
             </>
           ) : (
-            'Upload Media'
+            t('upload.uploadButton')
           )}
         </button>
       </div>
 
       {/* Gallery Section */}
       <div className="mt-16">
-        <h3 className="text-2xl font-serif font-semibold text-center mb-8 text-gray-800">Shared Moments</h3>
+        <h3 className="text-2xl font-serif font-semibold text-center mb-8 text-gray-800">{t('gallery.title')}</h3>
         
         {loadingGallery ? (
           <div className="flex justify-center py-12">
@@ -224,7 +226,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
         ) : gallery.length === 0 ? (
           <div className="text-center text-gray-500 py-12 bg-gray-50 rounded-2xl">
             <ImageIcon className="w-12 h-12 mx-auto mb-3 text-gray-300" />
-            <p>No photos yet. Be the first to share!</p>
+            <p>{t('gallery.noPhotos')}</p>
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
