@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Upload, Image as ImageIcon, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Upload, Image as ImageIcon, Loader2, AlertCircle, CheckCircle2, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 interface MediaFile {
@@ -28,6 +28,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
   const [loadingGallery, setLoadingGallery] = useState(true);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+  const [selectedMedia, setSelectedMedia] = useState<MediaFile | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {

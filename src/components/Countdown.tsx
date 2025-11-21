@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import confetti from "canvas-confetti";
 
 interface TimeLeft {
   days: number;
@@ -29,16 +30,63 @@ const calculateTimeLeft = (targetDate: string): TimeLeft | null => {
 const Countdown = ({ targetDate }: { targetDate: string }) => {
   // Start with null so server-render and initial client render match.
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
+  const [hasTriggeredConfetti, setHasTriggeredConfetti] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
   const t = useTranslations("countdown");
 
   useEffect(() => {
     // update immediately after mount, then every second
-    const update = () => setTimeLeft(calculateTimeLeft(targetDate));
+    const update = () => {
+      const newTimeLeft = calculateTimeLeft(targetDate);
+      setTimeLeft(newTimeLeft);
+      if (!isInitialized) {
+        setIsInitialized(true);
+      }
+    };
     update();
     const timer = setInterval(update, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [targetDate, isInitialized]);
+
+  useEffect(() => {
+    // Trigger confetti ONLY when countdown reaches zero (not on initial load)
+    if (isInitialized && !timeLeft && !hasTriggeredConfetti) {
+      setHasTriggeredConfetti(true);
+      
+      // Fireworks effect
+      const duration = 15 * 1000; // 15 seconds
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+      const randomInRange = (min: number, max: number) => {
+        return Math.random() * (max - min) + min;
+      };
+
+      const interval: NodeJS.Timeout = setInterval(() => {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          return;
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        // Fireworks from random positions
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        });
+        confetti({
+          ...defaults,
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        });
+      }, 250);
+    }
+  }, [isInitialized, timeLeft, hasTriggeredConfetti]);
 
   if (!timeLeft) {
     return (
