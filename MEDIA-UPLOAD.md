@@ -35,6 +35,7 @@ Add the following to your `.env.local` file:
 
 ```bash
 # Google Drive Folder ID
+Will be set in the `.env.local`. Search for the line:
 DRIVE_FOLDER_ID="your_folder_id_here"
 
 # Google Service Account Key (JSON content)

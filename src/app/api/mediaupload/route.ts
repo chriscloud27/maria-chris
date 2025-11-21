@@ -2,21 +2,25 @@ import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 import { Readable } from 'stream';
 
-// Initialize Google Drive client
-// We use a function to lazily initialize to avoid errors during build time if env vars are missing
+// Initialize OAuth2 client with refresh token
 const getDriveClient = () => {
-  const credentialsJson = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
-  if (!credentialsJson) {
-    throw new Error('GOOGLE_SERVICE_ACCOUNT_KEY is not set');
+  const oauth2Client = new google.auth.OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.GOOGLE_REDIRECT_URI
+  );
+
+  // Set refresh token to automatically refresh access tokens
+  const refreshToken = process.env.GOOGLE_REFRESH_TOKEN;
+  if (!refreshToken) {
+    throw new Error('GOOGLE_REFRESH_TOKEN is not set. Please authenticate first by visiting /api/auth/google');
   }
 
-  const credentials = JSON.parse(credentialsJson);
-  const auth = new google.auth.GoogleAuth({
-    credentials,
-    scopes: ['https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/drive.readonly'],
+  oauth2Client.setCredentials({
+    refresh_token: refreshToken,
   });
 
-  return google.drive({ version: 'v3', auth });
+  return google.drive({ version: 'v3', auth: oauth2Client });
 };
 
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
