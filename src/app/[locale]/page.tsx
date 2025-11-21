@@ -10,8 +10,9 @@ import Attire from "@/components/Attire";
 import { Schedule } from "@/components/Schedule";
 import { Story } from "@/components/Story";
 import { Footer } from "@/components/Footer";
+import { MediaUpload } from "@/components/MediaUpload";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import dynamic from 'next/dynamic';
 
 // Import Rsvp component with SSR disabled to prevent hydration issues
@@ -32,6 +33,7 @@ const Rsvp = dynamic(() => import("@/components/Rsvp").then(mod => ({ default: m
 
 export default function Index() {
   const t = useTranslations();
+  const [isCountdownFinished, setIsCountdownFinished] = useState(false);
 
   // enable smooth scrolling for anchor/hash link clicks
   useEffect(() => {
@@ -44,29 +46,52 @@ export default function Index() {
   
   return (
     <>
-      <Nav navItems={[
-        { title: t('nav.story'), id: 'story' },
-        { title: t('nav.details'), id: 'details' },
-        { title: t('nav.schedule'), id: 'schedule' },
-        { title: t('nav.location'), id: 'location' },
-        { title: t('nav.attire'), id: 'attire' },
-        { title: t('nav.hotels'), id: 'hotels' },
-        { title: t('nav.arrival'), id: 'arrival' },
-        { title: t('nav.rsvp'), id: 'rsvp' },
-        { title: t('nav.faq'), id: 'faq' }
-      ]} />
+      <Nav 
+        navItems={[
+          { title: t('nav.story'), id: 'story' },
+          { title: t('nav.details'), id: 'details' },
+          { title: t('nav.schedule'), id: 'schedule' },
+          { title: t('nav.location'), id: 'location' },
+          { title: t('nav.attire'), id: 'attire' },
+          { title: t('nav.hotels'), id: 'hotels' },
+          { title: t('nav.arrival'), id: 'arrival' },
+          { title: t('nav.rsvp'), id: 'rsvp' },
+          { title: t('nav.media'), id: 'media' },
+          { title: t('nav.faq'), id: 'faq' }
+        ]} 
+        isCountdownFinished={isCountdownFinished}
+      />
       {/* Spacer div to prevent content from being hidden behind fixed header */}
       <div className="h-20"></div>
       <main>
-        <section id="hero"><Hero /></section>
+        {/* After the countdown stopped: 
+            Hide: schedule, attire, locationexcursions, hotels, arrival, rsvp
+            Show: mediaupload, confetti effect (done in Countdown.tsx)
+        */}
+        <section id="hero"><Hero onCountdownFinish={() => setIsCountdownFinished(true)} /></section> 
         <section id="story"><Story /></section>
         <section id="details"><Details /></section>
-        <section id="schedule"><Schedule /></section>
-        <section id="attire"><Attire /></section>
-        <div className="container mx-auto px-4"><LocationExcursions />
-          <section id="hotels"><Hotels /></section>
-          <section id="arrival"><Arrival /></section>
-          <section id="rsvp"><Rsvp /></section>
+        {!isCountdownFinished && (
+          <>
+            <section id="schedule"><Schedule /></section>
+            <section id="attire"><Attire /></section>
+          </>
+        )}
+        <div className="container mx-auto px-4">
+          {!isCountdownFinished && <LocationExcursions />}
+          {!isCountdownFinished && <section id="hotels"><Hotels /></section>}
+          {!isCountdownFinished && <section id="arrival"><Arrival /></section>}
+          {!isCountdownFinished && <section id="rsvp"><Rsvp /></section>}
+          {isCountdownFinished && (
+            <section id="media">
+              <MediaUpload 
+                eventId="maria-chris" 
+                apiBaseUrl="/api/mediaupload" 
+                title={t('media.title')} 
+                description={t('media.description')} 
+              />
+            </section>
+          )}
           <section id="faq"><Faq /></section>
         </div>
       </main>

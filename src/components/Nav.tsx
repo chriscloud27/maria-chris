@@ -15,9 +15,10 @@ export interface NavItem {
 
 interface NavProps {
   navItems?: NavItem[];
+  isCountdownFinished?: boolean;
 }
 
-export const Nav = ({ navItems }: NavProps) => {
+export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const c = useTranslations('couple');
@@ -32,7 +33,14 @@ export const Nav = ({ navItems }: NavProps) => {
     { title: t('excursions'), id: 'excursions' },
     { title: t('faq'), id: 'faq' },
   ];
-  const sections = navItems ?? defaultSections;
+  const allSections = navItems ?? defaultSections;
+  
+  // Filter sections based on countdown status
+  // Before countdown: hide media
+  // After countdown: hide schedule, attire, location, hotels, arrival, rsvp
+  const sections = isCountdownFinished 
+    ? allSections.filter(item => !['schedule', 'attire', 'location', 'hotels', 'arrival', 'rsvp'].includes(item.id))
+    : allSections.filter(item => item.id !== 'media');
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-md border-b border-gray-200/20 shadow-sm hover:shadow-md transition-all duration-300 z-50">

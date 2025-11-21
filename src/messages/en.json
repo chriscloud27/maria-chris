@@ -22,7 +22,32 @@
   "rsvp": "Confirmation 🎉",
     "excursions": "Excursions",
     "faq": "FAQ",
+    "media": "Photos & Videos",
     "story": "Story"
+  },
+  "media": {
+    "title": "Photos & Videos 📸",
+    "description": "Upload your favorite moments here! We'd love to see the wedding through your eyes.",
+    "upload": {
+      "selectFiles": "Click to select photos or videos",
+      "filesSelected": "file",
+      "filesSelectedPlural": "files",
+      "selected": "selected",
+      "maxSize": "Max 10MB each • JPG, PNG, MP4",
+      "uploadButton": "Upload Media",
+      "uploading": "Uploading...",
+      "uploadSuccess": "Upload successful! Thanks for sharing.",
+      "uploadFailed": "Upload failed",
+      "uploadPartial": "Uploaded {uploaded} files. {failed} failed.",
+      "errorGeneric": "Something went wrong. Please try again.",
+      "moreFiles": "more"
+    },
+    "gallery": {
+      "title": "Shared Moments",
+      "noPhotos": "No photos yet. Be the first to share!",
+      "playRandom": "Play Random",
+      "playInOrder": "Play in Order"
+    }
   },
   "location": {
     "title": "Location",

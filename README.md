@@ -48,6 +48,14 @@ The RSVP system allows guests to RSVP to our wedding and stores their responses 
         NOTION_TOKEN=<your_notion_integration_token>
         NOTION_DATABASE_ID=<your_notion_database_id>
         RESEND_API_KEY=<your_resend_api_key>
+        ```
+
+## Media Upload System
+
+The project includes a feature for guests to upload photos and videos to Google Drive.
+
+- **Documentation**: See [MEDIA-UPLOAD.md](./MEDIA-UPLOAD.md) for setup instructions and usage details.
+- **Key Config**: Requires `GOOGLE_SERVICE_ACCOUNT_KEY` and `DRIVE_FOLDER_ID` in `.env.local`.
         RESEND_FROM_EMAIL=<your_resend_from_email>
         RSVP_DEADLINE=<rsvp_deadline_date> # e.g., '2026-05-10T23:59:59'
         ```
