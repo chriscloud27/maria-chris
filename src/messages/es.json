@@ -312,9 +312,9 @@
         "dateLabel": "Vie, 19 dic",
         "subtitle": "Opcional: Si te gusta - Bienvenida & Conexión 🔥",
         "events": [
-          { "time": "16:00", "title": "Llegada de invitados y check-in", "description": "Instálate, prepárate para una hermosa tarde." },
-          { "time": "18:30", "title": "Bienvenida e integración", "description": "Rompamos el hielo suavemente, conozcámonos unos a otros." },
-          { "time": "19:30", "title": "Natilla y Buñuelos", "description": "Prueba las delicias navideñas colombianas con BBQ." }
+          { "time": "5.30pm", "title": "Llegada de invitados y check-in", "description": "Instálate, prepárate para una hermosa tarde." },
+          { "time": "6:30pm", "title": "Bienvenida e integración", "description": "Rompamos el hielo suavemente, conozcámonos unos a otros." },
+          { "time": "7:30pm", "title": "Natilla y Buñuelos", "description": "Prueba las delicias navideñas colombianas con BBQ." }
         ]
       },
       {
