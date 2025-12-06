@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Papa from 'papaparse';
 import { useTranslations } from 'next-intl';
 
 interface Guest {
@@ -15,8 +14,7 @@ const tableDestinationMapping: Record<number, string> = {
   4: 'alamia',
   5: 'espania',
   6: 'japon',
-  7: 'colombia',
-  8: 'bulgaria' // Added for 8th table
+  7: 'colombia'
 };
 
 export const Destinations = () => {
@@ -41,48 +39,38 @@ export const Destinations = () => {
   useEffect(() => {
     const fetchGuests = async () => {
       try {
-        const response = await fetch('/names.csv');
-        const csvText = await response.text();
-        
-        Papa.parse(csvText, {
-          header: true,
-          complete: (results) => {
-            const guests = results.data as Guest[];
-            
-            // Group guests by table number, filtering out empty table numbers
-            const groupedGuests = guests.reduce((acc, guest) => {
-              const tableNr = guest.Table_nr?.trim();
-              const name = guest.Name?.trim();
-              
-              if (tableNr && name && tableNr !== '') {
-                const tableNum = parseInt(tableNr);
-                if (!acc[tableNum]) {
-                  acc[tableNum] = [];
-                }
-                // Truncate names to maximum 18 characters
-                acc[tableNum].push(name.length > 18 ? name.substring(0, 18) : name);
-              }
-              return acc;
-            }, {} as Record<number, string[]>);
-            
-            // Convert to the format expected by the component using the mapping
-            const tablesData = Object.keys(tableDestinationMapping).map(tableNumStr => {
-              const tableNum = parseInt(tableNumStr);
-              return {
-                nameKey: `table${tableNum}`,
-                number: tableNum,
-                destinations: groupedGuests[tableNum] || []
-              };
-            });
-            
-            setTables(tablesData);
-          },
-          error: (error) => {
-            console.error('Error parsing CSV:', error);
+        const response = await fetch('/api/guests');
+        const guests: Guest[] = await response.json();
+
+        // Group guests by table number, filtering out empty table numbers
+        const groupedGuests = guests.reduce((acc, guest) => {
+          const tableNr = guest.Table_nr?.trim();
+          const name = guest.Name?.trim();
+
+          if (tableNr && name && tableNr !== '') {
+            const tableNum = parseInt(tableNr);
+            if (!acc[tableNum]) {
+              acc[tableNum] = [];
+            }
+            // Truncate names to maximum 18 characters
+            acc[tableNum].push(name.length > 18 ? name.substring(0, 18) : name);
           }
+          return acc;
+        }, {} as Record<number, string[]>);
+
+        // Convert to the format expected by the component using the mapping
+        const tablesData = Object.keys(tableDestinationMapping).map(tableNumStr => {
+          const tableNum = parseInt(tableNumStr);
+          return {
+            nameKey: `table${tableNum}`,
+            number: tableNum,
+            destinations: groupedGuests[tableNum] || []
+          };
         });
+
+        setTables(tablesData);
       } catch (error) {
-        console.error('Error fetching CSV:', error);
+        console.error('Error fetching guests:', error);
       }
     };
 
@@ -107,7 +95,7 @@ export const Destinations = () => {
                 </div>
                 <span className="text-white font-mono">{t('mesaLabel')}</span>
               </div>
-              <h3 className="text-xl font-bold uppercase font-mono">{t(table.nameKey)}</h3>
+              <h3 className="text-xl font-bold uppercase font-mono">{t(tableDestinationMapping[table.number])}</h3>
             </div>
             <div className="space-y-4">
               {table.destinations.map((dest, index) => {
@@ -115,7 +103,7 @@ export const Destinations = () => {
                 return (
                   <div key={index} className="text-sm font-bold uppercase font-mono flex flex-wrap gap-1">
                     {padded.split('').map((letter, i) => (
-                      <span key={i} className="bg-gray-600 text-yellow-400 px-1 py-0.5 rounded text-xs w-5 h-6 flex items-center justify-center font-mono font-black">
+                      <span key={i} className="bg-gray-700 text-yellow-400 px-1 py-0.5 rounded text-xs w-5 h-6 flex items-center justify-center font-mono font-black">
                         {letter}
                       </span>
                     ))}

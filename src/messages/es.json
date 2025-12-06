@@ -151,7 +151,14 @@
     "table5": "Mesa 5",
     "table6": "Mesa 6",
     "table7": "Mesa 7",
-    "table8": "Mesa 8"
+    "table8": "Mesa 8",
+    "bulgaria": "Bulgaria",
+    "australia": "Australia",
+    "india": "India",
+    "alamia": "Albania",
+    "espania": "España",
+    "japon": "Japón",
+    "colombia": "Colombia"
   },
   "arrival": {
     "title": "Llegada",

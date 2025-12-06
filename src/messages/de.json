@@ -17,7 +17,7 @@
     "schedule": "Ablaufplan",
     "location": "Ort & Tipps",
     "hotels": "Hotels",
-    "destinations": "Ziele",
+    "destinations": "Abflug",
     "attire": "Kleidung",
     "arrival": "Anreise",
     "rsvp": "Bestätigung 🎉",
@@ -125,7 +125,14 @@
     "table5": "Tisch 5",
     "table6": "Tisch 6",
     "table7": "Tisch 7",
-    "table8": "Tisch 8"
+    "table8": "Tisch 8",
+    "bulgaria": "Bulgarien",
+    "australia": "Australien",
+    "india": "Indien",
+    "alamia": "Albanien",
+    "espania": "Spanien",
+    "japon": "Japan",
+    "colombia": "Kolumbien"
   },
   "arrival": {
     "title": "Anreise",
