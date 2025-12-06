@@ -32,6 +32,8 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
   const [isPlaying, setIsPlaying] = useState(false);
   const [playMode, setPlayMode] = useState<'order' | 'random'>('order');
   const [lastViewedIndex, setLastViewedIndex] = useState(0);
+  const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number; status: string } | null>(null);
+  const [uploadController, setUploadController] = useState<AbortController | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -41,17 +43,50 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
       return;
     }
 
-    const urls: string[] = [];
-    Array.from(files).forEach(file => {
-      if (file.type.startsWith('image/')) {
-        urls.push(URL.createObjectURL(file));
+    const generatePreviews = async () => {
+      const urls: string[] = [];
+      
+      for (const file of Array.from(files)) {
+        try {
+          // Show preview for images and HEIC files
+          if (file.type.startsWith('image/') || 
+              file.type === 'image/heic' || 
+              file.type === 'image/heif' || 
+              file.name.toLowerCase().endsWith('.heic') || 
+              file.name.toLowerCase().endsWith('.heif')) {
+            
+            // Convert HEIC files to JPG for preview
+            let previewFile = file;
+            if (file.type === 'image/heic' || 
+                file.type === 'image/heif' || 
+                file.name.toLowerCase().endsWith('.heic') || 
+                file.name.toLowerCase().endsWith('.heif')) {
+              try {
+                previewFile = await convertHeicToJpg(file);
+              } catch (error) {
+                console.warn('Failed to convert HEIC for preview, using original:', error);
+                // Fall back to original file
+              }
+            }
+            
+            urls.push(URL.createObjectURL(previewFile));
+          }
+        } catch (error) {
+          console.warn('Failed to create preview for file:', file.name, error);
+        }
       }
-    });
-    setPreviewUrls(urls);
+      
+      setPreviewUrls(urls);
+    };
+
+    generatePreviews();
 
     // Cleanup
     return () => {
-      urls.forEach(url => URL.revokeObjectURL(url));
+      setPreviewUrls(urls => {
+        urls.forEach(url => URL.revokeObjectURL(url));
+        return [];
+      });
     };
   }, [files]);
 
@@ -146,86 +181,180 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
     });
   };
 
+  const convertHeicToJpg = async (file: File): Promise<File> => {
+    try {
+      const heic2any = (await import('heic2any')).default;
+      const convertedBlob = await heic2any({
+        blob: file,
+        toType: 'image/jpeg',
+        quality: 0.8
+      }) as Blob;
+      
+      return new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.jpg'), {
+        type: 'image/jpeg',
+        lastModified: Date.now(),
+      });
+    } catch {
+      throw new Error('Failed to convert HEIC image');
+    }
+  };
+
+  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+  const fetchWithRetry = async (url: string, options: RequestInit, maxRetries = 3, controller?: AbortController): Promise<Response> => {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        const response = await fetch(url, { ...options, signal: controller?.signal });
+        
+        if (response.status === 429) { // Rate limit exceeded
+          if (attempt < maxRetries) {
+            const retryAfter = response.headers.get('Retry-After');
+            const waitTime = retryAfter ? parseInt(retryAfter) * 1000 : Math.pow(2, attempt) * 1000; // Exponential backoff
+            console.warn(`Rate limit exceeded. Retrying in ${waitTime / 1000} seconds...`);
+            await sleep(waitTime);
+            continue;
+          }
+        }
+        
+        return response;
+      } catch (error) {
+        if (error instanceof Error && error.name === 'AbortError') {
+          throw error; // Re-throw abort errors
+        }
+        if (attempt < maxRetries) {
+          const waitTime = Math.pow(2, attempt) * 1000;
+          console.warn(`Request failed. Retrying in ${waitTime / 1000} seconds...`, error);
+          await sleep(waitTime);
+          continue;
+        }
+        throw error;
+      }
+    }
+    throw new Error('Max retries exceeded');
+  };
+
+  const cancelUpload = () => {
+    if (uploadController) {
+      uploadController.abort();
+      setUploading(false);
+      setUploadProgress(null);
+      setMessage({ type: 'error', text: 'Upload cancelled' });
+    }
+  };
+
   const handleUpload = async () => {
     if (!files || files.length === 0) return;
 
+    const controller = new AbortController();
+    setUploadController(controller);
     setUploading(true);
     setMessage(null);
-
-    const formData = new FormData();
+    setUploadProgress({ current: 0, total: files.length, status: 'Processing files...' });
     
     try {
-      // Process each file
-      const processedFiles = await Promise.all(
-        Array.from(files).map(async (file) => {
+      // Process each file individually to handle failures gracefully
+      const processedFiles: File[] = [];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        setUploadProgress({ current: i + 1, total: files.length, status: `Processing ${file.name}...` });
+        
+        try {
+          let processedFile = file;
+          
+          // Convert HEIC/HEIF to JPG first
+          if (file.type === 'image/heic' || file.type === 'image/heif' || file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')) {
+            processedFile = await convertHeicToJpg(file);
+          }
+          
           // Only resize images, not videos
-          if (file.type.startsWith('image/')) {
+          if (processedFile.type.startsWith('image/')) {
             const maxSize = 1; // 1MB
-            const sizeInMB = file.size / (1024 * 1024);
+            const sizeInMB = processedFile.size / (1024 * 1024);
             
             if (sizeInMB > maxSize) {
-              return await resizeImage(file, maxSize);
+              processedFile = await resizeImage(processedFile, maxSize);
             }
           }
-          return file;
-        })
-      );
-      
-      processedFiles.forEach(file => {
-        formData.append('file', file);
-      });
-    } catch (err) {
-      console.error('Image processing error:', err);
-      setMessage({ type: 'error', text: 'Failed to process images' });
-      setUploading(false);
-      return;
-    }
-    
-    formData.append('eventId', eventId);
-
-    try {
-      const res = await fetch(apiBaseUrl, {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || t('upload.uploadFailed'));
-      }
-
-      if (data.errors && data.errors.length > 0) {
-        setMessage({ 
-          type: 'success', // Still success but with warnings
-          text: t('upload.uploadPartial', { uploaded: data.files.length, failed: data.errors.length })
-        });
-      } else {
-        setMessage({ type: 'success', text: t('upload.uploadSuccess') });
+          
+          processedFiles.push(processedFile);
+        } catch (err) {
+          console.warn(`Skipping file ${file.name} due to processing error:`, err);
+          // Skip this file and continue with others
+        }
       }
       
-      setFiles(null);
-      if (fileInputRef.current) fileInputRef.current.value = '';
+      if (processedFiles.length === 0) {
+        setMessage({ type: 'error', text: 'No valid files to upload' });
+        setUploading(false);
+        setUploadProgress(null);
+        return;
+      }
       
-      // Refresh gallery after short delay to allow Drive to process
-      // We need to re-fetch, but fetchGallery is inside useEffect. 
-      // We can trigger a re-fetch by toggling a dependency or moving fetchGallery out with useCallback.
-      // For simplicity in this fix, I'll just duplicate the fetch logic or use a trigger.
-      setTimeout(async () => {
-         try {
+      // Upload files one by one to track progress
+      let uploadedCount = 0;
+      let failedCount = 0;
+      
+      for (let i = 0; i < processedFiles.length; i++) {
+        const file = processedFiles[i];
+        setUploadProgress({ current: i + 1, total: processedFiles.length, status: `Uploading ${file.name}...` });
+        
+        try {
+          const formData = new FormData();
+          formData.append('file', file);
+          formData.append('eventId', eventId);
+          
+          await fetchWithRetry(apiBaseUrl, {
+            method: 'POST',
+            body: formData,
+          }, 3, controller);
+          
+          uploadedCount++;
+        } catch (err) {
+          console.warn(`Failed to upload ${file.name}:`, err);
+          failedCount++;
+        }
+      }
+      
+      setUploadProgress(null);
+      
+      if (uploadedCount > 0) {
+        if (failedCount > 0) {
+          setMessage({ 
+            type: 'success', 
+            text: `Uploaded ${uploadedCount} files. ${failedCount} failed.` 
+          });
+        } else {
+          setMessage({ type: 'success', text: `Successfully uploaded ${uploadedCount} files!` });
+        }
+        
+        // Refresh gallery
+        setTimeout(async () => {
+          try {
             const res = await fetch(`${apiBaseUrl}?eventId=${eventId}`);
             if (res.ok) {
               const data = await res.json();
               setGallery(data.files || []);
             }
           } catch (e) { console.error(e); }
-      }, 2000);
-
-    } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : t('upload.errorGeneric');
-      setMessage({ type: 'error', text: errorMessage });
+        }, 2000);
+      } else {
+        setMessage({ type: 'error', text: 'Failed to upload any files' });
+      }
+      
+      setFiles(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') {
+        setMessage({ type: 'error', text: 'Upload cancelled' });
+      } else {
+        console.error('Unexpected error during upload:', err);
+        setMessage({ type: 'error', text: 'Upload failed' });
+      }
+      setUploadProgress(null);
     } finally {
       setUploading(false);
+      setUploadController(null);
     }
   };
 
@@ -372,7 +501,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
           <input
             type="file"
             ref={fileInputRef}
-            accept="image/*,video/mp4,video/quicktime"
+            accept="image/*,.heic,.heif,video/mp4,video/quicktime"
             onChange={handleFileChange}
             className="hidden"
             id="file-upload"
@@ -439,6 +568,36 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
             t('upload.uploadButton')
           )}
         </button>
+
+        {/* Upload Progress */}
+        {uploadProgress && (
+          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="flex items-center gap-3">
+              <Loader2 className="animate-spin text-blue-500" size={20} />
+              <div className="flex-1">
+                <div className="text-sm font-medium text-blue-700">
+                  {uploadProgress.current}/{uploadProgress.total} files
+                </div>
+                <div className="text-xs text-blue-600 mt-1">
+                  {uploadProgress.status}
+                </div>
+                <div className="w-full bg-blue-200 rounded-full h-2 mt-2">
+                  <div 
+                    className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${(uploadProgress.current / uploadProgress.total) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+              <button
+                onClick={cancelUpload}
+                className="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors"
+                disabled={!uploadController}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Gallery Section */}
@@ -499,7 +658,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
               <button
                 key={item.id}
                 onClick={() => setSelectedMedia(item)}
-                className="group relative aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer"
+                  className="group relative aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
               >
                 {item.thumbnailLink ? (
                   <Image
