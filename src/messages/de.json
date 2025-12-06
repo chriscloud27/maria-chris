@@ -17,6 +17,7 @@
     "schedule": "Ablaufplan",
     "location": "Ort & Tipps",
     "hotels": "Hotels",
+    "destinations": "Ziele",
     "attire": "Kleidung",
     "arrival": "Anreise",
     "rsvp": "Bestätigung 🎉",
@@ -113,6 +114,18 @@
     "searchHotelOptionsCloseBy": "Hotels in der Nähe suchen",
     "searchAirbnbOptionsCloseBy": "Airbnb-Optionen in der Nähe suchen",
     "discountVoucher": "Rabattgutschein"
+  },
+  "destinations": {
+    "title": "ABFLUG",
+    "mesaLabel": "Tisch",
+    "table1": "Tisch 1",
+    "table2": "Tisch 2",
+    "table3": "Tisch 3",
+    "table4": "Tisch 4",
+    "table5": "Tisch 5",
+    "table6": "Tisch 6",
+    "table7": "Tisch 7",
+    "table8": "Tisch 8"
   },
   "arrival": {
     "title": "Anreise",
@@ -405,8 +418,8 @@
           },
           {
             "time": "14:00 – 19:00 Uhr",
-            "title": "Mittagessen & Programm am Nachmittag",
-            "description": "Ein festliches Programm für alle Gäste."
+            "title": "Mittagessen & Nachmittagsaktivitäten",
+            "description": "Festliche Aktivitäten für alle Gäste."
           }
         ]
       },
