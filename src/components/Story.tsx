@@ -33,7 +33,7 @@ export function Story() {
           </div>
           <div className="w-full md:w-1/2 px-4">
             <Image
-              src="/IMG_0586.jpg"
+              src="/IMG_4697.jpg"
               alt="Our Story"
               width={600}
               height={400}

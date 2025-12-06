@@ -14,9 +14,10 @@
   },
   "nav": {
     "details": "Detalles",
-    "schedule": "Programa",
+    "schedule": "Horario",
     "location": "Ubicación y Consejos",
     "hotels": "Hoteles",
+    "destinations": "Destinos",
     "attire": "Atuendo",
     "arrival": "Llegada",
   "rsvp": "Confirmar 🎉",
@@ -139,6 +140,25 @@
     "searchHotelOptionsCloseBy": "Buscar opciones de hotel cercanas",
     "searchAirbnbOptionsCloseBy": "Buscar opciones de Airbnb cercanas",
     "discountVoucher": "Cupón de descuento"
+  },
+  "destinations": {
+    "title": "SALIDAS",
+    "mesaLabel": "Mesa",
+    "table1": "Mesa 1",
+    "table2": "Mesa 2",
+    "table3": "Mesa 3",
+    "table4": "Mesa 4",
+    "table5": "Mesa 5",
+    "table6": "Mesa 6",
+    "table7": "Mesa 7",
+    "table8": "Mesa 8",
+    "bulgaria": "Bulgaria",
+    "australia": "Australia",
+    "india": "India",
+    "alamia": "Albania",
+    "espania": "España",
+    "japon": "Japón",
+    "colombia": "Colombia"
   },
   "arrival": {
     "title": "Llegada",
@@ -305,7 +325,7 @@
     "bigDay": "¡El gran día está aquí!"
   },
   "schedule": {
-    "title": "Programa",
+    "title": "Horario",
     "subtitle": "Un día lleno de amor y celebración",
     "days": [
       {
@@ -323,7 +343,7 @@
         "events": [
           { "time": "11:00", "title": "Iglesia Guatapé", "description": "Celebra la misa de boda en la iglesia." },
           { "time": "1:00 PM", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
-          { "time": "2:00 – 7:00 PM", "title": "Almuerzo y Programa de la Tarde", "description": "Un programa festivo para todos los invitados." }
+          { "time": "2:00 – 7:00 PM", "title": "Almuerzo y Actividades de la Tarde", "description": "Actividades festivas para todos los invitados." }
         ]
       },
       {

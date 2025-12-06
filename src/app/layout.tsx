@@ -5,7 +5,8 @@ import {
   Great_Vibes, 
   Dancing_Script,
   Inter,
-  Nunito 
+  Nunito,
+  JetBrains_Mono
 } from "next/font/google";
 import "./globals.css";
 import content from '@/content/wedding.json';
@@ -38,6 +39,13 @@ const nunito = Nunito({
   display: 'swap',
 });
 
+// Monospace Font
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: 'swap',
+});
+
 // Accent Fonts (Script/Handwritten)
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
@@ -66,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${inter.variable} ${nunito.variable} ${greatVibes.variable} ${dancingScript.variable} font-sans antialiased`}
+        className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${inter.variable} ${nunito.variable} ${greatVibes.variable} ${dancingScript.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         {children}
       </body>

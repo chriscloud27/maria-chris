@@ -23,6 +23,9 @@ const config: Config = {
         'script': ['var(--font-great-vibes)', 'var(--font-dancing-script)', 'cursive'],
         'accent': ['var(--font-great-vibes)', 'cursive'],
         'accent-alt': ['var(--font-dancing-script)', 'cursive'],
+
+        // Monospace
+        'mono': ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
         'soft-white': '#F9F9F8',

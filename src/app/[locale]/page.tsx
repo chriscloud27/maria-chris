@@ -2,6 +2,7 @@
 import { Hero } from "@/components/Hero";
 import { LocationExcursions } from "@/components/LocationExcursions";
 import { Hotels } from "@/components/Hotels";
+import { Destinations } from "@/components/Destinations";
 import { Arrival } from "@/components/Arrival";
 import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
@@ -54,6 +55,7 @@ export default function Index() {
           { title: t('nav.location'), id: 'location' },
           { title: t('nav.attire'), id: 'attire' },
           { title: t('nav.hotels'), id: 'hotels' },
+          { title: t('nav.destinations'), id: 'destinations' },
           { title: t('nav.arrival'), id: 'arrival' },
           { title: t('nav.rsvp'), id: 'rsvp' },
           { title: t('nav.media'), id: 'media' },
@@ -80,6 +82,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           {!isCountdownFinished && <LocationExcursions />}
           {!isCountdownFinished && <section id="hotels"><Hotels /></section>}
+          {!isCountdownFinished && <section id="destinations"><Destinations /></section>}
           {!isCountdownFinished && <section id="arrival"><Arrival /></section>}
           {!isCountdownFinished && <section id="rsvp"><Rsvp /></section>}
           {isCountdownFinished && (
