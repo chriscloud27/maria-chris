@@ -15,7 +15,7 @@
   "nav": {
     "details": "Detalles",
     "schedule": "Horario",
-    "location": "Ubicación y Consejos",
+    "location": "Ubicación",
     "hotels": "Hoteles",
     "destinations": "Destinos",
     "attire": "Atuendo",
@@ -23,8 +23,9 @@
   "rsvp": "Confirmar 🎉",
     "excursions": "Excursiones",
     "faq": "Preguntas",
-    "media": "Fotos y Videos",
-    "story": "Historia"
+    "media": "Fotos y Videos 📸",
+    "story": "Historia",
+    "returnToWedding": "Volver a la Boda"
   },
   "media": {
     "title": "Fotos y Videos 📸",
@@ -143,7 +144,7 @@
   },
   "destinations": {
     "title": "SALIDAS",
-    "mesaLabel": "Mesa",
+    "mesaLabel": "MESA",
     "table1": "Mesa 1",
     "table2": "Mesa 2",
     "table3": "Mesa 3",
@@ -155,7 +156,7 @@
     "bulgaria": "Bulgaria",
     "australia": "Australia",
     "india": "India",
-    "alamia": "Albania",
+    "alemania": "Alemania",
     "espania": "España",
     "japon": "Japón",
     "colombia": "Colombia"
@@ -256,11 +257,13 @@
   "faq": { "title": "Preguntas Frecuentes", "questions": [
     { "question": "¿Hay un código de vestimenta?", "answer": "Mira la sección de atuendo de esa página." },
     { "question": "¿Los niños son bienvenidos?", "answer": "Sí, los niños son bienvenidos. Por favor informanos que asistirán." },
-    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor, contáctanos directamente." },
+    { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor escríbanos a través del grupo de WhatsApp o directamente a Maria o Chris." },
     { "question": "¿Qué debo empacar?", "answer": "Traje de baño, zapatos cómodos (sin tacones, habrá césped y mucho para caminar), ropa abrigada para la noche ya que hará frío, ropa para yoga/deportes y buena energía. La noche puede ser fría. Trae una manta si es posible." },
     { "question": "¿Qué tal es el clima en Guatapé?", "answer": "Durante el día es agradablemente cálido; las noches pueden ser frescas. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
     { "question": "¿Qué regalos?", "answer": "Queremos que sepas que el mejor regalo para nosotros es tu viaje y presencia en nuestro día especial." },
-    { "question": "¿Hasta cuándo necesito confirmar mi asistencia?", "answer": "Por favor, haznoslo saber antes del 31 de octubre de 2025." }
+    { "question": "¿Hasta cuándo necesito confirmar mi asistencia?", "answer": "Por favor, haznoslo saber antes del 31 de octubre de 2025." },
+    { "question": "¿Cómo subo fotos y videos?", "answer": "En la página de medios, haz clic en 'Haz clic para seleccionar fotos o videos' para elegir tus archivos. Puedes seleccionar varios archivos a la vez. Una vez seleccionados, haz clic en 'Subir medios' para compartirlos con nosotros." },
+    { "question": "¿Cuánto tiempo estarán disponibles mis medios subidos?", "answer": "Las fotos y videos subidos estarán disponibles para ver en el sitio por al menos 6 meses después de la boda. Te notificaremos si hay algún cambio en esta línea de tiempo." }
     ] },
   "details": {
     "title": "Información General",

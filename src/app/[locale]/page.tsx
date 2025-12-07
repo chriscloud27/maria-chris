@@ -50,14 +50,13 @@ export default function Index() {
       <Nav 
         navItems={[
           { title: t('nav.story'), id: 'story' },
-          { title: t('nav.details'), id: 'details' },
           { title: t('nav.schedule'), id: 'schedule' },
-          { title: t('nav.location'), id: 'location' },
           { title: t('nav.attire'), id: 'attire' },
+          { title: t('nav.location'), id: 'location' },
           { title: t('nav.hotels'), id: 'hotels' },
-          { title: t('nav.destinations'), id: 'destinations' },
           { title: t('nav.arrival'), id: 'arrival' },
           { title: t('nav.rsvp'), id: 'rsvp' },
+          { title: t('nav.destinations'), id: 'destinations' },
           { title: t('nav.media'), id: 'media' },
           { title: t('nav.faq'), id: 'faq' }
         ]} 
@@ -68,21 +67,21 @@ export default function Index() {
       <main>
         {/* After the countdown stopped: 
             Hide: schedule, attire, locationexcursions, hotels, arrival, rsvp
-            Show: mediaupload, confetti effect (done in Countdown.tsx)
+            Show: confetti effect (done in Countdown.tsx)
         */}
         <section id="hero"><Hero onCountdownFinish={() => setIsCountdownFinished(true)} /></section> 
         <section id="story"><Story /></section>
-        <section id="details"><Details /></section>
+        <section id="schedule"><Schedule /></section>
         {!isCountdownFinished && (
           <>
-            <section id="schedule"><Schedule /></section>
+            <section id="details"><Details /></section>
             <section id="attire"><Attire /></section>
           </>
         )}
         <div className="container mx-auto px-4">
           {!isCountdownFinished && <LocationExcursions />}
           {!isCountdownFinished && <section id="hotels"><Hotels /></section>}
-          {!isCountdownFinished && <section id="destinations"><Destinations /></section>}
+          {isCountdownFinished && <section id="destinations"><Destinations /></section>}
           {!isCountdownFinished && <section id="arrival"><Arrival /></section>}
           {!isCountdownFinished && <section id="rsvp"><Rsvp /></section>}
           {isCountdownFinished && (

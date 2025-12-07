@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import { Upload, Image as ImageIcon, Loader2, AlertCircle, CheckCircle2, X, ChevronLeft, ChevronRight, Download, Play, Pause } from 'lucide-react';
+import { Upload, Image as ImageIcon, Loader2, AlertCircle, CheckCircle2, X, ChevronLeft, ChevronRight, Download, Play, Pause, Maximize, Minimize } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 interface MediaFile {
@@ -34,6 +34,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
   const [lastViewedIndex, setLastViewedIndex] = useState(0);
   const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number; status: string } | null>(null);
   const [uploadController, setUploadController] = useState<AbortController | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -451,12 +452,24 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
     }
   }, [selectedMedia, gallery]);
 
-  // Cleanup autoplay on unmount or when overlay closes
-  useEffect(() => {
-    if (!selectedMedia) {
-      setIsPlaying(false);
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
     }
-  }, [selectedMedia]);
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -692,6 +705,17 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
             aria-label="Close"
           >
             <X size={32} />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleFullscreen();
+            }}
+            className="absolute top-4 right-16 text-white hover:text-gray-300 transition-colors z-10"
+            aria-label="Toggle Fullscreen"
+          >
+            {isFullscreen ? <Minimize size={32} /> : <Maximize size={32} />}
           </button>
 
           {/* Download Button */}

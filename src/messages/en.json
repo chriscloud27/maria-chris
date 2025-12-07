@@ -15,7 +15,7 @@
   "nav": {
     "details": "Details",
     "schedule": "Schedule",
-    "location": "Location & Tips",
+    "location": "Location",
     "hotels": "Hotels",
     "destinations": "Destinations",
     "attire": "Attire",
@@ -23,8 +23,9 @@
   "rsvp": "Confirmation 🎉",
     "excursions": "Excursions",
     "faq": "FAQ",
-    "media": "Photos & Videos",
-    "story": "Story"
+    "media": "Photos & Videos 📸",
+    "story": "Story",
+    "returnToWedding": "Return to Wedding"
   },
   "media": {
     "title": "Photos & Videos 📸",
@@ -143,7 +144,7 @@
   },
   "destinations": {
     "title": "DEPARTURE",
-    "mesaLabel": "Table",
+    "mesaLabel": "TABLE",
     "table1": "Table 1",
     "table2": "Table 2",
     "table3": "Table 3",
@@ -155,7 +156,7 @@
     "bulgaria": "Bulgaria",
     "australia": "Australia",
     "india": "India",
-    "alamia": "Albania",
+    "alemania": "Germany",
     "espania": "Spain",
     "japon": "Japan",
     "colombia": "Colombia"
@@ -306,7 +307,7 @@
       },
       {
         "question": "Who can I contact with questions?",
-        "answer": "Please contact us directly."
+        "answer": "Please write to us via the WhatsApp group or directly to Maria or Chris."
       },
       {
         "question": "What should I pack?",
@@ -323,6 +324,14 @@
       {
         "question": "Until when do I need to confirm my attendance?",
         "answer": "Please let us know by October 31, 2025."
+      },
+      {
+        "question": "How do I upload photos and videos?",
+        "answer": "On the media page, click 'Click to select photos or videos' to choose your files. You can select multiple files at once. Once selected, click 'Upload Media' to share them with us."
+      },
+      {
+        "question": "How long will my uploaded media be available?",
+        "answer": "Uploaded photos and videos will be available for viewing on the site for at least 6 months after the wedding. We'll notify you if there's any change to this timeline."
       }
     ]
   },
