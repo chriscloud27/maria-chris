@@ -10,7 +10,8 @@ import HamburgerIcon from './icons/HamburgerIcon';
 
 export interface NavItem {
   title: string;
-  id: string;
+  id?: string;
+  href?: string;
 }
 
 interface NavProps {
@@ -36,17 +37,17 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
   const allSections = navItems ?? defaultSections;
   
   // Filter sections based on countdown status
-  // Before countdown: hide media
-  // After countdown: hide schedule, attire, location, hotels, arrival, rsvp
+  // Before countdown: hide destinations, media
+  // After countdown: hide attire, location, hotels, arrival, rsvp
   const sections = isCountdownFinished 
-    ? allSections.filter(item => !['schedule', 'attire', 'location', 'hotels', 'arrival', 'rsvp'].includes(item.id))
-    : allSections.filter(item => item.id !== 'media');
+    ? allSections.filter(item => !(item.id && ['attire', 'hotels', 'location', 'arrival', 'rsvp'].includes(item.id)))
+    : allSections.filter(item => !(item.id && ['destinations', 'media'].includes(item.id)));
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-md border-b border-gray-200/20 shadow-sm hover:shadow-md transition-all duration-300 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link href="#hero" className="text-xl font-script flex items-center">
+          <Link href="/#hero" className="text-xl font-script flex items-center">
             <Heart className="w-5 h-5 text-red-500 mr-2" />
             {c('name1')} & {c('name2')} 
             {/* {c('activity')} */}
@@ -54,9 +55,9 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
           <div className="hidden md:flex items-center space-x-4">
             {sections.map(section => (
               <Link 
-                key={section.id} 
-                href={`#${section.id}`} 
-                className={section.id === 'rsvp' 
+                key={section.id || section.href} 
+                href={section.href || `#${section.id}`} 
+                className={(section.id === 'rsvp' || (section.id === 'media' && isCountdownFinished))
                   ? "bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/50" 
                   : "hover:underline"
                 }
@@ -78,9 +79,9 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
           <div className="flex flex-col items-center space-y-4 py-4">
             {sections.map(section => (
               <Link 
-                key={section.id} 
-                href={`#${section.id}`} 
-                className={section.id === 'rsvp' 
+                key={section.id || section.href} 
+                href={section.href || `#${section.id}`} 
+                className={(section.id === 'rsvp' || (section.id === 'media' && isCountdownFinished))
                   ? "bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/50" 
                   : "hover:underline"
                 } 

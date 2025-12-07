@@ -11,15 +11,13 @@ export default function MediaPage() {
     <>
       <Nav 
         navItems={[
-          { title: t('nav.story'), id: 'story' },
-          { title: t('nav.details'), id: 'details' },
-          { title: t('nav.media'), id: 'media' },
-          { title: t('nav.faq'), id: 'faq' }
+          { title: t('nav.returnToWedding'), href: `/` },
+          { title: t('nav.faq'), href: `/#faq` }
         ]} 
         isCountdownFinished={true}
       />
       {/* Spacer div to prevent content from being hidden behind fixed header */}
-      <div className="h-20"></div>
+      <div className=""></div>
       <main>
         <div className="container mx-auto px-4 py-20">
           <MediaUpload 

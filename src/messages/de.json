@@ -15,7 +15,7 @@
   "nav": {
     "details": "Details",
     "schedule": "Ablaufplan",
-    "location": "Ort & Tipps",
+    "location": "Ort",
     "hotels": "Hotels",
     "destinations": "Abflug",
     "attire": "Kleidung",
@@ -23,8 +23,9 @@
     "rsvp": "Bestätigung 🎉",
     "excursions": "Ausflüge",
     "faq": "FAQ",
-    "media": "Fotos & Videos",
-    "story": "Geschichte"
+    "media": "Fotos & Videos📸",
+    "story": "Geschichte",
+    "returnToWedding": "Zurück zur Hochzeit"
   },
   "media": {
     "title": "Fotos & Videos 📸",
@@ -117,7 +118,7 @@
   },
   "destinations": {
     "title": "ABFLUG",
-    "mesaLabel": "Tisch",
+    "mesaLabel": "TISCH",
     "table1": "Tisch 1",
     "table2": "Tisch 2",
     "table3": "Tisch 3",
@@ -129,7 +130,7 @@
     "bulgaria": "Bulgarien",
     "australia": "Australien",
     "india": "Indien",
-    "alamia": "Albanien",
+    "alemania": "Deutschland",
     "espania": "Spanien",
     "japon": "Japan",
     "colombia": "Kolumbien"
@@ -306,7 +307,7 @@
       },
       {
       "question": "Wer kann bei Fragen kontaktiert werden?",
-      "answer": "Bitte kontaktiert uns direkt."
+      "answer": "Bitte schreibt uns über die Whatsapp-Gruppe oder direkt an Maria oder Chris."
       },
       {
       "question": "Was soll ich einpacken?",
@@ -323,6 +324,14 @@
       {
       "question": "Bis wann muss ich meine Teilnahme bestätigen?",
       "answer": "Bitte teilt uns dies bis zum 31. Oktober 2025 mit."
+      },
+      {
+      "question": "Wie lade ich Fotos und Videos hoch?",
+      "answer": "Auf der Medien-Seite klicke auf 'Klicke, um Fotos oder Videos auszuwählen', um deine Dateien auszuwählen. Du kannst mehrere Dateien auf einmal auswählen. Nach der Auswahl klicke auf 'Medien hochladen', um sie mit uns zu teilen."
+      },
+      {
+      "question": "Wie lange werden meine hochgeladenen Medien verfügbar sein?",
+      "answer": "Hochgeladene Fotos und Videos werden mindestens 6 Monate nach der Hochzeit auf der Seite zur Ansicht verfügbar sein. Wir benachrichtigen dich, falls sich daran etwas ändert."
       }
     ]
   },

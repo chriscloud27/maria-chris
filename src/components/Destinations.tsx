@@ -11,7 +11,7 @@ const tableDestinationMapping: Record<number, string> = {
   1: 'bulgaria',
   2: 'australia',
   3: 'india',
-  4: 'alamia',
+  4: 'alemania',
   5: 'espania',
   6: 'japon',
   7: 'colombia'
@@ -80,7 +80,7 @@ export const Destinations = () => {
   const maxLength = 18;
 
   return (
-    <section id="destinations" className="py-12">
+    <section id="destinations" className="py-12 pt-10 sm:pt-20">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold font-mono bg-gray-800 text-yellow-400 px-4 py-2 rounded-lg inline-block">{t('title')}</h2>
       </div>
@@ -88,7 +88,7 @@ export const Destinations = () => {
       <div className="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {tables.map((table) => (
           <div key={table.number} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden bg-gray-800 text-yellow-400 font-mono p-6">
-            <div className="flex flex-col items-start space-y-2 mb-4">
+            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
                 <div className={`w-6 h-6 ${colorClasses[table.number - 1]} flex items-center justify-center text-sm font-bold rounded`}>
                   {table.number}
