@@ -144,6 +144,7 @@
   },
   "destinations": {
     "title": "DEPARTURE",
+    "subtitle": "Find your destination",
     "mesaLabel": "TABLE",
     "table1": "Table 1",
     "table2": "Table 2",

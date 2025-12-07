@@ -83,6 +83,8 @@ export const Destinations = () => {
     <section id="destinations" className="py-12 pt-10 sm:pt-20">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold font-mono bg-gray-800 text-yellow-400 px-4 py-2 rounded-lg inline-block">{t('title')}</h2>
+        <p></p>
+        <p className="text-lg font-semibold font-mono bg-gray-800 text-yellow-400 rounded-lg inline-block px-4 py-2 mt-4">{t('subtitle')}</p>
       </div>
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
