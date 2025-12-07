@@ -144,6 +144,7 @@
   },
   "destinations": {
     "title": "SALIDAS",
+    "subtitle": "Encuentra tu destino",
     "mesaLabel": "MESA",
     "table1": "Mesa 1",
     "table2": "Mesa 2",

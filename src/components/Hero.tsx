@@ -55,7 +55,7 @@ export const Hero = ({ onCountdownFinish }: HeroProps = {}) => {
         {t('title')}
       </p>
       {/* Countdown Timer */}
-        <Countdown targetDate="2025-12-20T18:00:00" onCountdownFinish={onCountdownFinish} />
+        <Countdown targetDate="2025-12-05T18:00:00" onCountdownFinish={onCountdownFinish} />
 
         {/* Date Section - Elegant invitation style */}
       <div className="text-center mb-8">
