@@ -30,7 +30,8 @@ export async function GET() {
         const properties = page.properties;
         return {
           Name: properties.Name?.type === 'title' ? properties.Name.title[0]?.plain_text || '' : '',
-          Table_nr: properties.Table_nr?.type === 'number' ? properties.Table_nr.number?.toString() || '' : ''
+          Table_nr: properties.Table_nr?.type === 'number' ? properties.Table_nr.number?.toString() || '' : '',
+          Sit: properties.Sit?.type === 'number' ? properties.Sit.number?.toString() || '' : ''
         };
       });
 
