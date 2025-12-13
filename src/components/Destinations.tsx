@@ -4,17 +4,18 @@ import { useTranslations } from 'next-intl';
 interface Guest {
   Name: string;
   Table_nr: string;
+  Sit: string;
 }
 
 // Mapping of table numbers to destinations
 const tableDestinationMapping: Record<number, string> = {
   1: 'bulgaria',
-  2: 'australia',
-  3: 'india',
-  4: 'alemania',
-  5: 'espania',
-  6: 'japon',
-  7: 'colombia'
+  2: 'espania',
+  3: 'colombia',
+  4: 'japon',
+  5: 'australia',
+  6: 'alemania',
+  7: 'india'
 };
 
 export const Destinations = () => {
@@ -22,7 +23,7 @@ export const Destinations = () => {
   const [tables, setTables] = useState<Array<{
     nameKey: string;
     number: number;
-    destinations: string[];
+    destinations: Array<{name: string, sit: string}>;
   }>>([]);
 
   const colorClasses = [
@@ -46,17 +47,29 @@ export const Destinations = () => {
         const groupedGuests = guests.reduce((acc, guest) => {
           const tableNr = guest.Table_nr?.trim();
           const name = guest.Name?.trim();
+          const sit = guest.Sit?.trim();
 
           if (tableNr && name && tableNr !== '') {
             const tableNum = parseInt(tableNr);
             if (!acc[tableNum]) {
               acc[tableNum] = [];
             }
-            // Truncate names to maximum 18 characters
-            acc[tableNum].push(name.length > 18 ? name.substring(0, 18) : name);
+            acc[tableNum].push({
+              name: name,
+              sit: sit || ''
+            });
           }
           return acc;
-        }, {} as Record<number, string[]>);
+        }, {} as Record<number, Array<{name: string, sit: string}>>);
+
+        // Sort guests within each table by sit number ascending
+        Object.keys(groupedGuests).forEach(tableNum => {
+          groupedGuests[parseInt(tableNum)].sort((a, b) => {
+            const sitA = parseInt(a.sit) || 0;
+            const sitB = parseInt(b.sit) || 0;
+            return sitA - sitB;
+          });
+        });
 
         // Convert to the format expected by the component using the mapping
         const tablesData = Object.keys(tableDestinationMapping).map(tableNumStr => {
@@ -77,7 +90,7 @@ export const Destinations = () => {
     fetchGuests();
   }, []);
 
-  const maxLength = 18;
+  const maxLength = 17;
 
   return (
     <section id="destinations" className="py-12 pt-10 sm:pt-20">
@@ -87,34 +100,39 @@ export const Destinations = () => {
         <p className="text-lg font-semibold font-mono bg-gray-800 text-yellow-400 rounded-lg inline-block px-4 py-2 mt-4">{t('subtitle')}</p>
       </div>
 
-      <div className="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-        {tables.map((table) => (
-          <div key={table.number} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden bg-gray-800 text-yellow-400 font-mono p-6">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center space-x-2">
-                <div className={`w-6 h-6 ${colorClasses[table.number - 1]} flex items-center justify-center text-sm font-bold rounded`}>
-                  {table.number}
-                </div>
-                <span className="text-white font-mono">{t('mesaLabel')}</span>
-              </div>
-              <h3 className="text-xl font-bold uppercase font-mono">{t(tableDestinationMapping[table.number])}</h3>
-            </div>
-            <div className="space-y-4">
-              {table.destinations.map((dest, index) => {
-                const padded = dest + ' '.repeat(maxLength - dest.length);
-                return (
-                  <div key={index} className="text-sm font-bold uppercase font-mono flex flex-wrap gap-1">
-                    {padded.split('').map((letter, i) => (
-                      <span key={i} className="bg-gray-700 text-yellow-400 px-1 py-0.5 rounded text-xs w-5 h-6 flex items-center justify-center font-mono font-black">
-                        {letter}
-                      </span>
-                    ))}
+      <div className="container mx-auto px-4">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+          {tables.map((table) => (
+            <div key={table.number} className="rounded-lg shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 overflow-hidden bg-gray-800 text-yellow-400 font-mono p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <div className={`w-6 h-6 ${colorClasses[table.number - 1]} flex items-center justify-center text-sm font-bold rounded`}>
+                    {table.number}
                   </div>
-                );
-              })}
+                  <span className="text-white font-mono">{t('mesaLabel')}</span>
+                </div>
+                <h3 className="text-xl font-bold uppercase font-mono">{t(tableDestinationMapping[table.number])}</h3>
+              </div>
+              <div className="space-y-4">
+                {table.destinations.map((dest, index) => {
+                  const displaySit = dest.sit === '10' ? '0' : dest.sit;
+                  const displayText = (displaySit ? displaySit : '') + dest.name;
+                  const padded = displayText + ' '.repeat(Math.max(0, maxLength - displayText.length));
+                  const sitLength = displaySit ? displaySit.length : 0;
+                  return (
+                    <div key={index} className="text-sm font-bold uppercase font-['DotGothic16'] flex flex-wrap gap-1">
+                      {padded.split('').map((letter, i) => (
+                        <span key={i} className={`bg-gray-700 px-1 py-0.5 rounded text-xs w-5 h-6 flex items-center justify-center font-['DotGothic16'] font-black ${i < sitLength ? 'text-white' : 'text-yellow-400'}`}>
+                          {letter}
+                        </span>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
