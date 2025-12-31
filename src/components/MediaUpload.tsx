@@ -1,7 +1,6 @@
-'use client';
+ 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Image from 'next/image';
 import { Upload, Image as ImageIcon, Loader2, AlertCircle, CheckCircle2, X, ChevronLeft, ChevronRight, Download, Play, Pause, Maximize, Minimize } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -9,8 +8,12 @@ interface MediaFile {
   id: string;
   name: string;
   mimeType: string;
-  thumbnailLink?: string;
-  webViewLink?: string;
+  variants: {
+    thumb?: string;
+    small?: string;
+    medium?: string;
+    original: string;
+  };
 }
 
 interface MediaUploadProps {
@@ -395,8 +398,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
       document.body.removeChild(a);
     } catch (error) {
       console.error('Download failed:', error);
-      // Fallback to opening in new tab
-      window.open(selectedMedia.webViewLink, '_blank');
+      alert('Download failed. Please try again.');
     }
   };
 
@@ -528,11 +530,11 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
               <div className="grid grid-cols-3 gap-2 w-full mb-2">
                 {previewUrls.slice(0, 6).map((url, idx) => (
                   <div key={idx} className="relative w-full h-24">
-                    <Image 
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
                       src={url} 
                       alt={`Preview ${idx}`} 
-                      fill 
-                      className="object-cover rounded-lg" 
+                      className="w-full h-full object-cover rounded-lg" 
                     />
                   </div>
                 ))}
@@ -673,13 +675,13 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
                 onClick={() => setSelectedMedia(item)}
                   className="group relative aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
               >
-                {item.thumbnailLink ? (
-                  <Image
-                    src={item.thumbnailLink.replace('=s220', '=s600')}
+                {item.variants.thumb ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={`${apiBaseUrl}/download?fileId=${item.variants.thumb}`}
                     alt={item.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-gray-400">
@@ -773,23 +775,26 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
             {selectedMedia.mimeType.startsWith('video/') ? (
               <video
                 ref={videoRef}
-                src={`${apiBaseUrl}/download?fileId=${selectedMedia.id}`}
+                src={`${apiBaseUrl}/download?fileId=${selectedMedia.variants.original}`}
                 controls
                 autoPlay
                 onEnded={handleVideoEnded}
                 className="max-w-full max-h-full rounded-lg"
               />
             ) : (
-              <div className="relative w-full h-full">
-                <Image
-                  src={selectedMedia.thumbnailLink?.replace('=s220', '=s2000') || selectedMedia.webViewLink || ''}
-                  alt={selectedMedia.name}
-                  fill
-                  className="object-contain"
-                  sizes="90vw"
-                />
-              </div>
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={`${apiBaseUrl}/download?fileId=${selectedMedia.variants.medium || selectedMedia.variants.small || selectedMedia.variants.thumb}`}
+                srcSet={`
+                  ${selectedMedia.variants.small ? `${apiBaseUrl}/download?fileId=${selectedMedia.variants.small} 800w,` : ''}
+                  ${selectedMedia.variants.medium ? `${apiBaseUrl}/download?fileId=${selectedMedia.variants.medium} 1200w` : ''}
+                `}
+                sizes="90vw"
+                alt={selectedMedia.name}
+                className="max-w-full max-h-full object-contain rounded-lg"
+              />
             )}
+
           </div>
         </div>
       )}

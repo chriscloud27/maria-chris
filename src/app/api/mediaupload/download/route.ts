@@ -65,6 +65,24 @@ export async function GET(req: NextRequest) {
 
   } catch (error: unknown) {
     console.error('Download error:', error);
+    
+    // Check if it's a Google API error
+    if (error && typeof error === 'object' && 'code' in error) {
+      const apiError = error as { code?: number; message?: string };
+      
+      if (apiError.code === 403 || apiError.code === 429) {
+        return NextResponse.json({ 
+          error: 'Google Drive API quota exceeded. Please try again later.' 
+        }, { status: 429 });
+      }
+      
+      if (apiError.code === 402) {
+        return NextResponse.json({ 
+          error: 'Google Drive API billing issue. Please check Google Cloud Console.' 
+        }, { status: 402 });
+      }
+    }
+    
     return NextResponse.json({ error: 'Download failed' }, { status: 500 });
   }
 }

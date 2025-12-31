@@ -1,6 +1,7 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 import { Readable } from 'stream';
+import sharp from 'sharp';
 
 // Initialize OAuth2 client with refresh token
 const getDriveClient = () => {
@@ -25,6 +26,126 @@ const getDriveClient = () => {
 
 // Use separate folder ID for JGA uploads
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID_JGA;
+
+// Subfolder structure
+const SUBFOLDERS = {
+  original: 'original',
+  thumbs: 'thumbs',
+  small: 'small',
+  medium: 'medium',
+};
+
+// Cache for subfolder IDs to avoid repeated lookups
+const subfolderCache = new Map<string, string>();
+
+// Get or create a subfolder in Google Drive
+async function getOrCreateSubfolder(drive: any, parentFolderId: string, folderName: string): Promise<string> {
+  const cacheKey = `${parentFolderId}_${folderName}`;
+  
+  if (subfolderCache.has(cacheKey)) {
+    return subfolderCache.get(cacheKey)!;
+  }
+
+  // Check if folder exists
+  const searchResponse = await drive.files.list({
+    q: `name='${folderName}' and '${parentFolderId}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+    fields: 'files(id, name)',
+    pageSize: 1,
+  });
+
+  if (searchResponse.data.files && searchResponse.data.files.length > 0) {
+    const folderId = searchResponse.data.files[0].id!;
+    subfolderCache.set(cacheKey, folderId);
+    return folderId;
+  }
+
+  // Create folder if it doesn't exist
+  const createResponse = await drive.files.create({
+    requestBody: {
+      name: folderName,
+      mimeType: 'application/vnd.google-apps.folder',
+      parents: [parentFolderId],
+    },
+    fields: 'id',
+  });
+
+  const folderId = createResponse.data.id!;
+  subfolderCache.set(cacheKey, folderId);
+  return folderId;
+}
+
+// Generate image variants using sharp
+async function generateImageVariants(file: File) {
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const baseName = file.name.replace(/\.[^/.]+$/, ''); // Remove extension
+  const ext = file.name.split('.').pop() || 'jpg';
+
+  // Generate variants
+  const thumb = await sharp(buffer)
+    .resize(400, 400, { fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 85 })
+    .toBuffer();
+
+  const small = await sharp(buffer)
+    .resize(800, 800, { fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 90 })
+    .toBuffer();
+
+  const medium = await sharp(buffer)
+    .resize(1200, 1200, { fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 92 })
+    .toBuffer();
+
+  return {
+    original: { buffer, name: `${baseName}.${ext}` },
+    thumb: { buffer: thumb, name: `${baseName}_thumb.jpg` },
+    small: { buffer: small, name: `${baseName}_small.jpg` },
+    medium: { buffer: medium, name: `${baseName}_med.jpg` },
+  };
+}
+
+// Upload buffer to Google Drive
+async function uploadBufferToDrive(
+  drive: any,
+  buffer: Buffer,
+  fileName: string,
+  mimeType: string,
+  folderId: string
+) {
+  const bufferStream = Readable.from(buffer);
+  
+  const response = await drive.files.create({
+    requestBody: {
+      name: fileName,
+      parents: [folderId],
+      mimeType: mimeType,
+    },
+    media: {
+      mimeType: mimeType,
+      body: bufferStream,
+    },
+    fields: 'id, name, webViewLink',
+  });
+
+  // Make publicly accessible
+  if (response.data.id) {
+    try {
+      await drive.permissions.create({
+        fileId: response.data.id,
+        requestBody: {
+          role: 'reader',
+          type: 'anyone',
+        },
+      });
+    } catch (permError) {
+      console.warn('Could not set public permissions:', permError);
+    }
+  }
+
+  return response.data;
+}
 
 // Simple in-memory rate limiter
 const rateLimit = new Map<string, { count: number; lastReset: number }>();
@@ -88,6 +209,13 @@ export async function POST(req: NextRequest) {
     }
 
     const drive = getDriveClient();
+    
+    // Get or create subfolders
+    const originalFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.original);
+    const thumbsFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.thumbs);
+    const smallFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.small);
+    const mediumFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.medium);
+
     const results = [];
     const errors = [];
 
@@ -106,25 +234,45 @@ export async function POST(req: NextRequest) {
       }
 
       try {
-        const bufferStream = webStreamToNodeStream(file.stream());
-        const response = await drive.files.create({
-          requestBody: {
-            name: file.name,
-            parents: [DRIVE_FOLDER_ID],
+        const isVideo = file.type.startsWith('video/');
+        
+        if (isVideo) {
+          // Upload videos only to original folder
+          const arrayBuffer = await file.arrayBuffer();
+          const buffer = Buffer.from(arrayBuffer);
+          const result = await uploadBufferToDrive(drive, buffer, file.name, file.type, originalFolderId);
+          
+          results.push({
+            id: result.id,
+            name: result.name,
             mimeType: file.type,
-          },
-          media: {
-            mimeType: file.type,
-            body: bufferStream,
-          },
-          fields: 'id, name, webViewLink, thumbnailLink',
-        });
+            variants: {
+              original: result.id,
+            },
+          });
+        } else {
+          // Generate and upload image variants
+          const variants = await generateImageVariants(file);
+          
+          const [originalResult, thumbResult, smallResult, mediumResult] = await Promise.all([
+            uploadBufferToDrive(drive, variants.original.buffer, variants.original.name, file.type, originalFolderId),
+            uploadBufferToDrive(drive, variants.thumb.buffer, variants.thumb.name, 'image/jpeg', thumbsFolderId),
+            uploadBufferToDrive(drive, variants.small.buffer, variants.small.name, 'image/jpeg', smallFolderId),
+            uploadBufferToDrive(drive, variants.medium.buffer, variants.medium.name, 'image/jpeg', mediumFolderId),
+          ]);
 
-        results.push({
-          id: response.data.id,
-          name: response.data.name,
-          webViewLink: response.data.webViewLink,
-        });
+          results.push({
+            id: originalResult.id,
+            name: file.name,
+            mimeType: file.type,
+            variants: {
+              original: originalResult.id,
+              thumb: thumbResult.id,
+              small: smallResult.id,
+              medium: mediumResult.id,
+            },
+          });
+        }
       } catch (err: unknown) {
         console.error(`Failed to upload ${file.name}:`, err);
         errors.push(`${file.name}: Upload failed`);
@@ -156,16 +304,103 @@ export async function GET() {
 
     const drive = getDriveClient();
 
-    // List files in the folder
-    // We request thumbnailLink to display previews
-    const response = await drive.files.list({
-      q: `'${DRIVE_FOLDER_ID}' in parents and trashed = false`,
-      fields: 'files(id, name, mimeType, thumbnailLink, webViewLink, createdTime)',
-      orderBy: 'createdTime desc',
-      pageSize: 50, // Limit for MVP
+    // Get subfolders
+    const thumbsFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.thumbs);
+    const smallFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.small);
+    const mediumFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.medium);
+    const originalFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.original);
+
+    // Fetch files from each subfolder
+    const [thumbsResponse, smallResponse, mediumResponse, originalResponse] = await Promise.all([
+      drive.files.list({
+        q: `'${thumbsFolderId}' in parents and trashed = false`,
+        fields: 'files(id, name, mimeType, createdTime)',
+        orderBy: 'createdTime desc',
+        pageSize: 100,
+      }),
+      drive.files.list({
+        q: `'${smallFolderId}' in parents and trashed = false`,
+        fields: 'files(id, name, mimeType, createdTime)',
+        orderBy: 'createdTime desc',
+        pageSize: 100,
+      }),
+      drive.files.list({
+        q: `'${mediumFolderId}' in parents and trashed = false`,
+        fields: 'files(id, name, mimeType, createdTime)',
+        orderBy: 'createdTime desc',
+        pageSize: 100,
+      }),
+      drive.files.list({
+        q: `'${originalFolderId}' in parents and trashed = false`,
+        fields: 'files(id, name, mimeType, createdTime)',
+        orderBy: 'createdTime desc',
+        pageSize: 100,
+      }),
+    ]);
+
+    const thumbs = thumbsResponse.data.files || [];
+    const small = smallResponse.data.files || [];
+    const medium = mediumResponse.data.files || [];
+    const originals = originalResponse.data.files || [];
+
+    // Group files by base name (removing suffix)
+    const fileGroups = new Map<string, any>();
+
+    // Process thumbs as the primary list (for gallery display)
+    thumbs.forEach(thumb => {
+      const baseName = thumb.name!.replace(/_thumb\.jpg$/, '');
+      fileGroups.set(baseName, {
+        name: baseName,
+        mimeType: 'image/jpeg',
+        createdTime: thumb.createdTime,
+        variants: {
+          thumb: thumb.id,
+        },
+      });
     });
 
-    const files = response.data.files || [];
+    // Add small variants
+    small.forEach(file => {
+      const baseName = file.name!.replace(/_small\.jpg$/, '');
+      if (fileGroups.has(baseName)) {
+        fileGroups.get(baseName).variants.small = file.id;
+      }
+    });
+
+    // Add medium variants
+    medium.forEach(file => {
+      const baseName = file.name!.replace(/_med\.jpg$/, '');
+      if (fileGroups.has(baseName)) {
+        fileGroups.get(baseName).variants.medium = file.id;
+      }
+    });
+
+    // Add original variants (including videos)
+    originals.forEach(file => {
+      const baseName = file.name!.replace(/\.[^/.]+$/, ''); // Remove extension
+      const isVideo = file.mimeType?.startsWith('video/');
+      
+      if (isVideo) {
+        // Videos only have original
+        fileGroups.set(baseName, {
+          name: file.name,
+          mimeType: file.mimeType,
+          createdTime: file.createdTime,
+          variants: {
+            original: file.id,
+          },
+        });
+      } else {
+        // Images - add original to existing entry
+        if (fileGroups.has(baseName)) {
+          fileGroups.get(baseName).variants.original = file.id;
+          fileGroups.get(baseName).mimeType = file.mimeType; // Use original mimeType
+        }
+      }
+    });
+
+    // Convert map to array
+    const files = Array.from(fileGroups.values());
 
     return NextResponse.json({ files });
 
