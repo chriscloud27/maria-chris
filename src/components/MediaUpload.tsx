@@ -367,31 +367,17 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
 
   const handlePrevious = () => {
     if (!selectedMedia || gallery.length === 0) return;
-    console.log('handlePrevious - selectedMedia.id:', selectedMedia.id);
-    console.log('handlePrevious - gallery IDs:', gallery.map(item => item.id));
     const currentIndex = gallery.findIndex(item => item.id === selectedMedia.id);
-    console.log('handlePrevious - currentIndex:', currentIndex);
-    if (currentIndex === -1) {
-      console.warn('Current media not found in gallery', selectedMedia.id);
-      return;
-    }
+    if (currentIndex === -1) return;
     const prevIndex = currentIndex > 0 ? currentIndex - 1 : gallery.length - 1;
-    console.log('handlePrevious - prevIndex:', prevIndex);
     setSelectedMedia(gallery[prevIndex]);
   };
 
   const handleNext = () => {
     if (!selectedMedia || gallery.length === 0) return;
-    console.log('handleNext - selectedMedia.id:', selectedMedia.id);
-    console.log('handleNext - gallery IDs:', gallery.map(item => item.id));
     const currentIndex = gallery.findIndex(item => item.id === selectedMedia.id);
-    console.log('handleNext - currentIndex:', currentIndex);
-    if (currentIndex === -1) {
-      console.warn('Current media not found in gallery', selectedMedia.id);
-      return;
-    }
+    if (currentIndex === -1) return;
     const nextIndex = currentIndex < gallery.length - 1 ? currentIndex + 1 : 0;
-    console.log('handleNext - nextIndex:', nextIndex);
     setSelectedMedia(gallery[nextIndex]);
   };
 

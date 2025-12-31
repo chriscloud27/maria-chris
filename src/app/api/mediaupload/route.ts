@@ -38,7 +38,7 @@ const SUBFOLDERS = {
 const subfolderCache = new Map<string, string>();
 
 // Get or create a subfolder in Google Drive
-async function getOrCreateSubfolder(drive: any, parentFolderId: string, folderName: string): Promise<string> {
+async function getOrCreateSubfolder(drive: ReturnType<typeof getDriveClient>, parentFolderId: string, folderName: string): Promise<string> {
   const cacheKey = `${parentFolderId}_${folderName}`;
   
   if (subfolderCache.has(cacheKey)) {
@@ -107,7 +107,7 @@ async function generateImageVariants(file: File) {
 
 // Upload buffer to Google Drive
 async function uploadBufferToDrive(
-  drive: any,
+  drive: ReturnType<typeof getDriveClient>,
   buffer: Buffer,
   fileName: string,
   mimeType: string,
@@ -171,21 +171,6 @@ function checkRateLimit(ip: string, cost: number = 1): boolean {
 
   record.count += cost;
   return true;
-}
-
-// Helper to convert Web Stream to Node Readable Stream
-function webStreamToNodeStream(webStream: ReadableStream<Uint8Array>): Readable {
-  const reader = webStream.getReader();
-  return new Readable({
-    async read() {
-      const { done, value } = await reader.read();
-      if (done) {
-        this.push(null);
-      } else {
-        this.push(Buffer.from(value));
-      }
-    },
-  });
 }
 
 export async function POST(req: NextRequest) {
@@ -296,7 +281,6 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  console.log('=== GET /api/mediaupload called ===');
   try {
     if (!DRIVE_FOLDER_ID) {
       return NextResponse.json({ error: 'Server configuration error: DRIVE_FOLDER_ID missing' }, { status: 500 });
@@ -305,7 +289,6 @@ export async function GET() {
     const drive = getDriveClient();
 
     // First, try to list files from the main folder (for backwards compatibility)
-    console.log('Fetching files from main folder:', DRIVE_FOLDER_ID);
     const mainFolderResponse = await drive.files.list({
       q: `'${DRIVE_FOLDER_ID}' in parents and trashed = false`,
       fields: 'files(id, name, mimeType, thumbnailLink, webViewLink, createdTime)',
@@ -314,7 +297,6 @@ export async function GET() {
     });
 
     const mainFolderFiles = mainFolderResponse.data.files || [];
-    console.log('Main folder files count:', mainFolderFiles.length);
 
     // If we have files in the main folder, return them in the old format
     // This handles the case before migration
@@ -323,12 +305,10 @@ export async function GET() {
       const actualFiles = mainFolderFiles.filter(f => f.mimeType !== 'application/vnd.google-apps.folder');
       
       if (actualFiles.length > 0) {
-        console.log('First file from Drive API:', JSON.stringify(actualFiles[0], null, 2));
-        
         // Return in old format with backwards compatibility
         const files = actualFiles.map(file => {
           // Extract ID - it might be nested or at top level
-          const fileId = file.id || (file as any).fileId || file.name;
+          const fileId = file.id || file.name;
           
           return {
             id: fileId,
@@ -338,9 +318,6 @@ export async function GET() {
             webViewLink: file.webViewLink,
           };
         });
-        
-        console.log('Mapped files count:', files.length);
-        console.log('First mapped file:', JSON.stringify(files[0], null, 2));
         
         return NextResponse.json({ files });
       }
@@ -444,11 +421,24 @@ export async function GET() {
     const originals = originalResponse.data.files || [];
 
     // Group files by base name (removing suffix)
-    const fileGroups = new Map<string, any>();
+    interface FileGroup {
+      id: string;
+      name: string;
+      mimeType: string;
+      createdTime?: string | null;
+      variants: {
+        thumb?: string;
+        small?: string;
+        medium?: string;
+        original?: string;
+      };
+    }
+    const fileGroups = new Map<string, FileGroup>();
 
     // Process thumbs as the primary list (for gallery display)
     thumbs.forEach(thumb => {
-      const baseName = thumb.name!.replace(/_thumb\.jpg$/, '');
+      if (!thumb.id || !thumb.name) return; // Skip if missing required fields
+      const baseName = thumb.name.replace(/_thumb\.jpg$/, '');
       fileGroups.set(baseName, {
         id: thumb.id, // Use thumb ID as the main ID
         name: baseName,
@@ -462,23 +452,26 @@ export async function GET() {
 
     // Add small variants
     small.forEach(file => {
-      const baseName = file.name!.replace(/_small\.jpg$/, '');
+      if (!file.id || !file.name) return;
+      const baseName = file.name.replace(/_small\.jpg$/, '');
       if (fileGroups.has(baseName)) {
-        fileGroups.get(baseName).variants.small = file.id;
+        fileGroups.get(baseName)!.variants.small = file.id;
       }
     });
 
     // Add medium variants
     medium.forEach(file => {
-      const baseName = file.name!.replace(/_med\.jpg$/, '');
+      if (!file.id || !file.name) return;
+      const baseName = file.name.replace(/_med\.jpg$/, '');
       if (fileGroups.has(baseName)) {
-        fileGroups.get(baseName).variants.medium = file.id;
+        fileGroups.get(baseName)!.variants.medium = file.id;
       }
     });
 
     // Add original variants (including videos)
     originals.forEach(file => {
-      const baseName = file.name!.replace(/\.[^/.]+$/, ''); // Remove extension
+      if (!file.id || !file.name) return;
+      const baseName = file.name.replace(/\.[^/.]+$/, ''); // Remove extension
       const isVideo = file.mimeType?.startsWith('video/');
       
       if (isVideo) {
@@ -486,7 +479,7 @@ export async function GET() {
         fileGroups.set(baseName, {
           id: file.id, // Use original ID as the main ID for videos
           name: file.name,
-          mimeType: file.mimeType,
+          mimeType: file.mimeType || 'video/mp4',
           createdTime: file.createdTime,
           variants: {
             original: file.id,
@@ -495,8 +488,9 @@ export async function GET() {
       } else {
         // Images - add original to existing entry
         if (fileGroups.has(baseName)) {
-          fileGroups.get(baseName).variants.original = file.id;
-          fileGroups.get(baseName).mimeType = file.mimeType; // Use original mimeType
+          const group = fileGroups.get(baseName)!;
+          group.variants.original = file.id;
+          group.mimeType = file.mimeType || group.mimeType; // Use original mimeType
         }
       }
     });
