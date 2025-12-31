@@ -27,12 +27,6 @@ Google Drive Wedding Folder/
 ├── thumbs/           # 400x400 thumbnails (85% quality)
 ├── small/            # 800x800 for mobile (90% quality)
 └── medium/           # 1200x1200 for desktop (92% quality)
-
-Google Drive JGA Folder/
-├── original/
-├── thumbs/
-├── small/
-└── medium/
 ```
 
 ## File Naming Convention
@@ -54,7 +48,6 @@ If you're reading this, the codebase has already been updated. The changes inclu
 
 - ✅ Installed `sharp` package
 - ✅ Updated `/api/mediaupload/route.ts`
-- ✅ Updated `/api/jgaupload/route.ts`
 - ✅ Updated `MediaUpload.tsx` component
 - ✅ Created migration script
 
@@ -67,7 +60,7 @@ npx tsx scripts/generateImageVariants.ts
 ```
 
 This script will:
-1. List all files in both wedding and JGA folders
+1. List all files in the wedding folder
 2. Download each image
 3. Generate thumb, small, and medium variants
 4. Upload variants to appropriate subfolders
@@ -90,7 +83,7 @@ After running the script:
    - Check that originals are in `/original`
 
 2. **Test the Website:**
-   - Visit `/media` and `/jga` pages
+   - Visit `/media` page
    - Gallery should load thumbnails
    - Click images to open lightbox with larger variants
    - Test on mobile and desktop
@@ -178,7 +171,6 @@ Lightbox uses:
    - `GOOGLE_CLIENT_SECRET`
    - `GOOGLE_REFRESH_TOKEN`
    - `DRIVE_FOLDER_ID`
-   - `DRIVE_FOLDER_ID_JGA`
 2. Verify Google Drive API access
 3. Check available disk space (script downloads/processes images)
 4. Run with `--trace-warnings` for more details

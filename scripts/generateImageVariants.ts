@@ -164,7 +164,7 @@ async function moveFile(drive: any, fileId: string, fromFolderId: string, toFold
   });
 }
 
-// Process a single folder (either wedding or JGA)
+// Process a folder
 async function processFolderImages(drive: any, folderId: string, folderName: string) {
   console.log(`\n========================================`);
   console.log(`Processing folder: ${folderName}`);
@@ -273,7 +273,6 @@ async function main() {
   const drive = getDriveClient();
 
   const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
-  const DRIVE_FOLDER_ID_JGA = process.env.DRIVE_FOLDER_ID_JGA;
 
   console.log('\n🚀 Starting image variant generation...\n');
 
@@ -282,13 +281,6 @@ async function main() {
     await processFolderImages(drive, DRIVE_FOLDER_ID, 'Wedding Media');
   } else {
     console.warn('⚠️  DRIVE_FOLDER_ID not set, skipping wedding media folder');
-  }
-
-  // Process JGA folder
-  if (DRIVE_FOLDER_ID_JGA) {
-    await processFolderImages(drive, DRIVE_FOLDER_ID_JGA, 'JGA Media');
-  } else {
-    console.warn('⚠️  DRIVE_FOLDER_ID_JGA not set, skipping JGA folder');
   }
 
   console.log('\n✅ Migration complete!\n');

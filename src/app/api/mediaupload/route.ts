@@ -296,6 +296,7 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
+  console.log('=== GET /api/mediaupload called ===');
   try {
     if (!DRIVE_FOLDER_ID) {
       return NextResponse.json({ error: 'Server configuration error: DRIVE_FOLDER_ID missing' }, { status: 500 });
@@ -303,39 +304,139 @@ export async function GET() {
 
     const drive = getDriveClient();
 
-    // Get subfolders
-    const thumbsFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.thumbs);
-    const smallFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.small);
-    const mediumFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.medium);
-    const originalFolderId = await getOrCreateSubfolder(drive, DRIVE_FOLDER_ID, SUBFOLDERS.original);
+    // First, try to list files from the main folder (for backwards compatibility)
+    console.log('Fetching files from main folder:', DRIVE_FOLDER_ID);
+    const mainFolderResponse = await drive.files.list({
+      q: `'${DRIVE_FOLDER_ID}' in parents and trashed = false`,
+      fields: 'files(id, name, mimeType, thumbnailLink, webViewLink, createdTime)',
+      orderBy: 'createdTime desc',
+      pageSize: 100,
+    });
 
-    // Fetch files from each subfolder
-    const [thumbsResponse, smallResponse, mediumResponse, originalResponse] = await Promise.all([
+    const mainFolderFiles = mainFolderResponse.data.files || [];
+    console.log('Main folder files count:', mainFolderFiles.length);
+
+    // If we have files in the main folder, return them in the old format
+    // This handles the case before migration
+    if (mainFolderFiles.length > 0) {
+      // Check if any of them are NOT folders (i.e., actual files, not migrated yet)
+      const actualFiles = mainFolderFiles.filter(f => f.mimeType !== 'application/vnd.google-apps.folder');
+      
+      if (actualFiles.length > 0) {
+        console.log('First file from Drive API:', JSON.stringify(actualFiles[0], null, 2));
+        
+        // Return in old format with backwards compatibility
+        const files = actualFiles.map(file => {
+          // Extract ID - it might be nested or at top level
+          const fileId = file.id || (file as any).fileId || file.name;
+          
+          return {
+            id: fileId,
+            name: file.name || '',
+            mimeType: file.mimeType || '',
+            thumbnailLink: file.thumbnailLink,
+            webViewLink: file.webViewLink,
+          };
+        });
+        
+        console.log('Mapped files count:', files.length);
+        console.log('First mapped file:', JSON.stringify(files[0], null, 2));
+        
+        return NextResponse.json({ files });
+      }
+    }
+
+    // If main folder is empty or only has subfolders, try the new structure
+    // Get subfolders (only if they exist, don't create)
+    const [thumbsFolderSearch, smallFolderSearch, mediumFolderSearch, originalFolderSearch] = await Promise.all([
       drive.files.list({
-        q: `'${thumbsFolderId}' in parents and trashed = false`,
-        fields: 'files(id, name, mimeType, createdTime)',
-        orderBy: 'createdTime desc',
-        pageSize: 100,
+        q: `name='${SUBFOLDERS.thumbs}' and '${DRIVE_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+        fields: 'files(id)',
+        pageSize: 1,
       }),
       drive.files.list({
-        q: `'${smallFolderId}' in parents and trashed = false`,
-        fields: 'files(id, name, mimeType, createdTime)',
-        orderBy: 'createdTime desc',
-        pageSize: 100,
+        q: `name='${SUBFOLDERS.small}' and '${DRIVE_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+        fields: 'files(id)',
+        pageSize: 1,
       }),
       drive.files.list({
-        q: `'${mediumFolderId}' in parents and trashed = false`,
-        fields: 'files(id, name, mimeType, createdTime)',
-        orderBy: 'createdTime desc',
-        pageSize: 100,
+        q: `name='${SUBFOLDERS.medium}' and '${DRIVE_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+        fields: 'files(id)',
+        pageSize: 1,
       }),
       drive.files.list({
-        q: `'${originalFolderId}' in parents and trashed = false`,
-        fields: 'files(id, name, mimeType, createdTime)',
-        orderBy: 'createdTime desc',
-        pageSize: 100,
+        q: `name='${SUBFOLDERS.original}' and '${DRIVE_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+        fields: 'files(id)',
+        pageSize: 1,
       }),
     ]);
+
+    const thumbsFolderId = thumbsFolderSearch.data.files?.[0]?.id;
+    const smallFolderId = smallFolderSearch.data.files?.[0]?.id;
+    const mediumFolderId = mediumFolderSearch.data.files?.[0]?.id;
+    const originalFolderId = originalFolderSearch.data.files?.[0]?.id;
+
+    // If no subfolders exist, return empty array
+    if (!thumbsFolderId && !originalFolderId) {
+      return NextResponse.json({ files: [] });
+    }
+
+    // Fetch files from existing subfolders only
+    const fetchPromises = [];
+    
+    if (thumbsFolderId) {
+      fetchPromises.push(
+        drive.files.list({
+          q: `'${thumbsFolderId}' in parents and trashed = false`,
+          fields: 'files(id, name, mimeType, createdTime)',
+          orderBy: 'createdTime desc',
+          pageSize: 100,
+        })
+      );
+    } else {
+      fetchPromises.push(Promise.resolve({ data: { files: [] } }));
+    }
+
+    if (smallFolderId) {
+      fetchPromises.push(
+        drive.files.list({
+          q: `'${smallFolderId}' in parents and trashed = false`,
+          fields: 'files(id, name, mimeType, createdTime)',
+          orderBy: 'createdTime desc',
+          pageSize: 100,
+        })
+      );
+    } else {
+      fetchPromises.push(Promise.resolve({ data: { files: [] } }));
+    }
+
+    if (mediumFolderId) {
+      fetchPromises.push(
+        drive.files.list({
+          q: `'${mediumFolderId}' in parents and trashed = false`,
+          fields: 'files(id, name, mimeType, createdTime)',
+          orderBy: 'createdTime desc',
+          pageSize: 100,
+        })
+      );
+    } else {
+      fetchPromises.push(Promise.resolve({ data: { files: [] } }));
+    }
+
+    if (originalFolderId) {
+      fetchPromises.push(
+        drive.files.list({
+          q: `'${originalFolderId}' in parents and trashed = false`,
+          fields: 'files(id, name, mimeType, createdTime)',
+          orderBy: 'createdTime desc',
+          pageSize: 100,
+        })
+      );
+    } else {
+      fetchPromises.push(Promise.resolve({ data: { files: [] } }));
+    }
+
+    const [thumbsResponse, smallResponse, mediumResponse, originalResponse] = await Promise.all(fetchPromises);
 
     const thumbs = thumbsResponse.data.files || [];
     const small = smallResponse.data.files || [];
@@ -349,6 +450,7 @@ export async function GET() {
     thumbs.forEach(thumb => {
       const baseName = thumb.name!.replace(/_thumb\.jpg$/, '');
       fileGroups.set(baseName, {
+        id: thumb.id, // Use thumb ID as the main ID
         name: baseName,
         mimeType: 'image/jpeg',
         createdTime: thumb.createdTime,
@@ -382,6 +484,7 @@ export async function GET() {
       if (isVideo) {
         // Videos only have original
         fileGroups.set(baseName, {
+          id: file.id, // Use original ID as the main ID for videos
           name: file.name,
           mimeType: file.mimeType,
           createdTime: file.createdTime,

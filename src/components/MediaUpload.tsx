@@ -8,12 +8,15 @@ interface MediaFile {
   id: string;
   name: string;
   mimeType: string;
-  variants: {
+  variants?: {
     thumb?: string;
     small?: string;
     medium?: string;
     original: string;
   };
+  // Legacy format support (before migration)
+  thumbnailLink?: string;
+  webViewLink?: string;
 }
 
 interface MediaUploadProps {
@@ -363,16 +366,32 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
   };
 
   const handlePrevious = () => {
-    if (!selectedMedia) return;
+    if (!selectedMedia || gallery.length === 0) return;
+    console.log('handlePrevious - selectedMedia.id:', selectedMedia.id);
+    console.log('handlePrevious - gallery IDs:', gallery.map(item => item.id));
     const currentIndex = gallery.findIndex(item => item.id === selectedMedia.id);
+    console.log('handlePrevious - currentIndex:', currentIndex);
+    if (currentIndex === -1) {
+      console.warn('Current media not found in gallery', selectedMedia.id);
+      return;
+    }
     const prevIndex = currentIndex > 0 ? currentIndex - 1 : gallery.length - 1;
+    console.log('handlePrevious - prevIndex:', prevIndex);
     setSelectedMedia(gallery[prevIndex]);
   };
 
   const handleNext = () => {
-    if (!selectedMedia) return;
+    if (!selectedMedia || gallery.length === 0) return;
+    console.log('handleNext - selectedMedia.id:', selectedMedia.id);
+    console.log('handleNext - gallery IDs:', gallery.map(item => item.id));
     const currentIndex = gallery.findIndex(item => item.id === selectedMedia.id);
+    console.log('handleNext - currentIndex:', currentIndex);
+    if (currentIndex === -1) {
+      console.warn('Current media not found in gallery', selectedMedia.id);
+      return;
+    }
     const nextIndex = currentIndex < gallery.length - 1 ? currentIndex + 1 : 0;
+    console.log('handleNext - nextIndex:', nextIndex);
     setSelectedMedia(gallery[nextIndex]);
   };
 
@@ -675,10 +694,14 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
                 onClick={() => setSelectedMedia(item)}
                   className="group relative aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
               >
-                {item.variants.thumb ? (
+                {(item.variants?.thumb || item.thumbnailLink) ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
-                    src={`${apiBaseUrl}/download?fileId=${item.variants.thumb}`}
+                    src={
+                      item.variants?.thumb 
+                        ? `${apiBaseUrl}/download?fileId=${item.variants.thumb}` 
+                        : item.thumbnailLink!.replace('=s220', '=s600')
+                    }
                     alt={item.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
@@ -775,7 +798,11 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
             {selectedMedia.mimeType.startsWith('video/') ? (
               <video
                 ref={videoRef}
-                src={`${apiBaseUrl}/download?fileId=${selectedMedia.variants.original}`}
+                src={
+                  selectedMedia.variants?.original 
+                    ? `${apiBaseUrl}/download?fileId=${selectedMedia.variants.original}` 
+                    : `${apiBaseUrl}/download?fileId=${selectedMedia.id}`
+                }
                 controls
                 autoPlay
                 onEnded={handleVideoEnded}
@@ -784,11 +811,19 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
             ) : (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
-                src={`${apiBaseUrl}/download?fileId=${selectedMedia.variants.medium || selectedMedia.variants.small || selectedMedia.variants.thumb}`}
-                srcSet={`
-                  ${selectedMedia.variants.small ? `${apiBaseUrl}/download?fileId=${selectedMedia.variants.small} 800w,` : ''}
-                  ${selectedMedia.variants.medium ? `${apiBaseUrl}/download?fileId=${selectedMedia.variants.medium} 1200w` : ''}
-                `}
+                src={
+                  selectedMedia.variants?.medium || selectedMedia.variants?.small || selectedMedia.variants?.thumb
+                    ? `${apiBaseUrl}/download?fileId=${selectedMedia.variants.medium || selectedMedia.variants.small || selectedMedia.variants.thumb}`
+                    : selectedMedia.thumbnailLink?.replace('=s220', '=s2000') || ''
+                }
+                srcSet={
+                  selectedMedia.variants?.small && selectedMedia.variants?.medium
+                    ? `
+                      ${apiBaseUrl}/download?fileId=${selectedMedia.variants.small} 800w,
+                      ${apiBaseUrl}/download?fileId=${selectedMedia.variants.medium} 1200w
+                    `
+                    : undefined
+                }
                 sizes="90vw"
                 alt={selectedMedia.name}
                 className="max-w-full max-h-full object-contain rounded-lg"
