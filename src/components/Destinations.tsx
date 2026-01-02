@@ -41,7 +41,15 @@ export const Destinations = () => {
     const fetchGuests = async () => {
       try {
         const response = await fetch('/api/guests');
-        const guests: Guest[] = await response.json();
+        const data = await response.json();
+        
+        // Check if the response is an array
+        if (!Array.isArray(data)) {
+          console.error('API response is not an array:', data);
+          return;
+        }
+        
+        const guests: Guest[] = data;
 
         // Group guests by table number, filtering out empty table numbers
         const groupedGuests = guests.reduce((acc, guest) => {
