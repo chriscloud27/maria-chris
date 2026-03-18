@@ -16,7 +16,6 @@ export default function DestinationsPage() {
           { title: t('nav.attire'), id: 'attire' },
           { title: t('nav.location'), id: 'location' },
           { title: t('nav.hotels'), id: 'hotels' },
-          { title: t('nav.arrival'), id: 'arrival' },
           { title: t('nav.rsvp'), id: 'rsvp' },
           { title: t('nav.destinations'), id: 'destinations' },
           { title: t('nav.media'), id: 'media' },

@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { LocationExcursions } from "@/components/LocationExcursions";
 import { Hotels } from "@/components/Hotels";
 import { Destinations } from "@/components/Destinations";
-import { Arrival } from "@/components/Arrival";
 import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
 import { Details } from "@/components/Details";
@@ -54,7 +53,6 @@ export default function Index() {
           { title: t('nav.attire'), id: 'attire' },
           { title: t('nav.location'), id: 'location' },
           { title: t('nav.hotels'), id: 'hotels' },
-          { title: t('nav.arrival'), id: 'arrival' },
           { title: t('nav.rsvp'), id: 'rsvp' },
           { title: t('nav.destinations'), id: 'destinations' },
           { title: t('nav.media'), id: 'media' },
@@ -70,20 +68,22 @@ export default function Index() {
             Show: confetti effect (done in Countdown.tsx)
         */}
         <section id="hero"><Hero onCountdownFinish={() => setIsCountdownFinished(true)} /></section> 
-        <section id="story"><Story /></section>
-        <section id="schedule"><Schedule /></section>
         {!isCountdownFinished && (
           <>
-            <section id="details"><Details /></section>
+            <div className="container mx-auto px-4">
+              <section id="rsvp"><Rsvp /></section>
+            </div>
+            {/* <section id="details"><Details /></section> */}
             <section id="attire"><Attire /></section>
           </>
         )}
+        <section id="story"><Story /></section>
+        <section id="schedule"><Schedule /></section>
         <div className="container mx-auto px-4">
           {!isCountdownFinished && <LocationExcursions />}
           {!isCountdownFinished && <section id="hotels"><Hotels /></section>}
           {isCountdownFinished && <section id="destinations"><Destinations /></section>}
-          {!isCountdownFinished && <section id="arrival"><Arrival /></section>}
-          {!isCountdownFinished && <section id="rsvp"><Rsvp /></section>}
+          {/* {!isCountdownFinished && <section id="arrival"><Arrival /></section>} */}
           {isCountdownFinished && (
             <section id="media">
               <MediaUpload 

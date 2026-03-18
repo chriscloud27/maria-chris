@@ -125,7 +125,8 @@ export default function Attire() {
           </div>
         </div>
 
-        {/* White Boat Party Card (Box 3) */}
+        {/* White Boat Party Card (Box 3) - Commented out as there's no white boat party */}
+        {/*
   <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 py-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-8">
           <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
             <FaChild className="text-green-900 text-2xl" />
@@ -144,6 +145,7 @@ export default function Attire() {
             
           </div>
         </div>
+        */}
       </div>
     </section>
   );

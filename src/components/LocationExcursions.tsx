@@ -5,9 +5,8 @@ import {
   Heart,
   MapPin,
   Gift,
-  Sun,
-  Phone,
   Mail,
+  Car,
 } from 'lucide-react';
 
 const TravelTip = ({
@@ -25,7 +24,7 @@ const TravelTip = ({
     </div>
     <div>
       <h4 className="font-semibold text-lg">{title}</h4>
-      <p className="text-sm">{description}</p>
+      <div className="text-sm" dangerouslySetInnerHTML={{ __html: description }} />
     </div>
   </div>
 );
@@ -33,6 +32,7 @@ const TravelTip = ({
 export const LocationExcursions = () => {
   const tLocation = useTranslations('location');
   const tTips = useTranslations('travelTips');
+  const tDetails = useTranslations('details');
 
   const tips = [
     {
@@ -51,14 +51,13 @@ export const LocationExcursions = () => {
       description: tTips('localTreats.description'),
     },
     {
-      icon: <Sun className="w-5 h-5" />,
-      title: tTips('weather.title'),
-      description: tTips('weather.description'),
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      title: tTips('currency.title'),
-      description: tTips('currency.description'),
+      icon: <Car className="w-5 h-5" />,
+      title: tTips('parking.title'),
+      description: `
+        <p class="mb-2"><a href="${tDetails('parkingOption1Link')}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${tDetails('parkingOption1')}</a></p>
+        <p class="mb-2"><a href="${tDetails('parkingOption2Link')}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${tDetails('parkingOption2')}</a></p>
+        <p><a href="${tDetails('parkingOption3Link')}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${tDetails('parkingOption3')}</a></p>
+      `,
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -109,13 +108,13 @@ export const LocationExcursions = () => {
               >
                 <iframe
                   width="100%"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.0513610577627!2d-75.22322745541217!3d6.219689760335983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e441dbe3a08b0a7%3A0x90e6142371913e61!2sCasa%20Loma%20%2C%20Hotel%20Boutique!5e1!3m2!1sde!2sde!4v1759609928893!5m2!1sde!2sde"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.5545824817164!2d6.633866428998448!3d51.33336804051034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ba7166186679%3A0x8d629f090de22ad8!2sWinkmannshof%20by%20Qani!5e1!3m2!1sen!2sco!4v1773844942704!5m2!1sen!2sco"
                   height="500"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Casa Loma, Hotel Boutique"
+                  title="Winkmannshof an der Burg"
                   className="hover:scale-105 transition-transform duration-500"
                 ></iframe>
               </div>

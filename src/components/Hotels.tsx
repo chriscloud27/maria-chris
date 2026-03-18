@@ -21,35 +21,11 @@ export const Hotels = () => {
   const t = useTranslations('hotels');
 
   const hotels: Record<string, HotelData> = {
-    cristalinaCabana: {
-      bookingLink: "https://www.booking.com/hotel/co/loge-cabana-el-panol.es.html",
-      location: "https://maps.app.goo.gl/Nhzn6nzL5H9PDFzS6",
+    AirBnb: {
+      bookingLink: "https://www.airbnb.de/wishlists/invite/073a3280-7ab0-42f0-8f7a-719647dc0c1e?s=67&unique_share_id=76792540-b6b5-4741-ab72-b5c854c99fd9",
     },
-    monteGandolfo: {
-      bookingLink: "https://engine.lobbypms.com/apartamentos-monte-gandolfo?start-date=2025-10-27&end-date=2025-10-28&currency=EUR&lang=en",
-      location: "https://maps.app.goo.gl/4R2i92HRb2nYNgNZ8",
-      hintLink: "",
-    },
-    viajeroHostal: {
-      bookingLink: "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
-      location: "https://maps.app.goo.gl/JorKrdR4DnhVNBKM7",
-      hintLink: "https://www.viajerohostels.com/en/promotions/#ADVANCED_10_DAYS",
-    },
-    recuerdos: {
-      bookingLink: "https://www.booking.com/Share-qilgHR",
-      location: "https://maps.app.goo.gl/sYUo4AADaHoidUBH9",
-    },
-    altoLunaGlamping: {
-      bookingLink: "https://www.airbnb.com/rooms/1415467114306437650?guests=1&adults=1&s=67&unique_share_id=2e979ab5-cf80-4820-9357-60b1ab4252e7",
-      location: "https://maps.app.goo.gl/jEcrwYqxhLarpMdm7",
-    },
-    fincamariangel: {
-      bookingLink: "",
-      location: "https://maps.app.goo.gl/5WMKyjw1UqwwczNEA",
-    },
-    portomarina: {
-      bookingLink: "https://www.booking.com/Share-fbUfHfI",
-      location: "https://maps.app.goo.gl/hhCdmqUYwPSwTMov5",
+    Booking: {
+      bookingLink: "https://booking.com/mywishlist.html?wl=0d047fa6e3e74881afc5fe95210e08ce",
     },
   };
 
@@ -57,17 +33,12 @@ export const Hotels = () => {
     {
       titleKey: 'option1Title',
       image: '/Monte-Gandolfo.png',
-      places: ['cristalinaCabana', 'monteGandolfo'],
+      places: ['AirBnb'],
     },
     {
       titleKey: 'option2Title',
       image: '/viajero.png',
-      places: ['viajeroHostal', 'recuerdos', 'altoLunaGlamping'],
-    },
-    {
-      titleKey: 'option3Title',
-      image: '/vivanti.png',
-      places: ['fincamariangel', 'portomarina'],
+      places: ['Booking'],
     },
   ];
 
@@ -104,11 +75,17 @@ export const Hotels = () => {
                   const translated = t.raw(placeKey) as Omit<Hotel, 'bookingLink' | 'location' | 'hintLink'>;
                   const staticData = hotels[placeKey] || {};
                   const hotel = { ...translated, ...staticData } as Hotel;
+                  
+                  // Use promo text for AirBnb and Booking
+                  const displayDescription = placeKey === 'AirBnb' ? t('airbnbPromo') : 
+                                           placeKey === 'Booking' ? t('bookingPromo') : 
+                                           hotel.description;
+                  
                   return (
                     <div key={placeKey} className="mb-6 last:mb-0">
                       <h4 className="font-semibold text-lg mb-1 text-gray-800 dark:text-gray-200">{hotel.name}</h4>
-                      <p className="text-gray-600 dark:text-gray-300 mb-2 text-sm">{hotel.description}</p>
-                      {hotel.hint && (
+                      <p className="text-gray-600 dark:text-gray-300 mb-2 text-sm">{displayDescription}</p>
+                      {hotel.hint && placeKey !== 'AirBnb' && placeKey !== 'Booking' && (
                         <p className="text-xs text-purple-600 dark:text-purple-400 mb-2 italic">{hotel.hint}</p>
                       )}
                       <div className="flex flex-wrap gap-2">

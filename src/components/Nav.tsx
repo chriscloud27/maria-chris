@@ -29,7 +29,7 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
     { title: 'Schedule', id: 'schedule' },
     { title: t('location'), id: 'location' },
     { title: t('hotels'), id: 'hotels' },
-    { title: t('arrival'), id: 'arrival' },
+    // { title: t('arrival'), id: 'arrival' },
     { title: t('rsvp'), id: 'rsvp' },
     { title: t('excursions'), id: 'excursions' },
     { title: t('faq'), id: 'faq' },
@@ -40,7 +40,7 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
   // Before countdown: hide destinations, media
   // After countdown: hide attire, location, hotels, arrival, rsvp
   const sections = isCountdownFinished 
-    ? allSections.filter(item => !(item.id && ['attire', 'hotels', 'location', 'arrival', 'rsvp'].includes(item.id)))
+    ? allSections.filter(item => !(item.id && ['attire', 'hotels', 'location', 'rsvp'].includes(item.id)))
     : allSections.filter(item => !(item.id && ['destinations', 'media'].includes(item.id)));
 
   return (

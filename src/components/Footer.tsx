@@ -26,7 +26,6 @@ export const Footer = ({ navItems }: FooterProps) => {
     { title: t('schedule'), id: 'schedule' },
     { title: t('location'), id: 'location' },
     { title: t('hotels'), id: 'hotels' },
-    { title: t('arrival'), id: 'arrival' },
     { title: t('rsvp'), id: 'rsvp' },
     { title: t('faq'), id: 'faq' },
   ];

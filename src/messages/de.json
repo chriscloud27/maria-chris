@@ -5,12 +5,12 @@
     "activity": "Hochzeit"
   },
   "hero": {
-    "title": "Wir heiraten!",
-    "subtitle": "20. Dezember 2025",
-    "month": "Dezember",
-    "days": "20-21",
-    "year": "2025",
-    "location": "Guatapé, Kolumbien"
+    "title": "Wir feiern mit euch!",
+    "subtitle": "08. August 2026",
+    "month": "August",
+    "days": "8",
+    "year": "2026",
+    "location": "Krefeld-Linn, Deutschland"
   },
   "nav": {
     "details": "Details",
@@ -54,12 +54,12 @@
   "location": {
     "title": "Ort",
     "main": {
-      "name": "Casa Loma, Hotel Boutique",
-      "address": "054447, Peñol, Antioquia, Kolumbien"
+      "name": "Winkmannshof an der Burg",
+      "address": "Krefeld-Linn, Deutschland"
     },
-    "intro": "Wir lieben es, zu reisen und zauberhafte Orte zu entdecken. Guatapé ist für uns der perfekte Ort, um unsere Liebe zu feiern: ein farbenfrohes, fröhliches Dorf, umgeben von Wasser, Bergen und Himmel. Dieser besondere Ort fängt die Energie der vier Elemente ein und lädt zu Abenteuern, Schönheit und Nähe ein. Wir möchten diesen unvergesslichen Moment mit Familie und Freunden teilen, die atemberaubenden Ausblicke genießen, durch die lebendigen Straßen spazieren und den einzigartigen Geist erleben, der Guatapé so lebendig macht.",
+    "intro": "Wir lieben es, zu reisen und zauberhafte Orte zu entdecken. Krefeld-Linn ist für uns der perfekte Ort, um unsere Liebe zu feiern: eine wunderschöne Region in Deutschland. Dieser besondere Ort fängt die Energie der Verbundenheit und Freude ein und lädt zu Wärme, Schönheit und Nähe ein. Wir möchten diesen unvergesslichen Moment mit Familie und Freunden teilen, die charmanten Umgebungen genießen und den einzigartigen Geist erleben, der unsere Feier so besonders macht.",
     "roadWarningPrefix": "Bitte beachten:",
-    "roadWarning": "Die Straße ist befahrbar."
+    "roadWarning": "Parkplätze kostenlos vorhanden, solange Platz ist."
     ,"tipsHeading": "Reisetipps"
   },
   "hotels": {
@@ -67,11 +67,12 @@
     "subtitle": "Wir teilen einige Optionen, die du in Betracht ziehen kannst. Du kannst natürlich auch andere Unterkünfte in der Nähe des Veranstaltungsorts erkunden, die besser zu deinem Geschmack oder Budget passen - es gibt viele Möglichkeiten.",
     "option1Title": "Option $",
     "option2Title": "Option $$",
-    "option3Title": "Option $$$",
     "seeMore": "Mehr anzeigen",
     "bookingLinkText": "Mehr Details",
     "mapText": "Mehr Details",
     "locationText": "Standort",
+    "airbnbPromo": "Entdecke charmante Airbnb-Optionen in der näheren Umgebung bei freundlichen lokalen Gastgebern, die die besten Spots kennen!",
+    "bookingPromo": "Entdecke mehr Optionen auf Booking.com - von gemütlichen Hotels bis zu privaten Unterkünften bei lokalen Gastgebern.",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
       "description": "Geräumige Villa mit Grillbereich und Blick auf See, Berge und Wahrzeichen.",
@@ -109,6 +110,16 @@
       "description": "Private Hütte. Der perfekte Ort, um Ruhe zu finden und panoramische Aussichten auf den Peñol-Felsen zu genießen.",
       "hint": "Abgelegene Hütte; begrenzte Ausstattung und schnelle Auslastung - bitte frühzeitig buchen.",
       "hintLinkText": "Bei Airbnb buchen"
+    },
+    "AirBnb": {
+      "name": "Airbnb-Optionen",
+      "description": "Entdecke charmante Airbnb-Optionen in der näheren Umgebung bei freundlichen lokalen Gastgebern, die die besten Spots kennen!",
+      "hint": "Erkunde einzigartige Unterkünfte von gemütlichen Apartments bis hin zu charmanten Häusern mit lokalen Gastgebern."
+    },
+    "Booking": {
+      "name": "Booking.com-Optionen",
+      "description": "Entdecke mehr Optionen auf Booking.com - von gemütlichen Hotels bis zu privaten Unterkünften bei lokalen Gastgebern.",
+      "hint": "Finde eine große Auswahl an Unterkünften von budgetfreundlichen Hotels bis hin zu Luxus-Unterkünften."
     },
     "searchOnBooking": "Bei Booking suchen",
     "searchOnAirbnb": "Bei Airbnb suchen",
@@ -272,27 +283,23 @@
   "travelTips": {
     "bestTime": {
       "title": "Beste Ankunftszeit",
-      "description": "Freitagnachmittag, um die Vorfeierlichkeiten zu genießen und die bunte Stadt zu erkunden"
+      "description": "14 Uhr. Parkplätze vorhanden, siehe allgemeine Informationen"
     },
     "mustSee": {
       "title": "Sehenswert",
-      "description": "Besteige die Piedra del Peñol (740 Stufen!) für atemberaubende Aussichten auf den Stausee"
+      "description": "Krefeld, Burg Linn"
     },
     "localTreats": {
       "title": "Lokale Spezialitäten",
-      "description": "Probiere Arepas, Empanadas und frische Forelle aus dem See"
-    },
-    "weather": {
-      "title": "Wetter",
-      "description": "Dezember ist perfekt! 21-27°C, leichte Jacke für abends empfohlen"
-    },
-    "currency": {
-      "title": "Währung",
-      "description": "Kolumbianischer Peso (COP). USD wird in Touristengebieten weitgehend akzeptiert"
+      "description": "Probiere traditionelle deutsche Spezialitäten und lokale Favoriten"
     },
     "language": {
       "title": "Sprache",
-      "description": "Spanisch (wir haben Übersetzer bei der Hochzeit!)"
+      "description": "en/de/es - wir machen es für alle komfortabel"
+    },
+    "parking": {
+      "title": "Parken",
+      "description": "Am <a href=\"https://maps.app.goo.gl/LfG9qJVmuBmFAp2L9\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"Haus des kurfürstlichen Hofstiefelsmachers\"</a> (0min Fußweg, begrenzt, ggf. Parkgebühren), 👉🏼 auf der <a href=\"https://maps.app.goo.gl/ZhtVzJkuPxj7iAvh6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"Rheinbabenstraße\"</a> (beste Möglichkeit; 5min Fußweg, kostenlos), oder <a href=\"https://maps.app.goo.gl/zciPXtgwzkxbPhcB8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Burg Linn P1</a> (kostenlos, 10min Fußweg)."
     }
   },
   "faq": {
@@ -309,14 +316,6 @@
       {
       "question": "Wer kann bei Fragen kontaktiert werden?",
       "answer": "Bitte schreibt uns über die Whatsapp-Gruppe oder direkt an Maria oder Chris."
-      },
-      {
-      "question": "Was soll ich einpacken?",
-      "answer": "Badesachen, bequeme Schuhe (keine Absätze – es wird Gras und viel Lauferei geben), warme Kleidung für die Nacht, da es kühl wird, Kleidung für Yoga/Sport und gute Energie. Die Nacht kann kalt sein. Bringt wenn möglich eine Decke mit."
-      },
-      {
-      "question": "Wie ist das Wetter in Guatapé?",
-      "answer": "Tagsüber ist es angenehm warm, abends kann es kühl werden. Bringt etwas Leichtes für den Tag und eine Jacke oder einen Pullover für den Abend mit."
       },
       {
       "question": "Welche Geschenke?",
@@ -340,17 +339,17 @@
     "title": "Übersicht",
     "subtitle": "Zeremonie, Empfang und alles dazwischen",
     "dateTitle": "Datum",
-    "dateMain": "19. Dez: Willkommen & Verbinden\n20. Dez: Der Große Tag\n21. Dez: Weiße Party & Abschied",
-    "dateLine1": "19. Dez (optional): Willkommen & Verbinden",
-    "dateLine2": "20. Dez: Der Große Tag",
-    "dateLine3": "21. Dez (optional): Weiße Party & Abschied",
+    "dateMain": "8. August 2026: Der Feiertag",
+    "dateLine1": "8. August 2026: Der Feiertag",
+    "dateLine2": "",
+    "dateLine3": "",
     "ceremonyTime": "",
     "showDetailsButton": "Details Anzeigen",
     "venueTitle": "Veranstaltungsort",
-    "venueName": "Casa Loma, Hotel Boutique",
-    "venueAddress1": "054447, Peñol, Antioquia",
-    "venueAddress2": "Kolumbien",
-    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
+    "venueName": "Winkmannshof",
+    "venueAddress1": "Krefeld-Linn",
+    "venueAddress2": "Deutschland",
+    "venueMapLink": "https://maps.app.goo.gl/oRqvrYLijX8XYgQq6",
     "getDirections": "Route anzeigen",
     "attireTitle": "Kleidung",
     "attireWomenLabel": "Frauen:",
@@ -373,11 +372,18 @@
     "attireColorsButton": "Farben",
     "attireButtonLink": "https://pin.it/i/5NzR4QggM/"
     ,
-  "scheduleBox1Note": "Bringt gerne etwas fürs BBQ oder Snacks zum Teilen 🍖",
+  "scheduleBox1Note": "Sagt uns, wenn ihr eine Diät habt, über das RSVP-Formular oder indem ihr Chris direkt schreibt.",
   "scheduleBox2Note": "Ihr seid unsere Gäste 🥳",
   "scheduleBox3Note": "100.000 COP pro Person"
     ,
-    "attireWomenShoesButton": "Damen Schuhe"
+    "attireWomenShoesButton": "Damen Schuhe",
+    "parkingTitle": "Parken",
+    "parkingOption1": "Auf der \"Rheinbabenstraße\" (beste Möglichkeit; 5min Fußweg, kostenlos)",
+    "parkingOption1Link": "https://maps.app.goo.gl/ZhtVzJkuPxj7iAvh6",
+    "parkingOption2": "Am \"Haus des kurfürstlichen Hofstiefelsmachers\" (0min Fußweg, begrenzt, ggf. Parkgebühren)",
+    "parkingOption2Link": "https://maps.app.goo.gl/LfG9qJVmuBmFAp2L9",
+    "parkingOption3": "Parkplatz Burg Linn P1 (kostenlos, 10min Fußweg)",
+    "parkingOption3Link": "https://maps.app.goo.gl/zciPXtgwzkxbPhcB8"
   },
   "story": {
     "title": "Unsere Geschichte",
@@ -396,68 +402,36 @@
   },
   "schedule": {
     "title": "Ablaufplan",
-    "subtitle": "Ein Tag voller Liebe und Feierlichkeiten",
+    "subtitle": "Ein Tag voller Feier und Verbundenheit",
     "days": [
       {
-        "dateLabel": "Fr, 19. Dez",
-        "subtitle": "<i>Optional: </i><b>Begrüßung & Verbindung 🔥</b>",
+        "dateLabel": "Sa, 8. Aug",
+        "subtitle": "<b>Der Feiertag 🎉</b>",
         "events": [
           {
-            "time": "17:30 Uhr",
-            "title": "Gästeankunft & Check-In",
-            "description": "Macht euch bereit für einen schönen Abend."
+            "time": "14:00 - 15:00 Uhr",
+            "title": "Begrüßung & Integration",
+            "description": "Übungen draußen, um uns kennenzulernen, kulturbezogene Aktivitäten. Verpasst diese lustige Session nicht!"
           },
           {
-            "time": "18:30 Uhr",
-            "title": "Begrüßung und Integration",
-            "description": "Brecht das Eis und lernt euch kennen."
+            "time": "15:00 Uhr",
+            "title": "Kaffee & Kuchen Programm",
+            "description": "Präsentation, um euch willkommen zu fühlen, Überblick über die Hochzeit in Kolumbien, Einblicke, lustige Geschichten und euch zurück in unseren Hochzeitstag bringen."
           },
           {
-            "time": "19:30 Uhr",
-            "title": "Natilla & Buñuelos",
-            "description": "Probiert kolumbianische Weihnachtsleckereien mit BBQ."
-          }
-        ]
-      },
-      {
-        "dateLabel": "Sa, 20. Dez",
-        "subtitle": "<b>Der Große Tag 🪨🌬️</b>",
-        "events": [
-          {
-            "time": "11:00 Uhr",
-            "title": "Kirche Guatapé",
-            "description": "Feiert die Hochzeitsmesse in der Kirche."
+            "time": "17:00 Uhr",
+            "title": "Mehr Übungen & Spaß",
+            "description": "Zusätzliche Aktivitäten und Unterhaltung. Bleibt dran für Details!"
           },
           {
-            "time": "13:00 Uhr",
-            "title": "Ankunft des Paares",
-            "description": "Begrüßt die Neuvermählten mit Applaus."
+            "time": "19:00 Uhr",
+            "title": "Abendessen",
+            "description": "Genießt gemeinsam ein serviertes Abendessen."
           },
           {
-            "time": "14:00 – 19:00 Uhr",
-            "title": "Mittagessen & Nachmittagsaktivitäten",
-            "description": "Festliche Aktivitäten für alle Gäste."
-          }
-        ]
-      },
-      {
-        "dateLabel": "So, 21. Dez",
-        "subtitle": "<i>Optional: </i><b>Weiße Party & Abschied 💧</b>",
-        "events": [
-          {
-            "time": "11:00 Uhr",
-            "title": "Besuch einer Kaffeeplantage",
-            "description": "Ein achtsamer Moment, um gemeinsam in den Tag zu starten."
-          },
-          {
-            "time": "12:00 Uhr",
-            "title": "Tuk Tuk Tour",
-            "description": "Genießt eine besondere Fahrt nach Guatapé."
-          },
-          {
-            "time": "13:30 Uhr",
-            "title": "Weiße Bootsparty",
-            "description": "Zieht euch weiß an und genießt Musik, Tanz, Cocktails und den Sonnenuntergang zusammen."
+            "time": "21:00 - 23:00 Uhr",
+            "title": "Offene Party",
+            "description": "Raum für offene Feier und Tanzen."
           }
         ]
       }

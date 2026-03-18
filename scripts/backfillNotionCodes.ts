@@ -25,32 +25,49 @@ function generateCode(): string {
 }
 
 async function backfillCodes(dbId: string) {
-  const response = await notion.databases.query({
-    database_id: dbId,
-  });
+  let hasMore = true;
+  let cursor: string | undefined = undefined;
+  let totalProcessed = 0;
+  let totalUpdated = 0;
 
-  for (const page of response.results) {
-    const pageId = page.id;
+  while (hasMore) {
+    const response = await notion.databases.query({
+      database_id: dbId,
+      start_cursor: cursor,
+    });
 
-    // @ts-expect-error - dynamic property access
-    const codeProp = page.properties?.Code?.rich_text;
-    if (codeProp && codeProp.length > 0) {
-      console.log(`Skipping page ${pageId}, already has code.`);
-      continue;
+    console.log(`Processing page with ${response.results.length} results...`);
+
+    for (const page of response.results) {
+      const pageId = page.id;
+      totalProcessed++;
+
+      // @ts-expect-error - dynamic property access
+      const codeProp = page.properties?.Code?.rich_text;
+      if (codeProp && codeProp.length > 0) {
+        console.log(`Skipping page ${pageId}, already has code.`);
+        continue;
+      }
+
+      const newCode = generateCode();
+      console.log(`Updating page ${pageId} with code ${newCode}`);
+
+      await notion.pages.update({
+        page_id: pageId,
+        properties: {
+          Code: {
+            rich_text: [{ text: { content: newCode } }],
+          },
+        },
+      });
+      totalUpdated++;
     }
 
-    const newCode = generateCode();
-    console.log(`Updating page ${pageId} with code ${newCode}`);
-
-    await notion.pages.update({
-      page_id: pageId,
-      properties: {
-        Code: {
-          rich_text: [{ text: { content: newCode } }],
-        },
-      },
-    });
+    hasMore = response.has_more;
+    cursor = response.next_cursor || undefined;
   }
+
+  console.log(`\nCompleted! Processed ${totalProcessed} pages, updated ${totalUpdated} pages.`);
 }
 
 backfillCodes(databaseId).catch(err => {

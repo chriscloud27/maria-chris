@@ -5,12 +5,12 @@
     "activity": "Boda"
   },
   "hero": {
-    "title": "¡Nos casamos!",
-    "subtitle": "20 de diciembre de 2025",
-    "month": "Diciembre",
-    "days": "20-21",
-    "year": "2025",
-    "location": "Guatapé, Colombia"
+    "title": "¡Celebramos contigo!",
+    "subtitle": "8 de agosto de 2026",
+    "month": "Agosto",
+    "days": "8",
+    "year": "2026",
+    "location": "Krefeld-Linn, Alemania"
   },
   "nav": {
     "details": "Detalles",
@@ -54,38 +54,34 @@
   "location": {
     "title": "Ubicación",
     "main": {
-      "name": "Casa Loma, Hotel Boutique",
-      "address": "054447, Peñol, Antioquia, Colombia"
+      "name": "Winkmannshof an der Burg",
+      "address": "Krefeld-Linn, Alemania"
     },
-  "intro": "Nos encanta viajar y descubrir lugares mágicos, y no podríamos imaginar un mejor escenario para celebrar nuestro amor que Guatapé: un pueblo colorido y alegre rodeado de agua, montañas y cielo. Este lugar especial captura la energía de los cuatro elementos e invita a la aventura, la belleza y la conexión. Queremos compartir este momento inolvidable con nuestra familia y amigos, disfrutando de sus vistas impresionantes, sus calles vibrantes y ese espíritu único que hace que Guatapé esté lleno de vida y aventuras.",
+  "intro": "Nos encanta viajar y descubrir lugares mágicos, y no podríamos imaginar un mejor escenario para celebrar nuestro amor que en la hermosa región de Krefeld-Linn, Alemania. Este lugar especial captura la energía de la conexión y la alegría e invita a la calidez, la belleza y la unión. Queremos compartir este momento inolvidable con nuestra familia y amigos, disfrutando de los encantadores alrededores y ese espíritu único que hace que nuestra celebración sea tan especial.",
   "roadWarningPrefix": "Por favor ten en cuenta:",
-  "roadWarning": "Puede pasar la carretera.",
+  "roadWarning": "Estacionamiento disponible gratis, siempre que el espacio lo permita.",
   "tipsHeading": "Consejos de viaje"
   },
   "travelTips": {
     "bestTime": {
       "title": "Mejor Momento para Llegar",
-      "description": "Viernes por la tarde para disfrutar de las festividades previas a la boda y explorar el colorido pueblo"
+      "description": "14:00. Estacionamiento disponible, ver información general"
     },
     "mustSee": {
       "title": "Imperdible",
-      "description": "Sube a la Piedra del Peñol (¡740 escalones!) para vistas impresionantes del embalse"
+      "description": "Krefeld, Burg Linn"
     },
     "localTreats": {
       "title": "Delicias Locales",
-      "description": "Prueba arepas, empanadas y trucha fresca del lago"
-    },
-    "weather": {
-      "title": "Clima",
-      "description": "¡Diciembre es perfecto! 21-27°C, se recomienda chaqueta ligera para las noches"
-    },
-    "currency": {
-      "title": "Moneda",
-      "description": "Peso Colombiano (COP). USD ampliamente aceptado en áreas turísticas"
+      "description": "Prueba especialidades tradicionales alemanas y favoritos locales"
     },
     "language": {
       "title": "Idioma",
-      "description": "Español (¡tendremos traductores en la boda!)"
+      "description": "en/de/es - haremos que sea cómodo para todos"
+    },
+    "parking": {
+      "title": "Estacionamiento",
+      "description": "En <a href=\"https://maps.app.goo.gl/LfG9qJVmuBmFAp2L9\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"Haus des kurfürstlichen Hofstiefelsmachers\"</a> (0min caminando, limitado, posibles tarifas de estacionamiento), 👉🏼 en <a href=\"https://maps.app.goo.gl/ZhtVzJkuPxj7iAvh6\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"Rheinbabenstraße\"</a> (mejor opción; 5min caminando, gratis), o <a href=\"https://maps.app.goo.gl/zciPXtgwzkxbPhcB8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Burg Linn P1</a> (gratis, 10min caminando)."
     }
   },
   "hotels": {
@@ -93,11 +89,12 @@
   "subtitle": "Te compartimos algunas opciones que puedes considerar. Sin embargo, por supuesto, puedes explorar otras alternativas cercanas al venue que se ajusten mejor a tu gusto o presupuesto - hay muchas opciones disponibles.",
   "option1Title": "Opción $",
   "option2Title": "Opción $$",
-  "option3Title": "Opción $$$",
   "seeMore": "Ver más",
   "bookingLinkText": "Más detalles",
   "mapText": "Más detalles",
   "locationText": "Ubicación",
+  "airbnbPromo": "¡Descubre encantadoras opciones de Airbnb en la zona cercana con anfitriones locales amigables que conocen los mejores lugares!",
+  "bookingPromo": "Explora más opciones en Booking.com - desde hoteles acogedores hasta casas privadas con anfitriones locales.",
     "cristalinaCabana": {
       "name": "Cabaña Cristalina",
       "description": "Villa espaciosa con zona de BBQ y vista al lago, montañas y sitios emblemáticos.",
@@ -135,6 +132,16 @@
       "description": "Cabaña privada. El lugar perfecto para encontrar tranquilidad y disfrutar de vistas panorámicas de la Piedra del Peñol.",
       "hint": "Cabaña alejada; comodidades limitadas y se llena rápido - por favor reservar con anticipación.",
       "hintLinkText": "Reservar en Airbnb"
+    },
+    "AirBnb": {
+      "name": "Opciones Airbnb",
+      "description": "¡Descubre encantadoras opciones de Airbnb en la zona cercana con anfitriones locales amigables que conocen los mejores lugares!",
+      "hint": "Explora estancias únicas desde acogedores apartamentos hasta encantadoras casas con anfitriones locales."
+    },
+    "Booking": {
+      "name": "Opciones Booking.com",
+      "description": "Explora más opciones en Booking.com - desde hoteles acogedores hasta casas privadas con anfitriones locales.",
+      "hint": "Encuentra una amplia gama de alojamientos desde hoteles económicos hasta estancias de lujo."
     },
     "searchOnBooking": "Buscar en Booking",
     "searchOnAirbnb": "Buscar en Airbnb",
@@ -233,11 +240,14 @@
     "plusOneLabel": "Vendré con un acompañante (+1)",
   "accommodationLabel": "Sí, me voy a quedar y necesito acomodación. No, yo me resuelvo.",
     "connect19Label": "Vengo el 19 de Dic a Bienvenida & Conexión.",
-    "bigDayLabel": "Vengo el 20 de Dic al Gran Día",
+    "bigDayLabel": "Fiesta de Boda",
+    "imComingLabel": "Voy a venir",
     "boat21Label": "Vengo el 21 de Dic a Fiesta Blanca y Despedida",
     "boatLabel": "Me uno a la fiesta en barco (y llevo ropa blanca)",
     "messageLabel": "Mensaje (opcional)",
     "messagePlaceholder": "Necesidades dietéticas, edades de los niños, etc.",
+    "notesLabel": "Notas (cualquier dieta u otras restricciones o pistas para nosotros?)",
+    "notesPlaceholder": "Escribe aquí tus notas",
     "submitButton": "Enviar RSVP",
     "submittingButton": "Enviando...",
     "successMessage": "Actualizado correctamente.",
@@ -259,8 +269,6 @@
     { "question": "¿Hay un código de vestimenta?", "answer": "Mira la sección de atuendo de esa página." },
     { "question": "¿Los niños son bienvenidos?", "answer": "Sí, los niños son bienvenidos. Por favor informanos que asistirán." },
     { "question": "¿A quién puedo contactar si tengo preguntas?", "answer": "Por favor escríbanos a través del grupo de WhatsApp o directamente a Maria o Chris." },
-    { "question": "¿Qué debo empacar?", "answer": "Traje de baño, zapatos cómodos (sin tacones, habrá césped y mucho para caminar), ropa abrigada para la noche ya que hará frío, ropa para yoga/deportes y buena energía. La noche puede ser fría. Trae una manta si es posible." },
-    { "question": "¿Qué tal es el clima en Guatapé?", "answer": "Durante el día es agradablemente cálido; las noches pueden ser frescas. Trae algo ligero para el día y una chaqueta o suéter para la noche." },
     { "question": "¿Qué regalos?", "answer": "Queremos que sepas que el mejor regalo para nosotros es tu viaje y presencia en nuestro día especial." },
     { "question": "¿Hasta cuándo necesito confirmar mi asistencia?", "answer": "Por favor, haznoslo saber antes del 31 de octubre de 2025." },
     { "question": "¿Cómo subo fotos y videos?", "answer": "En la página de medios, haz clic en 'Haz clic para seleccionar fotos o videos' para elegir tus archivos. Puedes seleccionar varios archivos a la vez. Una vez seleccionados, haz clic en 'Subir medios' para compartirlos con nosotros." },
@@ -270,19 +278,19 @@
     "title": "Información General",
     "subtitle": "Ceremonia, recepción y todo lo demás",
     "dateTitle": "Fecha",
-  "dateMain": "19 Dic: Bienvenida y Conexión\n20 Dic: El Gran Día\n21 Dic: Fiesta Blanca y Despedida",
-  "dateLine1": "19 Dic (opcional): Bienvenida y Conexión",
-  "dateLine2": "20 Dic: El Gran Día",
-  "dateLine3": "21 Dic (opcional): Fiesta Blanca y Despedida",
+  "dateMain": "8 de agosto de 2026: El Día de Celebración",
+  "dateLine1": "8 de agosto de 2026: El Día de Celebración",
+  "dateLine2": "",
+  "dateLine3": "",
     "ceremonyTime": "",
     "showDetailsButton": "Ver Detalles",
     "dinnerTime": "Cena 19:30",
     "partyTime": "Fiesta 21:00",
     "venueTitle": "Lugar",
-    "venueName": "Casa Loma, Hotel Boutique",
-    "venueAddress1": "054447, Peñol, Antioquia",
-    "venueAddress2": "Colombia",
-    "venueMapLink": "https://maps.app.goo.gl/AJqtsKRrEcacKkfWA",
+    "venueName": "Winkmannshof",
+    "venueAddress1": "Krefeld-Linn",
+    "venueAddress2": "Alemania",
+    "venueMapLink": "https://maps.app.goo.gl/oRqvrYLijX8XYgQq6",
     "getDirections": "Cómo llegar",
     "attireTitle": "Atuendo",
   "attireWomenLabel": "Mujeres:",
@@ -307,11 +315,18 @@
     "getOverviewButtonText": "Obtener resumen",
     "getOverviewButtonLink": "#schedule"
     ,
-  "scheduleBox1Note": "Trae algo para el BBQ o snacks para compartir 🍖",
+  "scheduleBox1Note": "Dinos si tienes alguna dieta a través del formulario de RSVP o escribiendo directamente a Chris.",
   "scheduleBox2Note": "Ustedes son nuestros invitados 🥳",
   "scheduleBox3Note": "100.000 COP por persona"
   ,
-  "attireWomenShoesButton": "Zapatos mujer"
+  "attireWomenShoesButton": "Zapatos mujer",
+  "parkingTitle": "Estacionamiento",
+  "parkingOption1": "En \"Rheinbabenstraße\" (mejor opción; 5min caminando, gratis)",
+  "parkingOption1Link": "https://maps.app.goo.gl/ZhtVzJkuPxj7iAvh6",
+  "parkingOption2": "En \"Haus des kurfürstlichen Hofstiefelsmachers\" (0min caminando, limitado, posibles tarifas de estacionamiento)",
+  "parkingOption2Link": "https://maps.app.goo.gl/LfG9qJVmuBmFAp2L9",
+  "parkingOption3": "Estacionamiento Burg Linn P1 (gratis, 10min caminando)",
+  "parkingOption3Link": "https://maps.app.goo.gl/zciPXtgwzkxbPhcB8"
   },
   "story": {
     "title": "Nuestra Historia",
@@ -330,33 +345,37 @@
   },
   "schedule": {
     "title": "Horario",
-    "subtitle": "Un día lleno de amor y celebración",
+    "subtitle": "Un día de celebración y conexión",
     "days": [
       {
-        "dateLabel": "Vie, 19 dic",
-        "subtitle": "Opcional: Si te gusta - Bienvenida & Conexión 🔥",
+        "dateLabel": "Sáb, 8 ago",
+        "subtitle": "<b>El Día de Celebración 🎉</b>",
         "events": [
-          { "time": "5.30pm", "title": "Llegada de invitados y check-in", "description": "Instálate, prepárate para una hermosa tarde." },
-          { "time": "6:30pm", "title": "Bienvenida e integración", "description": "Rompamos el hielo suavemente, conozcámonos unos a otros." },
-          { "time": "7:30pm", "title": "Natilla y Buñuelos", "description": "Prueba las delicias navideñas colombianas con BBQ." }
-        ]
-      },
-      {
-        "dateLabel": "Sáb, 20 dic",
-        "subtitle": "<b>El Gran Día 🪨🌬️</b>",
-        "events": [
-          { "time": "11:00", "title": "Iglesia Guatapé", "description": "Celebra la misa de boda en la iglesia." },
-          { "time": "1:00 PM", "title": "Llegada de la Pareja", "description": "Da la bienvenida a los recién casados con aplausos." },
-          { "time": "2:00 – 7:00 PM", "title": "Almuerzo y Actividades de la Tarde", "description": "Actividades festivas para todos los invitados." }
-        ]
-      },
-      {
-        "dateLabel": "Dom, 21 dic",
-        "subtitle": "<i>Opcional: Si te gusta - </i><b>Despedida 💧</br>",
-        "events": [
-          { "time": "11:00 AM", "title": "Visita a una plantación de café", "description": "Un momento consciente para comenzar el día juntos." },
-          { "time": "12:00 PM", "title": "Tour en Tuk Tuk", "description": "Disfrutando de un paseo especial hacia Guatapé." },
-          { "time": "1:30 PM", "title": "Fiesta en Barco Blanca", "description": "Vístete de blanco y disfruta de música, baile, cócteles y la puesta de sol juntos." }
+          {
+            "time": "14:00 - 15:00",
+            "title": "Bienvenida e Integración",
+            "description": "Ejercicios afuera para conocernos, actividades relacionadas con la cultura. ¡No te pierdas esta sesión divertida!"
+          },
+          {
+            "time": "15:00",
+            "title": "Programa de Café y Pastel",
+            "description": "Presentación para que te sientas bienvenido, resumen de la boda en Colombia, perspectivas, historias divertidas y traerte de vuelta a nuestro día de boda."
+          },
+          {
+            "time": "17:00",
+            "title": "Más Ejercicios y Diversión",
+            "description": "Actividades adicionales y entretenimiento. ¡Mantente atento a los detalles!"
+          },
+          {
+            "time": "19:00",
+            "title": "Cena",
+            "description": "Disfruta de una cena servida juntos."
+          },
+          {
+            "time": "21:00 - 23:00",
+            "title": "Fiesta Abierta",
+            "description": "Espacio para celebración abierta y baile."
+          }
         ]
       }
     ]
