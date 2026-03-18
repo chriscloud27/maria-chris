@@ -69,10 +69,7 @@ export const Rsvp = () => {
               setValue('notes', data.notes || '');
               setValue('song', data.song || '');
               setValue('+1', data['+1'] || false);
-              setValue('AccommodationNeeded', data.AccommodationNeeded || false);
-              setValue('19-Connect', data['19-Connect'] || false);
               setValue('BigDay', data['BigDay'] || false);
-              setValue('21-Boat', data['21-Boat'] || false);
               setValue('whatsapp', data.whatsapp || '');
             }
           }
@@ -102,10 +99,7 @@ export const Rsvp = () => {
           setValue('notes', data.notes || '');
           setValue('song', data.song || '');
           setValue('+1', data['+1'] || false);
-          setValue('AccommodationNeeded', data.AccommodationNeeded || false);
-          setValue('19-Connect', data['19-Connect'] || false);
           setValue('BigDay', data['BigDay'] || false);
-          setValue('21-Boat', data['21-Boat'] || false);
           setValue('whatsapp', data.whatsapp || '');
           setVerifiedCode(invitationCode); // Store the verified code
           setIsVerified(true);
@@ -152,10 +146,7 @@ export const Rsvp = () => {
       notes: data.notes,
       song: data.song,
       '+1': data['+1'],
-      AccommodationNeeded: data.AccommodationNeeded,
-      '19-Connect': data['19-Connect'],
-      'BigDay': data['BigDay'], // Include BigDay field
-      '21-Boat': data['21-Boat'],
+      'BigDay': data['BigDay'],
       whatsapp: data.whatsapp,
       code: verifiedCode, // Include the verified code
     };
@@ -303,7 +294,7 @@ export const Rsvp = () => {
             <div className="mb-6">
               <h3 className="text-gray-800 text-lg font-semibold mb-4">{t('participationLabel')}</h3>
 
-              {/* BigDay headline + checkbox */}
+              {/* Wedding Party headline + checkbox */}
               <div className="mb-4">
                 <h4 className="text-gray-700 text-md font-semibold mb-2">{t('bigDayLabel')}</h4>
                 <div className="pl-2">
@@ -313,67 +304,23 @@ export const Rsvp = () => {
                       {...register('BigDay')}
                       className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
                     />
-                    <span className="text-gray-700 text-sm">{t('bigDayLabel')}</span>
+                    <span className="text-gray-700 text-sm">{t('imComingLabel')}</span>
                   </label>
                   {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
                 </div>
               </div>
 
-              {/* More options group */}
-              <div className="mb-4">
-                <h4 className="text-gray-700 text-md font-semibold mb-2">{t('moreOptionsHeading')}</h4>
-
-                {/* 19-Connect */}
-                <div className="mb-3 pl-2">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      {...register('19-Connect')}
-                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                    />
-                    <span className="text-gray-700 text-sm">{t('connect19Label')}</span>
-                  </label>
-                  {errors['19-Connect'] && <p className="text-red-500 text-xs mt-1">{errors['19-Connect'].message}</p>}
-                </div>
-
-                {/* +1 */}
-                <div className="mb-3 pl-2">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      {...register('+1')}
-                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                    />
-                    <span className="text-gray-700 text-sm">{t('plusOneLabel')}</span>
-                  </label>
-                  {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
-                </div>
-
-                {/* AccommodationNeeded */}
-                <div className="mb-3 pl-2">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      {...register('AccommodationNeeded')}
-                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                    />
-                    <span className="text-gray-700 text-sm">{t('accommodationLabel')}</span>
-                  </label>
-                  {errors['AccommodationNeeded'] && <p className="text-red-500 text-xs mt-1">{errors['AccommodationNeeded'].message}</p>}
-                </div>
-
-                {/* 21-Boat */}
-                <div className="mb-3 pl-2">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      {...register('21-Boat')}
-                      className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                    />
-                    <span className="text-gray-700 text-sm">{t('boat21Label')}</span>
-                  </label>
-                  {errors['21-Boat'] && <p className="text-red-500 text-xs mt-1">{errors['21-Boat'].message}</p>}
-                </div>
+              {/* +1 */}
+              <div className="mb-3 pl-2">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('+1')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm">{t('plusOneLabel')}</span>
+                </label>
+                {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
               </div>
             </div>
 

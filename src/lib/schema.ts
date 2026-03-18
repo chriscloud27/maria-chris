@@ -8,9 +8,7 @@ import { z } from 'zod';
 // - WhatsApp -> whatsapp (phone number)
 // - RSVP  -> rsvp (select: "Yes" | "No" | "Maybe")
 // - +1 -> '+1' (boolean) - plus one checkbox
-// - 19-Connect -> '19-Connect' (boolean) - connect event checkbox
 // - BigDay -> 'BigDay' (boolean) - main wedding day checkbox
-// - 21-Boat -> '21-Boat' (boolean) - boat event checkbox
 // - Notes -> notes (rich text)
 // - Song -> song (text)
 export const rsvpSchema = z.object({
@@ -19,10 +17,7 @@ export const rsvpSchema = z.object({
   whatsapp: z.string().optional(),
   rsvp: z.enum(['Yes', 'No', 'Maybe']).optional(),
   '+1': z.boolean().optional(),
-  AccommodationNeeded: z.boolean().optional(),
-  '19-Connect': z.boolean().optional(),
   'BigDay': z.boolean().optional(),
-  '21-Boat': z.boolean().optional(),
   notes: z.string().max(1000).optional(),
   song: z.string().max(200).optional(),
   // honeypot is present for spam protection but ignored by persistence

@@ -78,7 +78,7 @@ async function findRSVPPageIdByCode(code: string): Promise<string | null> {
 }
 
 export async function addRSVP(data: RsvpData) {
-  const { code, name, whatsapp, '19-Connect': connect19, 'BigDay': bigDay, '21-Boat': boat21, notes, song } = data;
+  const { code, name, whatsapp, '+1': plusOne, 'BigDay': bigDay, notes, song } = data;
   
   // Use code as primary identifier
   const existingPageId = code ? await findRSVPPageIdByCode(code) : null;
@@ -87,14 +87,9 @@ export async function addRSVP(data: RsvpData) {
     Name: { title: [{ text: { content: name } }] },
     ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
   // +1 is stored as a select (Yes/No) in Notion to match other event fields
-  '+1': { select: { name: data['+1'] ? 'Yes' : 'No' } },
-  AccommodationNeeded: { select: { name: data.AccommodationNeeded ? 'Yes' : 'No' } },
-  // These are informational in Notion - only set them when true to avoid
-  // sending explicit 'No' / false values which are unnecessary.
+  '+1': { select: { name: plusOne ? 'Yes' : 'No' } },
   // Persist as select options 'Yes' or 'No' - Notion will validate these as selects.
-  '19-Connect': { select: { name: connect19 ? 'Yes' : 'No' } },
   '20-BigDay': { select: { name: bigDay ? 'Yes' : 'No' } },
-  '21-Boat': { select: { name: boat21 ? 'Yes' : 'No' } },
   ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
     ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
     // Only add Code if it's provided (for new records)
@@ -188,11 +183,7 @@ export async function findRSVPByName(name: string) {
       name: getTitle(properties.Name),
       whatsapp: getPhoneNumber(properties.WhatsApp),
   '+1': propIsYes(properties['+1']),
-  AccommodationNeeded: propIsYes(properties['AccommodationNeeded']),
-  // rsvp is not stored in Notion; skip
-  '19-Connect': propIsYes(properties['19-Connect']),
   'BigDay': propIsYes(properties['20-BigDay']),
-  '21-Boat': propIsYes(properties['21-Boat']),
       notes: getRichText(properties.Notes),
       song: getRichText(properties.Song),
     };
@@ -238,10 +229,7 @@ export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'ti
       whatsapp: getPhoneNumber(properties.WhatsApp),
   // rsvp is not stored in Notion; skip
   '+1': propIsYes(properties['+1']),
-  AccommodationNeeded: propIsYes(properties['AccommodationNeeded']),
-  '19-Connect': propIsYes(properties['19-Connect']),
   'BigDay': propIsYes(properties['20-BigDay']),
-  '21-Boat': propIsYes(properties['21-Boat']),
       notes: getRichText(properties.Notes),
       song: getRichText(properties.Song),
     };
