@@ -27,11 +27,11 @@ type NotionProperties = {
   Name: { title: [{ text: { content: string } }] };
   // Email: { email: string };
   WhatsApp?: { phone_number: string };
-  '19-Connect'?: { select: { name: string } };
-  '+1'?: { checkbox: boolean };
+  '19-Connect'?: { status: { name: string } };
+  '+1'?: { status: { name: string } };
   AccommodationNeeded?: { select: { name: string } };
-  '20-BigDay'?: { checkbox: boolean };
-  '21-Boat'?: { select: { name: string } };
+  '20-BigDay'?: { status: { name: string } };
+  '21-Boat'?: { status: { name: string } };
   Notes?: { rich_text: [{ text: { content: string } }] };
   Song?: { rich_text: [{ text: { content: string } }] };
 };
@@ -84,8 +84,8 @@ export async function addRSVP(data: RsvpData) {
   const properties: NotionProperties = {
     Name: { title: [{ text: { content: name } }] },
     ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
-  '+1': { checkbox: plusOne ?? false },
-  '20-BigDay': { checkbox: bigDay ?? false },
+  '+1': { status: { name: plusOne ? 'Yes' : 'No' } },
+  '20-BigDay': { status: { name: bigDay ? 'Yes' : 'No' } },
   ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
     ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
     // Only add Code if it's provided (for new records)
@@ -124,6 +124,10 @@ function propIsYes(prop?: NotionProperty): boolean {
   if (t === 'select') {
     const selectProp = prop as Extract<NotionProperty, { type: 'select' }>;
     return String(selectProp.select?.name || '').toLowerCase() === 'yes';
+  }
+  if (t === 'status') {
+    const statusProp = prop as Extract<NotionProperty, { type: 'status' }>;
+    return String(statusProp.status?.name || '').toLowerCase() === 'yes';
   }
   if (t === 'title') {
     const titleProp = prop as Extract<NotionProperty, { type: 'title' }>;
