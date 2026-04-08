@@ -16,7 +16,7 @@ type NotionCreatePayload = {
   parent: { database_id: string };
   properties: {
     Name: { title: { text: { content: string } }[] };
-    '20-BigDay': { select: { name: string } };
+    '20-BigDay': { checkbox: boolean };
     Notes?: { rich_text: { text: { content: string } }[] };
   };
 };
@@ -50,7 +50,7 @@ test('calls notion.pages.create with expected payload including notes', async ()
   // Name property is now used for the page title
   expect(calledWith.parent.database_id).toBe('test-db-id');
   expect(calledWith.properties.Name.title[0].text.content).toBe(data.name);
-  expect(calledWith.properties['20-BigDay'].select.name).toBe('Yes');
+  expect(calledWith.properties['20-BigDay'].checkbox).toBe(true);
   expect(calledWith.properties.Notes!.rich_text[0].text.content).toBe(data.notes);
 });
 
