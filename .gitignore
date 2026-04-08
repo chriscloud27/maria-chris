@@ -34,3 +34,4 @@ build/
 
 # TypeScript build info
 tsconfig.tsbuildinfo
+.vercel

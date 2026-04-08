@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+npm run audit:check
+npm run deps:sync:check
+npm run check:deps
+npx lint-staged
