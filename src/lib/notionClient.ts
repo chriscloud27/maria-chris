@@ -27,12 +27,10 @@ type NotionProperties = {
   Name: { title: [{ text: { content: string } }] };
   // Email: { email: string };
   WhatsApp?: { phone_number: string };
-  // '+1'?: { checkbox: boolean };
-  // These are stored in Notion as select properties with options like 'Yes'/'No'.
   '19-Connect'?: { select: { name: string } };
-  '+1'?: { select: { name: string } };
+  '+1'?: { checkbox: boolean };
   AccommodationNeeded?: { select: { name: string } };
-  '20-BigDay'?: { select: { name: string } };
+  '20-BigDay'?: { checkbox: boolean };
   '21-Boat'?: { select: { name: string } };
   Notes?: { rich_text: [{ text: { content: string } }] };
   Song?: { rich_text: [{ text: { content: string } }] };
@@ -86,10 +84,8 @@ export async function addRSVP(data: RsvpData) {
   const properties: NotionProperties = {
     Name: { title: [{ text: { content: name } }] },
     ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
-  // +1 is stored as a select (Yes/No) in Notion to match other event fields
-  '+1': { select: { name: plusOne ? 'Yes' : 'No' } },
-  // Persist as select options 'Yes' or 'No' - Notion will validate these as selects.
-  '20-BigDay': { select: { name: bigDay ? 'Yes' : 'No' } },
+  '+1': { checkbox: plusOne ?? false },
+  '20-BigDay': { checkbox: bigDay ?? false },
   ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
     ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
     // Only add Code if it's provided (for new records)

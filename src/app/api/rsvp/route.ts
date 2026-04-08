@@ -30,9 +30,15 @@ export async function POST(req: NextRequest) {
       console.log('Successfully added or updated RSVP in Notion');
     } catch (pErr: unknown) {
       if (pErr instanceof Error) {
-        console.error('Notion Error:', pErr.message, JSON.stringify(pErr));
+        const notionErr = pErr as Error & { code?: string; body?: unknown; status?: number };
+        console.error('Notion Error:', pErr.message, {
+          code: notionErr.code,
+          status: notionErr.status,
+          body: notionErr.body,
+          full: JSON.stringify(pErr),
+        });
       } else {
-        console.error('Notion Error:', pErr);
+        console.error('Notion Error:', JSON.stringify(pErr));
       }
       return NextResponse.json({ error: 'Failed to save RSVP.' }, { status: 500 });
     }
