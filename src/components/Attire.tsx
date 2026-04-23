@@ -1,4 +1,4 @@
-import { FaPalette, FaChild } from "react-icons/fa";
+import { FaPalette } from "react-icons/fa";
 import { PiDressLight } from "react-icons/pi";
 import { useTranslations } from "next-intl";
 

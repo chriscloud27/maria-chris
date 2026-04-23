@@ -10,14 +10,13 @@ export const notion = new Client({ auth: notionConfig.token });
 type RsvpData = {
   code?: string;
   name: string;
-  whatsapp?: string;
+  kids?: boolean;
   '+1'?: boolean;
   AccommodationNeeded?: boolean;
   '19-Connect'?: boolean;
-  'BigDay'?: boolean;
+  'RSVP-DE'?: boolean;
   '21-Boat'?: boolean;
   notes?: string;
-  song?: string;
 };
 
 // This is the type for the properties object passed to notion.pages.create or notion.pages.update
@@ -26,14 +25,13 @@ type NotionProperties = {
   Code?: { rich_text: [{ text: { content: string } }] };
   Name: { title: [{ text: { content: string } }] };
   // Email: { email: string };
-  WhatsApp?: { phone_number: string };
+  Kids?: { multi_select: { name: string }[] };
   '19-Connect'?: { status: { name: string } };
-  '+1'?: { status: { name: string } };
+  '+1'?: { select: { name: string } };
   AccommodationNeeded?: { select: { name: string } };
-  '20-BigDay'?: { status: { name: string } };
+  'RSVP-DE'?: { select: { name: string } };
   '21-Boat'?: { status: { name: string } };
   Notes?: { rich_text: [{ text: { content: string } }] };
-  Song?: { rich_text: [{ text: { content: string } }] };
 };
 
 
@@ -76,18 +74,17 @@ async function findRSVPPageIdByCode(code: string): Promise<string | null> {
 }
 
 export async function addRSVP(data: RsvpData) {
-  const { code, name, whatsapp, '+1': plusOne, 'BigDay': bigDay, notes, song } = data;
+  const { code, name, kids, '+1': plusOne, 'RSVP-DE': bigDay, notes } = data;
   
   // Use code as primary identifier
   const existingPageId = code ? await findRSVPPageIdByCode(code) : null;
 
   const properties: NotionProperties = {
     Name: { title: [{ text: { content: name } }] },
-    ...(whatsapp && { WhatsApp: { phone_number: whatsapp } }),
-  '+1': { status: { name: plusOne ? 'Yes' : 'No' } },
-  '20-BigDay': { status: { name: bigDay ? 'Yes' : 'No' } },
+    Kids: { multi_select: kids ? [{ name: 'Yes' }] : [] },
+  '+1': { select: { name: plusOne ? 'Yes' : 'No' } },
+  'RSVP-DE': { select: { name: bigDay ? 'Yes' : 'No' } },
   ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
-    ...(song && { Song: { rich_text: [{ text: { content: song } }] } }),
     // Only add Code if it's provided (for new records)
     ...(code && !existingPageId && { Code: { rich_text: [{ text: { content: code } }] } }),
   };
@@ -133,9 +130,9 @@ function propIsYes(prop?: NotionProperty): boolean {
     const titleProp = prop as Extract<NotionProperty, { type: 'title' }>;
     return String(titleProp.title?.[0]?.plain_text || '').toLowerCase() === 'yes';
   }
-  if (t === 'rich_text') {
-    const rtProp = prop as Extract<NotionProperty, { type: 'rich_text' }>;
-    return String(rtProp.rich_text?.[0]?.plain_text || '').toLowerCase() === 'yes';
+  if (t === 'multi_select') {
+    const multiSelectProp = prop as Extract<NotionProperty, { type: 'multi_select' }>;
+    return multiSelectProp.multi_select.some(option => String(option.name || '').toLowerCase() === 'yes');
   }
   return false;
 }
@@ -176,16 +173,14 @@ export async function findRSVPByName(name: string) {
       (prop && prop.type === 'rich_text' && prop.rich_text[0]?.plain_text) || '';
     const getTitle = (prop?: NotionProperty): string => (prop && prop.type === 'title' && prop.title[0]?.plain_text) || '';
   // checkbox helper removed (not needed for select conversions below)
-    const getPhoneNumber = (prop?: NotionProperty): string => (prop && prop.type === 'phone_number' && prop.phone_number) || '';
 
     return {
       code: getRichText(properties.Code),
       name: getTitle(properties.Name),
-      whatsapp: getPhoneNumber(properties.WhatsApp),
+      kids: propIsYes(properties.Kids),
   '+1': propIsYes(properties['+1']),
-  'BigDay': propIsYes(properties['20-BigDay']),
+  'RSVP-DE': propIsYes(properties['RSVP-DE']),
       notes: getRichText(properties.Notes),
-      song: getRichText(properties.Song),
     };
   }
 
@@ -221,17 +216,15 @@ export async function findRSVPByCode(code: string, filterType: 'rich_text' | 'ti
       (prop && prop.type === 'rich_text' && prop.rich_text[0]?.plain_text) || '';
     const getTitle = (prop?: NotionProperty): string => (prop && prop.type === 'title' && prop.title[0]?.plain_text) || '';
   // checkbox helper removed (not needed for select conversions below)
-    const getPhoneNumber = (prop?: NotionProperty): string => (prop && prop.type === 'phone_number' && prop.phone_number) || '';
 
     return {
       code: getRichText(properties.Code),
       name: getTitle(properties.Name),
-      whatsapp: getPhoneNumber(properties.WhatsApp),
+      kids: propIsYes(properties.Kids),
   // rsvp is not stored in Notion; skip
   '+1': propIsYes(properties['+1']),
-  'BigDay': propIsYes(properties['20-BigDay']),
+  'RSVP-DE': propIsYes(properties['RSVP-DE']),
       notes: getRichText(properties.Notes),
-      song: getRichText(properties.Song),
     };
   }
 

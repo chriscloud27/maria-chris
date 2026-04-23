@@ -5,21 +5,19 @@ import { z } from 'zod';
 // - Code -> code (text) - invitation code identifier
 // - Name -> name (title)
 // - Email -> email
-// - WhatsApp -> whatsapp (phone number)
+// - Kids -> kids (boolean) - kids checkbox
 // - RSVP  -> rsvp (select: "Yes" | "No" | "Maybe")
 // - +1 -> '+1' (boolean) - plus one checkbox
-// - BigDay -> 'BigDay' (boolean) - main wedding day checkbox
+// - BigDay -> 'BigDay' (boolean) - main wedding day checkbox (RSVP-DE)
 // - Notes -> notes (rich text)
-// - Song -> song (text)
 export const rsvpSchema = z.object({
   code: z.string().optional(),
   name: z.string().min(1, 'Name is required'),
-  whatsapp: z.string().optional(),
+  kids: z.boolean().optional(),
   rsvp: z.enum(['Yes', 'No', 'Maybe']).optional(),
   '+1': z.boolean().optional(),
-  'BigDay': z.boolean().optional(),
+  'RSVP-DE': z.boolean().optional(),
   notes: z.string().max(1000).optional(),
-  song: z.string().max(200).optional(),
   // honeypot is present for spam protection but ignored by persistence
   honeypot: z.string().optional(),
 });

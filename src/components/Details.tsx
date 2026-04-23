@@ -1,6 +1,6 @@
 import { GoLocation } from "react-icons/go";
 import { PiDressLight } from "react-icons/pi";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export function Details() {
   const t = useTranslations("details");

@@ -5,7 +5,7 @@ import { Hotels } from "@/components/Hotels";
 import { Destinations } from "@/components/Destinations";
 import { Faq } from "@/components/Faq";
 import { Nav } from "@/components/Nav";
-import { Details } from "@/components/Details";
+// import { Details } from "@/components/Details";
 import Attire from "@/components/Attire";
 import { Schedule } from "@/components/Schedule";
 import { Story } from "@/components/Story";
@@ -19,7 +19,7 @@ import dynamic from 'next/dynamic';
 const Rsvp = dynamic(() => import("@/components/Rsvp").then(mod => ({ default: mod.Rsvp })), {
   ssr: false,
   loading: () => (
-    <div className="py-20">
+    <div className="py-20 pt-20">
       <div className="container mx-auto px-4 max-w-md">
         <div className="bg-white p-8 rounded-lg shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 text-center">
           <div className="flex justify-center items-center py-8">

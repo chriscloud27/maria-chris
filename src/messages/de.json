@@ -234,6 +234,7 @@
     "title": "Zusage 🎉",
     "invitation": "Wir können es kaum erwarten, mit euch zu feiern. Bitte gebt uns bis zum 31. Mai 2026 Bescheid.",
     "songInfo": "Musikwünsche sind willkommen! Fügt euren Lieblingstitel unten hinzu.",
+    "notesInfo": "Hinterlasst gerne eine persönliche Notiz.",
     "kidsInfo": "Kinder sind willkommen. Bitte gebt das das Alter im Nachrichtenfeld an.",
     "formTitle": "RSVP-Formular",
     "formSubtitle": "Wir senden eine Bestätigung an deine E-Mail.",
@@ -243,21 +244,18 @@
     "attendanceYes": "Gerne annehmen",
     "attendanceNo": "Leider ablehnen",
     "attendanceMaybe": "Vielleicht",
-    "songLabel": "Musikwunsch (optional)",
-    "songPlaceholder": "Künstler - Songtitel",
-    "whatsappLabel": "WhatsApp-Nummer (optional)",
-    "whatsappPlaceholder": "+49 170 123 4567",
+    "kidsLabel": "Ich bringe Kinder mit",
     "participationLabel": "",
   "plusOneLabel": "Ich bringe eine Begleitung (+1)",
     "accommodationLabel": "Ja: Ich bleibe und benötige eine Unterkunft. Nein: Ich kann selbst für meine Unterkunft sorgen.",
     "connect19Label": "Ich komme am 19. Dez zu Welcome & Connect.",
-    "bigDayLabel": "Hochzeitsfeier",
-    "imComingLabel": "Ich komme",
+    "bigDayLabel": "RSVP-DE",
+    "imComingLabel": "Ja",
     "boat21Label": "Ich komme am 21. Dez zur Weißen Party und Verabschiedung",
     "boatLabel": "Ich nehme an der Bootsparty teil (und bringe weiße Kleidung mit)",
     "messageLabel": "Nachricht (optional)",
     "messagePlaceholder": "Ernährungsbedürfnisse, Alter der Kinder, etc.",
-    "notesLabel": "Notizen (irgendwelche Ernährung oder andere Einschränkungen oder Hinweise für uns?)",
+    "notesLabel": "Notizen (Ernährung, Einschränkungen, Hinweise)",
     "notesPlaceholder": "Schreibe hier deine Notizen",
     "submitButton": "RSVP senden",
     "submittingButton": "Wird gesendet...",
@@ -308,7 +306,7 @@
     "questions": [
       {
       "question": "Gibt es eine Kleiderordnung?",
-      "answer": "Wir würden uns über festliche Kleidung freuen."
+      "answer": "Ja. Wir machen einen Vorschlag im Abschnitt Kleidung/Attire."
       },
       {
       "question": "Sind Kinder willkommen?",
@@ -320,15 +318,15 @@
       },
       {
       "question": "Welche Geschenke?",
-      "answer": "Wir möchten, dass ihr wisst, dass das größte Geschenk für uns eure Reise und eure Anwesenheit an unserem besonderen Tag ist."
+      "answer": "Das größte Geschenk für uns ist eure Anwesenheit an unserem besonderen Tag. Solltet ihr uns dennoch etwas schenken wollen, bedenkt bitte, dass wir sehr leicht leben und reisen."
       },
       {
       "question": "Bis wann muss ich meine Teilnahme bestätigen?",
-      "answer": "Bitte teilt uns dies bis zum 31. Oktober 2025 mit."
+      "answer": "Bitte teilt uns dies bis zum 17. Mai 2026 mit."
       },
       {
       "question": "Wie lade ich Fotos und Videos hoch?",
-      "answer": "Auf der Medien-Seite klicke auf 'Klicke, um Fotos oder Videos auszuwählen', um deine Dateien auszuwählen. Du kannst mehrere Dateien auf einmal auswählen. Nach der Auswahl klicke auf 'Medien hochladen', um sie mit uns zu teilen."
+      "answer": "Die Medien-Seite schalten wir kurz vorher frei. Klicke dort auf 'Medien hochladen' direkt vom Smartphone aus, um sie mit uns zu teilen."
       },
       {
       "question": "Wie lange werden meine hochgeladenen Medien verfügbar sein?",

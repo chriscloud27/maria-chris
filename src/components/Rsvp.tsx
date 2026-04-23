@@ -67,10 +67,9 @@ export const Rsvp = () => {
             const data = await res.json();
             if (data) {
               setValue('notes', data.notes || '');
-              setValue('song', data.song || '');
               setValue('+1', data['+1'] || false);
-              setValue('BigDay', data['BigDay'] || false);
-              setValue('whatsapp', data.whatsapp || '');
+              setValue('RSVP-DE', data['RSVP-DE'] || false);
+              setValue('kids', data.kids || false);
             }
           }
         } catch (error) {
@@ -97,10 +96,9 @@ export const Rsvp = () => {
         if (data) {
           setValue('name', data.name);
           setValue('notes', data.notes || '');
-          setValue('song', data.song || '');
           setValue('+1', data['+1'] || false);
-          setValue('BigDay', data['BigDay'] || false);
-          setValue('whatsapp', data.whatsapp || '');
+          setValue('RSVP-DE', data['RSVP-DE'] || false);
+          setValue('kids', data.kids || false);
           setVerifiedCode(invitationCode); // Store the verified code
           setIsVerified(true);
           console.log('Form populated after verification');
@@ -144,10 +142,9 @@ export const Rsvp = () => {
     const submitData = {
       name: data.name,
       notes: data.notes,
-      song: data.song,
       '+1': data['+1'],
-      'BigDay': data['BigDay'],
-      whatsapp: data.whatsapp,
+      'RSVP-DE': data['RSVP-DE'],
+      kids: data.kids,
       code: verifiedCode, // Include the verified code
     };
 
@@ -234,7 +231,7 @@ export const Rsvp = () => {
   }
 
   return (
-    <section id="rsvp">
+    <section id="rsvp" className="pt-32 pb-20">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-start">
         <div className="text-gray-700">
           <h2 className="text-4xl font-serif text-gray-800 mb-4">{t('title')}</h2>
@@ -245,7 +242,7 @@ export const Rsvp = () => {
               <div className="flex-shrink-0 text-purple-600 bg-purple-50 p-2 rounded-lg mr-3 mt-1">
                 <MusicIcon className="w-5 h-5" />
               </div>
-              <span>{t('songInfo')}</span>
+              <span>{t('notesInfo')}</span>
             </li>
             <li className="flex items-start">
               <div className="flex-shrink-0 text-yellow-600 bg-yellow-50 p-2 rounded-lg mr-3 mt-1">
@@ -275,21 +272,6 @@ export const Rsvp = () => {
 
             {/* Email removed */}
 
-            {/* WhatsApp number */}
-            <div className="mb-4">
-              <label htmlFor="whatsapp" className="block text-gray-700 text-sm font-bold mb-2">
-                {t('whatsappLabel')}
-              </label>
-              <input
-                id="whatsapp"
-                {...register('whatsapp')}
-                type="tel"
-                placeholder={t('whatsappPlaceholder')}
-                className={`w-full p-3 border rounded-md ${errors.whatsapp ? 'border-red-500' : 'border-gray-200'}`}
-              />
-              {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>}
-            </div>
-
             {/* Participation Section */}
             <div className="mb-6">
               <h3 className="text-gray-800 text-lg font-semibold mb-4">{t('participationLabel')}</h3>
@@ -301,12 +283,12 @@ export const Rsvp = () => {
                   <label className="flex items-center">
                     <input
                       type="checkbox"
-                      {...register('BigDay')}
+                      {...register('RSVP-DE')}
                       className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
                     />
                     <span className="text-gray-700 text-sm">{t('imComingLabel')}</span>
                   </label>
-                  {errors['BigDay'] && <p className="text-red-500 text-xs mt-1">{errors['BigDay'].message}</p>}
+                  {errors['RSVP-DE'] && <p className="text-red-500 text-xs mt-1">{errors['RSVP-DE'].message}</p>}
                 </div>
               </div>
 
@@ -321,6 +303,19 @@ export const Rsvp = () => {
                   <span className="text-gray-700 text-sm">{t('plusOneLabel')}</span>
                 </label>
                 {errors['+1'] && <p className="text-red-500 text-xs mt-1">{errors['+1'].message}</p>}
+              </div>
+
+              {/* Kids */}
+              <div className="mb-3 pl-2">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    {...register('kids')}
+                    className="mr-2 h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                  />
+                  <span className="text-gray-700 text-sm">{t('kidsLabel')}</span>
+                </label>
+                {errors.kids && <p className="text-red-500 text-xs mt-1">{errors.kids.message}</p>}
               </div>
             </div>
 
@@ -337,21 +332,6 @@ export const Rsvp = () => {
                 className="w-full p-3 border border-gray-200 rounded-md"
               />
               {errors.notes && <p className="text-red-500 text-xs mt-1">{errors.notes.message}</p>}
-            </div>
-
-            {/* Song request */}
-            <div className="mb-6">
-              <label htmlFor="song" className="block text-gray-700 text-sm font-bold mb-2">
-                {t('songLabel')}
-              </label>
-              <input
-                id="song"
-                {...register('song')}
-                type="text"
-                placeholder={t('songPlaceholder')}
-                className={`w-full p-3 border rounded-md ${errors.song ? 'border-red-500' : 'border-gray-200'}`}
-              />
-              {errors.song && <p className="text-red-500 text-xs mt-1">{errors.song.message}</p>}
             </div>
 
             {/* CO/DE removed */}
