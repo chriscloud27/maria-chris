@@ -128,3 +128,31 @@ The project includes a feature for guests to upload photos and videos to Google 
 *   `/src/lib/notionClient.ts`: Initializes the Notion client and provides the `addRSVP` function.
 *   `/src/config/notion.ts`: Contains the configuration for the Notion integration.
 *   `/test/rsvp.integration.test.ts`: Contains the end-to-end integration tests.
+
+## Backfill Notion Codes
+
+The `backfillnotioncodes` script generates and assigns unique RSVP codes to guests in your Notion database who don't already have one.
+
+### Prerequisites
+
+- Ensure your `.env.local` file is configured with `NOTION_API_KEY` and `NOTION_DATABASE_ID` (same as for the RSVP system).
+- The Notion database should have a "Code" property (Rich text type).
+
+### Running the Script
+
+```bash
+npx ts-node scripts/backfillNotionCodes.ts
+```
+
+### What it does
+
+- Queries all pages in your Notion RSVP database.
+- Checks each guest entry for an existing code in the "Code" property.
+- Generates a random unique code (format: XXXX-YYYY, e.g., 4821-XK9D) for entries without codes.
+- Updates the Notion page with the new code.
+- Skips entries that already have codes.
+- Processes all pages, handling pagination automatically.
+
+### Output
+
+The script will log its progress, showing how many pages were processed, skipped, and updated.

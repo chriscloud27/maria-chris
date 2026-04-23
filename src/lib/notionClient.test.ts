@@ -16,7 +16,9 @@ type NotionCreatePayload = {
   parent: { database_id: string };
   properties: {
     Name: { title: { text: { content: string } }[] };
-    '20-BigDay': { status: { name: string } };
+    'RSVP-DE': { select: { name: string } };
+    '+1': { select: { name: string } };
+    Kids: { multi_select: { name: string }[] };
     Notes?: { rich_text: { text: { content: string } }[] };
   };
 };
@@ -41,7 +43,7 @@ beforeEach(async () => {
 });
 
 test('calls notion.pages.create with expected payload including notes', async () => {
-  const data = { name: 'John Doe', email: 'john@example.com', BigDay: true, notes: 'See you' };
+  const data = { name: 'John Doe', 'RSVP-DE': true, notes: 'See you', '+1': false, kids: false };
   await addRSVP(data);
 
   expect(notion.pages.create).toHaveBeenCalledTimes(1);
@@ -50,13 +52,13 @@ test('calls notion.pages.create with expected payload including notes', async ()
   // Name property is now used for the page title
   expect(calledWith.parent.database_id).toBe('test-db-id');
   expect(calledWith.properties.Name.title[0].text.content).toBe(data.name);
-  expect(calledWith.properties['20-BigDay'].status.name).toBe('Yes');
+  expect(calledWith.properties['RSVP-DE'].select.name).toBe('Yes');
   expect(calledWith.properties.Notes!.rich_text[0].text.content).toBe(data.notes);
 });
 
 test('omits Notes when notes not provided', async () => {
   notion.pages.create = jest.fn().mockResolvedValue({});
-  const data = { name: 'Jane', BigDay: false };
+  const data = { name: 'Jane', 'RSVP-DE': false, '+1': false, kids: false };
   await addRSVP(data);
 
   const calledWith = notion.pages.create.mock.calls[0][0];
