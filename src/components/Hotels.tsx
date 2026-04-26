@@ -27,6 +27,10 @@ export const Hotels = () => {
     Booking: {
       bookingLink: "https://booking.com/mywishlist.html?wl=0d047fa6e3e74881afc5fe95210e08ce",
     },
+    HotelBenger: {
+      bookingLink: "https://www.hotel-benger.de/book-online/",
+      location: "https://maps.app.goo.gl/dHWvqSy4K1Ek5Zbf8",
+    },
   };
 
   const options = [
@@ -39,6 +43,11 @@ export const Hotels = () => {
       titleKey: 'option2Title',
       image: '/viajero.png',
       places: ['Booking'],
+    },
+    {
+      titleKey: 'option3Title',
+      image: '/hotel-benger.jpg',
+      places: ['HotelBenger'],
     },
   ];
 

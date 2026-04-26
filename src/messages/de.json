@@ -67,6 +67,7 @@
     "subtitle": "Wir teilen einige Optionen, die du in Betracht ziehen kannst. Du kannst natürlich auch andere Unterkünfte in der Nähe des Veranstaltungsorts erkunden, die besser zu deinem Geschmack oder Budget passen - es gibt viele Möglichkeiten.",
     "option1Title": "Option $",
     "option2Title": "Option $$",
+    "option3Title": "Option $$$",
     "seeMore": "Mehr anzeigen",
     "bookingLinkText": "Mehr Details",
     "mapText": "Mehr Details",
@@ -120,6 +121,11 @@
       "name": "Booking.com-Optionen",
       "description": "Entdecke mehr Optionen auf Booking.com - von gemütlichen Hotels bis zu privaten Unterkünften bei lokalen Gastgebern.",
       "hint": "Finde eine große Auswahl an Unterkünften von budgetfreundlichen Hotels bis hin zu Luxus-Unterkünften."
+    },
+    "HotelBenger": {
+      "name": "Hotel Benger",
+      "description": "Charmantes Hotel im Herzen von Krefeld-Bockum. Historisches Gebäude mit modernem Komfort, kostenlosem WLAN und Parkplätzen vor Ort.",
+      "hint": "10% Rabatt bei Direktbuchung – nah am Hochzeitsort in Krefeld."
     },
     "searchOnBooking": "Bei Booking suchen",
     "searchOnAirbnb": "Bei Airbnb suchen",
