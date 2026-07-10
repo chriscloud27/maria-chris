@@ -29,7 +29,7 @@ export const Hotels = () => {
     },
     HotelBenger: {
       bookingLink: "https://www.hotel-benger.de/book-online/",
-      location: "https://maps.app.goo.gl/dHWvqSy4K1Ek5Zbf8",
+      location: "https://maps.app.goo.gl/wY8Zii2EMRH9PhmL9",
     },
   };
 

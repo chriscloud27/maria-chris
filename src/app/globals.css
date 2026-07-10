@@ -54,6 +54,14 @@
 }
 
 :root {
+  --font-playfair-display: 'Playfair Display', Georgia, serif;
+  --font-cormorant-garamond: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter Variable', 'Inter', sans-serif;
+  --font-nunito: 'Nunito Variable', 'Nunito', sans-serif;
+  --font-great-vibes: 'Great Vibes', cursive;
+  --font-dancing-script: 'Dancing Script Variable', 'Dancing Script', cursive;
+  --font-jetbrains-mono: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+
   --radius: 0.625rem;
   --background: #F9F9F8; /* Soft White */
   --foreground: #1B1B1B; /* Elegant Black */

@@ -34,4 +34,5 @@ build/
 
 # TypeScript build info
 tsconfig.tsbuildinfo
+next-env.d.ts
 .vercel

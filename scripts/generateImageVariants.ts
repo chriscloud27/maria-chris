@@ -1,4 +1,4 @@
-import { google } from 'googleapis';
+import { google, drive_v3 } from 'googleapis';
 import sharp from 'sharp';
 import * as dotenv from 'dotenv';
 import { Readable } from 'stream';
@@ -36,7 +36,7 @@ const SUBFOLDERS = {
 const subfolderCache = new Map<string, string>();
 
 // Get or create a subfolder in Google Drive
-async function getOrCreateSubfolder(drive: any, parentFolderId: string, folderName: string): Promise<string> {
+async function getOrCreateSubfolder(drive: drive_v3.Drive, parentFolderId: string, folderName: string): Promise<string> {
   const cacheKey = `${parentFolderId}_${folderName}`;
   
   if (subfolderCache.has(cacheKey)) {
@@ -70,7 +70,7 @@ async function getOrCreateSubfolder(drive: any, parentFolderId: string, folderNa
 }
 
 // Download file from Google Drive
-async function downloadFile(drive: any, fileId: string): Promise<Buffer> {
+async function downloadFile(drive: drive_v3.Drive, fileId: string): Promise<Buffer> {
   const response = await drive.files.get(
     { fileId, alt: 'media' },
     { responseType: 'stream' }
@@ -115,7 +115,7 @@ async function generateImageVariants(buffer: Buffer, fileName: string) {
 
 // Upload buffer to Google Drive
 async function uploadBufferToDrive(
-  drive: any,
+  drive: drive_v3.Drive,
   buffer: Buffer,
   fileName: string,
   mimeType: string,
@@ -155,7 +155,7 @@ async function uploadBufferToDrive(
 }
 
 // Move file to a folder
-async function moveFile(drive: any, fileId: string, fromFolderId: string, toFolderId: string) {
+async function moveFile(drive: drive_v3.Drive, fileId: string, fromFolderId: string, toFolderId: string) {
   await drive.files.update({
     fileId: fileId,
     addParents: toFolderId,
@@ -165,7 +165,7 @@ async function moveFile(drive: any, fileId: string, fromFolderId: string, toFold
 }
 
 // Process a folder
-async function processFolderImages(drive: any, folderId: string, folderName: string) {
+async function processFolderImages(drive: drive_v3.Drive, folderId: string, folderName: string) {
   console.log(`\n========================================`);
   console.log(`Processing folder: ${folderName}`);
   console.log(`========================================\n`);

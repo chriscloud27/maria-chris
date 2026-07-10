@@ -1,152 +1,103 @@
-import { FaPalette } from "react-icons/fa";
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { PiDressLight } from "react-icons/pi";
 import { useTranslations } from "next-intl";
 
+function renderBoldLabel(s: string) {
+  const str = String(s);
+  if (/<\d+>/.test(str)) {
+    const html = str
+      .replace(/<(\d+)>(.*?)<\/\1>/g, "<strong>$2</strong>")
+      .replace(/<(\d+)>(.*?)<\1>/g, "<strong>$2</strong>");
+    return <p className="text-base text-gray-800 mb-1" dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+  return <p className="text-base text-gray-800 mb-1">{str}</p>;
+}
+
 export default function Attire() {
   const t = useTranslations("details");
+  const [open, setOpen] = useState(false);
+
+  const close = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open, close]);
 
   return (
     <section className="py-16">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-serif font-semibold mb-2">{t("attireTitle")}</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
-        <p className="text-lg text-gray-700">{t("attireNote")}</p>
+      <div className="container mx-auto px-4 max-w-lg">
+        <div className="bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 p-8">
+        {/* Icon */}
+        <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-full border border-stone-300 bg-stone-50">
+          <PiDressLight className="text-stone-600 text-3xl" />
+        </div>
+
+        {/* Title */}
+        <h2 className="text-3xl font-serif font-bold mb-1 text-stone-900">{t("attireTitle")}</h2>
+        <div className="w-20 h-0.5 bg-stone-300 mb-6" />
+
+        {/* Women */}
+        {renderBoldLabel(t("attireWomen"))}
+        <p className="text-base text-gray-700 mb-4">{t("attireWomenClothes")}</p>
+
+        {/* Men */}
+        {renderBoldLabel(t("attireMen"))}
+        <p className="text-base text-gray-700 mb-6">{t("attireMenClothes")}</p>
+
+        {/* Zoom button */}
+        <button
+          onClick={() => setOpen(true)}
+          className="mb-4 px-5 py-2 rounded border border-stone-400 text-stone-700 bg-white hover:bg-stone-50 font-medium transition text-base"
+        >
+          {t("attireZoomButton")}
+        </button>
+
+        {/* Thumbnail */}
+        <div
+          className="cursor-pointer w-44 rounded-xl overflow-hidden shadow border border-stone-200"
+          onClick={() => setOpen(true)}
+        >
+          <Image
+            src="/attire.jpg"
+            alt="Attire guide"
+            width={176}
+            height={220}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 flex flex-col md:flex-row gap-6 justify-center">
-        {/* Colors Card (Box 1) */}
-  <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 py-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-8">
-          <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
-            <FaPalette className="text-green-900 text-2xl" />
-          </div>
-          <h3 className="text-xl font-bold mb-2">{t("attireOverview")}</h3>
-          <p className="text-sm leading-relaxed space-y-1 mb-4">{t("attireColors")}</p>
-          <div className="mt-auto">
-            <a
-              href="https://au.pinterest.com/pin/6685099441633578/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
+      {/* Lightbox */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={close}
+        >
+          <div className="relative max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={close}
+              className="absolute -top-10 right-0 text-white text-2xl font-bold hover:text-stone-300"
+              aria-label="Close"
             >
-              {t("attireExampleButton")}
-            </a>
-            
+              ✕
+            </button>
+            <Image
+              src="/attire.jpg"
+              alt="Attire guide"
+              width={1200}
+              height={900}
+              className="w-full h-auto rounded-xl"
+            />
           </div>
         </div>
-
-        {/* Cloths Card (Box 2) */}
-  <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 py-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-8">
-          <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
-            <PiDressLight className="text-green-900 text-2xl" />
-          </div>
-          <h3 className="text-xl font-bold mb-2">{t("attireExampleTitle")}</h3>
-          <div className="mb-2">
-            {/*
-              Support two patterns in translations:
-              1) Numeric element markers like <0>text</0> or (sometimes) <0>text<0>
-                 - Treat the enclosed text as bold. These are often emitted by
-                   translation tooling that represents elements as numeric tags.
-              2) Legacy colon-based label formatting: "Label: rest"
-                 - Keep existing behavior where the portion before the first ':'
-                   is rendered bold.
-            */}
-            {(() => {
-              const renderWithMarkersOrColon = (s: string | undefined, extraClass = "mb-2") => {
-                if (!s || s.trim().length === 0) return null;
-                const str = String(s);
-
-                // If the translation contains numeric markers like <0>, convert them
-                // to <strong> so we can render the HTML. Support either closing
-                // form </0> or the uncommon shorthand <0>...<0>.
-                if (/<\d+>/.test(str)) {
-                  const html = str
-                    .replace(/<(\d+)>(.*?)<\/\1>/g, '<strong>$2</strong>')
-                    .replace(/<(\d+)>(.*?)<\1>/g, '<strong>$2</strong>');
-                  return (
-                    <p
-                      className={`text-sm text-gray-600 ${extraClass}`}
-                      // translations are local/trusted; render the small HTML snippet
-                      dangerouslySetInnerHTML={{ __html: html }}
-                    />
-                  );
-                }
-
-                // Fallback: keep previous colon-based bold label behavior
-                const parts = str.split(":");
-                if (parts.length > 1) {
-                  const label = parts.shift();
-                  const rest = parts.join(":");
-                  return (
-                    <p className={`text-sm text-gray-600 ${extraClass}`}>
-                      <strong>{label}:</strong>
-                      {rest}
-                    </p>
-                  );
-                }
-
-                return <p className={`text-sm text-gray-600 ${extraClass}`}>{str}</p>;
-              };
-
-              return (
-                <>
-                  {renderWithMarkersOrColon(t("attireWomen"))}
-                  {renderWithMarkersOrColon(t("attireMen"))}
-                  {renderWithMarkersOrColon(t("attireKids"), "mb-3")}
-                </>
-              );
-            })()}
-          </div>
-          <div className="mt-auto flex gap-2">
-            <a
-              href="https://au.pinterest.com/pin/4151824652621908/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-            >
-              {t("attireWomenMenButton")}
-            </a>
-            <a
-              href="https://www.pinterest.com/pin/138907969754227796"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-            >
-              {t("attireKidsButton")}
-            </a>
-            <a
-              href="https://www.pinterest.com/pin/291185932180375333"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-            >
-              {t("attireWomenShoesButton")}
-            </a>
-            
-          </div>
-        </div>
-
-        {/* White Boat Party Card (Box 3) - Commented out as there's no white boat party */}
-        {/*
-  <div className="flex-1 bg-white rounded-2xl shadow shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 border border-purple-100 py-8 flex flex-col items-start w-full max-w-sm mx-auto px-4 sm:px-8">
-          <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full border border-green-900/30">
-            <FaChild className="text-green-900 text-2xl" />
-          </div>
-          <h3 className="text-xl font-bold mb-2">{t("attireKidsTitle")}</h3>
-          <p className="text-sm text-gray-600 mb-4">{t("attireBoatText")}</p>
-          <div className="mt-auto">
-            <a
-              href="https://au.pinterest.com/pin/107804985306291399"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 rounded border border-green-900/30 text-green-900 bg-green-50 hover:bg-green-100 font-medium transition text-sm"
-            >
-              {t("attireMoreDetailsButton")}
-            </a>
-            
-          </div>
-        </div>
-        */}
-      </div>
+      )}
     </section>
   );
 }

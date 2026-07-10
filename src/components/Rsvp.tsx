@@ -55,6 +55,7 @@ export const Rsvp = () => {
 
   const statusRef = useRef<HTMLDivElement | null>(null);
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const nameValue = watch('name');
   const debouncedName = useDebounce(nameValue, 500);
 

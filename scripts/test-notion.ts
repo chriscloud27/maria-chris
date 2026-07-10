@@ -18,12 +18,12 @@ async function main() {
     // Print some basic info to confirm
     console.log('Database id:', notionConfig.databaseId);
     // Attempt to show the title (may be nested)
-    // @ts-ignore
-    const titleProp = Array.isArray(db.title) ? db.title.map((t: any) => t.plain_text).join('') : undefined;
+    // @ts-expect-error — db.title is not typed in all SDK versions
+    const titleProp = Array.isArray(db.title) ? db.title.map((t: { plain_text: string }) => t.plain_text).join('') : undefined;
     if (titleProp) console.log('Database title:', titleProp);
     process.exit(0);
-  } catch (err: any) {
-    console.error('Notion connection failed:', err?.message || err);
+  } catch (err: unknown) {
+    console.error('Notion connection failed:', err instanceof Error ? err.message : err);
     process.exit(2);
   }
 }

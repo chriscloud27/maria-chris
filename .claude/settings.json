@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/next-intl/package.json'\\).version\\)\")",
+      "Bash(node -e \"const m = require\\('/Users/christianweber/Documents/Github/wedding-landing-page/node_modules/next-intl/middleware'\\); console.log\\(Object.keys\\(m\\)\\)\")",
+      "Bash(npx tsc *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); deps=d.get\\('dependencies',{}\\); print\\([k for k in deps if 'vercel' in k.lower\\(\\)]\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); deps={**d.get\\('dependencies',{}\\),**d.get\\('peerDependencies',{}\\),**d.get\\('optionalDependencies',{}\\)}; print\\(json.dumps\\(deps, indent=2\\)\\)\")"
     ]
   }
 }

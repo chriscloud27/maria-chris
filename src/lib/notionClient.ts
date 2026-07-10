@@ -25,9 +25,9 @@ type NotionProperties = {
   Code?: { rich_text: [{ text: { content: string } }] };
   Name: { title: [{ text: { content: string } }] };
   // Email: { email: string };
-  Kids?: { multi_select: { name: string }[] };
+  Kids?: { number: number };
   '19-Connect'?: { status: { name: string } };
-  '+1'?: { select: { name: string } };
+  '+1'?: { number: number };
   AccommodationNeeded?: { select: { name: string } };
   'RSVP-DE'?: { select: { name: string } };
   '21-Boat'?: { status: { name: string } };
@@ -81,8 +81,8 @@ export async function addRSVP(data: RsvpData) {
 
   const properties: NotionProperties = {
     Name: { title: [{ text: { content: name } }] },
-    Kids: { multi_select: kids ? [{ name: 'Yes' }] : [] },
-  '+1': { select: { name: plusOne ? 'Yes' : 'No' } },
+    Kids: { number: kids ? 1 : 0 },
+  '+1': { number: plusOne ? 1 : 0 },
   'RSVP-DE': { select: { name: bigDay ? 'Yes' : 'No' } },
   ...(notes && { Notes: { rich_text: [{ text: { content: notes } }] } }),
     // Only add Code if it's provided (for new records)
@@ -114,6 +114,10 @@ type NotionProperty = PageObjectResponse['properties'][string];
 function propIsYes(prop?: NotionProperty): boolean {
   if (!prop) return false;
   const t = (prop as { type?: string }).type;
+  if (t === 'number') {
+    const numProp = prop as Extract<NotionProperty, { type: 'number' }>;
+    return numProp.number === 1;
+  }
   if (t === 'checkbox') {
     const checkboxProp = prop as Extract<NotionProperty, { type: 'checkbox' }>;
     return Boolean(checkboxProp.checkbox);

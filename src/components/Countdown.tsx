@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import confetti from "canvas-confetti";
 
@@ -35,7 +35,7 @@ interface CountdownProps {
 const Countdown = ({ targetDate, onCountdownFinish }: CountdownProps) => {
   // Start with null so server-render and initial client render match.
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
-  const [hasTriggeredConfetti, setHasTriggeredConfetti] = useState(false);
+  const hasTriggeredConfetti = useRef(false);
   const [isInitialized, setIsInitialized] = useState(false);
   const t = useTranslations("countdown");
 
@@ -56,8 +56,8 @@ const Countdown = ({ targetDate, onCountdownFinish }: CountdownProps) => {
 
   useEffect(() => {
     // Trigger confetti ONLY when countdown reaches zero (not on initial load)
-    if (isInitialized && !timeLeft && !hasTriggeredConfetti) {
-      setHasTriggeredConfetti(true);
+    if (isInitialized && !timeLeft && !hasTriggeredConfetti.current) {
+      hasTriggeredConfetti.current = true;
       onCountdownFinish?.();
       
       // Fireworks effect

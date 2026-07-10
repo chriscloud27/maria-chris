@@ -17,8 +17,8 @@ type NotionCreatePayload = {
   properties: {
     Name: { title: { text: { content: string } }[] };
     'RSVP-DE': { select: { name: string } };
-    '+1': { select: { name: string } };
-    Kids: { multi_select: { name: string }[] };
+    '+1': { number: number };
+    Kids: { number: number };
     Notes?: { rich_text: { text: { content: string } }[] };
   };
 };
@@ -53,6 +53,8 @@ test('calls notion.pages.create with expected payload including notes', async ()
   expect(calledWith.parent.database_id).toBe('test-db-id');
   expect(calledWith.properties.Name.title[0].text.content).toBe(data.name);
   expect(calledWith.properties['RSVP-DE'].select.name).toBe('Yes');
+  expect(calledWith.properties['+1'].number).toBe(0);
+  expect(calledWith.properties.Kids.number).toBe(0);
   expect(calledWith.properties.Notes!.rich_text[0].text.content).toBe(data.notes);
 });
 

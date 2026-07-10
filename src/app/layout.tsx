@@ -1,65 +1,18 @@
 import type { Metadata } from "next";
-import { 
-  Playfair_Display, 
-  Cormorant_Garamond, 
-  Great_Vibes, 
-  Dancing_Script,
-  Inter,
-  Nunito,
-  JetBrains_Mono
-} from "next/font/google";
+import '@fontsource/playfair-display/400.css';
+import '@fontsource/playfair-display/700.css';
+import '@fontsource/cormorant-garamond/300.css';
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/700.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/nunito';
+import '@fontsource/great-vibes/400.css';
+import '@fontsource-variable/dancing-script';
+import '@fontsource-variable/jetbrains-mono';
 import "./globals.css";
 import content from '@/content/wedding.json';
-
-// Heading Fonts (Serif, elegant, festlich)
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair-display",
-  display: 'swap',
-});
-
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant-garamond",
-  display: 'swap',
-});
-
-// Body Fonts (Sans-Serif, modern, klar)
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: 'swap',
-});
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-nunito",
-  display: 'swap',
-});
-
-// Monospace Font
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: 'swap',
-});
-
-// Accent Fonts (Script/Handwritten)
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-great-vibes",
-  display: 'swap',
-});
-
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-dancing-script",
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "Maria and Chris",
@@ -73,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${playfairDisplay.variable} ${cormorantGaramond.variable} ${inter.variable} ${nunito.variable} ${greatVibes.variable} ${dancingScript.variable} ${jetbrainsMono.variable} font-sans antialiased`}
-      >
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

@@ -5,10 +5,9 @@ import { useRouter, usePathname } from '@/navigation';
 import { useTransition, useState, useRef, useEffect } from 'react';
 import DEFlag from './icons/DEFlag';
 import ESFlag from './icons/ESFlag';
-import USFlag from './icons/USFlag';
 
 const locales: { code: 'en' | 'de' | 'es'; name: string; flag: React.ComponentType<React.SVGProps<SVGSVGElement>>; }[] = [
-  { code: 'en', name: 'English', flag: USFlag },
+  // { code: 'en', name: 'English', flag: USFlag },
   { code: 'de', name: 'Deutsch', flag: DEFlag },
   { code: 'es', name: 'Español', flag: ESFlag },
 ];

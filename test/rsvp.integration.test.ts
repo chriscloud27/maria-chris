@@ -34,13 +34,13 @@ test('End-to-end RSVP submission', async ({ page }) => {
   });
 
   expect(response.results.length).toBe(1);
-  const rsvpEntry = response.results[0] as any; // Adjust type if needed
-  expect(rsvpEntry.properties.Title.title[0].plain_text).toBe('Integration Test User');
+  const rsvpEntry = response.results[0] as { id: string; properties: Record<string, { title?: { plain_text: string }[]; email?: string; select?: { name: string }; rich_text?: { plain_text: string }[] }> };
+  expect(rsvpEntry.properties.Title.title![0].plain_text).toBe('Integration Test User');
   expect(rsvpEntry.properties.Email.email).toBe('test@example.com');
-  expect(rsvpEntry.properties.RSVP.select.name).toBe('Yes');
+  expect(rsvpEntry.properties.RSVP.select!.name).toBe('Yes');
   // Notes property might be undefined, so check if it exists first
   if (rsvpEntry.properties.Notes) {
-    expect(rsvpEntry.properties.Notes.rich_text[0].plain_text).toBe('Integration test notes');
+    expect(rsvpEntry.properties.Notes.rich_text![0].plain_text).toBe('Integration test notes');
   }
 
   // 6. Clean up the test data (delete the entry from Notion)

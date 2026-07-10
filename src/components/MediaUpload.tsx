@@ -37,20 +37,37 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
   const [selectedMedia, setSelectedMedia] = useState<MediaFile | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playMode, setPlayMode] = useState<'order' | 'random'>('order');
-  const [lastViewedIndex, setLastViewedIndex] = useState(0);
+  const lastViewedIndex = useRef(0);
   const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number; status: string } | null>(null);
   const [uploadController, setUploadController] = useState<AbortController | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (!files || files.length === 0) {
-      setPreviewUrls([]);
-      return;
-    }
+  const convertHeicToJpg = async (file: File): Promise<File> => {
+    try {
+      const heic2any = (await import('heic2any')).default;
+      const convertedBlob = await heic2any({
+        blob: file,
+        toType: 'image/jpeg',
+        quality: 0.8
+      }) as Blob;
 
+      return new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.jpg'), {
+        type: 'image/jpeg',
+        lastModified: Date.now(),
+      });
+    } catch {
+      throw new Error('Failed to convert HEIC image');
+    }
+  };
+
+  useEffect(() => {
     const generatePreviews = async () => {
+      if (!files || files.length === 0) {
+        setPreviewUrls([]);
+        return;
+      }
       const urls: string[] = [];
       
       for (const file of Array.from(files)) {
@@ -186,24 +203,6 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
       
       reader.onerror = () => reject(new Error('Failed to read file'));
     });
-  };
-
-  const convertHeicToJpg = async (file: File): Promise<File> => {
-    try {
-      const heic2any = (await import('heic2any')).default;
-      const convertedBlob = await heic2any({
-        blob: file,
-        toType: 'image/jpeg',
-        quality: 0.8
-      }) as Blob;
-      
-      return new File([convertedBlob], file.name.replace(/\.(heic|heif)$/i, '.jpg'), {
-        type: 'image/jpeg',
-        lastModified: Date.now(),
-      });
-    } catch {
-      throw new Error('Failed to convert HEIC image');
-    }
   };
 
   const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -454,7 +453,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
     if (selectedMedia) {
       const currentIndex = gallery.findIndex(item => item.id === selectedMedia.id);
       if (currentIndex !== -1) {
-        setLastViewedIndex(currentIndex);
+        lastViewedIndex.current = currentIndex;
       }
     }
   }, [selectedMedia, gallery]);
@@ -630,7 +629,7 @@ export function MediaUpload({ eventId, apiBaseUrl, title, description }: MediaUp
                 if (gallery.length > 0) {
                   // If not in order mode or at the end, start from beginning
                   // Otherwise resume from last viewed position
-                  const startIndex = playMode !== 'order' || lastViewedIndex >= gallery.length - 1 ? 0 : lastViewedIndex;
+                  const startIndex = playMode !== 'order' || lastViewedIndex.current >= gallery.length - 1 ? 0 : lastViewedIndex.current;
                   setSelectedMedia(gallery[startIndex]);
                   setIsPlaying(true);
                 }
