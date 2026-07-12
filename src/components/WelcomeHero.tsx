@@ -10,9 +10,9 @@ export const WelcomeHero = () => {
       </h1>
 
       {/* Bilingual subtitle */}
-      <p className="font-heading text-lg md:text-xl tracking-[0.1em] text-muted-foreground mb-12 text-center">
+      <h1 className="font-script font-normal text-3xl md:text-4xl lg:text-5xl mb-8 text-center leading-tight">
         Bienvenidos!
-      </p>
+      </h1>
 
       {/* Intro text - bilingual */}
       <div className="text-center mb-12">
@@ -47,10 +47,10 @@ export const WelcomeHero = () => {
 
       {/* Closing message - bilingual, script font, teal color */}
       <div className="text-center">
-        <p className="font-script text-lg md:text-xl text-muted-foreground italic">
+        <p className="font-script text-lg md:text-3xl text-muted-foreground">
           Schön, dass ihr da seid
         </p>
-        <p className="font-script text-lg md:text-xl text-muted-foreground italic">
+        <p className="font-script text-lg md:text-3xl text-muted-foreground">
           Es un placer tenerte aquí
         </p>
       </div>
