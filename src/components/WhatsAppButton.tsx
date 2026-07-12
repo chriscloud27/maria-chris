@@ -3,7 +3,7 @@
 import WhatsAppIcon from './icons/WhatsAppIcon';
 
 const WhatsAppButton = () => {
-  const whatsappLink = "https://chat.whatsapp.com/CDWsUTuLmZV5hVYfmcs4Hy";
+  const whatsappLink = "https://chat.whatsapp.com/IUsLSxoLMyMBfavdScI9vG?mode=gi_t";
 
   return (
     <a

@@ -63,7 +63,7 @@ export default function Index() {
       {/* Spacer div to prevent content from being hidden behind fixed header */}
       <div className="h-20"></div>
       <main>
-        {/* After the countdown stopped: 
+        {/* After the countdown stopped:
             Hide: schedule, attire, locationexcursions, hotels, arrival, rsvp
             Show: confetti effect (done in Countdown.tsx)
         */}

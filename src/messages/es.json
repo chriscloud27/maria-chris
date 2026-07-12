@@ -73,7 +73,7 @@
     },
     "localTreats": {
       "title": "Delicias Locales",
-      "description": "Prueba especialidades tradicionales alemanas y favoritos locales"
+      "description": "Festival de Castillo, Trajes Tradicionales y Patrimonio Krefeld-Linn 2026"
     },
     "language": {
       "title": "Idioma",
@@ -360,29 +360,24 @@
         "subtitle": "<b>El Día de Celebración 🎉</b>",
         "events": [
           {
-            "time": "14:00 - 15:00",
-            "title": "Bienvenida e Integración",
-            "description": "Ejercicios afuera para conocernos, actividades relacionadas con la cultura. ¡No te pierdas esta sesión divertida!"
+            "time": "14:45",
+            "title": "Llegada y Bienvenida",
+            "description": "Las puertas están abiertas — entra, ponte cómodo y deja que comience la celebración."
           },
           {
             "time": "15:00",
-            "title": "Programa de Café y Pastel",
-            "description": "Presentación para que te sientas bienvenido, resumen de la boda en Colombia, perspectivas, historias divertidas y traerte de vuelta a nuestro día de boda."
-          },
-          {
-            "time": "17:00",
-            "title": "Más Ejercicios y Diversión",
-            "description": "Actividades adicionales y entretenimiento. ¡Mantente atento a los detalles!"
+            "title": "Café, Pastel y Programa",
+            "description": "Disfruta de café y pastel mientras te presentamos el programa del día y compartimos momentos muy especiales de nuestra vida."
           },
           {
             "time": "19:00",
-            "title": "Cena",
-            "description": "Disfruta de una cena servida juntos."
+            "title": "Cena y Programa",
+            "description": "Lasst uns stärken, um den Abend gemeinsam einzuläuten"
           },
           {
-            "time": "21:00 - 23:00",
-            "title": "Fiesta Abierta",
-            "description": "Espacio para celebración abierta y baile."
+            "time": "23:00",
+            "title": "Cierre",
+            "description": "El día estará lleno de emoción, alegría y amor. Encontraremos el momento perfecto para despedirnos juntos."
           }
         ]
       }

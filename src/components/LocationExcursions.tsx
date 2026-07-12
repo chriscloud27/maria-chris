@@ -32,7 +32,7 @@ const TravelTip = ({
 export const LocationExcursions = () => {
   const tLocation = useTranslations('location');
   const tTips = useTranslations('travelTips');
-  const tDetails = useTranslations('details');
+  // const tDetails = useTranslations('details');
 
   const tips = [
     {
@@ -48,15 +48,13 @@ export const LocationExcursions = () => {
     {
       icon: <Gift className="w-5 h-5" />,
       title: tTips('localTreats.title'),
-      description: tTips('localTreats.description'),
+      description: `${tTips('localTreats.description')}<p class="mb-2"><a href="https://www.instagram.com/p/DYmLjjGDp3J/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Instagram</a></p>`,
     },
     {
       icon: <Car className="w-5 h-5" />,
       title: tTips('parking.title'),
       description: `
-        <p class="mb-2"><a href="${tDetails('parkingOption1Link')}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${tDetails('parkingOption1')}</a></p>
-        <p class="mb-2"><a href="${tDetails('parkingOption2Link')}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${tDetails('parkingOption2')}</a></p>
-        <p><a href="${tDetails('parkingOption3Link')}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${tDetails('parkingOption3')}</a></p>
+        <p class="mb-2"><a href="https://www.google.com/maps/@51.3356039,6.6356745,17z/data=!4m3!11m2!2smek9cE5tN1Gob9HzXjNMFA!3e3?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">Parkplatzübersicht Google Maps</a></p>
       `,
     },
     {

@@ -73,7 +73,7 @@
     },
     "localTreats": {
       "title": "Local Treats",
-      "description": "Try traditional German specialties and local favorites"
+      "description": "Burg-, Trachten- und Heimatfest Krefeld-Linn 2026"
     },
     "language": {
       "title": "Language",
@@ -417,29 +417,24 @@
         "subtitle": "<b>The Celebration Day 🎉</b>",
         "events": [
           {
-            "time": "2:00 - 3:00 PM",
-            "title": "Welcome & Integration",
-            "description": "Exercises outside to get to know each other, culture-related activities. Don't miss this fun session!"
+            "time": "2:45 PM",
+            "title": "Arrival and Welcome",
+            "description": "The doors are open — come in, settle in, and let the celebration begin."
           },
           {
             "time": "3:00 PM",
-            "title": "Coffee & Cake Program",
-            "description": "Presentation to feel welcome, overview of the wedding in Colombia, insights, fun stories, and bringing you back to our wedding day."
-          },
-          {
-            "time": "5:00 PM",
-            "title": "More Exercises & Fun",
-            "description": "Additional activities and entertainment. Stay tuned for details!"
+            "title": "Coffee, Cake & Program",
+            "description": "Enjoy coffee and cake while we introduce you our program of the day being part of very special moments of our life."
           },
           {
             "time": "7:00 PM",
-            "title": "Dinner",
-            "description": "Enjoy a served dinner together."
+            "title": "Dinner & Program",
+            "description": "Lasst uns stärken, um den Abend gemeinsam einzuläuten"
           },
           {
-            "time": "9:00 - 11:00 PM",
-            "title": "Open Party",
-            "description": "Space for open celebration and dancing."
+            "time": "11:00 PM",
+            "title": "End",
+            "description": "The day will be full of excitement, joy, and love. We will find a great moment to wrap it up."
           }
         ]
       }

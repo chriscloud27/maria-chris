@@ -296,7 +296,7 @@
     },
     "localTreats": {
       "title": "Lokale Spezialitäten",
-      "description": "Probiere traditionelle deutsche Spezialitäten und lokale Favoriten"
+      "description": "Burg-, Trachten- und Heimatfest Krefeld-Linn 2026"
     },
     "language": {
       "title": "Sprache",
@@ -417,29 +417,24 @@
         "subtitle": "<b>Der Feiertag 🎉</b>",
         "events": [
           {
-            "time": "14:00 - 15:00 Uhr",
-            "title": "Begrüßung & Integration",
-            "description": "Übungen draußen, um uns kennenzulernen, kulturbezogene Aktivitäten. Verpasst diese lustige Session nicht!"
+            "time": "14:45 Uhr",
+            "title": "Ankunft & Willkommen",
+            "description": "Die Türen sind offen — kommt rein, macht es euch gemütlich und lasst die Feier beginnen."
           },
           {
             "time": "15:00 Uhr",
-            "title": "Kaffee & Kuchen Programm",
-            "description": "Präsentation, um euch willkommen zu fühlen, Überblick über die Hochzeit in Kolumbien, Einblicke, lustige Geschichten und euch zurück in unseren Hochzeitstag bringen."
-          },
-          {
-            "time": "17:00 Uhr",
-            "title": "Mehr Übungen & Spaß",
-            "description": "Zusätzliche Aktivitäten und Unterhaltung. Bleibt dran für Details!"
+            "title": "Kaffee, Kuchen & Programm",
+            "description": "Genießt Kaffee und Kuchen, während wir euch unser Tagesprogramm vorstellen und besondere Momente unseres Lebens mit euch teilen."
           },
           {
             "time": "19:00 Uhr",
-            "title": "Abendessen",
-            "description": "Genießt gemeinsam ein serviertes Abendessen."
+            "title": "Abendessen & Programm",
+            "description": "Lasst uns stärken, um den Abend gemeinsam einzuläuten"
           },
           {
-            "time": "21:00 - 23:00 Uhr",
-            "title": "Offene Party",
-            "description": "Raum für offene Feier und Tanzen."
+            "time": "23:00 Uhr",
+            "title": "Ende",
+            "description": "Ein Tag voller Aufregung, Freude und Liebe. Wir finden den perfekten Moment, um ihn gemeinsam ausklingen zu lassen."
           }
         ]
       }

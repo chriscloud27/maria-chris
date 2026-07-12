@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
-import Image from 'next/image';
 import Countdown from './Countdown';
+import { HeroShell } from './HeroShell';
 
 interface HeroProps {
   onCountdownFinish?: () => void;
@@ -12,44 +12,12 @@ export const Hero = ({ onCountdownFinish }: HeroProps = {}) => {
   const c = useTranslations('couple');
 
   return (
-    <section
-      id="hero"
-      className="flex flex-col items-center justify-center h-screen text-foreground relative overflow-hidden"
-      style={{ 
-        backgroundImage: 'url(/background.png)', 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundColor: '#f0f0f0'
-      }}
-    >
-      {/* Decorative leaf in top left corner */}
-      <div className="absolute -top-10 -left-4 z-10">
-        <Image 
-          src="/leaf_top.png" 
-          alt="Decorative leaf" 
-          width={400}
-          height={400}
-          className="w-48 h-48 md:w-60 md:h-60 lg:w-80 lg:h-80 opacity-80 -rotate-[40deg]"
-        />
-      </div>
-
-      {/* Decorative leaf in bottom right corner */}
-      <div className="absolute -bottom-10 -right-4 z-10">
-        <Image 
-          src="/leaf_bottom.png" 
-          alt="Decorative leaf" 
-          width={400}
-          height={400}
-          className="w-48 h-48 md:w-60 md:h-60 lg:w-80 lg:h-80 opacity-80 -rotate-[40deg]"
-        />
-      </div>
-
+    <HeroShell id="hero">
       {/* Names Section - Script font for elegance */}
       <h1 className="font-script font-normal text-5xl md:text-6xl lg:text-7xl mb-4 text-center leading-tight">
         {c('name1')} & {c('name2')}
       </h1>
-      
+
       {/* Title */}
       <p className="font-heading text-lg md:text-xl tracking-[0.1em] text-muted-foreground mb-12">
         {t('title')}
@@ -65,13 +33,13 @@ export const Hero = ({ onCountdownFinish }: HeroProps = {}) => {
         </div>
         <p className="font-heading text-lg md:text-xl tracking-[0.2em]">{t('year')}</p>
       </div>
-      
+
       {/* Location Section - Formal typography */}
       <div className="text-center max-w-md">
         <p className="font-heading text-base md:text-lg tracking-[0.15em] uppercase">
           {t('location')}
         </p>
       </div>
-    </section>
+    </HeroShell>
   );
 }

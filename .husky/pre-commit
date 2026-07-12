@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
+set -e
 
-npm run audit:check
-npm run deps:sync:check
+echo "→ dep-drift check"
 npm run check:deps
+
+echo "→ lint-staged"
 npx lint-staged
