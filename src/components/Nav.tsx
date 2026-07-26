@@ -39,9 +39,9 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
   // Filter sections based on countdown status
   // Before countdown: hide destinations, media
   // After countdown: hide attire, location, hotels, arrival, rsvp
-  const sections = isCountdownFinished 
+  const sections = isCountdownFinished
     ? allSections.filter(item => !(item.id && ['attire', 'hotels', 'location', 'rsvp'].includes(item.id)))
-    : allSections.filter(item => !(item.id && ['destinations', 'media'].includes(item.id)));
+    : allSections.filter(item => !(item.id && ['destinations', 'rsvp'].includes(item.id)));
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-md border-b border-gray-200/20 shadow-sm hover:shadow-md transition-all duration-300 z-50">
@@ -57,7 +57,7 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
               <Link 
                 key={section.id || section.href} 
                 href={section.href || `#${section.id}`} 
-                className={(section.id === 'rsvp' || (section.id === 'media' && isCountdownFinished))
+                className={(section.id === 'rsvp' || section.id === 'media')
                   ? "bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/50" 
                   : "hover:underline"
                 }
@@ -81,7 +81,7 @@ export const Nav = ({ navItems, isCountdownFinished = false }: NavProps) => {
               <Link 
                 key={section.id || section.href} 
                 href={section.href || `#${section.id}`} 
-                className={(section.id === 'rsvp' || (section.id === 'media' && isCountdownFinished))
+                className={(section.id === 'rsvp' || section.id === 'media')
                   ? "bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/50" 
                   : "hover:underline"
                 } 

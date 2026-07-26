@@ -4,12 +4,13 @@ import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/navigation';
 import { useTransition, useState, useRef, useEffect } from 'react';
 import DEFlag from './icons/DEFlag';
+import ENFlag from './icons/ENFlag';
 import ESFlag from './icons/ESFlag';
 
 const locales: { code: 'en' | 'de' | 'es'; name: string; flag: React.ComponentType<React.SVGProps<SVGSVGElement>>; }[] = [
-  // { code: 'en', name: 'English', flag: USFlag },
   { code: 'de', name: 'Deutsch', flag: DEFlag },
   { code: 'es', name: 'Español', flag: ESFlag },
+  { code: 'en', name: 'English', flag: ENFlag },
 ];
 
 export default function LanguageSwitcher() {

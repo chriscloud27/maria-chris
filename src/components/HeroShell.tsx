@@ -10,7 +10,7 @@ export const HeroShell = ({ id, children }: HeroShellProps) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center justify-center h-screen text-foreground relative overflow-hidden"
+      className="flex flex-col items-center justify-center h-screen pt-20 text-foreground relative overflow-hidden"
       style={{
         backgroundImage: 'url(/background.png)',
         backgroundSize: 'cover',
