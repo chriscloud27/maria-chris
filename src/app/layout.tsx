@@ -13,6 +13,7 @@ import '@fontsource-variable/dancing-script';
 import '@fontsource-variable/jetbrains-mono';
 import "./globals.css";
 import content from '@/content/wedding.json';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Maria and Chris",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
